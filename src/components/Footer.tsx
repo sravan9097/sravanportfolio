@@ -1,43 +1,61 @@
+
 import { Link } from "react-router-dom";
+import { ArrowUp } from "lucide-react";
 
 const Footer = () => {
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
   return (
-    <footer className="py-20 px-4 border-t border-mint/10">
+    <footer className="py-12 px-4 border-t border-border">
       <div className="container mx-auto">
-        <div className="grid md:grid-cols-4 gap-12">
-          <div className="space-y-4">
-            <h3 className="text-2xl font-bold">ByteHire</h3>
-            <p className="text-white/60 max-w-xs">
-              Revolutionizing tech recruitment with AI-powered matching and seamless hiring processes.
+        <div className="flex flex-col md:flex-row justify-between items-center">
+          <div className="mb-6 md:mb-0">
+            <Link to="/" className="text-xl font-bold text-primary">
+              John Doe
+            </Link>
+            <p className="mt-2 text-sm text-primary-light">
+              UX Designer creating intuitive digital experiences
             </p>
           </div>
-          <div>
-            <h4 className="font-medium mb-4">Product</h4>
-            <ul className="space-y-2">
-              <li><Link to="/features" className="text-white/60 hover:text-mint transition-colors">Features</Link></li>
-              <li><Link to="/pricing" className="text-white/60 hover:text-mint transition-colors">Pricing</Link></li>
-              <li><Link to="/enterprise" className="text-white/60 hover:text-mint transition-colors">Enterprise</Link></li>
+          
+          <div className="flex flex-col md:flex-row items-center gap-6">
+            <ul className="flex gap-6 text-primary-light">
+              <li>
+                <Link to="/" className="hover:text-accent transition-colors">
+                  Projects
+                </Link>
+              </li>
+              <li>
+                <Link to="/about" className="hover:text-accent transition-colors">
+                  About
+                </Link>
+              </li>
+              <li>
+                <Link to="/process" className="hover:text-accent transition-colors">
+                  Process
+                </Link>
+              </li>
+              <li>
+                <Link to="/contact" className="hover:text-accent transition-colors">
+                  Contact
+                </Link>
+              </li>
             </ul>
-          </div>
-          <div>
-            <h4 className="font-medium mb-4">Company</h4>
-            <ul className="space-y-2">
-              <li><Link to="/about" className="text-white/60 hover:text-mint transition-colors">About Us</Link></li>
-              <li><Link to="/careers" className="text-white/60 hover:text-mint transition-colors">Careers</Link></li>
-              <li><Link to="/blog" className="text-white/60 hover:text-mint transition-colors">Blog</Link></li>
-            </ul>
-          </div>
-          <div>
-            <h4 className="font-medium mb-4">Legal</h4>
-            <ul className="space-y-2">
-              <li><Link to="/privacy" className="text-white/60 hover:text-mint transition-colors">Privacy</Link></li>
-              <li><Link to="/terms" className="text-white/60 hover:text-mint transition-colors">Terms</Link></li>
-              <li><Link to="/security" className="text-white/60 hover:text-mint transition-colors">Security</Link></li>
-            </ul>
+            
+            <button 
+              onClick={scrollToTop}
+              className="p-3 bg-accent/10 rounded-full hover:bg-accent/20 transition-colors"
+              aria-label="Scroll to top"
+            >
+              <ArrowUp className="w-5 h-5 text-accent" />
+            </button>
           </div>
         </div>
-        <div className="border-t border-mint/10 mt-16 pt-8 text-center text-white/60">
-          <p>&copy; {new Date().getFullYear()} ByteHire. All rights reserved.</p>
+        
+        <div className="border-t border-border mt-8 pt-8 text-center text-sm text-primary-light">
+          <p>© {new Date().getFullYear()} John Doe. All rights reserved.</p>
         </div>
       </div>
     </footer>

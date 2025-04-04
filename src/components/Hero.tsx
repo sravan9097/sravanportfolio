@@ -1,44 +1,26 @@
+
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Star } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 
 const Hero = () => {
   return (
-    <section className="pt-32 pb-20 px-4">
-      <div className="container mx-auto grid lg:grid-cols-2 gap-12 items-center">
-        <div className="space-y-8">
-          <div className="flex items-center gap-2 bg-mint/10 w-fit px-4 py-2 rounded-full border border-mint/20">
-            <Star className="w-4 h-4 text-mint" />
-            <span className="text-mint text-sm font-medium">AI-Powered Recruitment</span>
-          </div>
-          <h1 className="text-5xl md:text-7xl font-bold leading-tight text-white">
-            Hire top
-            <br />
-            tech talent
-            <br />
-            wisely
+    <section className="pt-32 pb-16 px-4">
+      <div className="container mx-auto max-w-5xl">
+        <div className="space-y-6 text-center md:text-left">
+          <h1 className="text-4xl md:text-6xl font-bold leading-tight text-primary animate-fade-in">
+            UX Designer<br />
+            <span className="text-accent">Creating intuitive experiences</span>
           </h1>
-          <p className="text-lg text-white/80 max-w-md">
-            Find and hire the best tech professionals for your team with our AI-powered recruitment platform.
+          <p className="text-lg text-primary-light max-w-2xl mx-auto md:mx-0 animate-fade-in" style={{ animationDelay: '0.2s' }}>
+            I design digital products that help people solve problems through thoughtful user experience and clean interface design.
           </p>
-          <div className="flex items-center gap-4">
-            <Button className="bg-mint hover:bg-mint/90 text-forest font-medium px-8 py-6 text-lg">
-              Get Started <ArrowRight className="ml-2 h-5 w-5" />
+          <div className="flex flex-wrap gap-4 justify-center md:justify-start animate-fade-in" style={{ animationDelay: '0.4s' }}>
+            <Button className="bg-accent hover:bg-accent-hover text-white px-6 py-6 rounded-md">
+              View Projects <ArrowRight className="ml-2 h-5 w-5" />
             </Button>
-            <Button variant="outline" className="border-mint/20 text-mint hover:bg-mint/10">
-              Watch Demo
+            <Button variant="outline" className="border-accent text-accent hover:bg-accent/10 px-6 py-6 rounded-md">
+              Contact Me
             </Button>
-          </div>
-        </div>
-        <div className="relative">
-          <div className="absolute -inset-0.5 bg-mint/20 rounded-2xl blur opacity-30" />
-          <img
-            src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158"
-            alt="Tech professional"
-            className="relative rounded-2xl shadow-2xl"
-          />
-          <div className="absolute -bottom-10 -left-10 bg-forest-light p-6 rounded-xl shadow-xl border border-mint/10">
-            <p className="text-mint text-4xl font-bold">124k+</p>
-            <p className="text-white/80">Active candidates</p>
           </div>
         </div>
       </div>

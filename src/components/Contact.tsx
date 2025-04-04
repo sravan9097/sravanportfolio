@@ -16,6 +16,9 @@ import {
 import { Textarea } from "@/components/ui/textarea";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
+import emailjs from "emailjs-com"; // Add this import
+
+
 
 const formSchema = z.object({
   name: z.string().min(2, { message: "Name must be at least 2 characters" }),
@@ -53,8 +56,39 @@ const Contact = () => {
         throw new Error(error.message || "Failed to submit form");
       }
       
-      // EmailJS will be integrated here when service and template IDs are provided
-      // For now, we'll just show a success message
+      // Send email to yourself
+    
+      await emailjs.send(
+        import.meta.env.SELF_EMAILJS_SERVICE_ID,
+        import.meta.env.SELF_EMAILJS_TEMPLATE_ID,
+        {
+          from_name: values.name,
+          from_email: values.email,
+          subject: values.subject,
+          message: values.message,
+        },
+        import.meta.env.SELF_EMAILJS_PUBLIC_KEY
+      ).then(
+        (response) => {
+          console.log('SUCCESS!', response.status, response.text);
+        },
+        (error) => {
+          console.log('FAILED...', error);
+        },
+      );
+
+      // Send email to client (user)
+      // await emailjs.send(
+      //   import.meta.env.VITE_APP_CLIENT_EMAILJS_SERVICE_ID,
+      //   import.meta.env.VITE_APP_CLIENT_EMAILJS_TEMPLATE_ID,
+      //   {
+      //     to_name: values.name,
+      //     to_email: values.email,
+      //     subject: values.subject,
+      //   },
+      //   import.meta.env.VITE_APP_CLIENT_EMAILJS_PUBLIC_KEY
+      // );
+
       
       toast({
         title: "Message sent!",
@@ -63,8 +97,10 @@ const Contact = () => {
       
       // Reset form
       form.reset();
+
+
     } catch (error) {
-      console.error("Form submission error:", error);
+      console.error("Form submission error:",error);
       toast({
         variant: "destructive",
         title: "Something went wrong",

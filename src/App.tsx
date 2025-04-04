@@ -5,6 +5,7 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
+import ProjectDetail from "./pages/ProjectDetail";
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -24,7 +25,7 @@ const App = () => (
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/about" element={<Index />} />
-          {/* Additional routes will be added as we create more pages */}
+          <Route path="/project/:id" element={<ProjectDetail />} />
         </Routes>
       </BrowserRouter>
     </TooltipProvider>

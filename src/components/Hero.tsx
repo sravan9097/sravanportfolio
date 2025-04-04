@@ -3,8 +3,15 @@ import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 
 const Hero = () => {
+  const scrollToSection = (sectionId: string) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
-    <section className="pt-32 pb-16 px-4">
+    <section className="pt-32 pb-16 px-4" id="home">
       <div className="container mx-auto max-w-5xl">
         <div className="space-y-6 text-center md:text-left">
           <h1 className="text-4xl md:text-6xl font-bold leading-tight text-primary animate-fade-in">
@@ -15,10 +22,17 @@ const Hero = () => {
             I design digital products that help people solve problems through thoughtful user experience and clean interface design.
           </p>
           <div className="flex flex-wrap gap-4 justify-center md:justify-start animate-fade-in" style={{ animationDelay: '0.4s' }}>
-            <Button className="bg-accent hover:bg-accent-hover text-white px-6 py-6 rounded-md">
+            <Button 
+              className="bg-accent hover:bg-accent-hover text-white px-6 py-6 rounded-md"
+              onClick={() => scrollToSection('projects')}
+            >
               View Projects <ArrowRight className="ml-2 h-5 w-5" />
             </Button>
-            <Button variant="outline" className="border-accent text-accent hover:bg-accent/10 px-6 py-6 rounded-md">
+            <Button 
+              variant="outline" 
+              className="border-accent text-accent hover:bg-accent/10 px-6 py-6 rounded-md"
+              onClick={() => scrollToSection('contact')}
+            >
               Contact Me
             </Button>
           </div>

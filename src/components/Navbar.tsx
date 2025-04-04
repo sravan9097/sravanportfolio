@@ -1,27 +1,56 @@
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const location = useLocation();
+  const isHomePage = location.pathname === '/';
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
 
+  const scrollToSection = (sectionId: string) => {
+    setIsMenuOpen(false);
+    
+    if (isHomePage) {
+      const element = document.getElementById(sectionId);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
+    } else {
+      window.location.href = `/#${sectionId}`;
+    }
+  };
+
+  // Close mobile menu when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      const target = event.target as HTMLElement;
+      if (isMenuOpen && !target.closest('nav')) {
+        setIsMenuOpen(false);
+      }
+    };
+
+    document.addEventListener('click', handleClickOutside);
+    return () => document.removeEventListener('click', handleClickOutside);
+  }, [isMenuOpen]);
+
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 glass-nav">
+    <nav className="fixed top-0 left-0 right-0 z-50 backdrop-blur-md bg-background/80 border-b border-border">
       <div className="container mx-auto px-4 py-5 flex items-center justify-between">
         <Link to="/" className="text-xl font-bold text-primary">
-          John Doe
+          Sravan Kumar
         </Link>
         
         {/* Mobile menu button */}
         <button 
           className="md:hidden text-primary" 
           onClick={toggleMenu}
+          aria-label="Toggle navigation menu"
         >
           {isMenuOpen ? (
             <X className="h-6 w-6" />
@@ -32,43 +61,48 @@ const Navbar = () => {
 
         {/* Desktop navigation */}
         <div className="hidden md:flex items-center space-x-8">
-          <Link to="/" className="text-primary hover:text-accent transition-colors">
+          <button onClick={() => scrollToSection('projects')} className="text-primary hover:text-accent transition-colors">
             Projects
-          </Link>
-          <Link to="/about" className="text-primary hover:text-accent transition-colors">
+          </button>
+          <button onClick={() => scrollToSection('about')} className="text-primary hover:text-accent transition-colors">
             About
-          </Link>
-          <Link to="/process" className="text-primary hover:text-accent transition-colors">
+          </button>
+          <button onClick={() => scrollToSection('process')} className="text-primary hover:text-accent transition-colors">
             Process
-          </Link>
-          <Link to="/contact" className="text-primary hover:text-accent transition-colors">
+          </button>
+          <button onClick={() => scrollToSection('contact')} className="text-primary hover:text-accent transition-colors">
             Contact
-          </Link>
+          </button>
         </div>
 
         {/* Mobile menu */}
         {isMenuOpen && (
-          <div className="absolute top-full left-0 w-full bg-white shadow-md py-4 md:hidden">
+          <div className="absolute top-full left-0 w-full bg-background/95 backdrop-blur-md shadow-md py-4 md:hidden">
             <div className="flex flex-col space-y-4 px-4">
-              <Link to="/" className="text-primary hover:text-accent transition-colors py-2" onClick={toggleMenu}>
+              <button onClick={() => scrollToSection('projects')} className="text-primary hover:text-accent transition-colors py-2 text-left">
                 Projects
-              </Link>
-              <Link to="/about" className="text-primary hover:text-accent transition-colors py-2" onClick={toggleMenu}>
+              </button>
+              <button onClick={() => scrollToSection('about')} className="text-primary hover:text-accent transition-colors py-2 text-left">
                 About
-              </Link>
-              <Link to="/process" className="text-primary hover:text-accent transition-colors py-2" onClick={toggleMenu}>
+              </button>
+              <button onClick={() => scrollToSection('process')} className="text-primary hover:text-accent transition-colors py-2 text-left">
                 Process
-              </Link>
-              <Link to="/contact" className="text-primary hover:text-accent transition-colors py-2" onClick={toggleMenu}>
+              </button>
+              <button onClick={() => scrollToSection('contact')} className="text-primary hover:text-accent transition-colors py-2 text-left">
                 Contact
-              </Link>
+              </button>
             </div>
           </div>
         )}
 
-        <Button className="hidden md:flex bg-accent hover:bg-accent-hover text-white">
+        <a 
+          href="/sravan-kumar-resume.pdf" 
+          target="_blank" 
+          rel="noopener noreferrer" 
+          className="hidden md:flex bg-accent hover:bg-accent-hover text-white px-4 py-2 rounded"
+        >
           Resume
-        </Button>
+        </a>
       </div>
     </nav>
   );

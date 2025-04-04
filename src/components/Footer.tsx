@@ -1,10 +1,24 @@
 
-import { Link } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 import { ArrowUp } from "lucide-react";
 
 const Footer = () => {
+  const location = useLocation();
+  const isHomePage = location.pathname === '/';
+
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
+  const scrollToSection = (sectionId: string) => {
+    if (isHomePage) {
+      const element = document.getElementById(sectionId);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
+    } else {
+      window.location.href = `/#${sectionId}`;
+    }
   };
 
   return (
@@ -12,9 +26,9 @@ const Footer = () => {
       <div className="container mx-auto">
         <div className="flex flex-col md:flex-row justify-between items-center">
           <div className="mb-6 md:mb-0">
-            <Link to="/" className="text-xl font-bold text-primary">
-              John Doe
-            </Link>
+            <button onClick={scrollToTop} className="text-xl font-bold text-primary">
+              Sravan Kumar
+            </button>
             <p className="mt-2 text-sm text-primary-light">
               UX Designer creating intuitive digital experiences
             </p>
@@ -23,24 +37,24 @@ const Footer = () => {
           <div className="flex flex-col md:flex-row items-center gap-6">
             <ul className="flex gap-6 text-primary-light">
               <li>
-                <Link to="/" className="hover:text-accent transition-colors">
+                <button onClick={() => scrollToSection('projects')} className="hover:text-accent transition-colors">
                   Projects
-                </Link>
+                </button>
               </li>
               <li>
-                <Link to="/about" className="hover:text-accent transition-colors">
+                <button onClick={() => scrollToSection('about')} className="hover:text-accent transition-colors">
                   About
-                </Link>
+                </button>
               </li>
               <li>
-                <Link to="/process" className="hover:text-accent transition-colors">
+                <button onClick={() => scrollToSection('process')} className="hover:text-accent transition-colors">
                   Process
-                </Link>
+                </button>
               </li>
               <li>
-                <Link to="/contact" className="hover:text-accent transition-colors">
+                <button onClick={() => scrollToSection('contact')} className="hover:text-accent transition-colors">
                   Contact
-                </Link>
+                </button>
               </li>
             </ul>
             
@@ -55,7 +69,7 @@ const Footer = () => {
         </div>
         
         <div className="border-t border-border mt-8 pt-8 text-center text-sm text-primary-light">
-          <p>© {new Date().getFullYear()} John Doe. All rights reserved.</p>
+          <p>© {new Date().getFullYear()} Sravan Kumar Mulugurthy. All rights reserved.</p>
         </div>
       </div>
     </footer>

@@ -30,7 +30,7 @@ const Index = () => {
   }, []);
 
   return (
-    <main className="min-h-screen bg-background-default">
+    <main className="min-h-screen bg-background">
       <Navbar />
       <Hero />
       <Projects />

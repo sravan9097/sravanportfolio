@@ -1,5 +1,5 @@
 
-# Portfolio - Sravan Kumar
+# Portfolio - Sravan Kumar Mulugurthy
 
 A modern portfolio website built with React, Tailwind CSS, and Supabase.
 
@@ -21,3 +21,8 @@ A modern portfolio website built with React, Tailwind CSS, and Supabase.
 1. Clone the repository
 2. Install dependencies with `npm install`
 3. Run the development server with `npm run dev`
+
+## Contact
+- Email: sravan.iitk@live.in
+- Phone: +91 9730578566
+- Location: India

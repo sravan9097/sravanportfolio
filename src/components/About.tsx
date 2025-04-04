@@ -32,7 +32,7 @@ const About = () => {
           <div>
             <h2 className="text-3xl font-bold mb-6 text-primary">About Me</h2>
             <p className="text-primary-light mb-4">
-              I'm a UX Designer with over 5 years of experience creating digital products that people love to use. 
+              I'm Sravan Kumar Mulugurthy, a UX Designer with over 5 years of experience creating digital products that people love to use. 
               My approach combines user research, strategic thinking, and creative problem-solving.
             </p>
             <p className="text-primary-light mb-6">

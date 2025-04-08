@@ -5,7 +5,11 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
-import ProjectDetail from "./pages/ProjectDetail";
+import ProjectNotFound from "./components/ProjectNotFound";
+import FinanceAppProject from "./pages/projects/FinanceAppProject";
+import FitnessTrackerProject from "./pages/projects/FitnessTrackerProject";
+import EcommerceRedesignProject from "./pages/projects/EcommerceRedesignProject";
+import TravelAppProject from "./pages/projects/TravelAppProject";
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -25,7 +29,11 @@ const App = () => (
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/about" element={<Index />} />
-          <Route path="/project/:id" element={<ProjectDetail />} />
+          <Route path="/project/finance-app" element={<FinanceAppProject />} />
+          <Route path="/project/fitness-tracker" element={<FitnessTrackerProject />} />
+          <Route path="/project/ecommerce-redesign" element={<EcommerceRedesignProject />} />
+          <Route path="/project/travel-app" element={<TravelAppProject />} />
+          <Route path="/project/*" element={<ProjectNotFound />} />
         </Routes>
       </BrowserRouter>
     </TooltipProvider>

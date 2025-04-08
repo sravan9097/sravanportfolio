@@ -1,3 +1,4 @@
+
 import { Button } from "@/components/ui/button";
 import { Mail, Phone, MapPin, Linkedin, Twitter, Dribbble } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
@@ -15,7 +16,7 @@ import {
 import { Textarea } from "@/components/ui/textarea";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
-import emailjs from "emailjs-com";
+import { sendEmail } from "@/lib/emailjs";
 
 const formSchema = z.object({
   name: z.string().min(2, { message: "Name must be at least 2 characters" }),
@@ -45,29 +46,32 @@ const Contact = () => {
     
     try {
       // First store in database via direct Supabase call
+      // Fix: Pass values as a single object, not an array
       const { error: dbError } = await supabase
         .from("contact_submissions")
-        .insert([values]);
+        .insert({
+          name: values.name,
+          email: values.email,
+          subject: values.subject,
+          message: values.message
+        });
       
       if (dbError) {
         throw new Error(dbError.message || "Failed to save your message");
       }
       
       // Send email notification to site owner
-      await emailjs.send(
-        import.meta.env.VITE_SELF_EMAILJS_SERVICE_ID || "",
-        import.meta.env.VITE_SELF_EMAILJS_TEMPLATE_ID || "",
-        {
+      await sendEmail({
+        serviceId: import.meta.env.VITE_SELF_EMAILJS_SERVICE_ID,
+        templateId: import.meta.env.VITE_SELF_EMAILJS_TEMPLATE_ID,
+        templateParams: {
           from_name: values.name,
           from_email: values.email,
           subject: values.subject,
           message: values.message,
         },
-        import.meta.env.VITE_EMAILJS_PUBLIC_KEY || ""
-      );
-
-      // TODO: Add code for confirmation email to the user here
-      // This would use a different template ID
+        publicKey: import.meta.env.VITE_EMAILJS_PUBLIC_KEY
+      });
 
       toast({
         title: "Message sent!",

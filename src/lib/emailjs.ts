@@ -1,25 +1,25 @@
 
-import emailjs from 'emailjs';
+import emailjs from 'emailjs-com';
 
 interface SendEmailParams {
   serviceId: string;
   templateId: string;
-  userId: string;
   templateParams: Record<string, unknown>;
+  publicKey: string;
 }
 
 export const sendEmail = async ({
   serviceId,
   templateId,
-  userId,
   templateParams,
+  publicKey,
 }: SendEmailParams): Promise<{ success: boolean; data?: any; error?: string }> => {
   try {
     const result = await emailjs.send(
       serviceId,
       templateId,
       templateParams,
-      userId
+      publicKey
     );
     
     return {

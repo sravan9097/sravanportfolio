@@ -1,4 +1,3 @@
-
 import { Button } from "@/components/ui/button";
 import { Mail, Phone, MapPin, Linkedin, Twitter, Dribbble } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
@@ -16,9 +15,7 @@ import {
 import { Textarea } from "@/components/ui/textarea";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
-import emailjs from "emailjs-com"; // Add this import
-
-
+import emailjs from "emailjs-com";
 
 const formSchema = z.object({
   name: z.string().min(2, { message: "Name must be at least 2 characters" }),
@@ -47,49 +44,31 @@ const Contact = () => {
     setIsSubmitting(true);
     
     try {
-      // First store in database via edge function
-      const { data, error } = await supabase.functions.invoke("contact-form", {
-        body: values,
-      });
+      // First store in database via direct Supabase call
+      const { error: dbError } = await supabase
+        .from("contact_submissions")
+        .insert([values]);
       
-      if (error) {
-        throw new Error(error.message || "Failed to submit form");
+      if (dbError) {
+        throw new Error(dbError.message || "Failed to save your message");
       }
       
-      // Send email to yourself
-    
+      // Send email notification to site owner
       await emailjs.send(
-        import.meta.env.SELF_EMAILJS_SERVICE_ID,
-        import.meta.env.SELF_EMAILJS_TEMPLATE_ID,
+        import.meta.env.VITE_SELF_EMAILJS_SERVICE_ID || "",
+        import.meta.env.VITE_SELF_EMAILJS_TEMPLATE_ID || "",
         {
           from_name: values.name,
           from_email: values.email,
           subject: values.subject,
           message: values.message,
         },
-        import.meta.env.SELF_EMAILJS_PUBLIC_KEY
-      ).then(
-        (response) => {
-          console.log('SUCCESS!', response.status, response.text);
-        },
-        (error) => {
-          console.log('FAILED...', error);
-        },
+        import.meta.env.VITE_EMAILJS_PUBLIC_KEY || ""
       );
 
-      // Send email to client (user)
-      // await emailjs.send(
-      //   import.meta.env.VITE_APP_CLIENT_EMAILJS_SERVICE_ID,
-      //   import.meta.env.VITE_APP_CLIENT_EMAILJS_TEMPLATE_ID,
-      //   {
-      //     to_name: values.name,
-      //     to_email: values.email,
-      //     subject: values.subject,
-      //   },
-      //   import.meta.env.VITE_APP_CLIENT_EMAILJS_PUBLIC_KEY
-      // );
+      // TODO: Add code for confirmation email to the user here
+      // This would use a different template ID
 
-      
       toast({
         title: "Message sent!",
         description: "Thanks for reaching out. I'll get back to you soon.",
@@ -97,14 +76,12 @@ const Contact = () => {
       
       // Reset form
       form.reset();
-
-
     } catch (error) {
-      console.error("Form submission error:",error);
+      console.error("Form submission error:", error);
       toast({
         variant: "destructive",
         title: "Something went wrong",
-        description: "Your message couldn't be sent. Please try again.",
+        description: error instanceof Error ? error.message : "Your message couldn't be sent. Please try again.",
       });
     } finally {
       setIsSubmitting(false);

@@ -18,10 +18,10 @@ const Projects = () => {
       category: "UI/UX Design"
     },
     {
-      id: "ecommerce-redesign",
-      title: "E-Commerce Redesign",
+      id: "bcexperienceproject",
+      title: "Building BeautifulCode Experience App",
       description: "Transforming an e-commerce platform with a focus on conversion optimization and user flow.",
-      image: "https://images.unsplash.com/photo-1532299033990-5bf394529e15",
+      image: "/Hero_Images/BC_experience_cover.png",
       category: "UX Research & Design"
     },
     {

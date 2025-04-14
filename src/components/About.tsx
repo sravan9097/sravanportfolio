@@ -1,5 +1,5 @@
 
-import { Code, PenTool, Lightbulb, Users } from "lucide-react";
+import { Code, PenTool, Lightbulb, Layers } from "lucide-react";
 
 const About = () => {
   const skills = [
@@ -14,9 +14,9 @@ const About = () => {
       description: "Crafting beautiful, intuitive interfaces with attention to visual hierarchy and accessibility."
     },
     {
-      icon: Users,
-      title: "User Research",
-      description: "Conducting interviews, usability testing, and analyzing data to inform design decisions."
+      icon: Layers,
+      title: "Design System",
+      description: "Create Brand Guidelines and build design sytem from scratch or Revamp any exisitng system."
     },
     {
       icon: Code,
@@ -41,20 +41,20 @@ const About = () => {
             </p>
             <div className="grid grid-cols-2 gap-4 text-sm">
               <div>
-                <h3 className="font-medium mb-2 text-primary">Design Tools</h3>
+                <h3 className="font-medium mb-2 text-primary">Tools & Softwares</h3>
                 <ul className="space-y-1 text-primary-light">
                   <li>Figma</li>
-                  <li>Adobe XD</li>
-                  <li>Sketch</li>
-                  <li>Protopie</li>
+                  <li>Cursor</li>
+                  <li>Balsamiq</li>
+                  <li>Illustrator/Premeir Pro</li>
                 </ul>
               </div>
               <div>
                 <h3 className="font-medium mb-2 text-primary">Technical Skills</h3>
                 <ul className="space-y-1 text-primary-light">
-                  <li>HTML/CSS</li>
-                  <li>JavaScript</li>
-                  <li>React</li>
+                  <li>HTML/CSS (TailwindCSS)</li>
+                  <li>JavaScript/React</li>
+                  <li>Design System</li>
                   <li>Responsive Design</li>
                 </ul>
               </div>
@@ -62,7 +62,7 @@ const About = () => {
           </div>
           <div className="rounded-lg overflow-hidden">
             <img 
-              src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e" 
+              src="/profile_photo.jpg" 
               alt="Profile" 
               className="w-full h-auto"
             />

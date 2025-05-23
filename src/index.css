@@ -55,7 +55,7 @@
   }
 
   ::selection {
-    @apply bg-accent text-accent-foreground;
+    @apply bg-accent text-foreground;
   }
 
   /* Portfolio-specific styles */

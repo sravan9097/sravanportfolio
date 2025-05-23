@@ -4,6 +4,13 @@ import ProjectCard from "./ProjectCard";
 const Projects = () => {
   const projects = [
     {
+      id: "design-system",
+      title: "Design System",
+      description: "A comprehensive design system with components, colors, typography and design guidelines.",
+      image: "/design-system/design-system-cover.png",
+      category: "UI/UX Design"
+    },
+    {
       id: "finance-app",
       title: "Mobile Banking App",
       description: "Redesigning the user experience for a digital banking platform focusing on accessibility and ease of use.",
@@ -23,13 +30,6 @@ const Projects = () => {
       description: "Transforming an e-commerce platform with a focus on conversion optimization and user flow.",
       image: "/Hero_Images/BC_experience_cover.png",
       category: "UX Research & Design"
-    },
-    {
-      id: "travel-app",
-      title: "Travel Planning App",
-      description: "Designing a seamless experience for travelers to plan and book their trips in one place.",
-      image: "https://images.unsplash.com/photo-1469854523086-cc02fe5d8800",
-      category: "Mobile Design"
     }
   ];
 

@@ -1,3 +1,4 @@
+
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -9,6 +10,7 @@ import FinanceAppProject from "./pages/projects/FinanceAppProject";
 import FitnessTrackerProject from "./pages/projects/FitnessTrackerProject";
 import BCExperienceProject from "./pages/projects/BCexperienceproject";
 import TravelAppProject from "./pages/projects/TravelAppProject";
+import DesignSystemProject from "./pages/projects/DesignSystemProject";
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -32,6 +34,7 @@ const App = () => (
           <Route path="/project/fitness-tracker" element={<FitnessTrackerProject />} />
           <Route path="/project/bcexperienceproject" element={<BCExperienceProject />} />
           <Route path="/project/travel-app" element={<TravelAppProject />} />
+          <Route path="/project/design-system" element={<DesignSystemProject />} />
           <Route path="/project/*" element={<ProjectNotFound />} />
         </Routes>
       </BrowserRouter>

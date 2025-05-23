@@ -1,5 +1,6 @@
 
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { 
@@ -14,7 +15,7 @@ import {
 } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
 import { Button } from "@/components/ui/button";
-import { PlusIcon } from "lucide-react";
+import { ArrowLeft, PlusIcon, CircleCheckBig, Grip } from "lucide-react";
 
 const DesignSystemProject = () => {
   // Color palette state
@@ -97,19 +98,29 @@ const DesignSystemProject = () => {
   // Design system components
   const atomicDesignComponents = [
     { 
-      name: "Colors", 
-      icon: "/design-system/color-palette.svg",
-      description: "Color system design tokens" 
+      name: "Consistency Across Products", 
+      icon: "/check.svg",
+      description: "Design systems ensure that every part of a digital product looks and feels the same, which enhances user experience (UX) and builds brand trust." 
     },
     { 
-      name: "Icons", 
-      icon: "/design-system/icons.svg",
-      description: "Iconography system"
+      name: "Faster Design and Development", 
+      icon: "/lightning.svg ",
+      description: "Teams don’t need to reinvent the wheel every time they design a button or a form. Components are already built, tested, and ready to use — saving time."
     },
     { 
-      name: "Grid", 
-      icon: "/design-system/grid.svg", 
-      description: "Layout foundations"
+      name: "Improved Collaboration", 
+      icon: "/sync.svg", 
+      description: "Layout foundationsDesigners, developers, product managers, and writers can all speak the same visual and functional language. Everyone knows what a “primary button” or “error message” should look like."
+    },
+    { 
+      name: "Scalability", 
+      icon: "/scale.svg", 
+      description: "When your product grows — more pages, new apps, different teams — a design system allows for easy scaling while maintaining visual and functional harmony."
+    },
+    { 
+      name: "Accessibility", 
+      icon: "/accessibility.svg", 
+      description: "Good design systems bake in accessibility best practices, helping ensure your products work for all users, including those with disabilities."
     }
   ];
 
@@ -128,32 +139,33 @@ const DesignSystemProject = () => {
   return (
     <div className="min-h-screen bg-white">
       <Navbar />
-      <div className="max-w-6xl mx-auto px-4 py-16 sm:px-6 lg:px-8">
-        <header className="flex justify-between items-center mb-16">
-          <h1 className="text-4xl font-bold">Design System</h1>
-          <div className="flex items-center space-x-2">
-            <PlusIcon className="h-5 w-5" />
-            <span className="text-sm">New Component</span>
+      <div className="container mx-auto max-w-4xl pt-32 pb-16 px-4">
+        <Link to="/#projects" className="inline-flex items-center text-accent hover:underline mb-8">
+          <ArrowLeft className="mr-2 h-5 w-5" /> Back to projects
+        </Link>
+        
+        {/* Hero Section */}
+        
+        <div className="aspect-[16/9] w-full overflow-hidden rounded-lg mb-10">
+            <img 
+              src="/Hero_Images/designsystemhero.png" 
+              alt="E-Commerce Redesign" 
+              className="w-full h-full object-cover" 
+            />
           </div>
-        </header>
-
         <section className="mb-24 grid md:grid-cols-2 gap-12">
           <div>
             <h2 className="text-3xl font-bold mb-6">What is Design System?</h2>
             <p className="text-gray-700 mb-4">
-              A design system is a collection of reusable components, guided by clear standards, 
-              that can be assembled to build any number of applications. It provides a single 
-              source of truth for design decisions, ensuring consistency across products.
-            </p>
-            <p className="text-gray-700">
-              Design systems help teams build better products faster by making design reusable—
-              reusability makes scale possible. This is the heart of design systems: 
-              systemizing design to create scale.
+            In the fast-paced world of digital product development, consistency, scalability, and efficiency are crucial. This is where a design system becomes an essential tool. 
+            A design system is more than just a collection of UI elements—it’s a comprehensive guide that defines the visual language, 
+            interaction patterns, and code standards for a brand or product. It serves as a single source of truth for designers and developers, 
+            ensuring that products look, feel, and function consistently across different platforms and teams.
             </p>
           </div>
           <div className="relative rounded-xl overflow-hidden bg-gray-100 flex items-center justify-center min-h-[300px]">
             <img 
-              src="/placeholder.svg" 
+              src="/design-system/designsystemhero.png" 
               alt="Design System Diagram" 
               className="w-full h-full object-cover"
             />
@@ -162,18 +174,25 @@ const DesignSystemProject = () => {
 
         <section className="mb-24">
           <div className="flex flex-col md:flex-row gap-12">
-            <div className="md:w-1/2">
+            <div >
               <h2 className="text-3xl font-bold mb-6">Why Design System Needed?</h2>
               <div className="space-y-4 text-gray-700">
                 <p>
                   Design systems solve several key problems in digital product development:
                 </p>
-                <ul className="list-disc pl-5 space-y-2">
-                  <li>Inconsistency across products and platforms</li>
-                  <li>Inefficient design and development processes</li>
-                  <li>Difficulty scaling design decisions</li>
-                  <li>Poor communication between design and development teams</li>
-                </ul>
+                <div className="grid  xl:grid-cols-3 lg:grid-cols-3 md:grid-cols-2 gap-6">
+                     {atomicDesignComponents.map((component, index) => (
+                     <div key={index} className="flex flex-col items-start gap-4 border border-gray-200 rounded-xl p-6 hover:shadow-md transition-shadow">
+                 <div className=" w-12 h-12 rounded-full flex items-center justify-center ">
+                    <img className="w-12  h-12" src={component.icon} alt={component.name} />
+                 </div>
+                  <div className="flex flex-col">
+                  <h3 className="font-bold text-lg mb-2">{component.name}</h3>
+                  <p className="text-primary-light text-sm">{component.description}</p>
+                  </div>
+              </div>
+            ))}
+          </div>  
                 <p>
                   By creating a shared language and toolkit, design systems ensure everyone
                   is working with the same components, patterns, and principles. This
@@ -181,31 +200,12 @@ const DesignSystemProject = () => {
                 </p>
               </div>
             </div>
-            <div className="md:w-1/2 flex items-center justify-center">
-              <div className="relative rounded-xl overflow-hidden bg-gray-100 w-full min-h-[300px]">
-                <img 
-                  src="/placeholder.svg" 
-                  alt="Why Design Systems Matter" 
-                  className="w-full h-full object-cover"
-                />
-              </div>
-            </div>
           </div>
         </section>
 
         <section className="mb-24">
           <h2 className="text-3xl font-bold mb-10">Atomic Design</h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {atomicDesignComponents.map((component, index) => (
-              <div key={index} className="border border-gray-200 rounded-xl p-6 hover:shadow-md transition-shadow">
-                <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mb-4">
-                  <img src={component.icon} alt={component.name} className="w-6 h-6" />
-                </div>
-                <h3 className="font-bold text-lg mb-2">{component.name}</h3>
-                <p className="text-gray-600 text-sm">{component.description}</p>
-              </div>
-            ))}
-          </div>
+        
         </section>
 
         <section className="mb-24">

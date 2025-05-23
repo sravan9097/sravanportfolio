@@ -46,7 +46,7 @@ const Navbar = () => {
   }, [isMenuOpen]);
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 backdrop-blur-md bg-background/80 border-b border-border">
+    <nav className="fixed top-0 left-0 right-0 z-50 glass-nav">
       <div className="container mx-auto px-4 py-5 flex items-center justify-between">
         <Link to="/" className="text-xl font-bold text-primary">
           Sravan Kumar
@@ -54,7 +54,7 @@ const Navbar = () => {
         
         {/* Mobile menu button */}
         <button 
-          className="md:hidden text-primary" 
+          className="md:hidden text-foreground" 
           onClick={toggleMenu}
           aria-label="Toggle navigation menu"
         >
@@ -67,37 +67,37 @@ const Navbar = () => {
 
         {/* Desktop navigation */}
         <div className="hidden md:flex items-center space-x-8">
-          <button onClick={() => scrollToSection('projects')} className="text-primary hover:text-accent transition-colors">
+          <button onClick={() => scrollToSection('projects')} className="text-foreground hover:text-accent transition-colors">
             Projects
           </button>
-          <button onClick={() => scrollToSection('about')} className="text-primary hover:text-accent transition-colors">
+          <button onClick={() => scrollToSection('about')} className="text-foreground hover:text-accent transition-colors">
             About
           </button>
-          <button onClick={() => scrollToSection('process')} className="text-primary hover:text-accent transition-colors">
+          <button onClick={() => scrollToSection('process')} className="text-foreground hover:text-accent transition-colors">
             Process
           </button>
-          <button onClick={() => scrollToSection('contact')} className="text-primary hover:text-accent transition-colors">
+          <button onClick={() => scrollToSection('contact')} className="text-foreground hover:text-accent transition-colors">
             Contact
           </button>
         </div>
 
         {/* Mobile menu */}
         {isMenuOpen && (
-          <div className="absolute top-full left-0 w-full bg-background/95 backdrop-blur-md shadow-md py-4 md:hidden">
+          <div className="absolute top-full left-0 w-full bg-card/95 backdrop-blur-md shadow-md py-4 md:hidden">
             <div className="flex flex-col space-y-4 px-4">
-              <button onClick={() => scrollToSection('projects')} className="text-primary hover:text-accent transition-colors py-2 text-left">
+              <button onClick={() => scrollToSection('projects')} className="text-foreground hover:text-accent transition-colors py-2 text-left">
                 Projects
               </button>
-              <button onClick={() => scrollToSection('about')} className="text-primary hover:text-accent transition-colors py-2 text-left">
+              <button onClick={() => scrollToSection('about')} className="text-foreground hover:text-accent transition-colors py-2 text-left">
                 About
               </button>
-              <button onClick={() => scrollToSection('process')} className="text-primary hover:text-accent transition-colors py-2 text-left">
+              <button onClick={() => scrollToSection('process')} className="text-foreground hover:text-accent transition-colors py-2 text-left">
                 Process
               </button>
-              <button onClick={() => scrollToSection('contact')} className="text-primary hover:text-accent transition-colors py-2 text-left">
+              <button onClick={() => scrollToSection('contact')} className="text-foreground hover:text-accent transition-colors py-2 text-left">
                 Contact
               </button>
-              <button onClick={toggleTheme} className="text-primary hover:text-accent transition-colors py-2 text-left flex items-center">
+              <button onClick={toggleTheme} className="text-foreground hover:text-accent transition-colors py-2 text-left flex items-center">
                 {theme === 'dark' ? (
                   <>
                     <Sun className="w-4 h-4 mr-2" />
@@ -117,7 +117,7 @@ const Navbar = () => {
         <div className="hidden md:flex items-center space-x-4">
           <button 
             onClick={toggleTheme}
-            className="p-2 rounded-full hover:bg-accent/10 text-primary"
+            className="p-2 rounded-full hover:bg-accent/10 text-foreground"
             aria-label={theme === 'dark' ? "Switch to light mode" : "Switch to dark mode"}
           >
             {theme === 'dark' ? (
@@ -131,7 +131,7 @@ const Navbar = () => {
             href="/sravan-kumar-resume.pdf" 
             target="_blank" 
             rel="noopener noreferrer" 
-            className="bg-accent hover:bg-accent-hover text-white px-4 py-2 rounded"
+            className="bg-primary text-primary-foreground hover:bg-primary/90 px-4 py-2 rounded"
           >
             Resume
           </a>

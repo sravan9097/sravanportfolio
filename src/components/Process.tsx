@@ -26,11 +26,11 @@ const Process = () => {
   ];
 
   return (
-    <section className="section-padding bg-background-alt">
+    <section id="process" className="section-padding bg-card">
       <div className="container mx-auto">
         <div className="max-w-3xl mx-auto text-center mb-16">
-          <h2 className="text-3xl font-bold mb-4 text-primary">Why Design Systems?</h2>
-          <p className="text-primary-light">Design systems aren't just about components and colors — they’re about creating structure that drives efficiency and clarity. I love building systems that not only make interfaces consistent but also empower teams to work faster and stay focused on solving real user problems.</p>
+          <h2 className="text-3xl font-bold mb-4 text-foreground">Why Design Systems?</h2>
+          <p className="text-muted-foreground">Design systems aren't just about components and colors — they're about creating structure that drives efficiency and clarity. I love building systems that not only make interfaces consistent but also empower teams to work faster and stay focused on solving real user problems.</p>
         </div>
         
         <div className="relative">
@@ -38,12 +38,12 @@ const Process = () => {
           <div className="grid md:grid-cols-4 gap-8">
             {processSteps.map((step, index) => (
               <div key={index} className="relative z-10">
-                <div className="bg-white p-6 rounded-xl border border-border shadow-sm">
+                <div className="bg-card p-6 rounded-xl border border-border shadow-sm">
                   <div className="w-12 h-12 bg-accent/10 rounded-full flex items-center justify-center mb-4 mx-auto">
                     <step.icon className="w-6 h-6 text-accent" />
                   </div>
-                  <h3 className="text-lg font-bold mb-2 text-primary text-center">{step.title}</h3>
-                  <p className="text-primary-light text-sm text-center">{step.description}</p>
+                  <h3 className="text-lg font-bold mb-2 text-foreground text-center">{step.title}</h3>
+                  <p className="text-muted-foreground text-sm text-center">{step.description}</p>
                 </div>
               </div>
             ))}

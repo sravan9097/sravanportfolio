@@ -26,16 +26,16 @@ const Footer = () => {
       <div className="container mx-auto">
         <div className="flex flex-col md:flex-row justify-between items-center">
           <div className="mb-6 md:mb-0">
-            <button onClick={scrollToTop} className="text-xl font-bold text-primary">
+            <button onClick={scrollToTop} className="text-xl font-bold text-foreground">
               Sravan Kumar
             </button>
-            <p className="mt-2 text-sm text-primary-light">
+            <p className="mt-2 text-sm text-muted-foreground">
               UX Designer creating intuitive digital experiences
             </p>
           </div>
           
           <div className="flex flex-col md:flex-row items-center gap-6">
-            <ul className="flex gap-6 text-primary-light">
+            <ul className="flex gap-6 text-muted-foreground">
               <li>
                 <button onClick={() => scrollToSection('projects')} className="hover:text-accent transition-colors">
                   Projects
@@ -68,7 +68,7 @@ const Footer = () => {
           </div>
         </div>
         
-        <div className="border-t border-border mt-8 pt-8 text-center text-sm text-primary-light">
+        <div className="border-t border-border mt-8 pt-8 text-center text-sm text-muted-foreground">
           <p>© {new Date().getFullYear()} Sravan Kumar Mulugurthy. All rights reserved.</p>
         </div>
       </div>

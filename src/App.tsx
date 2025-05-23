@@ -11,6 +11,7 @@ import FitnessTrackerProject from "./pages/projects/FitnessTrackerProject";
 import BCExperienceProject from "./pages/projects/BCexperienceproject";
 import TravelAppProject from "./pages/projects/TravelAppProject";
 import DesignSystemProject from "./pages/projects/DesignSystemProject";
+import { ThemeProvider } from "./components/ThemeProvider";
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -23,22 +24,24 @@ const queryClient = new QueryClient({
 
 const App = () => (
   <QueryClientProvider client={queryClient}>
-    <TooltipProvider>
-      <Toaster />
-      <Sonner />
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Index />} />
-          <Route path="/about" element={<Index />} />
-          <Route path="/project/finance-app" element={<FinanceAppProject />} />
-          <Route path="/project/fitness-tracker" element={<FitnessTrackerProject />} />
-          <Route path="/project/bcexperienceproject" element={<BCExperienceProject />} />
-          <Route path="/project/travel-app" element={<TravelAppProject />} />
-          <Route path="/project/design-system" element={<DesignSystemProject />} />
-          <Route path="/project/*" element={<ProjectNotFound />} />
-        </Routes>
-      </BrowserRouter>
-    </TooltipProvider>
+    <ThemeProvider>
+      <TooltipProvider>
+        <Toaster />
+        <Sonner />
+        <BrowserRouter>
+          <Routes>
+            <Route path="/" element={<Index />} />
+            <Route path="/about" element={<Index />} />
+            <Route path="/project/finance-app" element={<FinanceAppProject />} />
+            <Route path="/project/fitness-tracker" element={<FitnessTrackerProject />} />
+            <Route path="/project/bcexperienceproject" element={<BCExperienceProject />} />
+            <Route path="/project/travel-app" element={<TravelAppProject />} />
+            <Route path="/project/design-system" element={<DesignSystemProject />} />
+            <Route path="/project/*" element={<ProjectNotFound />} />
+          </Routes>
+        </BrowserRouter>
+      </TooltipProvider>
+    </ThemeProvider>
   </QueryClientProvider>
 );
 

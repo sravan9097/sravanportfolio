@@ -1,16 +1,22 @@
 
 import { useState, useEffect } from 'react';
 import { Button } from "@/components/ui/button";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Moon, Sun } from "lucide-react";
 import { Link, useLocation } from "react-router-dom";
+import { useTheme } from "@/hooks/useTheme";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const location = useLocation();
   const isHomePage = location.pathname === '/';
+  const { theme, setTheme } = useTheme();
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
+  };
+
+  const toggleTheme = () => {
+    setTheme(theme === 'dark' ? 'light' : 'dark');
   };
 
   const scrollToSection = (sectionId: string) => {
@@ -91,18 +97,45 @@ const Navbar = () => {
               <button onClick={() => scrollToSection('contact')} className="text-primary hover:text-accent transition-colors py-2 text-left">
                 Contact
               </button>
+              <button onClick={toggleTheme} className="text-primary hover:text-accent transition-colors py-2 text-left flex items-center">
+                {theme === 'dark' ? (
+                  <>
+                    <Sun className="w-4 h-4 mr-2" />
+                    Light Mode
+                  </>
+                ) : (
+                  <>
+                    <Moon className="w-4 h-4 mr-2" />
+                    Dark Mode
+                  </>
+                )}
+              </button>
             </div>
           </div>
         )}
 
-        <a 
-          href="/sravan-kumar-resume.pdf" 
-          target="_blank" 
-          rel="noopener noreferrer" 
-          className="hidden md:flex bg-accent hover:bg-accent-hover text-white px-4 py-2 rounded"
-        >
-          Resume
-        </a>
+        <div className="hidden md:flex items-center space-x-4">
+          <button 
+            onClick={toggleTheme}
+            className="p-2 rounded-full hover:bg-accent/10 text-primary"
+            aria-label={theme === 'dark' ? "Switch to light mode" : "Switch to dark mode"}
+          >
+            {theme === 'dark' ? (
+              <Sun className="w-5 h-5" />
+            ) : (
+              <Moon className="w-5 h-5" />
+            )}
+          </button>
+          
+          <a 
+            href="/sravan-kumar-resume.pdf" 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            className="bg-accent hover:bg-accent-hover text-white px-4 py-2 rounded"
+          >
+            Resume
+          </a>
+        </div>
       </div>
     </nav>
   );

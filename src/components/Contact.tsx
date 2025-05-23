@@ -97,8 +97,8 @@ const Contact = () => {
       <div className="container mx-auto">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-3xl font-bold mb-4 text-primary">Get In Touch</h2>
-            <p className="text-primary-light">Interested in working together? Let's discuss your project.</p>
+            <h2 className="text-3xl font-bold mb-4 text-primary">Let’s build better systems, together.</h2>
+            <p className="text-primary-light">Have a project or just want to connect? Drop me a message.</p>
           </div>
           
           <div className="grid md:grid-cols-5 gap-8">

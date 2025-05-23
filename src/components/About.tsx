@@ -32,30 +32,34 @@ const About = () => {
           <div>
             <h2 className="text-3xl font-bold mb-6 text-primary">About Me</h2>
             <p className="text-primary-light mb-4">
-              I'm Sravan Kumar Mulugurthy, a UX Designer with over 5 years of experience creating digital products that people love to use. 
-              My approach combines user research, strategic thinking, and creative problem-solving.
+            I’ve had an unconventional journey into product design, beginning as a video editor and growing into a system-oriented designer through hands-on problem solving. 
+            Over the years, I’ve worked across startups and large platforms—leading design, creating scalable systems, optimizing flows, and shipping impactful features.
             </p>
             <p className="text-primary-light mb-6">
-              I've worked with startups and established companies across various industries including fintech, 
-              healthcare, and e-commerce to deliver user-centered design solutions.
+            My strength lies in turning chaos into structure—whether it’s through a robust design system or simplifying a messy user journey. 
+            Currently, I'm the sole designer at BeautifulCode, leading product design for two internal platforms.
             </p>
             <div className="grid grid-cols-2 gap-4 text-sm">
               <div>
                 <h3 className="font-medium mb-2 text-primary">Tools & Softwares</h3>
                 <ul className="space-y-1 text-primary-light">
                   <li>Figma</li>
-                  <li>Cursor</li>
+                  <li>Figma Make, Site, Buzz (New features)</li>
+                  <li>Figjam</li>
+                  <li>Notion</li>
                   <li>Balsamiq</li>
-                  <li>Illustrator/Premeir Pro</li>
+                  <li>Cursor/Windsurf/Lovable/GitHub</li>
+                  <li></li>
                 </ul>
               </div>
               <div>
                 <h3 className="font-medium mb-2 text-primary">Technical Skills</h3>
                 <ul className="space-y-1 text-primary-light">
-                  <li>HTML/CSS (TailwindCSS)</li>
-                  <li>JavaScript/React</li>
                   <li>Design System</li>
-                  <li>Responsive Design</li>
+                  <li>Product UI/UX</li>
+                  <li>Prototyping</li>
+                  <li>Developer Collaboration</li>
+                  <li>HTML/CSS (TailwindCSS), JavaScript/React</li>
                 </ul>
               </div>
             </div>

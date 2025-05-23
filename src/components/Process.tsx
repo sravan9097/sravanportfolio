@@ -29,8 +29,8 @@ const Process = () => {
     <section className="section-padding bg-background-alt">
       <div className="container mx-auto">
         <div className="max-w-3xl mx-auto text-center mb-16">
-          <h2 className="text-3xl font-bold mb-4 text-primary">My Process</h2>
-          <p className="text-primary-light">How I approach design challenges and deliver effective solutions</p>
+          <h2 className="text-3xl font-bold mb-4 text-primary">Why Design Systems?</h2>
+          <p className="text-primary-light">Design systems aren't just about components and colors — they’re about creating structure that drives efficiency and clarity. I love building systems that not only make interfaces consistent but also empower teams to work faster and stay focused on solving real user problems.</p>
         </div>
         
         <div className="relative">

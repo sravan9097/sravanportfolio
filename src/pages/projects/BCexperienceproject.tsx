@@ -1,6 +1,7 @@
 
 import { Link } from "react-router-dom";
 import { ArrowLeft } from "lucide-react";
+import { Dialog, DialogTrigger, DialogContent } from "@/components/ui/dialog";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
@@ -16,14 +17,14 @@ const bcexperienceproject = () => {
   return (
     <div className="min-h-screen bg-background">
       <Navbar />
-      <div className="container mx-auto pt-32 pb-16 px-4">
+      <div className="container mx-auto max-w-4xl pt-32 pb-16 px-4">
         <Link to="/#projects" className="inline-flex items-center text-accent hover:underline mb-8">
           <ArrowLeft className="mr-2 h-5 w-5" /> Back to projects
         </Link>
         
         {/* Hero Section */}
         <div className="mb-12">
-          <span className="text-sm font-medium text-accent uppercase tracking-wider">UX Research & Design </span>
+          <span className="text-sm font-medium text-accent uppercase tracking-wider">UX Design & Development </span>
           <h1 className="text-4xl md:text-5xl font-bold mt-2 mb-6 text-primary">Building BeautifulCode Experience App </h1>
           
           <div className="aspect-[16/9] w-full overflow-hidden rounded-lg mb-10">
@@ -39,7 +40,7 @@ const bcexperienceproject = () => {
         <div className="grid md:grid-cols-3 gap-8 mb-12">
           <div>
             <h2 className="text-lg font-semibold mb-2 text-primary">Timeline</h2>
-            <p className="text-primary-light">4 months</p>
+            <p className="text-primary-light">3 months</p>
           </div>
           <div>
             <h2 className="text-lg font-semibold mb-2 text-primary">Tools</h2>
@@ -59,7 +60,7 @@ const bcexperienceproject = () => {
         <section className="mb-16">
           <h2 className="text-2xl font-bold mb-6 text-primary">Project Overview</h2>
           <div className="bg-card rounded-lg p-6 shadow-sm border border-gray-100">
-            <p className="text-primary-light mb-6">The BeautifulCode Experience App is an internal web-based tool designed to streamline daily updates, progress tracking, and communication between BeautifulCode’s employees, managers, and eventually, clients. It was developed to address the company’s urgent need for transparent, real-time project insights—minimizing micromanagement while fostering trust and collaboration.</p>
+            <p className="text-primary-light mb-6">The Beautiful Code Experience App is designed to enhance transparency and trust within remote teams by providing real-time insights into task progress, blockers, and meeting productivity. This case study outlines the UX design process undertaken to create an intuitive and efficient platform for employees, managers, and partners.</p>
             
             <div className="grid md:grid-cols-2 gap-8">
               <div>
@@ -187,12 +188,39 @@ const bcexperienceproject = () => {
               <p className="mb-6">Mapping out attributes and operations for each object helped clarify how users interact with the system and served as a foundation for the overall information architecture.</p>
               
               <div className="grid md:grid-cols-2 gap-4">
-                <div className="rounded-lg overflow-hidden border border-border">
-                  <img src="/Hero_Images/Objects.png" alt="Wireframe 1" className="w-full h-auto" />
-                </div>
-                <div className="rounded-lg overflow-hidden border border-border">
-                  <img src="/Hero_Images/Roles.png" alt="Wireframe 2" className="w-full h-auto" />
-                </div>
+                <Dialog>
+                  <DialogTrigger asChild>
+                    <img
+                      src="/Hero_Images/Objects.png"
+                      alt="Wireframe 1"
+                      className="w-full h-auto rounded-lg cursor-pointer hover:shadow-lg transition"
+                    />
+                  </DialogTrigger>
+                  <DialogContent className="max-w-7xl p-0  shadow-none border-none flex items-center justify-center">
+                    <img
+                      src="/Hero_Images/Objects.png"
+                      alt="Wireframe 1 Full View"
+                      className="w-full h-auto rounded-lg"
+                    />
+                  </DialogContent>
+                </Dialog>
+                <Dialog>
+                  <DialogTrigger asChild>
+                    <img
+                      src="/Hero_Images/Roles.png"
+                      alt="Wireframe 1"
+                      className="w-full h-auto rounded-lg cursor-pointer hover:shadow-lg transition"
+                    />
+                  </DialogTrigger>
+                  <DialogContent className="max-w-7xl p-0  shadow-none border-none flex items-center justify-center">
+                    <img
+                      src="/Hero_Images/Roles.png"
+                      alt="Wireframe 1 Full View"
+                      className="w-full h-auto rounded-lg"
+                    />
+                  </DialogContent>
+                </Dialog>
+               
               </div>
             </CardContent>
           </Card>
@@ -213,9 +241,23 @@ const bcexperienceproject = () => {
               </ul>
               
               
-                <div className="rounded-lg overflow-hidden ">
-                  <img src="/Hero_Images/Site_Map.png" alt="Wireframe 1" className="w-full h-auto" />
-                </div>
+                {/* Modal for full view image */}
+                <Dialog>
+                  <DialogTrigger asChild>
+                    <img
+                      src="/Hero_Images/Site_Map.png"
+                      alt="Wireframe 1"
+                      className="w-full h-auto rounded-lg cursor-pointer hover:shadow-lg transition"
+                    />
+                  </DialogTrigger>
+                  <DialogContent className="max-w-7xl p-0  shadow-none border-none flex items-center justify-center">
+                    <img
+                      src="/Hero_Images/Site_Map.png"
+                      alt="Wireframe 1 Full View"
+                      className="w-full h-auto rounded-lg"
+                    />
+                  </DialogContent>
+                </Dialog>
               
             </CardContent>
           </Card>
@@ -226,17 +268,45 @@ const bcexperienceproject = () => {
               <CardTitle className="text-xl">User Flow</CardTitle>
             </CardHeader>
             <CardContent>
-              <p className="mb-4">I developed one of the key flow for crucial interactions:</p>
-              <h4 className="font-medium mb-2">Check-in Flow:</h4>
-              <ul className="list-disc pl-5 mb-4 space-y-1">
-                <li>Prompted daily (twice) to log tasks worked on, progress updates, blockers, and priorities for the day.</li>
-                <li>Quick 5-minute completion goal.</li>
-                <li>Optional AI-based summarization to generate stand-up updates.</li>
+              <div className="flex flex-row gap-6 mb-4 ">
+                <div className="flex flex-col flex-1"> 
+                    <p className="mb-4">As the most frequent and critical interaction in the BC Experience App, the Check-In Flow was designed to be:</p>
+                    <ul className="list-disc pl-5 mb-4 space-y-1">
+                      <li>Quick and frictionless</li>
+                      <li>Structured yet flexible</li>
+                      <li>Smart enough to adapt over time</li>
               </ul>
-          
-                <div className="rounded-lg overflow-hidden ">
-                  <img src="/Hero_Images/check_in_flow.png" alt="Wireframe 1" className="w-full h-auto" />
                 </div>
+                <div className="flex flex-col flex-1">
+                  <h4 className="font-normal mb-2">Employees are prompted to check in twice daily (Midday & Day-End) to log:</h4>
+                  <ul className="list-disc pl-5 mb-4 space-y-1">
+                    <li>Tasks worked on</li>
+                    <li>Progress made</li>
+                    <li>Blockers faced</li>
+                    <li>Supporting materials (WIP links or docs)</li>
+                  </ul>
+                  
+                </div>
+              </div>
+              <h3 className="font-medium mb-2">✍️ My Design Goal:</h3>
+                  <p className="mb-4">To make check-ins feel lightweight and non-disruptive, while capturing high-quality, structured updates for managers and partners.</p>
+              
+              <Dialog>
+                  <DialogTrigger asChild>
+                    <img
+                      src="/Hero_Images/check_in_flow.png"
+                      alt="Wireframe 1"
+                      className="w-full h-auto rounded-lg cursor-pointer hover:shadow-lg transition"
+                    />
+                  </DialogTrigger>
+                  <DialogContent className="max-w-7xl p-0  shadow-none border-none flex items-center justify-center">
+                    <img
+                      src="/Hero_Images/check_in_flow.png"
+                      alt="Wireframe 1 Full View"
+                      className="w-full h-auto rounded-lg"
+                    />
+                  </DialogContent>
+                </Dialog>
                
               
             </CardContent>
@@ -255,18 +325,70 @@ const bcexperienceproject = () => {
               <p className="mb-4">Below are some of the intial wireframes i came up to discuss with stakeholders</p>
               
               <div className="grid md:grid-cols-2 gap-4">
-                <div className="rounded-lg overflow-hidden border border-border">
-                  <img src="/Hero_Images/check_in_flow_1.png" alt="Wireframe 1" className="w-full h-auto" />
-                </div>
-                <div className="rounded-lg overflow-hidden border border-border">
-                  <img src="/Hero_Images/check_in_flow_2.png" alt="Wireframe 1" className="w-full h-auto" />
-                </div>
-                <div className="rounded-lg overflow-hidden border border-border">
-                  <img src="/Hero_Images/team_view_1.png" alt="Wireframe 2" className="w-full h-auto" />
-                </div>
-                <div className="rounded-lg overflow-hidden border border-border">
-                  <img src="/Hero_Images/team_settings.png" alt="Wireframe 2" className="w-full h-auto" />
-                </div>
+                <Dialog>  
+                  <DialogTrigger asChild>
+                    <img
+                      src="/Hero_Images/check_in_flow_1.png"
+                      alt="Wireframe 1"
+                      className="w-full h-auto rounded-lg cursor-pointer hover:shadow-lg transition"
+                    />
+                  </DialogTrigger>
+                  <DialogContent className="max-w-6xl p-0  shadow-none border-none flex items-center justify-center">
+                    <img
+                      src="/Hero_Images/check_in_flow_1.png"
+                      alt="Wireframe 1 Full View"
+                      className="w-full h-auto rounded-lg"
+                    />
+                  </DialogContent>
+                </Dialog>
+                <Dialog>  
+                  <DialogTrigger asChild>
+                    <img
+                      src="/Hero_Images/check_in_flow_2.png"
+                      alt="Wireframe 1"
+                      className="w-full h-auto rounded-lg cursor-pointer hover:shadow-lg transition"
+                    />
+                  </DialogTrigger>
+                  <DialogContent className="max-w-6xl p-0  shadow-none border-none flex items-center justify-center">
+                    <img
+                      src="/Hero_Images/check_in_flow_2.png"
+                      alt="Wireframe 1 Full View"
+                      className="w-full h-auto rounded-lg"
+                    />
+                  </DialogContent>
+                </Dialog>
+                <Dialog>  
+                  <DialogTrigger asChild>
+                    <img
+                      src="/Hero_Images/team_view_1.png"
+                      alt="Wireframe 1"
+                      className="w-full h-auto rounded-lg cursor-pointer hover:shadow-lg transition"
+                    />
+                  </DialogTrigger>
+                  <DialogContent className="max-w-6xl p-0  shadow-none border-none flex items-center justify-center">
+                    <img
+                      src="/Hero_Images/team_view_1.png"
+                      alt="Wireframe 1 Full View"
+                      className="w-full h-auto rounded-lg"
+                    />
+                  </DialogContent>
+                </Dialog>
+                <Dialog>  
+                  <DialogTrigger asChild>
+                    <img
+                      src="/Hero_Images/team_settings.png"
+                      alt="Wireframe 1"
+                      className="w-full h-auto rounded-lg cursor-pointer hover:shadow-lg transition"
+                    />
+                  </DialogTrigger>
+                  <DialogContent className="max-w-6xl p-0  shadow-none border-none flex items-center justify-center">
+                    <img
+                      src="/Hero_Images/team_settings.png"
+                      alt="Wireframe 1 Full View"
+                      className="w-full h-auto rounded-lg"
+                    />
+                  </DialogContent>
+                </Dialog>
               </div>
             </CardContent>
           </Card>

@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import Navbar from "@/components/Navbar";
@@ -13,9 +12,8 @@ import {
   Card, 
   CardContent
 } from "@/components/ui/card";
-import { Separator } from "@/components/ui/separator";
 import { Button } from "@/components/ui/button";
-import { ArrowLeft, PlusIcon, CircleCheckBig, Grip } from "lucide-react";
+import { ArrowLeft, PlusIcon } from "lucide-react";
 
 const DesignSystemProject = () => {
   // Color palette state
@@ -105,12 +103,12 @@ const DesignSystemProject = () => {
     { 
       name: "Faster Design and Development", 
       icon: "/lightning.svg ",
-      description: "Teams don’t need to reinvent the wheel every time they design a button or a form. Components are already built, tested, and ready to use — saving time."
+      description: "Teams don't need to reinvent the wheel every time they design a button or a form. Components are already built, tested, and ready to use — saving time."
     },
     { 
       name: "Improved Collaboration", 
       icon: "/sync.svg", 
-      description: "Layout foundationsDesigners, developers, product managers, and writers can all speak the same visual and functional language. Everyone knows what a “primary button” or “error message” should look like."
+      description: "Layout foundationsDesigners, developers, product managers, and writers can all speak the same visual and functional language. Everyone knows what a "primary button" or "error message" should look like."
     },
     { 
       name: "Scalability", 
@@ -137,7 +135,7 @@ const DesignSystemProject = () => {
   const spacingExamples = [4, 8, 12, 16, 24, 32, 48, 64];
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-background">
       <Navbar />
       <div className="container mx-auto max-w-4xl pt-32 pb-16 px-4">
         <Link to="/#projects" className="inline-flex items-center text-accent hover:underline mb-8">
@@ -145,25 +143,25 @@ const DesignSystemProject = () => {
         </Link>
         
         {/* Hero Section */}
-        
         <div className="aspect-[16/9] w-full overflow-hidden rounded-lg mb-10">
-            <img 
-              src="/Hero_Images/designsystemhero.png" 
-              alt="E-Commerce Redesign" 
-              className="w-full h-full object-cover" 
-            />
-          </div>
+          <img 
+            src="/Hero_Images/designsystemhero.png" 
+            alt="Design System" 
+            className="w-full h-full object-cover" 
+          />
+        </div>
+        
         <section className="mb-24 grid md:grid-cols-2 gap-12">
           <div>
-            <h2 className="text-3xl font-bold mb-6">What is Design System?</h2>
-            <p className="text-gray-700 mb-4">
+            <h2 className="text-3xl font-bold mb-6 text-foreground">What is Design System?</h2>
+            <p className="text-muted-foreground mb-4">
             In the fast-paced world of digital product development, consistency, scalability, and efficiency are crucial. This is where a design system becomes an essential tool. 
-            A design system is more than just a collection of UI elements—it’s a comprehensive guide that defines the visual language, 
+            A design system is more than just a collection of UI elements—it's a comprehensive guide that defines the visual language, 
             interaction patterns, and code standards for a brand or product. It serves as a single source of truth for designers and developers, 
             ensuring that products look, feel, and function consistently across different platforms and teams.
             </p>
           </div>
-          <div className="relative rounded-xl overflow-hidden bg-gray-100 flex items-center justify-center min-h-[300px]">
+          <div className="relative rounded-xl overflow-hidden bg-muted flex items-center justify-center min-h-[300px]">
             <img 
               src="/design-system/designsystemhero.png" 
               alt="Design System Diagram" 
@@ -174,25 +172,25 @@ const DesignSystemProject = () => {
 
         <section className="mb-24">
           <div className="flex flex-col md:flex-row gap-12">
-            <div >
-              <h2 className="text-3xl font-bold mb-6">Why Design System Needed?</h2>
-              <div className="space-y-4 text-gray-700">
+            <div>
+              <h2 className="text-3xl font-bold mb-6 text-foreground">Why Design System Needed?</h2>
+              <div className="space-y-4 text-muted-foreground">
                 <p>
                   Design systems solve several key problems in digital product development:
                 </p>
-                <div className="grid  xl:grid-cols-3 lg:grid-cols-3 md:grid-cols-2 gap-6">
-                     {atomicDesignComponents.map((component, index) => (
-                     <div key={index} className="flex flex-col items-start gap-4 border border-gray-200 rounded-xl p-6 hover:shadow-md transition-shadow">
-                 <div className=" w-12 h-12 rounded-full flex items-center justify-center ">
-                    <img className="w-12  h-12" src={component.icon} alt={component.name} />
-                 </div>
-                  <div className="flex flex-col">
-                  <h3 className="font-bold text-lg mb-2">{component.name}</h3>
-                  <p className="text-primary-light text-sm">{component.description}</p>
-                  </div>
-              </div>
-            ))}
-          </div>  
+                <div className="grid xl:grid-cols-3 lg:grid-cols-3 md:grid-cols-2 gap-6">
+                  {atomicDesignComponents.map((component, index) => (
+                    <div key={index} className="flex flex-col items-start gap-4 border border-border rounded-xl p-6 hover:shadow-md transition-shadow bg-card">
+                      <div className="w-12 h-12 rounded-full flex items-center justify-center">
+                        <img className="w-12 h-12" src={component.icon} alt={component.name} />
+                      </div>
+                      <div className="flex flex-col">
+                        <h3 className="font-bold text-lg mb-2 text-card-foreground">{component.name}</h3>
+                        <p className="text-muted-foreground text-sm">{component.description}</p>
+                      </div>
+                    </div>
+                  ))}
+                </div>  
                 <p>
                   By creating a shared language and toolkit, design systems ensure everyone
                   is working with the same components, patterns, and principles. This
@@ -204,22 +202,21 @@ const DesignSystemProject = () => {
         </section>
 
         <section className="mb-24">
-          <h2 className="text-3xl font-bold mb-10">Atomic Design</h2>
-        
+          <h2 className="text-3xl font-bold mb-10 text-foreground">Atomic Design</h2>
         </section>
 
         <section className="mb-24">
-          <h2 className="text-3xl font-bold mb-10">Colors</h2>
+          <h2 className="text-3xl font-bold mb-10 text-foreground">Colors</h2>
           <div className="mb-6">
             <div className="flex flex-wrap gap-3 mb-8">
               {Object.keys(colorPalettes).map((category) => (
                 <button
                   key={category}
                   onClick={() => setSelectedColorCategory(category)}
-                  className={`px-4 py-2 rounded-md text-sm ${
+                  className={`px-4 py-2 rounded-md text-sm transition-colors ${
                     selectedColorCategory === category 
-                    ? "bg-blue-500 text-white" 
-                    : "bg-gray-100 text-gray-800 hover:bg-gray-200"
+                    ? "bg-accent text-accent-foreground" 
+                    : "bg-secondary text-secondary-foreground hover:bg-secondary/80"
                   }`}
                 >
                   {category.charAt(0).toUpperCase() + category.slice(1)}
@@ -232,8 +229,8 @@ const DesignSystemProject = () => {
                   <div 
                     className={`${color.className} h-20 rounded-md mb-2`}
                   ></div>
-                  <div className="text-sm font-medium">{color.name}</div>
-                  <div className="text-xs text-gray-500">{color.hex}</div>
+                  <div className="text-sm font-medium text-foreground">{color.name}</div>
+                  <div className="text-xs text-muted-foreground">{color.hex}</div>
                 </div>
               ))}
             </div>
@@ -241,36 +238,36 @@ const DesignSystemProject = () => {
         </section>
 
         <section className="mb-24">
-          <h2 className="text-3xl font-bold mb-10">Typography</h2>
+          <h2 className="text-3xl font-bold mb-10 text-foreground">Typography</h2>
           <div className="mb-8 flex items-center justify-center">
-            <div className="inline-flex items-center border rounded-md p-2 bg-white">
-              <span className="font-bold text-2xl mr-3">Aa</span>
+            <div className="inline-flex items-center border border-border rounded-md p-2 bg-card">
+              <span className="font-bold text-2xl mr-3 text-card-foreground">Aa</span>
               <div className="text-sm">
-                <div>Inter</div>
-                <div className="text-gray-500">Sans-serif</div>
+                <div className="text-card-foreground">Inter</div>
+                <div className="text-muted-foreground">Sans-serif</div>
               </div>
             </div>
           </div>
           <div className="overflow-x-auto">
-            <table className="min-w-full divide-y divide-gray-200">
-              <thead className="bg-gray-50">
+            <table className="min-w-full divide-y divide-border">
+              <thead className="bg-muted">
                 <tr>
-                  <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Name</th>
-                  <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Size</th>
-                  <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Weight</th>
-                  <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Line Height</th>
-                  <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Preview</th>
+                  <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-muted-foreground uppercase tracking-wider">Name</th>
+                  <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-muted-foreground uppercase tracking-wider">Size</th>
+                  <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-muted-foreground uppercase tracking-wider">Weight</th>
+                  <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-muted-foreground uppercase tracking-wider">Line Height</th>
+                  <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-muted-foreground uppercase tracking-wider">Preview</th>
                 </tr>
               </thead>
-              <tbody className="bg-white divide-y divide-gray-200">
+              <tbody className="bg-card divide-y divide-border">
                 {typographyExamples.map((item, index) => (
                   <tr key={index}>
-                    <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">{item.name}</td>
-                    <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">{item.size}</td>
-                    <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">{item.weight}</td>
-                    <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">{item.lineHeight}</td>
+                    <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-card-foreground">{item.name}</td>
+                    <td className="px-6 py-4 whitespace-nowrap text-sm text-muted-foreground">{item.size}</td>
+                    <td className="px-6 py-4 whitespace-nowrap text-sm text-muted-foreground">{item.weight}</td>
+                    <td className="px-6 py-4 whitespace-nowrap text-sm text-muted-foreground">{item.lineHeight}</td>
                     <td className="px-6 py-4 whitespace-nowrap">
-                      <div className={`${
+                      <div className={`text-card-foreground ${
                         item.name === "Heading 1" ? "text-2xl font-bold" :
                         item.name === "Heading 2" ? "text-xl font-bold" :
                         item.name === "Heading 3" ? "text-lg font-semibold" :
@@ -288,9 +285,9 @@ const DesignSystemProject = () => {
         </section>
 
         <section className="mb-24">
-          <h2 className="text-3xl font-bold mb-8">Spacing</h2>
+          <h2 className="text-3xl font-bold mb-8 text-foreground">Spacing</h2>
           <div className="mb-6">
-            <p className="text-gray-700 mb-6">
+            <p className="text-muted-foreground mb-6">
               Consistent spacing helps maintain visual harmony throughout an interface.
               Our spacing system uses a base unit of 4px to create a rhythmic feel.
             </p>
@@ -298,8 +295,8 @@ const DesignSystemProject = () => {
               <div className="grid grid-cols-4 sm:grid-cols-8 gap-4">
                 {spacingExamples.map((space, index) => (
                   <div key={index} className="flex flex-col items-center">
-                    <div className="bg-blue-500 mb-2" style={{ width: `${space}px`, height: `${space}px` }}></div>
-                    <span className="text-xs text-gray-500">{space}px</span>
+                    <div className="bg-accent mb-2" style={{ width: `${space}px`, height: `${space}px` }}></div>
+                    <span className="text-xs text-muted-foreground">{space}px</span>
                   </div>
                 ))}
               </div>
@@ -308,8 +305,8 @@ const DesignSystemProject = () => {
         </section>
 
         <section className="mb-24">
-          <h2 className="text-3xl font-bold mb-8">Components</h2>
-          <p className="text-gray-700 mb-8">
+          <h2 className="text-3xl font-bold mb-8 text-foreground">Components</h2>
+          <p className="text-muted-foreground mb-8">
             Our design system provides a comprehensive set of UI components that can be 
             combined to create consistent user experiences.
           </p>
@@ -323,7 +320,7 @@ const DesignSystemProject = () => {
             <TabsContent value="buttons" className="space-y-6">
               <Card>
                 <CardContent className="pt-6">
-                  <h3 className="text-lg font-medium mb-4">Button Variants</h3>
+                  <h3 className="text-lg font-medium mb-4 text-card-foreground">Button Variants</h3>
                   <div className="flex flex-wrap gap-4">
                     <Button variant="default">Primary</Button>
                     <Button variant="secondary">Secondary</Button>
@@ -335,7 +332,7 @@ const DesignSystemProject = () => {
               </Card>
               <Card>
                 <CardContent className="pt-6">
-                  <h3 className="text-lg font-medium mb-4">Button Sizes</h3>
+                  <h3 className="text-lg font-medium mb-4 text-card-foreground">Button Sizes</h3>
                   <div className="flex flex-wrap items-center gap-4">
                     <Button size="sm">Small</Button>
                     <Button size="default">Default</Button>
@@ -350,23 +347,23 @@ const DesignSystemProject = () => {
             <TabsContent value="inputs" className="space-y-6">
               <Card>
                 <CardContent className="pt-6">
-                  <h3 className="text-lg font-medium mb-4">Text Inputs</h3>
+                  <h3 className="text-lg font-medium mb-4 text-card-foreground">Text Inputs</h3>
                   <div className="grid md:grid-cols-2 gap-6">
                     <div className="space-y-2">
-                      <label className="text-sm font-medium">Default</label>
+                      <label className="text-sm font-medium text-card-foreground">Default</label>
                       <input
                         type="text"
                         placeholder="Enter your name"
-                        className="w-full px-3 py-2 border border-gray-300 rounded-md"
+                        className="w-full px-3 py-2 border border-input rounded-md bg-background text-foreground"
                       />
                     </div>
                     <div className="space-y-2">
-                      <label className="text-sm font-medium">Disabled</label>
+                      <label className="text-sm font-medium text-card-foreground">Disabled</label>
                       <input
                         type="text"
                         disabled
                         placeholder="Disabled input"
-                        className="w-full px-3 py-2 border border-gray-300 rounded-md bg-gray-100"
+                        className="w-full px-3 py-2 border border-input rounded-md bg-muted text-muted-foreground"
                       />
                     </div>
                   </div>
@@ -374,11 +371,11 @@ const DesignSystemProject = () => {
               </Card>
               <Card>
                 <CardContent className="pt-6">
-                  <h3 className="text-lg font-medium mb-4">Select Inputs</h3>
+                  <h3 className="text-lg font-medium mb-4 text-card-foreground">Select Inputs</h3>
                   <div className="grid md:grid-cols-2 gap-6">
                     <div className="space-y-2">
-                      <label className="text-sm font-medium">Default</label>
-                      <select className="w-full px-3 py-2 border border-gray-300 rounded-md">
+                      <label className="text-sm font-medium text-card-foreground">Default</label>
+                      <select className="w-full px-3 py-2 border border-input rounded-md bg-background text-foreground">
                         <option>Option 1</option>
                         <option>Option 2</option>
                         <option>Option 3</option>
@@ -392,19 +389,19 @@ const DesignSystemProject = () => {
               <div className="grid sm:grid-cols-2 gap-6">
                 <Card>
                   <CardContent className="pt-6">
-                    <h3 className="text-lg font-medium mb-2">Basic Card</h3>
-                    <p className="text-gray-500 text-sm">
+                    <h3 className="text-lg font-medium mb-2 text-card-foreground">Basic Card</h3>
+                    <p className="text-muted-foreground text-sm">
                       This is a basic card component that can be used to display content.
                     </p>
                   </CardContent>
                 </Card>
                 <Card>
-                  <div className="h-32 bg-gray-200 flex items-center justify-center">
-                    <span className="text-gray-500">Image</span>
+                  <div className="h-32 bg-muted flex items-center justify-center">
+                    <span className="text-muted-foreground">Image</span>
                   </div>
                   <CardContent className="pt-4">
-                    <h3 className="text-lg font-medium mb-2">Card with Image</h3>
-                    <p className="text-gray-500 text-sm">
+                    <h3 className="text-lg font-medium mb-2 text-card-foreground">Card with Image</h3>
+                    <p className="text-muted-foreground text-sm">
                       This card includes an image above the content.
                     </p>
                   </CardContent>
@@ -415,35 +412,35 @@ const DesignSystemProject = () => {
         </section>
 
         <section className="mb-24">
-          <h2 className="text-3xl font-bold mb-10">Grid System</h2>
-          <p className="text-gray-700 mb-8">
+          <h2 className="text-3xl font-bold mb-10 text-foreground">Grid System</h2>
+          <p className="text-muted-foreground mb-8">
             Our grid system is based on a 12-column layout that provides flexibility and 
             structure across different screen sizes.
           </p>
           <div className="mb-8">
             <div className="grid grid-cols-12 gap-2 mb-4">
               {Array(12).fill(0).map((_, i) => (
-                <div key={i} className="bg-blue-100 h-12 flex items-center justify-center text-xs text-blue-500">
+                <div key={i} className="bg-accent/20 h-12 flex items-center justify-center text-xs text-accent-foreground border border-border">
                   {i + 1}
                 </div>
               ))}
             </div>
             <div className="grid grid-cols-12 gap-2 mb-4">
               {[4, 4, 4].map((span, i) => (
-                <div key={i} className={`col-span-${span} bg-blue-200 h-12 flex items-center justify-center text-xs text-blue-700`}>
+                <div key={i} className={`col-span-${span} bg-accent/30 h-12 flex items-center justify-center text-xs text-accent-foreground border border-border`}>
                   col-{span}
                 </div>
               ))}
             </div>
             <div className="grid grid-cols-12 gap-2 mb-4">
               {[6, 6].map((span, i) => (
-                <div key={i} className={`col-span-${span} bg-blue-300 h-12 flex items-center justify-center text-xs text-blue-800`}>
+                <div key={i} className={`col-span-${span} bg-accent/40 h-12 flex items-center justify-center text-xs text-accent-foreground border border-border`}>
                   col-{span}
                 </div>
               ))}
             </div>
             <div className="grid grid-cols-12 gap-2">
-              <div className="col-span-12 bg-blue-400 h-12 flex items-center justify-center text-xs text-white">
+              <div className="col-span-12 bg-accent/50 h-12 flex items-center justify-center text-xs text-accent-foreground border border-border">
                 col-12
               </div>
             </div>

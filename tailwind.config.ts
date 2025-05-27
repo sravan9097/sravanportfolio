@@ -20,23 +20,19 @@ export default {
     },
     extend: {
       colors: {
-        primary: {
-          DEFAULT: "#333333", // Dark gray for text
-          light: "#666666",  // Light gray for secondary text
-        },
-        accent: {
-          DEFAULT: "#3B82F6", // Blue accent color
-          hover: "#2563EB", // Darker blue for hover states
-        },
-        background: {
-          DEFAULT: "#FFFFFF", // White background
-          alt: "#F9FAFB", // Light gray for alternate sections
-        },
-        border: "#E5E7EB",
+        border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
+        primary: {
+          DEFAULT: "hsl(var(--primary))",
+          foreground: "hsl(var(--primary-foreground))",
+        },
+        secondary: {
+          DEFAULT: "hsl(var(--secondary))",
+          foreground: "hsl(var(--secondary-foreground))",
+        },
         destructive: {
           DEFAULT: "hsl(var(--destructive))",
           foreground: "hsl(var(--destructive-foreground))",
@@ -45,9 +41,9 @@ export default {
           DEFAULT: "hsl(var(--muted))",
           foreground: "hsl(var(--muted-foreground))",
         },
-        secondary: {
-          DEFAULT: "hsl(var(--secondary))",
-          foreground: "hsl(var(--secondary-foreground))",
+        accent: {
+          DEFAULT: "hsl(var(--accent))",
+          foreground: "hsl(var(--accent-foreground))",
         },
         popover: {
           DEFAULT: "hsl(var(--popover))",

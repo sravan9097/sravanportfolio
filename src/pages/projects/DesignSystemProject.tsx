@@ -1,3 +1,4 @@
+
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import Navbar from "@/components/Navbar";
@@ -102,13 +103,13 @@ const DesignSystemProject = () => {
     },
     { 
       name: "Faster Design and Development", 
-      icon: "/lightning.svg ",
+      icon: "/lightning.svg",
       description: "Teams don't need to reinvent the wheel every time they design a button or a form. Components are already built, tested, and ready to use — saving time."
     },
     { 
       name: "Improved Collaboration", 
       icon: "/sync.svg", 
-      description: "Layout foundationsDesigners, developers, product managers, and writers can all speak the same visual and functional language. Everyone knows what a "primary button" or "error message" should look like."
+      description: "Designers, developers, product managers, and writers can all speak the same visual and functional language. Everyone knows what a 'primary button' or 'error message' should look like."
     },
     { 
       name: "Scalability", 

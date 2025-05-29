@@ -1,9 +1,10 @@
 
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import { ArrowUp } from "lucide-react";
 
 const Footer = () => {
   const location = useLocation();
+  const navigate = useNavigate();
   const isHomePage = location.pathname === '/';
 
   const scrollToTop = () => {
@@ -17,7 +18,13 @@ const Footer = () => {
         element.scrollIntoView({ behavior: 'smooth' });
       }
     } else {
-      window.location.href = `/#${sectionId}`;
+      navigate('/');
+      setTimeout(() => {
+        const element = document.getElementById(sectionId);
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth' });
+        }
+      }, 100);
     }
   };
 

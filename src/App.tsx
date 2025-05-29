@@ -5,6 +5,7 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
+import Projects from "./pages/Projects";
 import ProjectNotFound from "./components/ProjectNotFound";
 import FinanceAppProject from "./pages/projects/FinanceAppProject";
 import FitnessTrackerProject from "./pages/projects/FitnessTrackerProject";
@@ -32,6 +33,7 @@ const App = () => (
           <Routes>
             <Route path="/" element={<Index />} />
             <Route path="/about" element={<Index />} />
+            <Route path="/projects" element={<Projects />} />
             <Route path="/project/finance-app" element={<FinanceAppProject />} />
             <Route path="/project/fitness-tracker" element={<FitnessTrackerProject />} />
             <Route path="/project/bcexperienceproject" element={<BCExperienceProject />} />

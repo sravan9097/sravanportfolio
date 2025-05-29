@@ -77,7 +77,7 @@ const About = () => {
           <h2 className="text-3xl font-bold mb-12 text-primary text-center">My Skills</h2>
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
             {skills.map((skill, index) => (
-              <div key={index} className="p-6 rounded-xl border border-border bg-white shadow-sm">
+              <div key={index} className="p-6 rounded-xl border border-border bg-card shadow-sm">
                 <div className="w-12 h-12 bg-accent/10 rounded-full flex items-center justify-center mb-4">
                   <skill.icon className="w-6 h-6 text-accent" />
                 </div>

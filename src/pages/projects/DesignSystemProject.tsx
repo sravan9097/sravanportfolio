@@ -90,7 +90,12 @@ const DesignSystemProject = () => {
       { name: "Gray-800", hex: "#1F2937", className: "bg-gray-800" },
       { name: "Gray-700", hex: "#374151", className: "bg-gray-700" },
       { name: "Gray-600", hex: "#4B5563", className: "bg-gray-600" },
-      { name: "Gray-500", hex: "#6B7280", className: "bg-gray-500" }
+      { name: "Gray-500", hex: "#6B7280", className: "bg-gray-500" },
+      { name: "Gray-400", hex: "#9CA3AF", className: "bg-gray-400" },
+      { name: "Gray-300", hex: "#D1D5DB", className: "bg-gray-300" },
+      { name: "Gray-200", hex: "#E5E7EB", className: "bg-gray-200" },
+      { name: "Gray-100", hex: "#F9FAFB", className: "bg-gray-100" },
+      { name: "Gray-50", hex: "#F9FAFB", className: "bg-gray-50" }
     ]
   };
   
@@ -123,17 +128,46 @@ const DesignSystemProject = () => {
     }
   ];
 
+  // Atomic Design Examples
+  const atomicDesignExamples = [
+    { name: "Atoms", image: "/design-system/Atoms.png", description: "Atoms are the smallest building blocks — like buttons, inputs, labels, or color swatches. They can’t be broken down further without losing their meaning." },
+    { name: "Molecules", image: "/design-system/molecules.png", description: "Molecules are groups of atoms working together. For example, a label + input field + button can form a search bar — a functional, reusable unit." },
+    { name: "Organisms", image: "/design-system/organisms.png", description: "Organisms are complex UI components made of molecules and/or atoms, such as a navigation bar or product card." },
+    { name: "Templates", image: "/design-system/templates.png", description: "Templates are pages or layouts made of organisms and molecules, such as a dashboard or checkout page." },
+    { name: "Pages", image: "/design-system/pages.png", description: "Pages are the highest level of the design system, representing the full-screen views of a digital product." }
+  ];
+
+  // Color Examples
+  const colorExamples = [
+    { name: "Core Colours", description: "These represent the brand's primary and secondary colors — used for buttons, links, highlights, and key interactions." },
+    { name: "Functional Colours", description: "These are semantic colors used to indicate states, such as: Success (e.g. green) Error (e.g. red) Warning (e.g. orange) Info (e.g. blue)" },
+    { name: "Neutrals", description: "Greys, blacks, and whites used for text, backgrounds, dividers, and UI surfaces. These form the foundation of layout and readability." }
+  ];
+
+
   // Typography examples
   const typographyExamples = [
-    { name: "Heading 1", size: "2.5rem", weight: "Bold", lineHeight: "1.2", preview: "Heading 1" },
-    { name: "Heading 2", size: "2rem", weight: "Bold", lineHeight: "1.3", preview: "Heading 2" },
-    { name: "Heading 3", size: "1.75rem", weight: "Semibold", lineHeight: "1.4", preview: "Heading 3" },
-    { name: "Paragraph", size: "1rem", weight: "Regular", lineHeight: "1.5", preview: "Body text" },
-    { name: "Small", size: "0.875rem", weight: "Regular", lineHeight: "1.5", preview: "Small text" },
+    { name: "Hero Title", size: "4.24rem", weight: "Medium", lineHeight: "1.1", preview: "Hero Title" },          // ~67.8px
+    { name: "Heading 1", size: "3.14rem", weight: "Bold", lineHeight: "1.2", preview: "Heading 1" },                  // ~50.2px
+    { name: "Heading 2", size: "1.94rem", weight: "Bold", lineHeight: "1.3", preview: "Heading 2" },                  // ~31px
+    { name: "Heading 3", size: "1.2rem", weight: "Semibold", lineHeight: "1.4", preview: "Heading 3" },               // ~19.2px
+    { name: "Body Large", size: "1.125rem", weight: "Regular", lineHeight: "1.6", preview: "Body large text" },       // ~18px
+    { name: "Paragraph", size: "1rem", weight: "Regular", lineHeight: "1.5", preview: "Body text" },                  // 16px
+    { name: "Body Small", size: "0.875rem", weight: "Regular", lineHeight: "1.5", preview: "Body small text" },       // ~14px
+    { name: "Caption", size: "0.75rem", weight: "Regular", lineHeight: "1.4", preview: "Caption text" },              // 12px
+    { name: "Overline", size: "0.618rem", weight: "Medium", lineHeight: "1.4", preview: "OVERLINE TEXT" },            // ~10px
+    { name: "Micro", size: "0.5rem", weight: "Medium", lineHeight: "1.2", preview: "Micro text" },                    // 8px
   ];
 
   // Spacing examples
-  const spacingExamples = [4, 8, 12, 16, 24, 32, 48, 64];
+  const spacingExamples = [4, 8, 12, 16, 24, 32, 48, 64 ];
+
+
+  // Icon styles
+  const iconStyles = [
+    {image: <img src="/design-system/outlinedIcons.svg" alt="Outlined Icons" className="w-full rounded-xl mb-3 border-border border"/>, name: "Outlined", description: "Minimal, clean, and often used in low-emphasis or neutral contexts (e.g., toolbars, inputs, secondary buttons). These work well for modern and lightweight interfaces." },
+    {image: <img src="/design-system/filledIcons.svg" alt="Filled Icons" className="w-full rounded-xl mb-3 border-border border"/>, name: "Filled", description: "Bolder, high-emphasis icons used for primary actions or alerts. These draw more attention and are best used selectively to avoid visual clutter." }
+  ];
 
   return (
     <div className="min-h-screen bg-background">
@@ -171,6 +205,9 @@ const DesignSystemProject = () => {
           </div>
         </section>
 
+
+        {/* Why Design System Needed Section */}
+
         <section className="mb-24">
           <div className="flex flex-col md:flex-row gap-12">
             <div>
@@ -182,7 +219,7 @@ const DesignSystemProject = () => {
                 <div className="grid xl:grid-cols-3 lg:grid-cols-3 md:grid-cols-2 gap-6">
                   {atomicDesignComponents.map((component, index) => (
                     <div key={index} className="flex flex-col items-start gap-4 border border-border rounded-xl p-6 hover:shadow-md transition-shadow bg-card">
-                      <div className="w-12 h-12 rounded-full flex items-center justify-center">
+                      <div className="w-16 h-16 rounded-full flex items-center justify-center bg-white p-2">
                         <img className="w-12 h-12" src={component.icon} alt={component.name} />
                       </div>
                       <div className="flex flex-col">
@@ -202,12 +239,52 @@ const DesignSystemProject = () => {
           </div>
         </section>
 
-        <section className="mb-24">
-          <h2 className="text-3xl font-bold mb-10 text-foreground">Atomic Design</h2>
-        </section>
+
+        {/* Atomic Design Section */}
 
         <section className="mb-24">
-          <h2 className="text-3xl font-bold mb-10 text-foreground">Colors</h2>
+          <h2 className="text-3xl font-bold mb-10 text-foreground">Atomic Design</h2>
+          <p className="text-muted-foreground mb-6">
+          Atomic Design is a methodology for crafting design systems in a hierarchical, structured manner.
+          Coined by Brad Frost, it draws inspiration from chemistry, breaking down interfaces into smaller parts called atoms,
+          which combine to form molecules, organisms, and finally templates and pages. This modular thinking encourages consistency,
+          reusability, and scalability in UI development.
+          </p>
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4">
+          {atomicDesignExamples.map((example, index) => (
+            <div key={index} className="flex flex-col">
+              <div className="w-full rounded-md mb-2"> <img src={example.image} alt={example.name} /></div>
+              <div className="text-lg font-medium text-foreground text-center mb-3">{example.name}</div>
+              <div className="text-sm text-muted-foreground text-center">{example.description}</div>
+            </div>
+          ))}
+        </div>  
+        </section>
+
+        {/* Color Section */}
+
+        <section className="mb-24">
+          <h2 className="text-3xl font-bold mb-8 text-foreground">Colors</h2>
+          <p className="text-primary-light text-lg font-semibold mb-2">
+          "Color defines the visual identity and emotional tone of your product."
+          </p>
+          <p className="text-muted-foreground mb-6">
+          A well-crafted color system supports usability, accessibility, and brand recognition. 
+          It helps users understand states (like success or error), draw attention to key elements, and maintain consistency across UI components.
+          </p>
+          <p className="text-muted-foreground mb-6">
+          Our color palette is structured into three main groups: 
+          </p>
+          <div className="grid xl:grid-cols-3 lg:grid-cols-3 md:grid-cols-2 gap-6 mb-8">
+                  {colorExamples.map((component, index) => (
+                    <div key={index} className="flex flex-col items-start border border-border rounded-xl p-5 hover:shadow-md transition-shadow bg-card">
+                        <h3 className="font-semibold text-lg mb-3 text-card-foreground">{component.name}</h3>
+                        <p className="text-muted-foreground text-base">{component.description}</p>
+                      </div>
+                  ))}
+          </div>
+
+          
           <div className="mb-6">
             <div className="flex flex-wrap gap-3 mb-8">
               {Object.keys(colorPalettes).map((category) => (
@@ -238,16 +315,19 @@ const DesignSystemProject = () => {
           </div>
         </section>
 
-        <section className="mb-24">
+
+
+        {/* Typography Section */}
+
+
+          <section className="mb-24">
           <h2 className="text-3xl font-bold mb-10 text-foreground">Typography</h2>
-          <div className="mb-8 flex items-center justify-center">
-            <div className="inline-flex items-center border border-border rounded-md p-2 bg-card">
-              <span className="font-bold text-2xl mr-3 text-card-foreground">Aa</span>
-              <div className="text-sm">
-                <div className="text-card-foreground">Inter</div>
-                <div className="text-muted-foreground">Sans-serif</div>
-              </div>
-            </div>
+          <div className="mb-8 flex flex-col gap-4 items-center justify-center">
+            <p className="text-muted-foreground">Typography sets the tone and structure of your product’s content. 
+              It creates visual hierarchy, improves readability, and brings consistency across your interface.</p>
+            <p className="text-muted-foreground">In this type scale, we use the Golden Ratio (~1.618) to ensure harmonious sizing—from headlines to body text. Starting at a base of 1rem, each size scales naturally for a balanced and readable system.</p>
+            <p className="text-muted-foreground">We use a range of weights (Bold, Semibold, Regular, Medium) to define hierarchy and ensure clarity across headings, paragraphs, and UI labels.</p> 
+              
           </div>
           <div className="overflow-x-auto">
             <table className="min-w-full divide-y divide-border">
@@ -262,29 +342,80 @@ const DesignSystemProject = () => {
               </thead>
               <tbody className="bg-card divide-y divide-border">
                 {typographyExamples.map((item, index) => (
-                  <tr key={index}>
-                    <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-card-foreground">{item.name}</td>
-                    <td className="px-6 py-4 whitespace-nowrap text-sm text-muted-foreground">{item.size}</td>
-                    <td className="px-6 py-4 whitespace-nowrap text-sm text-muted-foreground">{item.weight}</td>
-                    <td className="px-6 py-4 whitespace-nowrap text-sm text-muted-foreground">{item.lineHeight}</td>
-                    <td className="px-6 py-4 whitespace-nowrap">
-                      <div className={`text-card-foreground ${
-                        item.name === "Heading 1" ? "text-2xl font-bold" :
-                        item.name === "Heading 2" ? "text-xl font-bold" :
-                        item.name === "Heading 3" ? "text-lg font-semibold" :
-                        item.name === "Paragraph" ? "text-base" :
-                        "text-sm"
-                      }`}>
-                        {item.preview}
-                      </div>
-                    </td>
-                  </tr>
-                ))}
-              </tbody>
+                    <tr key={index}>
+                      <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-card-foreground">
+                        {item.name}
+                      </td>
+                      <td className="px-6 py-4 whitespace-nowrap text-sm text-muted-foreground">
+                        {item.size}
+                      </td>
+                      <td className="px-6 py-4 whitespace-nowrap text-sm text-muted-foreground">
+                        {item.weight}
+                      </td>
+                      <td className="px-6 py-4 whitespace-nowrap text-sm text-muted-foreground">
+                        {item.lineHeight}
+                      </td>
+                      <td className="px-6 py-4 whitespace-nowrap">
+                        <div
+                          className="text-card-foreground"
+                          style={{
+                            fontSize: item.size,
+                            fontWeight:
+                              item.weight === "Extra Bold" ? 800 :
+                              item.weight === "Bold" ? 700 :
+                              item.weight === "Semibold" ? 600 :
+                              item.weight === "Medium" ? 500 :
+                              400,
+                            lineHeight: item.lineHeight
+                          }}
+                        >
+                          {item.preview}
+                        </div>
+                      </td>
+                    </tr>
+                    ))}
+              </tbody>          
             </table>
+            <div className="flex flex-col items-start justify-center gap-2 p-10 mt-10 border border-border rounded-xl bg-card ">
+              <h3 className="text-xl font-bold mb-2 text-primary">For Example</h3>
+              
+              <div className="flex flex-row w-full justify-between items-center gap-2">
+                <span className="flex items-center gap-1 text-primary text-base text-nowrap">
+                  <span className="text-xl">★</span> 30 Days free trail
+                </span>
+                <span className="flex w-full border-b border-gray-200 border-dashed ml-2"></span>
+                <span className="text-primary-light text-base flex justify-center items-center px-4 py-1 border border-border rounded-md bg-card text-center text-nowrap">Body Large</span>
+              </div>
+              <div className="flex flex-row w-full justify-between items-center gap-2">
+              <h2 className="text-4xl font-bold text-primary-light text-nowrap">
+                Best Payments <br /> Experience
+              </h2>
+              <span className="flex w-full border-b border-gray-200 border-dashed ml-2"></span>
+              <span className="text-primary-light text-base flex items-center w-fit px-4 py-1 border border-border rounded-md bg-card text-center text-nowrap">Heading 2</span>
+              </div>
+              <div className="flex flex-row w-full justify-between  items-center gap-2 mb-2"> 
+              <span className="text-primary-light text-base text-nowrap ">
+                Make your daily routine easier by managingmoney and  <br/>transactions with the Bank Card.
+              </span>
+              <span className="flex w-full border-b border-gray-200 border-dashed ml-2"></span>
+              <span className="text-primary-light text-base flex items-center w-auto px-4 py-1 border border-border rounded-md bg-card text-center text-nowrap">Paragraph</span>
+              </div>
+              <div className="flex flex-row w-full justify-between items-center gap-2">
+
+              <Button> Get Started </Button>
+              <span className="flex w-full border-b border-gray-200 border-dashed ml-2"></span>
+              <span className="text-primary-light text-base flex items-center w-auto px-4 py-1 border border-border rounded-md bg-card text-center text-nowrap">Body</span>
+              </div>
+            </div>
+
           </div>
         </section>
 
+
+
+
+        {/* Spacing Section */}
+        
         <section className="mb-24">
           <h2 className="text-3xl font-bold mb-8 text-foreground">Spacing</h2>
           <div className="mb-6">
@@ -305,6 +436,51 @@ const DesignSystemProject = () => {
           </div>
         </section>
 
+
+
+        {/* Icons Section */} 
+
+        <section className="mb-24">
+          <h2 className="text-3xl font-bold mb-8 text-foreground">Icons</h2>
+          <div className="mb-6">
+            <p className="text-muted-foreground mb-6">
+            Icons visually communicate actions, states, and content at a glance. 
+            They make interfaces faster to scan and more intuitive to use.
+            </p>
+            <div className="space-y-6">
+              <h3 className="text-lg font-semibold mb-4 text-foreground">Styles</h3>
+              <p className="text-muted-foreground mb-6">
+              Icons are available in two styles: outlined and filled.
+              </p>
+              <div className="grid xl:grid-cols-2 lg:grid-cols-2 md:grid-cols-2 gap-6 mb-8 w-full">
+                  {iconStyles.map((component, index) => (
+                    <div key={index} className="flex flex-col items-start border border-border rounded-xl p-5 hover:shadow-md transition-shadow bg-card">
+                        {component.image}
+                        <h3 className="font-semibold text-lg mb-3 text-card-foreground">{component.name}</h3>
+                        <p className="text-muted-foreground text-base">{component.description}</p>
+                      </div>
+                  ))}
+              </div>
+            </div>
+          </div>
+          <div>
+            <h3 className="text-lg font-semibold mb-4 text-foreground">Guidelines</h3>
+            <p className="text-muted-foreground mb-2">
+            Use icons to represent actions, states, and content at a glance.
+            </p>
+            <ul className="list-disc list-inside text-muted-foreground ml-2">
+              <li>Use a consistent grid (e.g., 24×24px).</li>
+              <li>Maintain stroke weight across all icons.</li>
+              <li>UPair icons with labels unless universally understood.</li>
+              <li>Add aria-label for accessibility.</li>
+            </ul>
+          </div>
+        </section>
+
+
+
+        {/* Components Section */}
+                  
         <section className="mb-24">
           <h2 className="text-3xl font-bold mb-8 text-foreground">Components</h2>
           <p className="text-muted-foreground mb-8">
@@ -312,28 +488,53 @@ const DesignSystemProject = () => {
             combined to create consistent user experiences.
           </p>
 
-          <Tabs defaultValue="buttons" className="w-full">
-            <TabsList className="mb-6">
-              <TabsTrigger value="buttons">Buttons</TabsTrigger>
-              <TabsTrigger value="inputs">Inputs</TabsTrigger>
-              <TabsTrigger value="cards">Cards</TabsTrigger>
-            </TabsList>
-            <TabsContent value="buttons" className="space-y-6">
-              <Card>
+          <section className="mb-6">
+            <h3 className="text-xl font-bold mb-2 text-foreground">Buttons</h3>
+            <p className="text-muted-foreground mb-6">
+            Buttons trigger actions. They guide users through your interface and drive interaction.
+            </p>
+            <div className="flex flex-col gap-6 p-2 ">
+            <Card>
                 <CardContent className="pt-6">
-                  <h3 className="text-lg font-medium mb-4 text-card-foreground">Button Variants</h3>
-                  <div className="flex flex-wrap gap-4">
-                    <Button variant="default">Primary</Button>
-                    <Button variant="secondary">Secondary</Button>
-                    <Button variant="outline">Outline</Button>
-                    <Button variant="ghost">Ghost</Button>
-                    <Button variant="link">Link</Button>
+                  <h3 className="text-lg font-medium mb-6 text-card-foreground ">Button Variants</h3>
+                  <div className="space-y-6">
+                    <div className="flex flex-row flex-wrap gap-4">
+                      <span className="text-muted-foreground text-sm text-center flex  w-40 text-nowrap"> State / Variant</span>
+                      <span className="text-muted-foreground text-sm text-center flex justify-center w-[84px] text-nowrap"> Primary</span>
+                      <span className="text-muted-foreground text-sm text-center flex justify-center w-[104px] text-nowrap"> Secondary</span>
+                      <span className="text-muted-foreground text-sm text-center flex justify-center w-[82px] text-nowrap"> Outline</span>
+                      <span className="text-muted-foreground text-sm text-center flex justify-center w-[72px] text-nowrap"> Ghost</span>
+                      <span className="text-muted-foreground text-sm text-center flex justify-center w-[60px] text-nowrap"> Link</span>
+                    </div>
+                    <span className="flex w-full border-b border-gray-200 border-dashed mx-2"></span>
+                      <div className="flex flex-wrap gap-4">
+                        <span className="text-primary-light text-base flex items-center w-40 text-nowrap"> Default State</span>
+                        <Button variant="default">Primary</Button>
+                        <Button variant="secondary">Secondary</Button>
+                        <Button variant="outline">Outline</Button>
+                        <Button variant="ghost">Ghost</Button>
+                        <Button variant="link">Link</Button>
+                      </div>
+                      <span className="flex w-full border-b border-gray-200 border-dashed mx-2"></span>
+                      <div className="flex flex-wrap gap-4">
+                        <span className="text-primary-light text-base flex items-center w-40 text-nowrap"> Hover State</span>
+                        <Button variant="default" className="bg-primary/90">Primary</Button>
+                        <Button variant="secondary" className="bg-secondary/80 border border-border">Secondary</Button>
+                        <Button variant="outline" className="bg-primary text-white">Outline</Button>
+                        <Button variant="ghost" className="bg-primary text-white">Ghost</Button>
+                        <Button variant="link" className="underline">Link</Button>
+                      </div>
+                      <span className="flex w-full border-b border-gray-200 border-dashed mx-2"></span>
+                      <div className="flex flex-wrap gap-4">
+                        <span className="text-primary-light text-base flex items-center text-nowrap w-40"> Disabled State</span>
+                        <Button variant="default" disabled>Primary</Button>
+                        <Button variant="secondary" disabled>Secondary</Button>
+                        <Button variant="outline" disabled>Outline</Button>
+                        <Button variant="ghost" disabled>Ghost</Button>
+                        <Button variant="link" disabled>Link</Button>
+                      </div>
                   </div>
-                </CardContent>
-              </Card>
-              <Card>
-                <CardContent className="pt-6">
-                  <h3 className="text-lg font-medium mb-4 text-card-foreground">Button Sizes</h3>
+                  <h3 className="text-lg font-medium mb-6 text-card-foreground mt-10">Button Sizes</h3>
                   <div className="flex flex-wrap items-center gap-4">
                     <Button size="sm">Small</Button>
                     <Button size="default">Default</Button>
@@ -344,6 +545,19 @@ const DesignSystemProject = () => {
                   </div>
                 </CardContent>
               </Card>
+            </div>
+          </section>
+            
+          
+
+          <Tabs defaultValue="buttons" className="w-full">
+            <TabsList className="mb-6">
+              <TabsTrigger value="buttons">Buttons</TabsTrigger>
+              <TabsTrigger value="inputs">Inputs</TabsTrigger>
+              <TabsTrigger value="cards">Cards</TabsTrigger>
+            </TabsList>
+            <TabsContent value="buttons" className="space-y-6">
+              
             </TabsContent>
             <TabsContent value="inputs" className="space-y-6">
               <Card>
@@ -412,40 +626,12 @@ const DesignSystemProject = () => {
           </Tabs>
         </section>
 
+
+        {/* Grid System Section */}
+
         <section className="mb-24">
           <h2 className="text-3xl font-bold mb-10 text-foreground">Grid System</h2>
-          <p className="text-muted-foreground mb-8">
-            Our grid system is based on a 12-column layout that provides flexibility and 
-            structure across different screen sizes.
-          </p>
-          <div className="mb-8">
-            <div className="grid grid-cols-12 gap-2 mb-4">
-              {Array(12).fill(0).map((_, i) => (
-                <div key={i} className="bg-accent/20 h-12 flex items-center justify-center text-xs text-accent-foreground border border-border">
-                  {i + 1}
-                </div>
-              ))}
-            </div>
-            <div className="grid grid-cols-12 gap-2 mb-4">
-              {[4, 4, 4].map((span, i) => (
-                <div key={i} className={`col-span-${span} bg-accent/30 h-12 flex items-center justify-center text-xs text-accent-foreground border border-border`}>
-                  col-{span}
-                </div>
-              ))}
-            </div>
-            <div className="grid grid-cols-12 gap-2 mb-4">
-              {[6, 6].map((span, i) => (
-                <div key={i} className={`col-span-${span} bg-accent/40 h-12 flex items-center justify-center text-xs text-accent-foreground border border-border`}>
-                  col-{span}
-                </div>
-              ))}
-            </div>
-            <div className="grid grid-cols-12 gap-2">
-              <div className="col-span-12 bg-accent/50 h-12 flex items-center justify-center text-xs text-accent-foreground border border-border">
-                col-12
-              </div>
-            </div>
-          </div>
+          
         </section>
       </div>
       <Footer />

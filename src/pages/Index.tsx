@@ -32,12 +32,14 @@ const Index = () => {
   return (
     <main className="min-h-screen bg-background">
       <Navbar />
+      <div className="flex flex-col md:max-w-7xl">
       <Hero />
       <Projects />
       <About />
       <Process />
       <Contact />
       <Footer />
+      </div>
     </main>
   );
 };

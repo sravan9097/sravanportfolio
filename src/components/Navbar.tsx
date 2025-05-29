@@ -73,9 +73,6 @@ const Navbar = () => {
           <button onClick={() => scrollToSection('about')} className="text-foreground hover:text-accent transition-colors">
             About
           </button>
-          <button onClick={() => scrollToSection('process')} className="text-foreground hover:text-accent transition-colors">
-            Process
-          </button>
           <button onClick={() => scrollToSection('contact')} className="text-foreground hover:text-accent transition-colors">
             Contact
           </button>
@@ -90,10 +87,7 @@ const Navbar = () => {
               </button>
               <button onClick={() => scrollToSection('about')} className="text-foreground hover:text-accent transition-colors py-2 text-left">
                 About
-              </button>
-              <button onClick={() => scrollToSection('process')} className="text-foreground hover:text-accent transition-colors py-2 text-left">
-                Process
-              </button>
+              </button>               
               <button onClick={() => scrollToSection('contact')} className="text-foreground hover:text-accent transition-colors py-2 text-left">
                 Contact
               </button>

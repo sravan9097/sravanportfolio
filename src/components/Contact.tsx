@@ -168,7 +168,7 @@ const Contact = () => {
                           <FormControl>
                             <input
                               {...field}
-                              className="w-full px-4 py-2 border border-border rounded-md focus:outline-none focus:ring-2 focus:ring-accent/50"
+                              className="w-full px-4 py-2 bg-card border border-border rounded-md focus:outline-none focus:ring-2 focus:ring-accent/50"
                             />
                           </FormControl>
                           <FormMessage />
@@ -186,7 +186,7 @@ const Contact = () => {
                             <input
                               {...field}
                               type="email"
-                              className="w-full px-4 py-2 border border-border rounded-md focus:outline-none focus:ring-2 focus:ring-accent/50"
+                              className="w-full px-4 py-2 bg-card border border-border rounded-md focus:outline-none focus:ring-2 focus:ring-accent/50"
                             />
                           </FormControl>
                           <FormMessage />
@@ -204,7 +204,7 @@ const Contact = () => {
                         <FormControl>
                           <input
                             {...field}
-                            className="w-full px-4 py-2 border border-border rounded-md focus:outline-none focus:ring-2 focus:ring-accent/50"
+                            className="w-full px-4 py-2 bg-card border border-border rounded-md focus:outline-none focus:ring-2 focus:ring-accent/50"
                           />
                         </FormControl>
                         <FormMessage />
@@ -222,7 +222,7 @@ const Contact = () => {
                           <Textarea
                             {...field}
                             rows={5}
-                            className="w-full px-4 py-2 border border-border rounded-md focus:outline-none focus:ring-2 focus:ring-accent/50"
+                            className="w-full px-4 py-2 bg-card border border-border rounded-md focus:outline-none focus:ring-2 focus:ring-accent/50"
                           />
                         </FormControl>
                         <FormMessage />

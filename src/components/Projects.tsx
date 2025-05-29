@@ -7,8 +7,15 @@ const Projects = () => {
       id: "design-system",
       title: "Design System",
       description: "A comprehensive design system with components, colors, typography and design guidelines.",
-      image: "/design-system/design-system-cover.png",
+      image: "/Hero_Images/designsystemhero.png",
       category: "UI/UX Design"
+    },
+    {
+      id: "bcexperienceproject",
+      title: "Building BeautifulCode Experience App",
+      description: "Transforming an e-commerce platform with a focus on conversion optimization and user flow.",
+      image: "/Hero_Images/BC_experience_cover.png",
+      category: "UX Research & Design"
     },
     {
       id: "finance-app",
@@ -23,13 +30,6 @@ const Projects = () => {
       description: "Creating an intuitive dashboard for users to track their fitness goals and progress.",
       image: "https://images.unsplash.com/photo-1434494878577-86c23bcb06b9",
       category: "UI/UX Design"
-    },
-    {
-      id: "bcexperienceproject",
-      title: "Building BeautifulCode Experience App",
-      description: "Transforming an e-commerce platform with a focus on conversion optimization and user flow.",
-      image: "/Hero_Images/BC_experience_cover.png",
-      category: "UX Research & Design"
     }
   ];
 

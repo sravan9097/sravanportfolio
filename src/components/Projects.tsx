@@ -55,7 +55,7 @@ const Projects = () => {
                   </div>
                   <div className="p-6">
                     <p className="text-xs font-medium text-muted-foreground uppercase tracking-wider mb-2">{project.category}</p>
-                    <h3 className="text-xl font-semibold text-card-foreground mb-2 group-hover:text-accent transition-colors">{project.title}</h3>
+                    <h3 className="text-xl overflow-hidden text-ellipsis whitespace-nowrap font-semibold text-card-foreground mb-2 group-hover:text-accent transition-colors">{project.title}</h3>
                     <p className="text-sm text-muted-foreground line-clamp-2">{project.description}</p>
                   </div>
                 </div>

@@ -322,7 +322,7 @@ const DesignSystemProject = () => {
         {/* Typography Section */}
 
 
-          <section className="mb-24">
+        <section className="mb-24">
           <h2 className="text-3xl font-bold mb-10 text-foreground">Typography</h2>
           <div className="mb-8 flex flex-col gap-4 items-center justify-center">
             <p className="text-muted-foreground">Typography sets the tone and structure of your product’s content. 
@@ -541,10 +541,7 @@ const DesignSystemProject = () => {
                 </CardContent>
               </Card>
             </div>
-          </section>
-            
-          
-
+        </section>
           <Tabs defaultValue="buttons" className="w-full">
             <TabsList className="mb-6">
               <TabsTrigger value="buttons">Buttons</TabsTrigger>
@@ -660,8 +657,8 @@ const DesignSystemProject = () => {
               </div>
             </TabsContent>
           </Tabs>
-        </section>
-      </div>
+        
+      
     </ProjectLayout>
   );
 };

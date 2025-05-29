@@ -68,7 +68,7 @@ const Projects = () => {
           </BreadcrumbList>
         </Breadcrumb>
 
-        <div className="max-w-4xl mx-auto">
+        <div className="max-w-7xl mx-auto">
           <h1 className="text-4xl font-bold mb-4 text-foreground">All Projects</h1>
           <p className="text-lg text-muted-foreground mb-12">
             Explore my complete collection of design work and case studies.
@@ -88,7 +88,7 @@ const Projects = () => {
                     </div>
                     <div className="p-6">
                       <p className="text-xs font-medium text-muted-foreground uppercase tracking-wider mb-2">{project.category}</p>
-                      <h3 className="text-xl font-semibold text-card-foreground mb-2 group-hover:text-accent transition-colors">{project.title}</h3>
+                      <h3 className="text-xl overflow-hidden text-ellipsis whitespace-nowrap font-semibold text-card-foreground mb-2 group-hover:text-accent transition-colors">{project.title}</h3>
                       <p className="text-sm text-muted-foreground line-clamp-2">{project.description}</p>
                     </div>
                   </div>

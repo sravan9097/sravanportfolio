@@ -30,9 +30,9 @@ const Index = () => {
   }, []);
 
   return (
-    <main className="min-h-screen bg-background">
+    <main className="min-h-screen bg-background ">
       <Navbar />
-      <div className="flex flex-col md:max-w-7xl">
+      <div className="flex flex-col ">
       <Hero />
       <Projects />
       <About />

@@ -2,9 +2,9 @@ import { useState, useEffect } from "react";
 import ProjectLayout from "@/components/ProjectLayout";
 import { 
   Tabs, 
-  TabsContent, 
   TabsList, 
-  TabsTrigger 
+  TabsTrigger,
+  TabsContent 
 } from "@/components/ui/tabs";
 import { 
   Card, 
@@ -12,6 +12,7 @@ import {
 } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { PlusIcon } from "lucide-react";
+import { Footer } from "react-day-picker";
 
 const DesignSystemProject = () => {
   // Scroll to top when component mounts
@@ -215,7 +216,7 @@ const DesignSystemProject = () => {
                   {atomicDesignComponents.map((component, index) => (
                     <div key={index} className="flex flex-col items-start gap-4 border border-border rounded-xl p-6 hover:shadow-md transition-shadow bg-card">
                       <div className="w-16 h-16 rounded-full flex items-center justify-center bg-white p-2">
-                        <img className="w-12 h-12" src={component.icon} alt={component.name} />
+                        <img className="w-12 h-12" src={component.icon} alt={`${component.name} icon`} />
                       </div>
                       <div className="flex flex-col">
                         <h3 className="font-bold text-lg mb-2 text-card-foreground">{component.name}</h3>
@@ -248,7 +249,13 @@ const DesignSystemProject = () => {
         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4">
           {atomicDesignExamples.map((example, index) => (
             <div key={index} className="flex flex-col">
-              <div className="w-full rounded-md mb-2"> <img src={example.image} alt={example.name} /></div>
+              <div className="w-full rounded-md mb-2 overflow-hidden">
+                <img 
+                  src={example.image} 
+                  alt={`${example.name} example`} 
+                  className="w-full h-auto object-cover"
+                />
+              </div>
               <div className="text-lg font-medium text-foreground text-center mb-3">{example.name}</div>
               <div className="text-sm text-muted-foreground text-center">{example.description}</div>
             </div>
@@ -475,19 +482,12 @@ const DesignSystemProject = () => {
 
 
         {/* Components Section */}
-                  
         <section className="mb-24">
           <h2 className="text-3xl font-bold mb-8 text-foreground">Components</h2>
           <p className="text-muted-foreground mb-8">
             Our design system provides a comprehensive set of UI components that can be 
             combined to create consistent user experiences.
           </p>
-
-          <section className="mb-6">
-            <h3 className="text-xl font-bold mb-2 text-foreground">Buttons</h3>
-            <p className="text-muted-foreground mb-6">
-            Buttons trigger actions. They guide users through your interface and drive interaction.
-            </p>
             <div className="flex flex-col gap-6 p-2 ">
             <Card>
                 <CardContent className="pt-6">
@@ -552,7 +552,57 @@ const DesignSystemProject = () => {
               <TabsTrigger value="cards">Cards</TabsTrigger>
             </TabsList>
             <TabsContent value="buttons" className="space-y-6">
-              
+              <Card>
+                <CardContent className="pt-6">
+                  <h3 className="text-lg font-medium mb-6 text-card-foreground">Button Variants</h3>
+                  <div className="space-y-6">
+                    <div className="flex flex-row flex-wrap gap-4">
+                      <span className="text-muted-foreground text-sm text-center flex w-40 text-nowrap"> State / Variant</span>
+                      <span className="text-muted-foreground text-sm text-center flex justify-center w-[84px] text-nowrap"> Primary</span>
+                      <span className="text-muted-foreground text-sm text-center flex justify-center w-[104px] text-nowrap"> Secondary</span>
+                      <span className="text-muted-foreground text-sm text-center flex justify-center w-[82px] text-nowrap"> Outline</span>
+                      <span className="text-muted-foreground text-sm text-center flex justify-center w-[72px] text-nowrap"> Ghost</span>
+                      <span className="text-muted-foreground text-sm text-center flex justify-center w-[60px] text-nowrap"> Link</span>
+                    </div>
+                    <span className="flex w-full border-b border-gray-200 border-dashed mx-2"></span>
+                    <div className="flex flex-wrap gap-4">
+                      <span className="text-primary-light text-base flex items-center w-40 text-nowrap"> Default State</span>
+                      <Button variant="default">Primary</Button>
+                      <Button variant="secondary">Secondary</Button>
+                      <Button variant="outline">Outline</Button>
+                      <Button variant="ghost">Ghost</Button>
+                      <Button variant="link">Link</Button>
+                    </div>
+                    <span className="flex w-full border-b border-gray-200 border-dashed mx-2"></span>
+                    <div className="flex flex-wrap gap-4">
+                      <span className="text-primary-light text-base flex items-center w-40 text-nowrap"> Hover State</span>
+                      <Button variant="default" className="bg-primary/90">Primary</Button>
+                      <Button variant="secondary" className="bg-secondary/80 border border-border">Secondary</Button>
+                      <Button variant="outline" className="bg-primary text-white">Outline</Button>
+                      <Button variant="ghost" className="bg-primary text-white">Ghost</Button>
+                      <Button variant="link" className="underline">Link</Button>
+                    </div>
+                    <span className="flex w-full border-b border-gray-200 border-dashed mx-2"></span>
+                    <div className="flex flex-wrap gap-4">
+                      <span className="text-primary-light text-base flex items-center text-nowrap w-40"> Disabled State</span>
+                      <Button variant="default" disabled>Primary</Button>
+                      <Button variant="secondary" disabled>Secondary</Button>
+                      <Button variant="outline" disabled>Outline</Button>
+                      <Button variant="ghost" disabled>Ghost</Button>
+                      <Button variant="link" disabled>Link</Button>
+                    </div>
+                  </div>
+                  <h3 className="text-lg font-medium mb-6 text-card-foreground mt-10">Button Sizes</h3>
+                  <div className="flex flex-wrap items-center gap-4">
+                    <Button size="sm">Small</Button>
+                    <Button size="default">Default</Button>
+                    <Button size="lg">Large</Button>
+                    <Button size="icon" variant="outline" aria-label="Add">
+                      <PlusIcon className="h-4 w-4" />
+                    </Button>
+                  </div>
+                </CardContent>
+              </Card>
             </TabsContent>
             <TabsContent value="inputs" className="space-y-6">
               <Card>
@@ -581,7 +631,7 @@ const DesignSystemProject = () => {
               </Card>
               <Card>
                 <CardContent className="pt-6">
-                  <h3 className="text-lg font-medium mb-2 text-card-foreground">Basic Card</h3>
+                  <h2 className="text-lg font-medium mb-2 text-card-foreground">Basic Card</h2>
                   <p className="text-muted-foreground">This is a basic card component with some content.</p>
                 </CardContent>
               </Card>
@@ -598,12 +648,12 @@ const DesignSystemProject = () => {
                 </Card>
                 <Card>
                   <div className="h-32 bg-muted flex items-center justify-center">
-                    <span className="text-muted-foreground">Image</span>
+                    <span className="text-muted-foreground">Image Placeholder</span>
                   </div>
-                  <CardContent className="pt-4">
+                  <CardContent className="pt-6">
                     <h3 className="text-lg font-medium mb-2 text-card-foreground">Card with Image</h3>
                     <p className="text-muted-foreground text-sm">
-                      This card includes an image above the content.
+                      This card includes an image placeholder and content below it.
                     </p>
                   </CardContent>
                 </Card>
@@ -611,17 +661,8 @@ const DesignSystemProject = () => {
             </TabsContent>
           </Tabs>
         </section>
-
-
-        {/* Grid System Section */}
-
-        <section className="mb-24">
-          <h2 className="text-3xl font-bold mb-10 text-foreground">Grid System</h2>
-          
-        </section>
       </div>
-      <Footer />
-    </div>
+    </ProjectLayout>
   );
 };
 

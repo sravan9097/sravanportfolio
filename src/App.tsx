@@ -13,6 +13,7 @@ import BCExperienceProject from "./pages/projects/BCexperienceproject";
 import TravelAppProject from "./pages/projects/TravelAppProject";
 import DesignSystemProject from "./pages/projects/DesignSystemProject";
 import { ThemeProvider } from "./components/ThemeProvider";
+import ScrollToTop from "./components/ui/ScrollToTop";
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -29,7 +30,8 @@ const App = () => (
       <TooltipProvider>
         <Toaster />
         <Sonner />
-        <BrowserRouter>
+          <BrowserRouter>
+          <ScrollToTop />
           <Routes>
             <Route path="/" element={<Index />} />
             <Route path="/about" element={<Index />} />

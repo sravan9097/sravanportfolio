@@ -29,7 +29,7 @@ const Footer = () => {
   };
 
   return (
-    <footer className="py-12 px-4 border-t border-border">
+    <footer className="py-12 border-t border-border">
       <div className="container mx-auto">
         <div className="flex flex-col md:flex-row justify-between items-center">
           <div className="mb-6 md:mb-0">
@@ -53,11 +53,7 @@ const Footer = () => {
                   About
                 </button>
               </li>
-              <li>
-                <button onClick={() => scrollToSection('process')} className="hover:text-accent transition-colors">
-                  Process
-                </button>
-              </li>
+              
               <li>
                 <button onClick={() => scrollToSection('contact')} className="hover:text-accent transition-colors">
                   Contact

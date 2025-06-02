@@ -13,6 +13,7 @@ import {
 import { Button } from "@/components/ui/button";
 import { PlusIcon } from "lucide-react";
 import { Footer } from "react-day-picker";
+import { Input } from "@/components/ui/input";
 
 const DesignSystemProject = () => {
   // Scroll to top when component mounts
@@ -174,6 +175,7 @@ const DesignSystemProject = () => {
   return (
     <ProjectLayout projectTitle="Design System">
       {/* Hero Section */}
+      
       <div className="aspect-[16/9] w-full overflow-hidden rounded-lg mb-10">
         <img 
           src="/Hero_Images/designsystemhero.png" 
@@ -192,9 +194,9 @@ const DesignSystemProject = () => {
           ensuring that products look, feel, and function consistently across different platforms and teams.
           </p>
         </div>
-        <div className="relative rounded-xl overflow-hidden bg-muted flex items-center justify-center min-h-[300px]">
+        <div className="relative rounded-xl overflow-hidden bg-muted flex items-center justify-center min-h-[300px] bg-[#F9F7F3]">
           <img 
-            src="/design-system/designsystemhero.png" 
+            src="/design-system/designsystemimage.png" 
             alt="Design System Diagram" 
             className="w-full h-full object-cover"
           />
@@ -488,7 +490,21 @@ const DesignSystemProject = () => {
             Our design system provides a comprehensive set of UI components that can be 
             combined to create consistent user experiences.
           </p>
-            <div className="flex flex-col gap-6 p-2 ">
+          <div>
+            <h3 className="text-2xl font-bold mb-4 text-foreground">Buttons</h3>
+            <p className="text-muted-foreground mb-2">
+            Buttons trigger actions. They guide users through your interface and drive interaction. Types of Button:
+            </p>
+
+            <ul className="list-disc list-inside ml-2 mb-6">
+              <li className="mb-1 text-muted-foreground"><span className="text-primary-light text-bold">Primary:</span> Main call to action. Use once per screen.</li>
+              <li className="mb-1 text-muted-foreground"><span className="text-primary-light text-bold">Secondary:</span> Used for less important actions.</li>
+              <li className="mb-1 text-muted-foreground"><span className="text-primary-light text-bold">Outline:</span> Use for less prominent actions.</li>
+              <li className="mb-1 text-muted-foreground"><span className="text-primary-light text-bold">Ghost:</span> Use for less important actions.</li>
+              <li className="mb-1 text-muted-foreground"><span className="text-primary-light text-bold">Link:</span> Use for navigation actions.</li>
+            </ul>
+          </div>
+          <div className="flex flex-col gap-6 p-2 ">
             <Card>
                 <CardContent className="pt-6">
                   <h3 className="text-lg font-medium mb-6 text-card-foreground ">Button Variants</h3>
@@ -542,122 +558,58 @@ const DesignSystemProject = () => {
               </Card>
             </div>
         </section>
-          <Tabs defaultValue="buttons" className="w-full">
-            <TabsList className="mb-6">
-              <TabsTrigger value="buttons">Buttons</TabsTrigger>
-              <TabsTrigger value="inputs">Inputs</TabsTrigger>
-              <TabsTrigger value="cards">Cards</TabsTrigger>
-            </TabsList>
-            <TabsContent value="buttons" className="space-y-6">
-              <Card>
-                <CardContent className="pt-6">
-                  <h3 className="text-lg font-medium mb-6 text-card-foreground">Button Variants</h3>
-                  <div className="space-y-6">
-                    <div className="flex flex-row flex-wrap gap-4">
-                      <span className="text-muted-foreground text-sm text-center flex w-40 text-nowrap"> State / Variant</span>
-                      <span className="text-muted-foreground text-sm text-center flex justify-center w-[84px] text-nowrap"> Primary</span>
-                      <span className="text-muted-foreground text-sm text-center flex justify-center w-[104px] text-nowrap"> Secondary</span>
-                      <span className="text-muted-foreground text-sm text-center flex justify-center w-[82px] text-nowrap"> Outline</span>
-                      <span className="text-muted-foreground text-sm text-center flex justify-center w-[72px] text-nowrap"> Ghost</span>
-                      <span className="text-muted-foreground text-sm text-center flex justify-center w-[60px] text-nowrap"> Link</span>
-                    </div>
-                    <span className="flex w-full border-b border-gray-200 border-dashed mx-2"></span>
-                    <div className="flex flex-wrap gap-4">
-                      <span className="text-primary-light text-base flex items-center w-40 text-nowrap"> Default State</span>
-                      <Button variant="default">Primary</Button>
-                      <Button variant="secondary">Secondary</Button>
-                      <Button variant="outline">Outline</Button>
-                      <Button variant="ghost">Ghost</Button>
-                      <Button variant="link">Link</Button>
-                    </div>
-                    <span className="flex w-full border-b border-gray-200 border-dashed mx-2"></span>
-                    <div className="flex flex-wrap gap-4">
-                      <span className="text-primary-light text-base flex items-center w-40 text-nowrap"> Hover State</span>
-                      <Button variant="default" className="bg-primary/90">Primary</Button>
-                      <Button variant="secondary" className="bg-secondary/80 border border-border">Secondary</Button>
-                      <Button variant="outline" className="bg-primary text-white">Outline</Button>
-                      <Button variant="ghost" className="bg-primary text-white">Ghost</Button>
-                      <Button variant="link" className="underline">Link</Button>
-                    </div>
-                    <span className="flex w-full border-b border-gray-200 border-dashed mx-2"></span>
-                    <div className="flex flex-wrap gap-4">
-                      <span className="text-primary-light text-base flex items-center text-nowrap w-40"> Disabled State</span>
-                      <Button variant="default" disabled>Primary</Button>
-                      <Button variant="secondary" disabled>Secondary</Button>
-                      <Button variant="outline" disabled>Outline</Button>
-                      <Button variant="ghost" disabled>Ghost</Button>
-                      <Button variant="link" disabled>Link</Button>
-                    </div>
-                  </div>
-                  <h3 className="text-lg font-medium mb-6 text-card-foreground mt-10">Button Sizes</h3>
-                  <div className="flex flex-wrap items-center gap-4">
-                    <Button size="sm">Small</Button>
-                    <Button size="default">Default</Button>
-                    <Button size="lg">Large</Button>
-                    <Button size="icon" variant="outline" aria-label="Add">
-                      <PlusIcon className="h-4 w-4" />
-                    </Button>
-                  </div>
-                </CardContent>
-              </Card>
-            </TabsContent>
-            <TabsContent value="inputs" className="space-y-6">
-              <Card>
-                <CardContent className="pt-6">
-                  <h3 className="text-lg font-medium mb-4 text-card-foreground">Text Inputs</h3>
-                  <div className="grid md:grid-cols-2 gap-6">
-                    <div className="space-y-2">
-                      <label className="text-sm font-medium text-card-foreground">Default</label>
-                      <input
-                        type="text"
-                        placeholder="Enter your name"
-                        className="w-full px-3 py-2 border border-input rounded-md bg-background text-foreground"
-                      />
-                    </div>
-                    <div className="space-y-2">
-                      <label className="text-sm font-medium text-card-foreground">Disabled</label>
-                      <input
-                        type="text"
-                        disabled
-                        placeholder="Disabled input"
-                        className="w-full px-3 py-2 border border-input rounded-md bg-muted text-muted-foreground"
-                      />
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
-              <Card>
-                <CardContent className="pt-6">
-                  <h2 className="text-lg font-medium mb-2 text-card-foreground">Basic Card</h2>
-                  <p className="text-muted-foreground">This is a basic card component with some content.</p>
-                </CardContent>
-              </Card>
-            </TabsContent>
-            <TabsContent value="cards" className="space-y-6">
-              <div className="grid sm:grid-cols-2 gap-6">
-                <Card>
-                  <CardContent className="pt-6">
-                    <h3 className="text-lg font-medium mb-2 text-card-foreground">Basic Card</h3>
-                    <p className="text-muted-foreground text-sm">
-                      This is a basic card component that can be used to display content.
-                    </p>
-                  </CardContent>
-                </Card>
-                <Card>
-                  <div className="h-32 bg-muted flex items-center justify-center">
-                    <span className="text-muted-foreground">Image Placeholder</span>
-                  </div>
-                  <CardContent className="pt-6">
-                    <h3 className="text-lg font-medium mb-2 text-card-foreground">Card with Image</h3>
-                    <p className="text-muted-foreground text-sm">
-                      This card includes an image placeholder and content below it.
-                    </p>
-                  </CardContent>
-                </Card>
-              </div>
-            </TabsContent>
-          </Tabs>
+         
         
+        <section>
+        
+          <div>
+            <h3 className="text-2xl font-bold mb-4 text-foreground">Input Fields</h3>
+            <p className="text-muted-foreground mb-2">
+            Input fields are used to collect user input. Types of Input Fields:
+            </p>
+
+            <ul className="list-disc list-inside ml-2 mb-6">
+              <li className="mb-1 text-muted-foreground"><span className="text-primary-light text-bold">Single Line:</span> Single line input field.</li>
+              <li className="mb-1 text-muted-foreground"><span className="text-primary-light text-bold">Multi Line:</span> Multi line input field.</li>
+              <li className="mb-1 text-muted-foreground"><span className="text-primary-light text-bold">Number:</span> Number input field.</li>
+              <li className="mb-1 text-muted-foreground"><span className="text-primary-light text-bold">Date:</span> Date input field.</li>
+              <li className="mb-1 text-muted-foreground"><span className="text-primary-light text-bold">Time:</span> Time input field.</li>
+            </ul>
+          </div>
+                  
+          <Card>
+            <CardContent>
+              <h3 className="text-lg font-medium mb-6 text-card-foreground mt-8">Input Variants</h3>
+              <div className="flex flex-col  gap-4">
+                <div className="flex flex-row gap-6 items-center w-full ">
+                    <div className="w-1/2">
+                      <Input placeholder="Single Line" />
+                    </div>
+                    <div className="w-1/2">
+                      <Input placeholder="Multi Line" />
+                    </div>
+                </div>
+                <div className="flex flex-row gap-6 items-center w-full">
+                    <div className="w-1/2">
+                      <Input placeholder="Number" />
+                    </div>
+                    <div className="w-1/2">
+                      <Input placeholder="Date" />
+                    </div>
+                </div>
+                
+              </div>    
+            </CardContent>
+          </Card>
+        </section>
+        
+        <div className="text-center mt-16">
+            <h2 className="text-xl font-bold mb-4 text-primary">Interested in working together?</h2>
+            <Button asChild className="bg-accent hover:bg-accent-hover text-white">
+              <a href="/#contact">Contact Me</a>
+            </Button>
+        </div>
+                  
       
     </ProjectLayout>
   );

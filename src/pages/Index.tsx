@@ -10,6 +10,7 @@ import { useEffect } from "react";
 
 const Index = () => {
   useEffect(() => {
+
     // Animation on scroll
     const callback = (entries: IntersectionObserverEntry[]) => {
       entries.forEach(entry => {
@@ -32,7 +33,7 @@ const Index = () => {
   return (
     <main className="min-h-screen bg-background ">
       <Navbar />
-      <div className="flex flex-col ">
+      <div className="flex flex-col max-w-6xl mx-auto ">
       <Hero />
       <Projects />
       <About />

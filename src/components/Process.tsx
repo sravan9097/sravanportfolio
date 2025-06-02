@@ -1,27 +1,27 @@
 
-import { ClipboardCheck, Search, PenTool, Layers } from "lucide-react";
+
 
 const Process = () => {
   const processSteps = [
     {
-      icon: Search,
-      title: "Research",
-      description: "Understanding the problem space through user research, competitive analysis, and stakeholder interviews."
+      icon: '/check.svg',
+      title: "Consistency",
+      description: "Design systems unify UI elements—colors, typography, spacing, and components—so products look and behave the same everywhere. This builds trust and improves usability."
     },
     {
-      icon: ClipboardCheck,
-      title: "Define",
-      description: "Creating user personas, journey maps, and defining requirements to guide the design process."
+      icon: '/lightning.svg',
+      title: "Efficiency",
+      description: "With reusable components and guidelines, teams design and build faster. No need to start from scratch every time—just plug, play, and customize."
     },
     {
-      icon: PenTool,
-      title: "Design",
-      description: "Ideating, sketching, wireframing, and creating high-fidelity mockups with iterative feedback."
+      icon: '/sync.svg',
+      title: "Collaboration",
+      description: "Design systems create a shared language between designers, developers, and product teams. Everyone knows what a button or card means—no guesswork."
     },
     {
-      icon: Layers,
-      title: "Deliver",
-      description: "Prototyping, user testing, and handing off design specifications to development teams."
+      icon: '/scale.svg',
+      title: " Scalability",
+      description: "As products grow, a system ensures they scale smoothly. Whether it’s a new feature, app, or platform, the foundation stays consistent and flexible."
     },
   ];
 
@@ -38,9 +38,9 @@ const Process = () => {
           <div className="grid md:grid-cols-4 gap-8">
             {processSteps.map((step, index) => (
               <div key={index} className="relative z-10">
-                <div className="bg-card p-6 rounded-xl border border-border shadow-sm">
-                  <div className="w-12 h-12 bg-accent/10 rounded-full flex items-center justify-center mb-4 mx-auto">
-                    <step.icon className="w-6 h-6 text-accent" />
+                <div className="bg-card p-6 rounded-xl border border-border shadow-sm h-full">
+                  <div className="w-12 h-12 bg-white rounded-lg flex items-center justify-center mb-4 mx-auto">
+                    <img src={step.icon} alt={step.title} className="w-10 h-10" />
                   </div>
                   <h3 className="text-lg font-bold mb-2 text-foreground text-center">{step.title}</h3>
                   <p className="text-muted-foreground text-sm text-center">{step.description}</p>

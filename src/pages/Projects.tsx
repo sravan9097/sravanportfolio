@@ -53,7 +53,7 @@ const Projects = () => {
   return (
     <div className="min-h-screen bg-background">
       <Navbar />
-      <div className="container mx-auto pt-32 pb-16 px-4">
+      <div className=" max-w-5xl container mx-auto pt-32 pb-16 px-4">
         <Breadcrumb className="mb-8">
           <BreadcrumbList>
             <BreadcrumbItem>
@@ -68,7 +68,7 @@ const Projects = () => {
           </BreadcrumbList>
         </Breadcrumb>
 
-        <div className="max-w-7xl mx-auto">
+        <div className="max-w-5xl mx-auto">
           <h1 className="text-4xl font-bold mb-4 text-foreground">All Projects</h1>
           <p className="text-lg text-muted-foreground mb-12">
             Explore my complete collection of design work and case studies.

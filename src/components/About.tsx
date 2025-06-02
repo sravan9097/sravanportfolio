@@ -1,5 +1,5 @@
 
-import { Code, PenTool, Lightbulb, Layers } from "lucide-react";
+import { Code, PenTool, Lightbulb, Layers, Figma, Dribbble } from "lucide-react";
 
 const About = () => {
   const skills = [
@@ -32,13 +32,21 @@ const About = () => {
           <div>
             <h2 className="text-3xl font-bold mb-6 text-primary">About Me</h2>
             <p className="text-primary-light mb-4">
-            I’ve had an unconventional journey into product design, beginning as a video editor and growing into a system-oriented designer through hands-on problem solving. 
-            Over the years, I’ve worked across startups and large platforms—leading design, creating scalable systems, optimizing flows, and shipping impactful features.
+            I’ve had an unconventional journey into product design, beginning as a video editor and growing into a system oriented designer through hands-on problem solving. 
+            Over the years, I’ve worked across startups and large platforms leading design, creating scalable systems, optimizing flows, and shipping impactful features.
             </p>
             <p className="text-primary-light mb-6">
-            My strength lies in turning chaos into structure—whether it’s through a robust design system or simplifying a messy user journey. 
+            My strength lies in turning chaos into structure whether it’s through a robust design system or simplifying a messy user journey. 
             Currently, I'm the sole designer at BeautifulCode, leading product design for two internal platforms.
             </p>
+            <div className="flex flex-row items-center gap-4 mb-6">
+              <a href="https://www.figma.com/@sravan" target="_blank" className="bg-accent/10 p-3 rounded-full hover:bg-accent/20 transition-colors">
+                    <Figma className="w-5 h-5 text-accent" />
+              </a>
+              <a href="https://www.dribbble.com/@sra1van" target="_blank" className="bg-accent/10 p-3 rounded-full hover:bg-accent/20 transition-colors">
+                    <Dribbble className="w-5 h-5 text-accent" />
+              </a>
+            </div>
             <div className="grid grid-cols-2 gap-4 text-sm">
               <div>
                 <h3 className="font-medium mb-2 text-primary">Tools & Softwares</h3>

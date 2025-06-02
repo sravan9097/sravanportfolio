@@ -1,6 +1,6 @@
 
 import { Button } from "@/components/ui/button";
-import { Mail, Phone, MapPin, Linkedin, Twitter, Dribbble } from "lucide-react";
+import { Mail, Phone, MapPin, Linkedin, Twitter, Dribbble, Instagram, Figma } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 import { useState } from "react";
 import { supabase } from "@/integrations/supabase/client";
@@ -142,13 +142,16 @@ const Contact = () => {
               <div className="pt-6">
                 <h3 className="font-medium text-primary mb-3">Connect</h3>
                 <div className="flex gap-4">
-                  <a href="#" className="bg-accent/10 p-3 rounded-full hover:bg-accent/20 transition-colors">
+                  <a href="https://www.figma.com/@sravan" target="_blank" className="bg-accent/10 p-3 rounded-full hover:bg-accent/20 transition-colors">
+                    <Figma className="w-5 h-5 text-accent" />
+                  </a>
+                  <a href="https://www.linkedin.com/in/sravankumar9092/" target="_blank" className="bg-accent/10 p-3 rounded-full hover:bg-accent/20 transition-colors">
                     <Linkedin className="w-5 h-5 text-accent" />
                   </a>
-                  <a href="#" className="bg-accent/10 p-3 rounded-full hover:bg-accent/20 transition-colors">
-                    <Twitter className="w-5 h-5 text-accent" />
+                  <a href="https://instagram.com/sravan_photography" target="_blank" className="bg-accent/10 p-3 rounded-full hover:bg-accent/20 transition-colors">
+                    <Instagram className="w-5 h-5 text-accent" />
                   </a>
-                  <a href="#" className="bg-accent/10 p-3 rounded-full hover:bg-accent/20 transition-colors">
+                  <a href="https://dribbble.com/sra1van" target="_blank" className="bg-accent/10 p-3 rounded-full hover:bg-accent/20 transition-colors">
                     <Dribbble className="w-5 h-5 text-accent" />
                   </a>
                 </div>

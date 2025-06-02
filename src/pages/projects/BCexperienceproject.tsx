@@ -12,16 +12,13 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
+import ProjectLayout from "@/components/ProjectLayout";
 
+  
 const bcexperienceproject = () => {
   return (
-    <div className="min-h-screen bg-background">
-      <Navbar />
-      <div className="container mx-auto max-w-4xl pt-32 pb-16 px-4">
-        <Link to="/#projects" className="inline-flex items-center text-accent hover:underline mb-8">
-          <ArrowLeft className="mr-2 h-5 w-5" /> Back to projects
-        </Link>
-        
+    <ProjectLayout projectTitle="BC Experience App">
+      
         {/* Hero Section */}
         <div className="mb-12">
           <span className="text-sm font-medium text-accent uppercase tracking-wider">UX Design & Development </span>
@@ -503,9 +500,9 @@ const bcexperienceproject = () => {
             <a href="/#contact">Contact Me</a>
           </Button>
         </div>
-      </div>
-      <Footer />
-    </div>
+      
+   
+    </ProjectLayout>
   );
 };
 

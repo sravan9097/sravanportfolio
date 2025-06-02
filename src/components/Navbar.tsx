@@ -74,7 +74,7 @@ const Navbar = () => {
 
         {/* Desktop navigation */}
         <div className="hidden md:flex items-center space-x-8">
-          <button onClick={() => scrollToSection('projects')} className="text-foreground hover:text-accent transition-colors">
+          <button onClick={() => navigate('/projects')} className="text-foreground hover:text-accent transition-colors">
             Projects
           </button>
           <button onClick={() => scrollToSection('about')} className="text-foreground hover:text-accent transition-colors">
@@ -129,9 +129,8 @@ const Navbar = () => {
           </button>
           
           <a 
-            href="/sravan-kumar-resume.pdf" 
+            href="https://pmvzymjpjwnmtmvccqxh.supabase.co/storage/v1/object/public/files//Sravan%20Kumar%20M%20-%20Sr%20UX%20Designer%20.pdf" 
             target="_blank" 
-            rel="noopener noreferrer" 
             className="bg-primary text-primary-foreground hover:bg-primary/90 px-4 py-2 rounded"
           >
             Resume

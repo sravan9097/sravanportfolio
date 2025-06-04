@@ -11,25 +11,23 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
+import ProjectLayout from "@/components/ProjectLayout";
 
-const FinanceAppProject = () => {
+const ShareChatLeadGenerationProject = () => {
   return (
+    <ProjectLayout projectTitle="ShareChat Lead Generation">  
     <div className="min-h-screen bg-background">
-      <Navbar />
-      <div className="container mx-auto pt-32 pb-16 px-4">
-        <Link to="/#projects" className="inline-flex items-center text-accent hover:underline mb-8">
-          <ArrowLeft className="mr-2 h-5 w-5" /> Back to projects
-        </Link>
+      
+      
         
         {/* Hero Section */}
         <div className="mb-12">
           <span className="text-sm font-medium text-accent uppercase tracking-wider">UX Design</span>
-          <h1 className="text-4xl md:text-5xl font-bold mt-2 mb-6 text-primary">Mobile Banking App</h1>
-          
+          <h1 className="text-4xl md:text-5xl font-bold mt-2 mb-6 text-primary">Designing Lead Generation Feature for ShareChat</h1>
           <div className="aspect-[16/9] w-full overflow-hidden rounded-lg mb-10">
             <img 
               src="https://images.unsplash.com/photo-1563986768609-322da13575f3" 
-              alt="Mobile Banking App" 
+              alt="ShareChat Lead Generation" 
               className="w-full h-full object-cover" 
             />
           </div>
@@ -279,8 +277,8 @@ const FinanceAppProject = () => {
         </div>
       </div>
       <Footer />
-    </div>
-  );
+    </ProjectLayout>
+    );
 };
 
-export default FinanceAppProject;
+export default ShareChatLeadGenerationProject;

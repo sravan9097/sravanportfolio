@@ -7,7 +7,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
 import Projects from "./pages/Projects";
 import ProjectNotFound from "./components/ProjectNotFound";
-import FinanceAppProject from "./pages/projects/FinanceAppProject";
+import ShareChatLeadGenerationProject from "./pages/projects/ShareChatLeadGenerationProject";
 import FitnessTrackerProject from "./pages/projects/FitnessTrackerProject";
 import BCExperienceProject from "./pages/projects/BCexperienceproject";
 import TravelAppProject from "./pages/projects/TravelAppProject";
@@ -36,7 +36,7 @@ const App = () => (
             <Route path="/" element={<Index />} />
             <Route path="/about" element={<Index />} />
             <Route path="/projects" element={<Projects />} />
-            <Route path="/project/finance-app" element={<FinanceAppProject />} />
+            <Route path="/project/sharechat" element={<ShareChatLeadGenerationProject />} />
             <Route path="/project/fitness-tracker" element={<FitnessTrackerProject />} />
             <Route path="/project/bcexperienceproject" element={<BCExperienceProject />} />
             <Route path="/project/travel-app" element={<TravelAppProject />} />

@@ -19,9 +19,9 @@ const Projects = () => {
       category: "UX Research & Design"
     },
     {
-      id: "finance-app",
-      title: "Mobile Banking App",
-      description: "Redesigning the user experience for a digital banking platform focusing on accessibility and ease of use.",
+      id: "sharechat",
+      title: "Designing Lead Generation Feature for ShareChat",
+      description: "Designing a lead generation feature for ShareChat.",
       image: "https://images.unsplash.com/photo-1563986768609-322da13575f3",
       category: "UX Design"
     },

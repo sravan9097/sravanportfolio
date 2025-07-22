@@ -22,7 +22,7 @@ const ProjectLayout = ({ children, projectTitle }: ProjectLayoutProps) => {
   return (
     <div className="min-h-screen bg-background">
       <Navbar />
-      <div className="container mx-auto max-w-5xl pt-32 pb-16 px-4">
+      <div className="container mx-auto max-w-5xl pt-32 pb-16">
         <Breadcrumb className="mb-6">
           <BreadcrumbList>
             <BreadcrumbItem>
@@ -43,9 +43,9 @@ const ProjectLayout = ({ children, projectTitle }: ProjectLayoutProps) => {
           </BreadcrumbList>
         </Breadcrumb>
         
-        <Link to="/projects" className="inline-flex items-center text-accent hover:underline mb-8">
+        {/* <Link to="/projects" className="inline-flex items-center text-accent hover:underline mb-8">
           <ArrowLeft className="mr-2 h-5 w-5" /> Back to projects
-        </Link>
+        </Link> */}
         
         {children}
       </div>

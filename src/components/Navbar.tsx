@@ -1,5 +1,5 @@
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { Button } from "@/components/ui/button";
 import { Menu, X, Moon, Sun } from "lucide-react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
@@ -11,6 +11,8 @@ const Navbar = () => {
   const navigate = useNavigate();
   const isHomePage = location.pathname === '/';
   const { theme, setTheme } = useTheme();
+
+  const mobileMenuRef = useRef<HTMLDivElement>(null);
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -42,14 +44,20 @@ const Navbar = () => {
   // Close mobile menu when clicking outside
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
-      const target = event.target as HTMLElement;
-      if (isMenuOpen && !target.closest('nav')) {
+      if (mobileMenuRef.current && !mobileMenuRef.current.contains(event.target as Node)) {
         setIsMenuOpen(false);
       }
     };
 
-    document.addEventListener('click', handleClickOutside);
-    return () => document.removeEventListener('click', handleClickOutside);
+    if (isMenuOpen) {
+      document.addEventListener('mousedown', handleClickOutside);
+    } else {
+      document.removeEventListener('mousedown', handleClickOutside);
+    }
+
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
   }, [isMenuOpen]);
 
   return (
@@ -86,10 +94,9 @@ const Navbar = () => {
         </div>
 
         {/* Mobile menu */}
-        {isMenuOpen && (
-          <div className="absolute top-full left-0 w-full bg-card/95 backdrop-blur-md shadow-md py-4 md:hidden">
+        <div ref={mobileMenuRef} className={`absolute top-full left-0 w-full bg-card/95 backdrop-blur-md shadow-md py-4 md:hidden transition-all duration-300 ease-in-out ${isMenuOpen ? 'max-h-screen opacity-100 visible' : 'max-h-0 opacity-0 invisible overflow-hidden'}`}>
             <div className="flex flex-col space-y-4 px-4">
-              <button onClick={() => scrollToSection('projects')} className="text-foreground hover:text-accent transition-colors py-2 text-left">
+              <button onClick={() => { setIsMenuOpen(false); navigate('/projects'); }} className="text-foreground hover:text-accent transition-colors py-2 text-left">
                 Projects
               </button>
               <button onClick={() => scrollToSection('about')} className="text-foreground hover:text-accent transition-colors py-2 text-left">
@@ -113,7 +120,6 @@ const Navbar = () => {
               </button>
             </div>
           </div>
-        )}
 
         <div className="hidden md:flex items-center space-x-4">
           <button 
@@ -128,13 +134,12 @@ const Navbar = () => {
             )}
           </button>
           
-          <a 
-            href="https://pmvzymjpjwnmtmvccqxh.supabase.co/storage/v1/object/public/files//Sravan%20Kumar%20M%20-%20Sr%20UX%20Designer%20.pdf" 
-            target="_blank" 
-            className="bg-primary text-primary-foreground hover:bg-primary/90 px-4 py-2 rounded"
+          <button 
+            onClick={() => window.open("https://pmvzymjpjwnmtmvccqxh.supabase.co/storage/v1/object/public/files//Sravan%20Kumar%20M%20-%20Sr%20UX%20Designer%20.pdf", "_blank")}
+            className="bg-primary text-[#fff] hover:bg-primary/90 px-4 py-2 rounded"
           >
             Resume
-          </a>
+          </button>
         </div>
       </div>
     </nav>

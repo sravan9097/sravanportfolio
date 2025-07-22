@@ -15,24 +15,32 @@ const Projects = () => {
   const allProjects = [
     {
       id: "design-system",
-      title: "Design System",
+      title: "What is Design System?",
       description: "A comprehensive design system with components, colors, typography and design guidelines.",
       image: "/Hero_Images/designsystemhero.png",
-      category: "UI/UX Design"
+      category: "Design System"
+    },
+    {
+      id: "beautifulcode-revamp",
+      title: "BeautifulCode Website Revamp",
+      description: "A calm, minimal, and geek-friendly website for BeautifulCode, reflecting deep engineering culture and thought leadership.",
+      image: "/bcwebsite/beautifulcodeCover.png", // Replace with actual image when available
+      category: "Case Study"
+    },
+   
+    {
+      id: "sharechat",
+      title: "Designing Lead Generation Feature for ShareChat", 
+      description: "Designing a lead generation feature for ShareChat.",
+      image: "https://images.unsplash.com/photo-1563986768609-322da13575f3",
+      category: "UX/UI Design"
     },
     {
       id: "bcexperienceproject", 
       title: "Building BeautifulCode Experience App",
       description: "Transforming an e-commerce platform with a focus on conversion optimization and user flow.",
       image: "/Hero_Images/BC_experience_cover.png",
-      category: "UX Research & Design"
-    },
-    {
-      id: "sharechat",
-      title: "Designing Lead Generation Feature for ShareChat", 
-      description: "Designing a lead generation feature for ShareChat.",
-      image: "https://images.unsplash.com/photo-1563986768609-322da13575f3",
-      category: "UX Design"
+      category: "UX/UI Design"
     },
     {
       id: "fitness-tracker",
@@ -53,7 +61,7 @@ const Projects = () => {
   return (
     <div className="min-h-screen bg-background">
       <Navbar />
-      <div className=" max-w-5xl container mx-auto pt-32 pb-16 px-4">
+      <div className=" max-w-5xl container mx-auto pt-32 pb-16">
         <Breadcrumb className="mb-8">
           <BreadcrumbList>
             <BreadcrumbItem>

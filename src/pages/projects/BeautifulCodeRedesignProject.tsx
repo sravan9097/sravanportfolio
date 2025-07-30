@@ -337,6 +337,24 @@ const BeautifulCodeRedesignProject = () => {
               I designed the site to be fully responsive, knowing that many first-time visitors — especially external leadership — may land on mobile.
             </p>
 
+            <div className="my-8 bg-white border border-blue-200 rounded-lg p-4">
+                <div className="flex items-center">
+                 
+                  <div className="flex flex-row gap-2">
+                    <p className="text-base text-foreground font-normal">This is the main Figma project file where I have everything documented in detail.</p>
+                    <a 
+                      href="https://www.figma.com/community/file/1531452240079073955/beautifulcode-website-redesign-a-geeky-developer-first-experience" 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+
+                      className="text-base text-blue-600 hover:text-blue-800 hover:underline"
+                    >
+                      View detailed documentation →
+                    </a>
+                  </div>
+                </div>
+              </div> 
+
             {/* Desktop Screens */}
             <div className="mb-8">
               <h3 className="text-xl font-semibold mb-4 text-foreground">Desktop Screens</h3>

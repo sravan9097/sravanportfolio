@@ -25,15 +25,15 @@ const Projects = () => {
       title: "BeautifulCode Website Revamp",
       description: "A calm, minimal, and geek-friendly website for BeautifulCode, reflecting deep engineering culture and thought leadership.",
       image: "/bcwebsite/beautifulcodeCover.png", // Replace with actual image when available
-      category: "Case Study"
+      category: "UX/UI Design"
     },
    
     {
       id: "sharechat",
       title: "Designing Lead Generation Feature for ShareChat", 
       description: "Designing a lead generation feature for ShareChat.",
-      image: "https://images.unsplash.com/photo-1563986768609-322da13575f3",
-      category: "UX/UI Design"
+      image: "/Hero_Images/sharechatCover.png",
+      category: "Case Study"
     },
     {
       id: "bcexperienceproject", 

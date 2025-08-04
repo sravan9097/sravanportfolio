@@ -337,6 +337,24 @@ const BeautifulCodeRedesignProject = () => {
               I designed the site to be fully responsive, knowing that many first-time visitors — especially external leadership — may land on mobile.
             </p>
 
+            <div className="my-8 bg-white border border-blue-200 rounded-lg p-4">
+                <div className="flex items-center">
+                 
+                  <div className="flex flex-row gap-2">
+                    <p className="text-base text-foreground font-normal">This is the main Figma project file where I have everything documented in detail.</p>
+                    <a 
+                      href="https://www.figma.com/community/file/1531452240079073955/beautifulcode-website-redesign-a-geeky-developer-first-experience" 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+
+                      className="text-base text-blue-600 hover:text-blue-800 hover:underline"
+                    >
+                      View detailed documentation →
+                    </a>
+                  </div>
+                </div>
+              </div> 
+
             {/* Desktop Screens */}
             <div className="mb-8">
               <h3 className="text-xl font-semibold mb-4 text-foreground">Desktop Screens</h3>
@@ -587,12 +605,12 @@ function MobileScreensSlideshow() {
       <Carousel setApi={setApi} opts={{ loop: true, align: "start", slidesToScroll: 1 }} className="w-full">
         <CarouselContent className="-ml-4">
           {mobileScreens.map((screen, idx) => (
-            <CarouselItem key={idx} className="pl-4 basis-1/2 md:basis-1/3 lg:basis-1/4">
-              <div className="flex flex-col items-center justify-center p-2">
+            <CarouselItem key={idx} className="pl-4 basis-1/2 md:basis-1/3 lg:basis-1/4 pb-2">
+              <div className="flex flex-col items-center justify-center p-1 rounded-xl border border-gray-200 shadow-md">
                 <img
                   src={screen.src}
                   alt={screen.alt}
-                  className="w-full h-auto object-contain min-h-80"
+                  className="w-full h-auto object-contain min-h-80 rounded-lg"
                   draggable={false}
                 />
                 {/* <p className="text-sm text-muted-foreground text-center max-w-xs mt-2">

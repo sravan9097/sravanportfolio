@@ -5,13 +5,6 @@ import { Link } from "react-router-dom";
 const Projects = () => {
   const projects = [
     {
-      id: "beautifulcode-revamp",  
-      title: "BeautifulCode Website Revamp",
-      description: "Creating a calm, minimal, and geek-friendly website for BeautifulCode, reflecting deep engineering culture and thought leadership.",
-      image: "/bcwebsite/beautifulcodeCover.png",
-      category: "UX/UI Design"
-    },
-    {
       id: "design-system",
       title: "What is Design System?",
       description: "A comprehensive design system with components, colors, typography and design guidelines.",
@@ -19,10 +12,18 @@ const Projects = () => {
       category: "Design System"
     },
     {
-      id: "bcexperienceproject",
-      title: "Building BeautifulCode Experience App",
-      description: "Transforming an e-commerce platform with a focus on conversion optimization and user flow.",
-      image: "/Hero_Images/BC_experience_cover.png",
+      id: "beautifulcode-revamp",  
+      title: "BeautifulCode Website Revamp",
+      description: "Creating a calm, minimal, and geek-friendly website for BeautifulCode, reflecting deep engineering culture and thought leadership.",
+      image: "/bcwebsite/beautifulcodeCover.png",
+      category: "UX/UI Design"
+    },
+    
+    {
+      id: "sharechat",
+      title: "Designing Lead Generation Feature for ShareChat",
+      description: "Designing a lead generation feature for ShareChat.",
+      image: "/Hero_Images/sharechatCover.png",
       category: "UX/UI Design"
     }
   ];

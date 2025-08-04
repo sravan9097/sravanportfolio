@@ -4,17 +4,30 @@ import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Index from "./pages/Index";
-import Projects from "./pages/Projects";
+import { lazy, Suspense, useState, useEffect } from "react";
 import ProjectNotFound from "./components/ProjectNotFound";
-import ShareChatLeadGenerationProject from "./pages/projects/ShareChatLeadGenerationProject";
-import FitnessTrackerProject from "./pages/projects/FitnessTrackerProject";
-import BCExperienceProject from "./pages/projects/BCexperienceproject";
-import TravelAppProject from "./pages/projects/TravelAppProject";
-import DesignSystemProject from "./pages/projects/DesignSystemProject";
-import ProjectDetailPage from "./pages/projects/[projectid]";
 import { ThemeProvider } from "./components/ThemeProvider";
 import ScrollToTop from "./components/ui/ScrollToTop";
+import { PerformanceMonitor } from "./components/PerformanceMonitor";
+import { OfflinePage } from "./components/OfflinePage";
+import { useNetworkStatus } from "./hooks/useNetworkStatus";
+
+// Lazy load pages for code splitting
+const Index = lazy(() => import("./pages/Index"));
+const Projects = lazy(() => import("./pages/Projects"));
+const ShareChatLeadGenerationProject = lazy(() => import("./pages/projects/ShareChatLeadGenerationProject"));
+const FitnessTrackerProject = lazy(() => import("./pages/projects/FitnessTrackerProject"));
+const BCExperienceProject = lazy(() => import("./pages/projects/BCexperienceproject"));
+const TravelAppProject = lazy(() => import("./pages/projects/TravelAppProject"));
+const DesignSystemProject = lazy(() => import("./pages/projects/DesignSystemProject"));
+const ProjectDetailPage = lazy(() => import("./pages/projects/[projectid]"));
+
+// Loading component
+const LoadingSpinner = () => (
+  <div className="flex items-center justify-center min-h-screen">
+    <div className="animate-spin rounded-full h-32 w-32 border-b-2 border-accent"></div>
+  </div>
+);
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -25,25 +38,51 @@ const queryClient = new QueryClient({
   },
 });
 
-const App = () => (
-  <QueryClientProvider client={queryClient}>
-    <ThemeProvider>
-      <TooltipProvider>
-        <Toaster />
-        <Sonner />
-          <BrowserRouter>
-          <ScrollToTop />
-          <Routes>
-            <Route path="/" element={<Index />} />
-            <Route path="/about" element={<Index />} />
-            <Route path="/projects" element={<Projects />} />
-            <Route path="/project/:projectid" element={<ProjectDetailPage />} />
-            <Route path="/project/*" element={<ProjectNotFound />} />
-          </Routes>
-        </BrowserRouter>
-      </TooltipProvider>
-    </ThemeProvider>
-  </QueryClientProvider>
-);
+const App = () => {
+  const { isOnline } = useNetworkStatus();
+  const [showOfflinePage, setShowOfflinePage] = useState(false);
+
+  useEffect(() => {
+    // Show offline page after a brief delay to avoid flashing
+    const timer = setTimeout(() => {
+      setShowOfflinePage(!isOnline);
+    }, 1000);
+
+    return () => clearTimeout(timer);
+  }, [isOnline]);
+
+  // Show offline page when offline
+  if (showOfflinePage) {
+    return (
+      <ThemeProvider>
+        <OfflinePage onRetry={() => window.location.reload()} />
+      </ThemeProvider>
+    );
+  }
+
+  return (
+    <QueryClientProvider client={queryClient}>
+      <ThemeProvider>
+        <TooltipProvider>
+          <PerformanceMonitor />
+          <Toaster />
+          <Sonner />
+            <BrowserRouter>
+            <ScrollToTop />
+            <Suspense fallback={<LoadingSpinner />}>
+              <Routes>
+                <Route path="/" element={<Index />} />
+                <Route path="/about" element={<Index />} />
+                <Route path="/projects" element={<Projects />} />
+                <Route path="/project/:projectid" element={<ProjectDetailPage />} />
+                <Route path="/project/*" element={<ProjectNotFound />} />
+              </Routes>
+            </Suspense>
+          </BrowserRouter>
+        </TooltipProvider>
+      </ThemeProvider>
+    </QueryClientProvider>
+  );
+};
 
 export default App;

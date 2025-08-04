@@ -1,6 +1,7 @@
 
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
+import { LazyImage } from "@/components/ui/LazyImage";
 
 const Projects = () => {
   const projects = [
@@ -41,7 +42,7 @@ const Projects = () => {
               <Link to={`/project/${project.id}`}>
                 <div className="bg-card rounded-xl border border-border overflow-hidden hover:shadow-lg transition-shadow">
                   <div className="w-full">
-                    <img 
+                    <LazyImage 
                       src={project.image} 
                       alt={project.title} 
                       className="w-full h-full object-cover transition-transform duration-300 hover:scale-105" 

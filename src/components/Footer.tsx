@@ -1,6 +1,7 @@
 
 import { useLocation, useNavigate } from "react-router-dom";
 import { ArrowUp } from "lucide-react";
+import { CacheStatusIndicator } from "./CacheStatusIndicator";
 
 const Footer = () => {
   const location = useLocation();
@@ -71,8 +72,13 @@ const Footer = () => {
           </div>
         </div>
         
-        <div className="border-t border-border mt-8 pt-8 text-center text-sm text-muted-foreground">
-          <p>© {new Date().getFullYear()} Sravan Kumar Mulugurthy. All rights reserved.</p>
+        <div className="border-t border-border mt-8 pt-8">
+          <div className="flex flex-col md:flex-row justify-between items-center gap-4">
+            <p className="text-sm text-muted-foreground">
+              © {new Date().getFullYear()} Sravan Kumar Mulugurthy. All rights reserved.
+            </p>
+            <CacheStatusIndicator />
+          </div>
         </div>
       </div>
     </footer>

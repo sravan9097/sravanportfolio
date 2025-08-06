@@ -15,11 +15,6 @@ import { useNetworkStatus } from "./hooks/useNetworkStatus";
 // Lazy load pages for code splitting
 const Index = lazy(() => import("./pages/Index"));
 const Projects = lazy(() => import("./pages/Projects"));
-const ShareChatLeadGenerationProject = lazy(() => import("./pages/projects/ShareChatLeadGenerationProject"));
-const FitnessTrackerProject = lazy(() => import("./pages/projects/FitnessTrackerProject"));
-const BCExperienceProject = lazy(() => import("./pages/projects/BCexperienceproject"));
-const TravelAppProject = lazy(() => import("./pages/projects/TravelAppProject"));
-const DesignSystemProject = lazy(() => import("./pages/projects/DesignSystemProject"));
 const ProjectDetailPage = lazy(() => import("./pages/projects/[projectid]"));
 
 // Loading component

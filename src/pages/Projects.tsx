@@ -21,6 +21,20 @@ const Projects = () => {
       category: "Design System"
     },
     {
+      id: "design-tokens-naming",
+      title: "Naming Design Tokens: A Vital Step in the Design System Journey",
+      description: "A comprehensive guide to naming design tokens effectively for better design system communication and collaboration.",
+      image: "/Hero_Images/naming-design-tokens.webp",
+      category: "Design System"
+    },
+    {
+      id: "mcp-design-code-bridge",
+      title: "Bridging Design & Code in the Age of AI: How MCP Turns Your Design System into a Live-Synced Developer Guide",
+      description: "Learn how Model Context Protocol (MCP) creates a real-time bridge between design systems and development, enabling AI-powered tools to maintain perfect design-to-code consistency.",
+      image: "/Hero_Images/figmamcpCover.webp",
+      category: "Design System"
+    },
+    {
       id: "beautifulcode-revamp",
       title: "BeautifulCode Website Revamp",
       description: "A calm, minimal, and geek-friendly website for BeautifulCode, reflecting deep engineering culture and thought leadership.",
@@ -41,20 +55,6 @@ const Projects = () => {
       description: "Transforming an e-commerce platform with a focus on conversion optimization and user flow.",
       image: "/Hero_Images/BC_experience_cover.png",
       category: "UX/UI Design"
-    },
-    {
-      id: "fitness-tracker",
-      title: "Fitness Tracker Dashboard",
-      description: "Creating an intuitive dashboard for users to track their fitness goals and progress.",
-      image: "https://images.unsplash.com/photo-1434494878577-86c23bcb06b9", 
-      category: "UI/UX Design"
-    },
-    {
-      id: "travel-app",
-      title: "Travel Planning App",
-      description: "A comprehensive travel planning application with booking features and itinerary management.",
-      image: "https://images.unsplash.com/photo-1488646953014-85cb44e25828",
-      category: "Mobile Design"
     }
   ];
 

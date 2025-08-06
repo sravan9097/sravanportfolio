@@ -4,16 +4,16 @@ import BeautifulCodeRedesignProject from "./BeautifulCodeRedesignProject";
 import DesignSystemProject from "./DesignSystemProject";
 import bcexperienceproject from "./BCexperienceproject";
 import ShareChatLeadGenerationProject from "./ShareChatLeadGenerationProject";
-import FitnessTrackerProject from "./FitnessTrackerProject";
-import TravelAppProject from "./TravelAppProject";
+import DesignTokenNamingArticle from "./DesignTokenNamingArticle";
+import MCPDesignCodeBridgeArticle from "./MCPDesignCodeBridgeArticle";
 
 const projectComponents: Record<string, React.FC> = {
   "design-system": DesignSystemProject,
+  "design-tokens-naming": DesignTokenNamingArticle,
+  "mcp-design-code-bridge": MCPDesignCodeBridgeArticle,
   "beautifulcode-revamp": BeautifulCodeRedesignProject,
   "bcexperienceproject": bcexperienceproject,
-  "sharechat": ShareChatLeadGenerationProject,
-  "fitness-tracker": FitnessTrackerProject,
-  "travel-app": TravelAppProject,
+  "sharechat": ShareChatLeadGenerationProject
 };
 
 const ProjectDetailPage: React.FC = () => {

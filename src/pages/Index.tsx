@@ -32,9 +32,9 @@ const Index = () => {
   }, []);
 
   return (
-    <main className="min-h-screen bg-background ">
+    <main className="min-h-screen bg-background">
       <Navbar />
-      <div className="flex flex-col max-w-6xl mx-auto ">
+      <div className="flex flex-col container-padded max-w-6xl">
       <Hero />
       <Projects />
       <FigmaFiles />

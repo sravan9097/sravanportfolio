@@ -42,8 +42,8 @@ const Process = () => {
                   <div className="w-12 h-12 bg-white rounded-lg flex items-center justify-center mb-4 mx-auto">
                     <img src={step.icon} alt={step.title} className="w-10 h-10" />
                   </div>
-                  <h3 className="text-lg font-bold mb-2 text-foreground text-center">{step.title}</h3>
-                  <p className="text-muted-foreground text-sm text-center">{step.description}</p>
+                  <h3 className="text-xl font-bold mb-2 text-foreground text-center">{step.title}</h3>
+                  <p className="text-muted-foreground text-base text-center">{step.description}</p>
                 </div>
               </div>
             ))}

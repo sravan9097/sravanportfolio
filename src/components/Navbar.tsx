@@ -135,7 +135,7 @@ const Navbar = () => {
           </button>
           
           <button 
-            onClick={() => window.open("https://pmvzymjpjwnmtmvccqxh.supabase.co/storage/v1/object/public/files//Sravan%20Kumar%20M%20-%20Sr%20UX%20Designer%20.pdf", "_blank")}
+            onClick={() => window.open("https://drive.google.com/file/d/1JaGLKGczaqfxbIG8t4QrTbZ4jn2GkgfW/view?usp=sharing", "_blank")}
             className="bg-primary text-[#fff] hover:bg-primary/90 px-4 py-2 rounded"
           >
             Resume

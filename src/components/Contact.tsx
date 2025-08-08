@@ -47,14 +47,18 @@ const Contact = () => {
     try {
       // First store in database via direct Supabase call
       // Fix: Pass values as a single object, not an array
-      const { error: dbError } = await supabase
-        .from("contact_submissions")
-        .insert({
-          name: values.name,
-          email: values.email,
-          subject: values.subject,
-          message: values.message
-        });
+      let dbError: { message?: string } | null = null;
+      if (supabase) {
+        const { error } = await supabase
+          .from("contact_submissions")
+          .insert({
+            name: values.name,
+            email: values.email,
+            subject: values.subject,
+            message: values.message,
+          });
+        dbError = error as { message?: string } | null;
+      }
       
       if (dbError) {
         throw new Error(dbError.message || "Failed to save your message");

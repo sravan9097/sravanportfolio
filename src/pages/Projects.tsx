@@ -93,7 +93,7 @@ const Projects = () => {
       id: "adspark-figma",
       title: "Adspark - Design System",
       description: "Explore design system implementation from Adspark.",
-      image: "public/Hero_Images/adsparkCover.png",
+      image: "/Hero_Images/adsparkCover.png",
       category: "Figma File - Design System",
       link: "https://www.figma.com/community/file/1324430043396376581/adspark-ads-platform-responsive-to-all-devices-light-dark-ui-support-variables"
     }

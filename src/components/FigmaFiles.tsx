@@ -59,11 +59,21 @@ const FigmaFiles = () => {
           ))}
         </div>
         <div className="text-center mt-12">
-          <a href="https://www.figma.com/@sravan" target="_blank" rel="noopener noreferrer">
-            <Button variant="outline" size="lg">
-              View All Figma Files
-            </Button>
-          </a>
+          <Button
+            variant="outline"
+            size="lg"
+            onClick={() => {
+              window.location.href = "/projects#figma-files";
+              setTimeout(() => {
+                const el = document.getElementById("figma-files");
+                if (el) {
+                  el.scrollIntoView({ behavior: "smooth" });
+                }
+              }, 100);
+            }}
+          >
+            View All Figma Files
+          </Button>
         </div>
       </div>
     </section>

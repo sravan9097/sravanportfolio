@@ -22,14 +22,14 @@ const Hero = () => {
           </p>
           <div className="flex flex-wrap gap-4 justify-start animate-fade-in" style={{ animationDelay: '0.4s' }}>
             <Button 
-              className="bg-accent hover:bg-accent-hover text-white px-6 py-6 rounded-md"
+              className="bg-accent hover:bg-accent-hover text-white px-6 py-6 rounded-md w-full md:w-auto"
               onClick={() => window.location.href = '/projects'}
             >
               View My Work <ArrowRight className="ml-2 h-5 w-5" />
             </Button>
             <Button 
               variant="outline" 
-              className="border-accent text-primary-light px-6 py-6 rounded-md"
+              className="border-accent text-primary-light px-6 py-6 rounded-md hover:bg-accent/10 w-full md:w-auto"
               onClick={() => scrollToSection('contact')}
             >
               Contact Me

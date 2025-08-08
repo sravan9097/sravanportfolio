@@ -83,26 +83,22 @@ const BeautifulCodeRedesignProject = () => {
             <h2 className="text-2xl font-bold mb-4 text-foreground">Wireframing & Early Concepts</h2>
               <h3 className="text-xl font-semibold mb-2 text-foreground">Wireframing</h3>
               <p className="text-base text-muted-foreground mb-4">I began by translating the sketch into low-fidelity wireframes. I experimented with different layouts for the homepage and category pages.</p>
-              <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-6">  
-              <Card>
-                <h4  className=" mb-2 text-foreground p-6">First Iteration</h4>
-                <CardContent>
-                  <div className="my-4">
+              <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-6 mb-4">  
+              <div> 
+              <h4  className=" mb-2 text-foreground my-2 md:my-4">First Iteration</h4>
+              <div className="my-4 rounded-lg overflow-hidden">
                     <img src="/bcwebsite/wireframe1.png" alt="BeautifulCode Website Revamp" className="w-full object-cover" />
                   </div>
-                  
-                 
-                </CardContent>
-              </Card>
-              <Card>
-                <h4 className="mb-2 text-foreground p-6">Second Iteration</h4>
-                <CardContent>
-                  <div className="my-4">
-                    <img src="/bcwebsite/wireframe2.png" alt="BeautifulCode Website Revamp" className="w-full object-cover" />
+              </div>
+              <div>
+                <h4 className="mb-2 text-foreground my-2 md:my-4">Second Iteration</h4>
+                
+                  <div className="my-4 rounded-lg overflow-hidden bg-accent/10">
+                    <img src="/bcwebsite/wireframe3.png" alt="BeautifulCode Website Revamp" className="w-full object-cover" />
                   </div>
                   
-                </CardContent>
-              </Card>
+                
+              </div>
             </div>
             
           </section>
@@ -164,8 +160,8 @@ const BeautifulCodeRedesignProject = () => {
               <img src="/bcwebsite/navigation.gif" alt="Navigation Animation" className="w-full rounded-lg shadow" />
               <span className="text-sm text-muted-foreground mt-2">Smooth navigation animation demonstrating the shared transitions and mobile menu.</span>
             </div>
-            <div className="my-4 flex flex-row items-start gap-12">
-              <div className="w-1/2 flex flex-col items-start">
+            <div className="my-4 flex flex-col md:flex-row items-start md:items-center gap-6 mb-6">
+              <div className="w-full md:w-1/2 flex flex-col items-start">
               <h3 className="text-xl font-semibold mb-2 text-foreground mt-4">Interactivity</h3>
               <p className="text-muted-foreground mb-4">To showcase how everything comes together, I created a fully clickable prototype with:</p>
               <ul className="mb-2 pl-5 list-disc text-muted-foreground">
@@ -176,7 +172,7 @@ const BeautifulCodeRedesignProject = () => {
               </ul>
               </div>
               {/* Why It Works */}
-              <div className="w-1/2 flex flex-col items-start"> 
+              <div className="w-full md:w-1/2 flex flex-col items-start"> 
               
               <h3 className="text-xl font-semibold mb-2 text-foreground mt-4">Why It Works</h3>
               <ul className="mb-2 pl-5 list-disc text-muted-foreground">
@@ -187,7 +183,7 @@ const BeautifulCodeRedesignProject = () => {
               </ul>
               </div>
             </div>
-            <blockquote className="border-l-4 pl-4 italic font-semibold text-muted-foreground mb-4">
+            <blockquote className="border-l-4 pl-4 italic font-semibold text-muted-foreground mb-12 md:mb-4">
               “We didn’t want the site to feel like a typical company page. This prototype helped sell that — it feels more like a curated dev wiki, structured and clean.”
             </blockquote>
 
@@ -335,17 +331,20 @@ const BeautifulCodeRedesignProject = () => {
               I designed the site to be fully responsive, knowing that many first-time visitors — especially external leadership — may land on mobile.
             </p>
 
-            <div className="my-8 bg-white border border-blue-200 rounded-lg p-4">
+            <div className="my-8 bg-surface-100 border border-border rounded-lg p-4">
                 <div className="flex items-center">
-                 
-                  <div className="flex flex-row gap-2">
+                  {/* Figma logo */}
+                <div className="flex-shrink-0 mr-4">
+                  <img src="/figmalogo.svg" alt="Figma" className="w-9 h-9" />
+                </div>
+                  <div className="flex flex-col md:flex-row gap-2">
                     <p className="text-base text-foreground font-normal">This is the main Figma project file where I have everything documented in detail.</p>
                     <a 
                       href="https://www.figma.com/community/file/1531452240079073955/beautifulcode-website-redesign-a-geeky-developer-first-experience" 
                       target="_blank" 
                       rel="noopener noreferrer"
 
-                      className="text-base text-blue-600 hover:text-blue-800 hover:underline"
+                      className="text-base dark:text-white text-primary hover:text-primary/80 hover:underline"
                     >
                       View detailed documentation →
                     </a>
@@ -603,8 +602,8 @@ function MobileScreensSlideshow() {
       <Carousel setApi={setApi} opts={{ loop: true, align: "start", slidesToScroll: 1 }} className="w-full">
         <CarouselContent className="-ml-4">
           {mobileScreens.map((screen, idx) => (
-            <CarouselItem key={idx} className="pl-4 basis-1/2 md:basis-1/3 lg:basis-1/4 pb-2">
-              <div className="flex flex-col items-center justify-center p-1 rounded-xl border border-gray-200 shadow-md">
+            <CarouselItem key={idx} className="pl-4 basis-3/4 md:basis-1/3 lg:basis-1/4 pb-2">
+              <div className="flex flex-col items-center justify-center p-1 rounded-xl border border-gray-200 bg-white shadow-md">
                 <img
                   src={screen.src}
                   alt={screen.alt}

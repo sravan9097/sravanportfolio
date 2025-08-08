@@ -49,7 +49,7 @@ const ShareChatLeadGenerationProject = () => {
                   <img
                     src={slide.src}
                     alt={slide.alt}
-                    className="w-full h-auto object-cover min-h-120 rounded-lg"
+                    className="w-full h-auto object-cover min-h-120 rounded-lg bg-white"
                     draggable={false}
                   />
                   <p className="text-sm text-muted-foreground text-center max-w-4xl mt-4">
@@ -147,7 +147,7 @@ const ShareChatLeadGenerationProject = () => {
           <h2 className="text-2xl font-bold mb-6 text-foreground">Process Overview</h2>
           <div>
             <p className="text-primary-light mb-6">We followed a Double Diamond approach, moving from research to definition, then exploring solutions before refining the best one.</p>
-            <div className="my-10">
+            <div className="my-10 rounded-lg overflow-hidden bg-neutral-100">
               <img src="/sharechatLead/Double Diamond.svg" alt="Double Diamond" className="w-full h-auto" />
             </div>
 
@@ -304,23 +304,27 @@ const ShareChatLeadGenerationProject = () => {
               </div>
             </div>
 
-            <div className="my-8 bg-white border border-blue-200 rounded-lg p-4">
-                <div className="flex items-center">
-                 
-                  <div className="flex flex-row gap-2">
-                    <p className="text-base text-foreground font-normal">This is the main Figma project file where I have everything documented in detail.</p>
-                    <a 
-                      href="https://www.figma.com/community/file/1324673389958171817/new-feature-introduction-of-lead-generation-ad-format" 
-                      target="_blank" 
-                      rel="noopener noreferrer"
-
-                      className="text-base text-blue-600 hover:text-blue-800 hover:underline"
-                    >
-                      View detailed documentation →
-                    </a>
-                  </div>
+            <div className="my-8 bg-surface-100 border border-border rounded-lg p-4">
+              <div className="flex items-center">
+                {/* Figma logo */}
+                <div className="flex-shrink-0 mr-4">
+                  <img src="/figmalogo.svg" alt="Figma" className="w-9 h-9" />
                 </div>
-              </div> 
+                <div className="flex flex-col md:flex-row gap-2">
+                  <p className="text-base text-foreground font-normal">
+                    This is the main Figma project file where I have everything documented in detail.
+                  </p>
+                  <a
+                    href="https://www.figma.com/community/file/1324673389958171817/new-feature-introduction-of-lead-generation-ad-format"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-base dark:text-white text-primary hover:text-primary/80 hover:underline"
+                  >
+                    View detailed documentation →
+                  </a>
+                </div>
+              </div>
+            </div>
               
           </div>
         </section>

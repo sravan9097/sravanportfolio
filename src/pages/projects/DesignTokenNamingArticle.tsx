@@ -302,7 +302,7 @@ const DesignTokenNamingArticle = () => {
               <p className="text-lg font-mono text-foreground text-center">ButtonColor1</p>
             </div>
             <div className="p-3">
-              <ul className="text-sm text-red-800 space-y-2">
+              <ul className="text-sm text-red-500 space-y-2">
                 {poorExample.issues.map((issue, index) => (
                   <li key={index} className="flex items-center flex-row gap-2">
                     <span className="text-red-600 mt-1">✗</span>
@@ -318,7 +318,7 @@ const DesignTokenNamingArticle = () => {
               <p className="text-lg font-mono text-foreground text-center">button-primary-background-color-hover</p>
             </div>
             <div className=" p-3">
-              <ul className="text-sm text-green-800 space-y-2">
+              <ul className="text-sm text-green-500 space-y-2">
                 {goodExample.benefits.map((benefit, index) => (
                   <li key={index} className="flex items-center gap-2">
                     <span className="text-green-600 mt-1">✓</span>

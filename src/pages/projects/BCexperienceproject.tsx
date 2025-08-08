@@ -68,7 +68,7 @@ const BCExperienceProject = () => {
                   <img
                     src={slide.src}
                     alt={slide.alt}
-                    className="w-full h-auto object-cover rounded-lg border"
+                    className="w-full h-auto object-cover rounded-lg border bg-white"
                     draggable={false}
                   />
                   {slide.caption && (
@@ -103,19 +103,19 @@ const BCExperienceProject = () => {
         </div>
         
         {/* Project Overview */}
-        <div className="grid md:grid-cols-3 gap-8 mb-12 ">
-          <div>
+        <div className="flex flex-row gap-8 mb-12 ">
+          <div className="w-1/3">
             <h2 className="text-lg font-semibold mb-2 text-primary">Timeline</h2>
             <p className="text-primary-light">3 months</p>
           </div>
-          <div>
+          <div className="w-1/3">
             <h2 className="text-lg font-semibold mb-2 text-primary">Tools</h2>
             <ul className="text-primary-light">
               <li>Figma</li>
               <li>Cursor</li>
             </ul>
           </div>
-          <div>
+          <div className="w-1/3">
             <h2 className="text-lg font-semibold mb-2 text-primary">My Role</h2>
             <p className="text-primary-light">UX Designer & Front-End Developer</p>
           </div>
@@ -230,22 +230,25 @@ const BCExperienceProject = () => {
 
         {/* Final UI Section */}
         <section className="mb-12 w-full">
+
             <h2 className="text-2xl font-bold mb-6 text-foreground">Final UI</h2>
             <div >
               <p className="text-base text-muted-foreground mb-6">
                 The final design focused on a clean, developer-first aesthetic. The UI is simple, structured, and provides clear information hierarchy, making it easy for users to check in, view team progress, and get a snapshot of daily activities.
               </p>
 
-              <div className="my-8 bg-white border border-blue-200 rounded-lg p-4">
+              <div className="my-8 bg-surface-100 border border-border rounded-lg p-4">
                 <div className="flex items-center">
-                 
-                  <div className="flex flex-row gap-2">
+                  {/* Figma logo */}
+                <div className="flex-shrink-0 mr-4">
+                  <img src="/figmalogo.svg" alt="Figma" className="w-9 h-9" />
+                </div>
+                  <div className="flex flex-col md:flex-row gap-2">
                     <p className="text-base text-foreground font-normal">This is the main Figma project file where I have everything documented in detail.</p>
                     <a 
                       href="https://www.figma.com/community/file/1532192399307808386/beautiful-code-experience-app" 
                       target="_blank" rel="noopener noreferrer"
-
-                      className="text-base text-blue-600 hover:text-blue-800 hover:underline"
+                      className="text-base dark:text-white text-primary hover:text-primary/80 hover:underline"
                     >
                       View detailed documentation →
                     </a>

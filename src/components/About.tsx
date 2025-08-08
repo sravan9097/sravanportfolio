@@ -39,14 +39,24 @@ const About = () => {
             My strength lies in turning chaos into structure whether it’s through a robust design system or simplifying a messy user journey. 
             Currently, I'm the sole designer at BeautifulCode, leading product design for two internal platforms.
             </p>
-            <div className="flex flex-row items-center gap-4 mb-6">
-              <a href="https://www.figma.com/@sravan" target="_blank" rel="noopener noreferrer" className="bg-accent/10 p-3 rounded-full hover:bg-accent/20 transition-colors">
-                    <Figma className="w-5 h-5 text-accent" />
+            <div className="mb-6">
+              <a
+                href="https://www.figma.com/@sravan"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block"
+              >
+                <div className="flex items-center gap-4 bg-accent/10 hover:bg-accent/20 transition-colors p-4 rounded-xl border border-border">
+                  <div className="flex-shrink-0">
+                    <img src="/figmalogo.svg" alt="Figma Community" className="w-8 h-8" />
+                  </div>
+                  <div>
+                    <div className="font-semibold text-primary">Figma Community</div>
+                    <div className="text-primary-light text-sm">View my published files, templates, and resources</div>
+                  </div>
+                </div>
               </a>
-              <a href="https://www.dribbble.com/@sra1van" target="_blank" rel="noopener noreferrer" className="bg-accent/10 p-3 rounded-full hover:bg-accent/20 transition-colors">
-                    <Dribbble className="w-5 h-5 text-accent" />
-              </a>
-        </div>
+            </div>
            
           </div>
           <div className="flex items-center justify-center w-full max-w-sm md:w-1/3">

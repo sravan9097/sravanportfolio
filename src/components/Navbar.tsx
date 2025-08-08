@@ -62,9 +62,13 @@ const Navbar = () => {
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 glass-nav">
-      <div className="container mx-auto px-4 py-5 flex items-center justify-between">
-        <Link to="/" className="text-xl font-bold text-primary">
-          Sravan Kumar
+      <div className="container mx-auto px-4 md:px-8 py-4 flex items-center justify-between">
+        <Link to="/" className="flex items-center">
+          <img 
+            src="/sravan_logo.svg" 
+            alt="Sravan Kumar" 
+            className="h-10 w-auto filter dark:invert transition-all duration-200"
+          />
         </Link>
         
         {/* Mobile menu button */}
@@ -99,13 +103,13 @@ const Navbar = () => {
               <button onClick={() => { setIsMenuOpen(false); navigate('/projects'); }} className="text-foreground hover:text-accent transition-colors py-2 text-left">
                 My Work
               </button>
-              <button onClick={() => scrollToSection('about')} className="text-foreground hover:text-accent transition-colors py-2 text-left">
+              <button onClick={() => { setIsMenuOpen(false); scrollToSection('about'); }} className="text-foreground hover:text-accent transition-colors py-2 text-left">
                 About
               </button>               
-              <button onClick={() => scrollToSection('contact')} className="text-foreground hover:text-accent transition-colors py-2 text-left">
+              <button onClick={() => { setIsMenuOpen(false); scrollToSection('contact'); }} className="text-foreground hover:text-accent transition-colors py-2 text-left">
                 Contact
               </button>
-              <button onClick={toggleTheme} className="text-foreground hover:text-accent transition-colors py-2 text-left flex items-center">
+              <button onClick={() => { setIsMenuOpen(false); toggleTheme(); }} className="text-foreground hover:text-accent transition-colors py-2 text-left flex items-center">
                 {theme === 'dark' ? (
                   <>
                     <Sun className="w-4 h-4 mr-2" />

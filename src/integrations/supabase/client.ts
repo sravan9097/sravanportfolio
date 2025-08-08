@@ -3,7 +3,14 @@
 import { createClient } from '@supabase/supabase-js';
 import type { Database } from './types';
 
-const SUPABASE_URL = "https://pmvzymjpjwnmtmvccqxh.supabase.co";
-const SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InBtdnp5bWpwandubXRtdmNjcXhoIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDM3NDIwNDQsImV4cCI6MjA1OTMxODA0NH0.BpoxfNIB4dnr9k1vc810l0Lpd0fUxT9CBZ0a2R2ZX5I";
+const SUPABASE_URL = import.meta.env.VITE_SUPABASE_URL as string;
+const SUPABASE_ANON_KEY = import.meta.env.VITE_SUPABASE_ANON_KEY as string;
+
+if (!SUPABASE_URL || !SUPABASE_ANON_KEY) {
+  // Fail fast in development to avoid silent misconfigurations
+  // In production (Vercel), set these in Project → Settings → Environment Variables
+  // VITE_SUPABASE_URL, VITE_SUPABASE_ANON_KEY
+  console.warn('Supabase env vars missing: ensure VITE_SUPABASE_URL and VITE_SUPABASE_ANON_KEY are set.');
+}
 
 export const supabase = createClient<Database>(SUPABASE_URL, SUPABASE_ANON_KEY);

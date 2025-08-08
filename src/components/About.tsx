@@ -39,10 +39,10 @@ const About = () => {
             Currently, I'm the sole designer at BeautifulCode, leading product design for two internal platforms.
             </p>
             <div className="flex flex-row items-center gap-4 mb-6">
-              <a href="https://www.figma.com/@sravan" target="_blank" className="bg-accent/10 p-3 rounded-full hover:bg-accent/20 transition-colors">
+              <a href="https://www.figma.com/@sravan" target="_blank" rel="noopener noreferrer" className="bg-accent/10 p-3 rounded-full hover:bg-accent/20 transition-colors">
                     <Figma className="w-5 h-5 text-accent" />
               </a>
-              <a href="https://www.dribbble.com/@sra1van" target="_blank" className="bg-accent/10 p-3 rounded-full hover:bg-accent/20 transition-colors">
+              <a href="https://www.dribbble.com/@sra1van" target="_blank" rel="noopener noreferrer" className="bg-accent/10 p-3 rounded-full hover:bg-accent/20 transition-colors">
                     <Dribbble className="w-5 h-5 text-accent" />
               </a>
             </div>

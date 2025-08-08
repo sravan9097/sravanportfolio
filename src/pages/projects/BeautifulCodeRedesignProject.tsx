@@ -209,10 +209,9 @@ const BeautifulCodeRedesignProject = () => {
                 <p className="text-sm text-muted-foreground mb-4">
                   Experience the complete desktop version with all interactions, navigation, and responsive elements.
                 </p>
-                <a 
+                 <a 
                   href="https://www.figma.com/proto/8UL3n9NG6qx2f9sOIhJvYA/BeautifulCode-Website-Revamp?page-id=2017%3A8672&node-id=2017-8682&p=f&viewport=628%2C-1150%2C0.13&t=ZaoTSCj3ULZxGmE2-1&scaling=scale-down-width&content-scaling=fixed&starting-point-node-id=2017%3A8682" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
+                   target="_blank" rel="noopener noreferrer"
                   className="inline-flex items-center px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition-colors"
                 >
                   <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -238,10 +237,9 @@ const BeautifulCodeRedesignProject = () => {
                 <p className="text-sm text-muted-foreground mb-4">
                   Test the mobile experience with touch interactions, responsive navigation, and mobile-specific features.
                 </p>
-                <a 
+                 <a 
                   href="https://www.figma.com/proto/8UL3n9NG6qx2f9sOIhJvYA/BeautifulCode-Website-Revamp?page-id=1978%3A7025&node-id=1978-7050&p=f&viewport=615%2C583%2C0.14&t=X3Hip31XRA6oB769-1&scaling=contain&content-scaling=fixed&starting-point-node-id=1978%3A7050" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
+                   target="_blank" rel="noopener noreferrer"
                   className="inline-flex items-center px-4 py-2 bg-green-600 text-white rounded-md hover:bg-green-700 transition-colors"
                 >
                   <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">

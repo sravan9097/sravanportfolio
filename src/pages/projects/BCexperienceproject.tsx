@@ -191,8 +191,7 @@ const BCExperienceProject = () => {
                 </p>
                 <a 
                   href="https://www.figma.com/proto/EtqeVYOBvOPc15RlSbZmZr/BeautifulCode-Experience-App?page-id=553%3A11178&node-id=40000021-50100&p=f&viewport=2332%2C217%2C0.12&t=L0l2vB5rOzhuFU8Q-1&scaling=scale-down&content-scaling=fixed&starting-point-node-id=40000021%3A49953" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
+                  target="_blank" rel="noopener noreferrer"
                   className="inline-flex items-center px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition-colors"
                 >
                   <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -244,8 +243,7 @@ const BCExperienceProject = () => {
                     <p className="text-base text-foreground font-normal">This is the main Figma project file where I have everything documented in detail.</p>
                     <a 
                       href="https://www.figma.com/community/file/1532192399307808386/beautiful-code-experience-app" 
-                      target="_blank" 
-                      rel="noopener noreferrer"
+                      target="_blank" rel="noopener noreferrer"
 
                       className="text-base text-blue-600 hover:text-blue-800 hover:underline"
                     >

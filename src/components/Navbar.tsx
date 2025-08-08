@@ -62,12 +62,15 @@ const Navbar = () => {
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 glass-nav">
-      <div className="container mx-auto px-4 md:px-8 py-4 flex items-center justify-between">
+      <div className="container mx-auto px-4 md:max-w-6xl py-4 flex items-center justify-between">
         <Link to="/" className="flex items-center">
-          <img 
-            src="/sravan_logo.svg" 
-            alt="Sravan Kumar" 
-            className="h-10 w-auto filter dark:invert transition-all duration-200"
+          <div
+            aria-label="Sravan Kumar"
+            className="h-10 w-40 bg-foreground transition-all duration-200"
+            style={{
+              WebkitMask: 'url(/sravan_logo.svg) center / contain no-repeat',
+              mask: 'url(/sravan_logo.svg) center / contain no-repeat',
+            }}
           />
         </Link>
         
@@ -139,7 +142,7 @@ const Navbar = () => {
           </button>
           
           <button 
-            onClick={() => window.open("https://drive.google.com/file/d/1JaGLKGczaqfxbIG8t4QrTbZ4jn2GkgfW/view?usp=sharing", "_blank")}
+            onClick={() => window.open("https://drive.google.com/file/d/1Fuzx713sT4hjdQ2u2g8eweaYsL_jVSbk/view?usp=sharing", "_blank")}
             className="bg-primary text-[#fff] hover:bg-primary/90 px-4 py-2 rounded"
           >
             Resume

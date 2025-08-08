@@ -105,7 +105,7 @@ const About = () => {
                   <skill.icon className="w-6 h-6 text-accent" />
                 </div>
                 <h3 className="text-lg font-bold mb-2 text-primary">{skill.title}</h3>
-                <p className="text-primary-light text-base">{skill.description}</p>
+                <p className="text-muted-foreground text-base">{skill.description}</p>
               </div>
             ))}
           </div>

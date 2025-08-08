@@ -1,27 +1,26 @@
-
-import { Code, PenTool, Lightbulb, Layers, Figma, Dribbble } from "lucide-react";
+import {  Paintbrush, LayoutDashboard, Code, Layers, Figma, Dribbble } from "lucide-react";
 
 const About = () => {
   const skills = [
     {
-      icon: Lightbulb,
+      icon: LayoutDashboard,
       title: "UX Strategy",
-      description: "Creating user-centered design strategies based on research and business objectives."
+      description: "Designing user-centric experiences that align with business goals and user needs."
     },
     {
-      icon: PenTool,
-      title: "UI Design",
-      description: "Crafting beautiful, intuitive interfaces with attention to visual hierarchy and accessibility."
+      icon: Paintbrush,
+      title: "UI/UX Design",
+      description: "Creating visually engaging, accessible interfaces with a focus on usability and aesthetics."
     },
     {
       icon: Layers,
-      title: "Design System",
-      description: "Create Brand Guidelines and build design sytem from scratch or Revamp any exisitng system."
+      title: "Design Systems",
+      description: "Developing scalable design systems and brand guidelines from scratch or revamping existing ones."
     },
     {
       icon: Code,
-      title: "Prototyping",
-      description: "Building interactive prototypes to validate design solutions and gather user feedback."
+      title: "Frontend Development",
+      description: "Transforming designs into responsive, interactive web interfaces with clean frontend code."
     }
   ];
 

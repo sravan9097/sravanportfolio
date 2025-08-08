@@ -90,7 +90,7 @@ const BCExperienceProject = () => {
       
         {/* Hero Section */}
         <div className="mb-12">
-          <span className="text-sm font-medium text-accent uppercase tracking-wider">UX/UI Design </span>
+          <span className="text-sm font-medium text-accent uppercase tracking-wider">Case Study - Web App Design</span>
           <h1 className="text-4xl md:text-5xl font-bold mt-2 mb-6 text-primary">Building BeautifulCode Experience App </h1>
           
           <div className="aspect-[16/9] w-full overflow-hidden rounded-lg mb-10">

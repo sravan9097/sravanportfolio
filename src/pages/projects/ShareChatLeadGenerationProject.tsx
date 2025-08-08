@@ -72,7 +72,7 @@ const ShareChatLeadGenerationProject = () => {
         
         {/* Hero Section */}
         <div className="mb-12">
-          <span className="text-sm font-medium text-accent uppercase tracking-wider">Case Study</span>
+          <span className="text-sm font-medium text-accent uppercase tracking-wider">Case Study - Feature Design</span>
           <h1 className="text-4xl md:text-5xl font-bold mt-2 mb-6 text-primary">Lead Generation Ad Feature – ShareChat Ads Platform</h1>
           <p className="text-xl text-primary-light mb-6">Empowering advertisers to launch lead-gen campaigns independently through a customizable, self-serve form builder.</p>
           <div className="aspect-[16/9] w-full overflow-hidden rounded-lg mb-10">
@@ -94,7 +94,7 @@ const ShareChatLeadGenerationProject = () => {
             <h2 className="text-lg font-semibold mb-2 text-primary">Tools</h2>
             <ul className="text-primary-light">
               <li>Figma</li>
-              <li>UserTesting</li>
+             
             </ul>
           </div>
           <div>

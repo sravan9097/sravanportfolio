@@ -6,6 +6,7 @@ import About from "@/components/About";
 import Process from "@/components/Process";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
+import FigmaFiles from "@/components/FigmaFiles";
 import { useEffect } from "react";
 
 const Index = () => {
@@ -36,6 +37,7 @@ const Index = () => {
       <div className="flex flex-col max-w-6xl mx-auto ">
       <Hero />
       <Projects />
+      <FigmaFiles />
       <About />
       <Process />
       <Contact />

@@ -33,7 +33,7 @@ const ProjectLayout = ({ children, projectTitle }: ProjectLayoutProps) => {
             <BreadcrumbSeparator />
             <BreadcrumbItem>
               <BreadcrumbLink asChild>
-                <Link to="/projects">Projects</Link>
+                <Link to="/projects">My Work</Link>
               </BreadcrumbLink>
             </BreadcrumbItem>
             <BreadcrumbSeparator />

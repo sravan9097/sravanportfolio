@@ -13,7 +13,7 @@ const BeautifulCodeRedesignProject = () => {
         <div className="flex flex-col items-center mx-auto ">
           {/* Hero Section */}
           <div className="mb-12">
-          <span className="text-sm font-medium text-accent uppercase tracking-wider">UX Design </span>
+          <span className="text-sm font-medium text-accent uppercase tracking-wider">Case Study - Website Redesign</span>
           <h1 className="text-4xl md:text-5xl font-bold mt-2 mb-6 text-primary">BeautifulCode Website Revamp </h1>
           
           <div className="aspect-[16/9] w-full overflow-hidden rounded-lg">

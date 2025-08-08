@@ -99,14 +99,7 @@ const MCPDesignCodeBridgeArticle = () => {
         />
       </div>
 
-      {/* Article Header */}
-      <div className="mb-12">
-        <div className="flex items-center gap-4 text-sm text-muted-foreground">
-          <span>December 2024</span>
-          <span>•</span>
-          <span>6 mins read</span>
-        </div>
-      </div>
+     
 
       {/* Introduction */}
       <section className="mb-16">
@@ -266,11 +259,14 @@ mcp-server --figma-token $FIGMA_API_KEY`}
         <p className="text-lg text-muted-foreground mb-6 leading-relaxed">
           MCP doesn't replace your design system; it operationalizes it. By exposing design intent as structured, real-time data, you empower both AI and human developers to speak the same language, shrink hand-off overhead, and let your design system do what it was meant to do—keep experiences consistent at scale.
         </p>
-        <div className="bg-blue-50 border border-blue-200 rounded-lg p-6">
-          <h3 className="text-lg font-semibold text-blue-900 mb-2">The Future of Design Systems</h3>
-          <p className="text-blue-800">
-            As AI becomes more integrated into our development workflows, MCP provides the missing link between design intent and code implementation. The result? Faster development, better consistency, and a design system that truly serves both designers and developers.
+        <div className="border-l-4 border-blue-500 bg-blue-50 dark:bg-blue-950/20 rounded-r-lg p-6 my-8">
+          
+          <p className="text-muted-foreground text-2xl  ">
+          “The humans will set the goals, formulate the hypotheses, determine the criteria, and perform the evaluations. <br/>
+          The computers will do the routinable work that must be done to prepare the way for insights and decisions in technical and scientific thinking.” <br/>
+         
           </p>
+          <p className="text-muted-foreground text-base mt-4"> -J. C. R. Licklider, Man-Computer Symbiosis, 1960</p>
         </div>
       </section>
 

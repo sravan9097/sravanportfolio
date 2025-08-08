@@ -83,7 +83,7 @@ const Navbar = () => {
         {/* Desktop navigation */}
         <div className="hidden md:flex items-center space-x-8">
           <button onClick={() => navigate('/projects')} className="text-foreground hover:text-accent transition-colors">
-            Projects
+            My Work
           </button>
           <button onClick={() => scrollToSection('about')} className="text-foreground hover:text-accent transition-colors">
             About
@@ -97,7 +97,7 @@ const Navbar = () => {
         <div ref={mobileMenuRef} className={`absolute top-full left-0 w-full bg-card/95 backdrop-blur-md shadow-md py-4 md:hidden transition-all duration-300 ease-in-out ${isMenuOpen ? 'max-h-screen opacity-100 visible' : 'max-h-0 opacity-0 invisible overflow-hidden'}`}>
             <div className="flex flex-col space-y-4 px-4">
               <button onClick={() => { setIsMenuOpen(false); navigate('/projects'); }} className="text-foreground hover:text-accent transition-colors py-2 text-left">
-                Projects
+                My Work
               </button>
               <button onClick={() => scrollToSection('about')} className="text-foreground hover:text-accent transition-colors py-2 text-left">
                 About

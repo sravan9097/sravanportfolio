@@ -147,15 +147,7 @@ const DesignTokenNamingArticle = () => {
         />
       </div>
 
-      {/* Article Header */}
-      <div className="mb-12">
-       
-        <div className="flex items-center gap-4 text-sm text-muted-foreground">
-          <span>April 29, 2024</span>
-          <span>•</span>
-          <span>8 mins read</span>
-        </div>
-      </div>
+      
 
       {/* Introduction */}
       <section className="mb-16">

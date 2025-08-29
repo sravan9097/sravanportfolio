@@ -32,12 +32,12 @@ const About = () => {
           <div className=" w-full md:w-2/3">
             <h2 className="text-3xl font-bold mb-6 text-primary">About Me</h2>
             <p className="text-primary-light mb-4 text-base">
-            I’ve had an unconventional journey into product design, beginning as a video editor and growing into a system oriented designer through hands-on problem solving. 
+            I’ve had an unconventional journey into product design, beginning as a Chemical Engineer and then as a video editor and growing into a system oriented designer through hands-on problem solving. 
             Over the years, I’ve worked across startups and large platforms leading design, creating scalable systems, optimizing flows, and shipping impactful features.
             </p>
             <p className="text-primary-light mb-6 text-base">
             My strength lies in turning chaos into structure whether it’s through a robust design system or simplifying a messy user journey. 
-            Currently, I'm the sole designer at BeautifulCode, leading product design for two internal platforms.
+            Currently, I'm the sole UX/Product Designer at BeautifulCode, leading design for two internal platforms.
             </p>
             <div className="mb-6">
               <a

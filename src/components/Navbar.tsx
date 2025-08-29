@@ -62,16 +62,17 @@ const Navbar = () => {
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 glass-nav">
-      <div className="container mx-auto px-4 md:max-w-6xl py-4 flex items-center justify-between">
+      <div className="container mx-auto px-4 md:max-w-5xl py-4 flex items-center justify-between">
         <Link to="/" className="flex items-center">
-          <div
+          {/* <div
             aria-label="Sravan Kumar"
             className="h-10 w-40 bg-foreground transition-all duration-200"
             style={{
               WebkitMask: 'url(/sravan_logo.svg) center / contain no-repeat',
               mask: 'url(/sravan_logo.svg) center / contain no-repeat',
             }}
-          />
+          /> */}
+          <span className="text-xl font-bold text-primary">Sravan Kumar</span>
         </Link>
         
         {/* Mobile menu button */}

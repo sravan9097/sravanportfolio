@@ -11,7 +11,7 @@ import ScrollToTop from "./components/ui/ScrollToTop";
 import { PerformanceMonitor } from "./components/PerformanceMonitor";
 import { OfflinePage } from "./components/OfflinePage";
 import { useNetworkStatus } from "./hooks/useNetworkStatus";
-import { trackPageview } from "@/lib/analytics";
+// Removed GA pageview tracking; Vercel Web Analytics handles page views automatically
 
 // Lazy load pages for code splitting
 const Index = lazy(() => import("./pages/Index"));
@@ -34,13 +34,7 @@ const queryClient = new QueryClient({
   },
 });
 
-const RouteChangeTracker = () => {
-  const location = useLocation();
-  useEffect(() => {
-    trackPageview(location.pathname + location.search);
-  }, [location]);
-  return null;
-};
+// No RouteChangeTracker needed for Vercel Web Analytics
 
 const App = () => {
   const { isOnline } = useNetworkStatus();
@@ -73,7 +67,6 @@ const App = () => {
           <Sonner />
             <BrowserRouter>
             <ScrollToTop />
-            <RouteChangeTracker />
             <Suspense fallback={<LoadingSpinner />}>
               <Routes>
                 <Route path="/" element={<Index />} />

@@ -16,6 +16,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { sendEmail } from "@/lib/emailjs";
+import { track } from "@vercel/analytics";
 
 const formSchema = z.object({
   name: z.string().min(2, { message: "Name must be at least 2 characters" }),
@@ -60,6 +61,12 @@ const Contact = () => {
       if (!emailResult.success) {
         throw new Error(emailResult.error || "Failed to send email");
       }
+
+      // Track successful contact submission
+      track('contact_submit', {
+        name_length: values.name.length,
+        subject_length: values.subject.length,
+      });
 
       toast({
         title: "Message sent!",

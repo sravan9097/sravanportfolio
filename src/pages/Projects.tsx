@@ -1,6 +1,6 @@
 
 import { Link } from "react-router-dom";
-import { trackEvent } from "@/lib/analytics";
+import { track } from "@vercel/analytics";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { 
@@ -130,7 +130,7 @@ const Projects = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {allProjects.filter(project => project.category.includes("Case Study")).map((project) => (
                 <div key={project.id} className="group">
-                  <Link to={`/project/${project.id}`} className="block" onClick={() => trackEvent('project_open', { id: project.id, title: project.title, category: project.category })}>
+                  <Link to={`/project/${project.id}`} className="block" onClick={() => track('project_open', { id: project.id, title: project.title, category: project.category })}>
                     <div className="bg-card rounded-lg border border-border overflow-hidden hover:shadow-lg transition-shadow">
                       <div className="aspect-[16/10] overflow-hidden">
                         <img 
@@ -184,7 +184,7 @@ const Projects = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {allProjects.filter(project => project.category.includes("Figma File")).map((project) => (
                 <div key={project.id} className="group">
-                  <a href={project.link} target="_blank" rel="noopener noreferrer" className="block" onClick={() => trackEvent('figma_open', { id: project.id, title: project.title })}>
+                  <a href={project.link} target="_blank" rel="noopener noreferrer" className="block" onClick={() => track('figma_open', { id: project.id, title: project.title })}>
                     <div className="bg-card rounded-lg border border-border overflow-hidden hover:shadow-lg transition-shadow">
                       <div className="aspect-[16/10] overflow-hidden">
                         <img 

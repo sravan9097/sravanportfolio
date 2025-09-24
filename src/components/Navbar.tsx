@@ -3,6 +3,7 @@ import { useState, useEffect, useRef } from 'react';
 import { Button } from "@/components/ui/button";
 import { Menu, X, Moon, Sun, Download } from "lucide-react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
+import { trackEvent } from "@/lib/analytics";
 import { useTheme } from "@/hooks/useTheme";
 
 const Navbar = () => {
@@ -104,16 +105,16 @@ const Navbar = () => {
         {/* Mobile menu */}
         <div ref={mobileMenuRef} className={`absolute top-full left-0 w-full bg-card/95 backdrop-blur-md shadow-md py-4 md:hidden transition-all duration-300 ease-in-out ${isMenuOpen ? 'max-h-screen opacity-100 visible' : 'max-h-0 opacity-0 invisible overflow-hidden'}`}>
             <div className="flex flex-col space-y-4 px-4">
-              <button onClick={() => { setIsMenuOpen(false); navigate('/projects'); }} className="text-foreground hover:text-accent transition-colors py-2 text-left">
+              <button onClick={() => { trackEvent('nav_click', { label: 'my_work', context: 'mobile' }); setIsMenuOpen(false); navigate('/projects'); }} className="text-foreground hover:text-accent transition-colors py-2 text-left">
                 My Work
               </button>
-              <button onClick={() => { setIsMenuOpen(false); scrollToSection('about'); }} className="text-foreground hover:text-accent transition-colors py-2 text-left">
+              <button onClick={() => { trackEvent('nav_click', { label: 'about', context: 'mobile' }); setIsMenuOpen(false); scrollToSection('about'); }} className="text-foreground hover:text-accent transition-colors py-2 text-left">
                 About
               </button>               
-              <button onClick={() => { setIsMenuOpen(false); scrollToSection('contact'); }} className="text-foreground hover:text-accent transition-colors py-2 text-left">
+              <button onClick={() => { trackEvent('nav_click', { label: 'contact', context: 'mobile' }); setIsMenuOpen(false); scrollToSection('contact'); }} className="text-foreground hover:text-accent transition-colors py-2 text-left">
                 Contact
               </button>
-              <button onClick={() => { setIsMenuOpen(false); window.open("https://drive.google.com/drive/folders/1_p8uKUiWuPJGIB-Y5_y375I50rx3WOmR?usp=sharing", "_blank"); }} className="text-foreground hover:text-accent transition-colors py-2 text-left flex items-center">
+              <button onClick={() => { trackEvent('resume_download', { location: 'navbar_mobile' }); setIsMenuOpen(false); window.open("https://drive.google.com/drive/folders/1_p8uKUiWuPJGIB-Y5_y375I50rx3WOmR?usp=sharing", "_blank"); }} className="text-foreground hover:text-accent transition-colors py-2 text-left flex items-center">
                 <Download className="w-4 h-4 mr-2" />
                 Resume
               </button>
@@ -147,7 +148,7 @@ const Navbar = () => {
           </button>
           
           <button 
-            onClick={() => window.open("https://drive.google.com/drive/folders/1_p8uKUiWuPJGIB-Y5_y375I50rx3WOmR?usp=sharing", "_blank")}
+            onClick={() => { trackEvent('resume_download', { location: 'navbar_desktop' }); window.open("https://drive.google.com/drive/folders/1_p8uKUiWuPJGIB-Y5_y375I50rx3WOmR?usp=sharing", "_blank"); }}
             className="bg-primary text-[#fff] hover:bg-primary/90 px-4 py-2 rounded"
           >
             Resume

@@ -2,6 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import App from "./App.tsx";
 import "./index.css";
+import { initGA } from "@/lib/analytics";
 
 // Register service worker only in production to avoid dev caching issues
 if (import.meta.env.PROD && 'serviceWorker' in navigator) {
@@ -22,3 +23,8 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
     <App />
   </React.StrictMode>,
 );
+
+// Initialize Google Analytics after the app mounts
+if (typeof window !== 'undefined') {
+  initGA(import.meta.env.VITE_GA_ID as string | undefined);
+}

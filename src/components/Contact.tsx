@@ -3,7 +3,6 @@ import { Button } from "@/components/ui/button";
 import { Mail, Phone, MapPin, Linkedin, Twitter, Dribbble, Instagram, Figma } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 import { useState } from "react";
-import { supabase } from "@/integrations/supabase/client";
 import { useForm } from "react-hook-form";
 import {
   Form,
@@ -45,27 +44,8 @@ const Contact = () => {
     setIsSubmitting(true);
     
     try {
-      // First store in database via direct Supabase call
-      // Fix: Pass values as a single object, not an array
-      let dbError: { message?: string } | null = null;
-      if (supabase) {
-        const { error } = await supabase
-          .from("contact_submissions")
-          .insert({
-            name: values.name,
-            email: values.email,
-            subject: values.subject,
-            message: values.message,
-          });
-        dbError = error as { message?: string } | null;
-      }
-      
-      if (dbError) {
-        throw new Error(dbError.message || "Failed to save your message");
-      }
-      
       // Send email notification to site owner
-      await sendEmail({
+      const emailResult = await sendEmail({
         serviceId: import.meta.env.VITE_SELF_EMAILJS_SERVICE_ID,
         templateId: import.meta.env.VITE_SELF_EMAILJS_TEMPLATE_ID,
         templateParams: {
@@ -76,6 +56,10 @@ const Contact = () => {
         },
         publicKey: import.meta.env.VITE_EMAILJS_PUBLIC_KEY
       });
+
+      if (!emailResult.success) {
+        throw new Error(emailResult.error || "Failed to send email");
+      }
 
       toast({
         title: "Message sent!",

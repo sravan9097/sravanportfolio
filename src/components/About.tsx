@@ -1,29 +1,4 @@
-import {  Paintbrush, LayoutDashboard, Code, Layers, Figma, Dribbble } from "lucide-react";
-
 const About = () => {
-  const skills = [
-    {
-      icon: LayoutDashboard,
-      title: "UX Strategy",
-      description: "Designing user-centric experiences that align with business goals and user needs."
-    },
-    {
-      icon: Paintbrush,
-      title: "UI/UX Design",
-      description: "Creating visually engaging, accessible interfaces with a focus on usability and aesthetics."
-    },
-    {
-      icon: Layers,
-      title: "Design Systems",
-      description: "Developing scalable design systems and brand guidelines from scratch or revamping existing ones."
-    },
-    {
-      icon: Code,
-      title: "Frontend Development",
-      description: "Transforming designs into responsive, interactive web interfaces with clean frontend code."
-    }
-  ];
-
   return (
     <section className="section-padding" id="about">
       <div className="container-padded">
@@ -32,12 +7,10 @@ const About = () => {
           <div className=" w-full md:w-2/3">
             <h2 className="text-3xl font-bold mb-6 text-primary">About Me</h2>
             <p className="text-primary-light mb-4 text-base">
-            I’ve had an unconventional journey into product design, beginning as a Chemical Engineer and then as a video editor and growing into a system oriented designer through hands-on problem solving. 
-            Over the years, I’ve worked across startups and large platforms leading design, creating scalable systems, optimizing flows, and shipping impactful features.
+            I’m Sravan Kumar, a UX designer who believes in grounding design in empathy and strategy. Over the years, I’ve led end-to-end UX projects—user research, flows, interaction design, prototyping, and usability testing—and supported product growth with scalable systems.
             </p>
             <p className="text-primary-light mb-6 text-base">
-            My strength lies in turning chaos into structure whether it’s through a robust design system or simplifying a messy user journey. 
-            Currently, I'm the sole UX/Product Designer at BeautifulCode, leading design for two internal platforms.
+            I bring a balanced mindset: user-first thinking, business impact, and consistency at scale.
             </p>
             <div className="mb-6">
               <a
@@ -70,7 +43,6 @@ const About = () => {
           </div>
         </div>
 
-        
             <div className="grid grid-cols-2 gap-4 text-base">
               <div>
                 <h3 className="font-medium mb-2 text-primary">Tools & Softwares</h3>
@@ -95,21 +67,29 @@ const About = () => {
                 </ul>
               </div>
             </div>
-        
-        <div className="mt-20">
-          <h2 className="text-3xl font-bold mb-12 text-primary text-center">My Skills</h2>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
-            {skills.map((skill, index) => (
-              <div key={index} className="p-4 rounded-xl border border-border bg-card shadow-sm">
-                <div className="w-12 h-12 bg-accent/10 rounded-full flex items-center justify-center mb-4">
-                  <skill.icon className="w-6 h-6 text-accent" />
-                </div>
-                <h3 className="text-lg font-bold mb-2 text-primary">{skill.title}</h3>
-                <p className="text-muted-foreground text-base">{skill.description}</p>
-              </div>
-            ))}
+
+        {/* <div className="mt-20">
+          <h2 className="text-3xl font-bold mb-6 text-primary text-center">Why Choose Me</h2>
+          <div className="max-w-4xl mx-auto grid sm:grid-cols-2 gap-6">
+            <div className="p-4 rounded-xl border border-border bg-card shadow-sm">
+              <h3 className="text-lg font-bold mb-2 text-primary">User-first, data-informed</h3>
+              <p className="text-muted-foreground text-base">Every design starts from real users and metrics.</p>
+            </div>
+            <div className="p-4 rounded-xl border border-border bg-card shadow-sm">
+              <h3 className="text-lg font-bold mb-2 text-primary">End-to-end accountability</h3>
+              <p className="text-muted-foreground text-base">I handle projects from concept through delivery.</p>
+            </div>
+            <div className="p-4 rounded-xl border border-border bg-card shadow-sm">
+              <h3 className="text-lg font-bold mb-2 text-primary">Scalable thinking</h3>
+              <p className="text-muted-foreground text-base">I build designs that future-proof growth.</p>
+            </div>
+            <div className="p-4 rounded-xl border border-border bg-card shadow-sm">
+              <h3 className="text-lg font-bold mb-2 text-primary">Collaboration & mentorship</h3>
+              <p className="text-muted-foreground text-base">Guiding junior designers, aligning across teams.</p>
+            </div>
           </div>
-        </div>
+          <p className="text-center text-sm text-muted-foreground mt-6">Past work: improved conversion by 18%, reduced dev overhead by 25%.</p>
+        </div> */}
       </div>
     </section>
   );

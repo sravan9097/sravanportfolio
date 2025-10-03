@@ -1,8 +1,78 @@
 
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
+import { useEffect, useRef } from "react";
+import { createAnimatable } from 'animejs';
+
+const uxSkills: string[] = [
+  "User Research",
+  "Usability Testing",
+  "Information Architecture",
+  "Product Design",
+  "Wireframing",
+  "Prototyping",
+  "Interaction Design",
+  "Design Systems",
+  "Figma",
+  "Accessibility",
+  "User Flows",
+  "Heuristic Evaluation",
+  "Journey Mapping",
+  "UI Design",
+  "Microinteractions",
+  "Mircoanimations",
+  "React",
+  "TypeScript",
+  "Tailwind CSS",
+];
 
 const Hero = () => {
+  const sectionRef = useRef<HTMLElement>(null);
+  const lightRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (!sectionRef.current || !lightRef.current) return;
+
+    const section = sectionRef.current;
+    const light = lightRef.current;
+
+    // Create animatable for smooth light movement
+    const animatableLight = createAnimatable(light, {
+      x: 600, // Duration in ms for x animation
+      y: 600, // Duration in ms for y animation
+      ease: 'out(3)', // Smooth easing
+    });
+
+    const onMouseMove = (e: MouseEvent) => {
+      const bounds = section.getBoundingClientRect();
+      // Center the light on the cursor (accounting for the element being centered via translate)
+      const x = e.clientX - bounds.left;
+      const y = e.clientY - bounds.top;
+      
+      // Animate the light position smoothly
+      animatableLight.x(x);
+      animatableLight.y(y);
+    };
+
+    const onMouseEnter = () => {
+      light.style.opacity = '1';
+    };
+
+    const onMouseLeave = () => {
+      light.style.opacity = '0';
+    };
+
+    section.addEventListener('mousemove', onMouseMove);
+    section.addEventListener('mouseenter', onMouseEnter);
+    section.addEventListener('mouseleave', onMouseLeave);
+
+    return () => {
+      section.removeEventListener('mousemove', onMouseMove);
+      section.removeEventListener('mouseenter', onMouseEnter);
+      section.removeEventListener('mouseleave', onMouseLeave);
+    };
+  }, []);
+
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
     if (element) {
@@ -11,15 +81,36 @@ const Hero = () => {
   };
 
   return (
-    <section className="pt-28 pb-14" id="home">
-      <div className="container-padded max-w-7xl">
-        <div className="space-y-6 ">
-          <h1 className="text-4xl md:text-6xl md:text-left font-bold leading-tight text-primary-light animate-fade-in"> Building Design Systems That Scale  <span className="text-accent md:text-left">— One Component at a Time.</span>
-          </h1>
-          <p className="text-lg text-primary-light max-w-4xl md:mx-0 animate-fade-in" style={{ animationDelay: '0.2s' }}>
-          I’m Sravan Kumar, a product designer with 5+ years of experience in building scalable design systems and intuitive digital experiences. With a background in fast-growing startups and product companies, I specialize in transforming fragmented UIs into cohesive, efficient systems that empower teams to ship faster and smarter.
+    <section ref={sectionRef} className="pt-36 pb-0 hero-grid relative overflow-hidden" id="home">
+      {/* Animated light effect */}
+      <div 
+        ref={lightRef}
+        className="pointer-events-none absolute opacity-0 transition-opacity duration-500"
+        style={{
+          left: '-300px', // Center the 600px wide element
+          top: '-300px', // Center the 600px tall element
+          width: '600px',
+          height: '600px',
+          background: 'radial-gradient(circle, rgba(59, 130, 246, 0.15) 0%, rgba(59, 130, 246, 0.08) 25%, transparent 70%)',
+          filter: 'blur(40px)',
+          willChange: 'transform',
+        }}
+      />
+      <div className="container-padded max-w-7xl pb-14">
+        <div className="space-y-8">
+          {/* Greeting like reference site */}
+          <p className="text-lg md:text-xl text-muted-foreground animate-fade-in md:text-center">
+            Hi! I'm Sravan
           </p>
-          <div className="flex flex-wrap gap-4 justify-start animate-fade-in" style={{ animationDelay: '0.4s' }}>
+          
+          {/* Bold headline with italic emphasis for Design + Code */}
+          <h1 className="mx-auto mb-6 max-w-6xl font-semibold text-5xl md:text-5xl lg:text-7xl md:text-center leading-tight overflow-visible pb-2"> Where <em className="not-italic animated-gradient-text">Design + Coding</em> Collide</h1>
+          {/* Shorter, punchier description */}
+          <p className="text-lg md:text-xl text-primary-light max-w-4xl animate-fade-in md:text-center md:mx-auto" style={{ animationDelay: '0.2s' }}>
+          I’m a UX designer passionate about understanding users, shaping product experiences, and building accessible, usable interfaces. My process spans research, wireframing, prototyping, and design systems. Outside of design, I enjoy coding, building prototypes and front-end experiments to explore ideas in action.
+          </p>
+          
+          <div className="flex flex-wrap gap-4 justify-start animate-fade-in md:justify-center" style={{ animationDelay: '0.4s' }}>
             <Button 
               className="bg-accent hover:bg-accent-hover text-white px-6 py-6 rounded-md w-full md:w-auto"
               onClick={() => window.location.href = '/projects'}
@@ -31,8 +122,32 @@ const Hero = () => {
               className="border-accent text-primary-light px-6 py-6 rounded-md hover:bg-accent/10 w-full md:w-auto"
               onClick={() => scrollToSection('contact')}
             >
-              Contact Me
+              Work with me
             </Button>
+          </div>
+        </div>
+      </div>
+      
+      {/* Skills Ticker - Full Width */}
+      <div className="w-full overflow-hidden py-6  bg-card/30 backdrop-blur-sm">
+        <div className="container-padded max-w-7xl">
+          <div className="flex items-center gap-3 mb-3">
+          <div className="h-px flex-1 bg-border" />
+            <span className="text-sm uppercase tracking-wider text-muted-foreground">Skills</span>
+            <div className="h-px flex-1 bg-border" />
+          </div>
+        </div>
+        <div className="ticker-mask">
+          <div className="ticker-track" aria-hidden="true">
+            {[...Array(2)].map((_, loopIndex) => (
+              <ul className="ticker-row" key={loopIndex}>
+                {uxSkills.map((skill, idx) => (
+                  <li key={`${loopIndex}-${idx}`} className="ticker-chip">
+                    {skill}
+                  </li>
+                ))}
+              </ul>
+            ))}
           </div>
         </div>
       </div>

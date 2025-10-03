@@ -35,10 +35,10 @@ const Footer = () => {
         <div className="flex flex-col md:flex-row justify-between items-center">
           <div className="mb-6 md:mb-0">
             <button onClick={scrollToTop} className="text-xl font-bold text-foreground">
-              Sravan Kumar
+              Sravan Kumar — Senior UX Designer
             </button>
             <p className="mt-2 text-sm text-muted-foreground">
-              UX Designer creating intuitive digital experiences
+              Crafting thoughtful digital experiences that scale
             </p>
           </div>
           
@@ -53,6 +53,11 @@ const Footer = () => {
                 <button onClick={() => scrollToSection('about')} className="hover:text-accent transition-colors">
                   About
                 </button>
+              </li>
+              <li>
+                <a href="/resume.pdf" className="hover:text-accent transition-colors" target="_blank" rel="noopener noreferrer">
+                  Resume
+                </a>
               </li>
               
               <li>

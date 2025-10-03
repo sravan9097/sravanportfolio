@@ -2,6 +2,7 @@
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import Projects from "@/components/Projects";
+import WhatIDo from "@/components/WhatIDo";
 import About from "@/components/About";
 import Process from "@/components/Process";
 import Contact from "@/components/Contact";
@@ -34,12 +35,14 @@ const Index = () => {
   return (
     <main className="min-h-screen bg-background">
       <Navbar />
-      <div className="flex flex-col container-padded max-w-6xl">
       <Hero />
+      <div className="flex flex-col container-padded max-w-7xl">
       <Projects />
-      <FigmaFiles />
+      
+      <WhatIDo />
       <About />
-      <Process />
+      <FigmaFiles />
+      {/* <Process /> */}
       <Contact />
       </div>
       <Footer />

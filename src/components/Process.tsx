@@ -5,23 +5,23 @@ const Process = () => {
   const processSteps = [
     {
       icon: '/check.svg',
-      title: "Consistency",
-      description: "Design systems unify UI elements—colors, typography, spacing, and components—so products look and behave the same everywhere. This builds trust and improves usability."
+      title: "Discover & Define",
+      description: "User research, personas, journey maps, stakeholder alignment."
     },
     {
       icon: '/lightning.svg',
-      title: "Efficiency",
-      description: "With reusable components and guidelines, teams design and build faster. No need to start from scratch every time—just plug, play, and customize."
+      title: "Ideate & Wireframe",
+      description: "Sketching, rapid iteration, flow mapping."
     },
     {
       icon: '/sync.svg',
-      title: "Collaboration",
-      description: "Design systems create a shared language between designers, developers, and product teams. Everyone knows what a button or card means—no guesswork."
+      title: "Prototype & Test",
+      description: "Interactive prototypes, usability feedback."
     },
     {
       icon: '/scale.svg',
-      title: " Scalability",
-      description: "As products grow, a system ensures they scale smoothly. Whether it’s a new feature, app, or platform, the foundation stays consistent and flexible."
+      title: "Refine, Deliver & Scale",
+      description: "Polished UI, handoff, QA support, iterate with patterns & systems."
     },
   ];
 
@@ -29,8 +29,8 @@ const Process = () => {
     <section id="process" className="section-padding bg-card">
       <div className="container mx-auto">
         <div className="max-w-3xl mx-auto text-center mb-16">
-          <h2 className="text-3xl font-bold mb-4 text-primary">Why Design Systems?</h2>
-          <p className="text-muted-foreground">Design systems aren't just about components and colors — they're about creating structure that drives efficiency and clarity. I love building systems that not only make interfaces consistent but also empower teams to work faster and stay focused on solving real user problems.</p>
+          <h2 className="text-3xl font-bold mb-4 text-primary">My Process</h2>
+          <p className="text-muted-foreground">I partner closely with product managers, engineers, and stakeholders. I value clear communication, regular feedback, and documentation to bridge design and development.</p>
         </div>
         
         <div className="relative">

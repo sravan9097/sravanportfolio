@@ -55,7 +55,7 @@ const Footer = () => {
                 </button>
               </li>
               <li>
-                <a href="/resume.pdf" className="hover:text-accent transition-colors" target="_blank" rel="noopener noreferrer">
+                <a onClick={() => window.open("https://drive.google.com/drive/folders/1_p8uKUiWuPJGIB-Y5_y375I50rx3WOmR?usp=sharing", "_blank")} target="_blank" rel="noopener noreferrer"  className="hover:text-accent transition-colors cursor-pointer">
                   Resume
                 </a>
               </li>

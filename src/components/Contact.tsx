@@ -92,8 +92,8 @@ const Contact = () => {
       <div className="container mx-auto">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-3xl font-bold mb-4 text-primary">Let’s create something meaningful together</h2>
-            <p className="text-primary-light">Get in touch about projects, consulting, or collaboration.</p>
+            <h2 className="text-4xl font-bold mb-4 text-primary-light">Let’s create meaningful experiences together.</h2>
+            <p className="text-primary-light">I’m open to new projects, collaborations, and full-time opportunities. If you’re hiring or looking to improve your product’s UX, let’s connect.</p>
           </div>
           
           <div className="grid md:grid-cols-5 gap-8">
@@ -103,7 +103,7 @@ const Contact = () => {
                   <Mail className="w-5 h-5 text-accent" />
                 </div>
                 <div>
-                  <h3 className="font-medium text-primary mb-1">Email</h3>
+                  <h3 className="font-medium text-primary mb-1">Drop a mail</h3>
                   <a href="mailto:sravan.iitk@live.in" className="text-primary-light hover:text-accent transition-colors">
                     sravan.iitk@live.in
                   </a>
@@ -115,7 +115,7 @@ const Contact = () => {
                   <Phone className="w-5 h-5 text-accent" />
                 </div>
                 <div>
-                  <h3 className="font-medium text-primary mb-1">Phone</h3>
+                  <h3 className="font-medium text-primary mb-1">Whatsapp/Call me</h3>
                   <a href="tel:+919730578566" className="text-primary-light hover:text-accent transition-colors">
                     +91 9730578566
                   </a>
@@ -127,7 +127,7 @@ const Contact = () => {
                   <MapPin className="w-5 h-5 text-accent" />
                 </div>
                 <div>
-                  <h3 className="font-medium text-primary mb-1">Location</h3>
+                  <h3 className="font-medium text-primary mb-1">Currently based in</h3>
                   <p className="text-primary-light">
                     Hyderabad, Telangana, India
                   </p>
@@ -135,7 +135,7 @@ const Contact = () => {
               </div>
               
               <div className="pt-6">
-                <h3 className="font-medium text-primary mb-3">Connect</h3>
+                <h3 className="font-medium text-primary mb-3">Connect with me on</h3>
                 <div className="flex gap-4">
                  
                   <a href="https://www.linkedin.com/in/sravankumar9092/" target="_blank" rel="noopener noreferrer" className="bg-accent/10 p-3 rounded-full hover:bg-accent/20 transition-colors">
@@ -158,11 +158,12 @@ const Contact = () => {
                       name="name"
                       render={({ field }) => (
                         <FormItem>
-                          <FormLabel className="text-sm font-medium text-primary">Name</FormLabel>
+                          <FormLabel className="text-sm font-medium text-primary">Your full name</FormLabel>
                           <FormControl>
                             <input
                               {...field}
                               className="w-full px-4 py-2 bg-card border border-border rounded-md focus:outline-none focus:ring-2 focus:ring-accent/50"
+                              placeholder="Hi, I’m…"
                             />
                           </FormControl>
                           <FormMessage />
@@ -175,12 +176,13 @@ const Contact = () => {
                       name="email"
                       render={({ field }) => (
                         <FormItem>
-                          <FormLabel className="text-sm font-medium text-primary">Email</FormLabel>
+                          <FormLabel className="text-sm font-medium text-primary">Your email</FormLabel>
                           <FormControl>
                             <input
                               {...field}
                               type="email"
                               className="w-full px-4 py-2 bg-card border border-border rounded-md focus:outline-none focus:ring-2 focus:ring-accent/50"
+                              placeholder="Drop your email here"
                             />
                           </FormControl>
                           <FormMessage />
@@ -194,11 +196,12 @@ const Contact = () => {
                     name="subject"
                     render={({ field }) => (
                       <FormItem>
-                        <FormLabel className="text-sm font-medium text-primary">Subject</FormLabel>
+                        <FormLabel className="text-sm font-medium text-primary">Project, role, or collaboration</FormLabel>
                         <FormControl>
                           <input
                             {...field}
                             className="w-full px-4 py-2 bg-card border border-border rounded-md focus:outline-none focus:ring-2 focus:ring-accent/50"
+                            placeholder="Let’s talk about…"
                           />
                         </FormControl>
                         <FormMessage />
@@ -211,12 +214,13 @@ const Contact = () => {
                     name="message"
                     render={({ field }) => (
                       <FormItem>
-                        <FormLabel className="text-sm font-medium text-primary">Message</FormLabel>
+                        <FormLabel className="text-sm font-medium text-primary">How can I help?</FormLabel>
                         <FormControl>
                           <Textarea
                             {...field}
                             rows={5}
                             className="w-full px-4 py-2 bg-card border border-border rounded-md focus:outline-none focus:ring-2 focus:ring-accent/50"
+                            placeholder="Share your thoughts, ideas, or job details here"
                           />
                         </FormControl>
                         <FormMessage />

@@ -5,12 +5,20 @@ const About = () => {
         <div className="flex flex-col-reverse md:flex-row gap-8 md:gap-12 items-center mb-12">
           {/* On mobile: image medium; show intro text alongside image using order utilities */}
           <div className=" w-full md:w-2/3">
-            <h2 className="text-3xl font-bold mb-6 text-primary">About Me</h2>
+            <h2 className="text-4xl font-bold mb-6 text-primary-light">About Me</h2>
             <p className="text-primary-light mb-4 text-base">
-            I’m Sravan Kumar, a UX designer who believes in grounding design in empathy and strategy. Over the years, I’ve led end-to-end UX projects—user research, flows, interaction design, prototyping, and usability testing—and supported product growth with scalable systems.
+            I’m Sravan Kumar, a UX designer who bridges strategy, design, and execution. I specialize in turning complex user problems into intuitive, scalable solutions—grounded in research and validated through prototypes.
+
             </p>
+            
             <p className="text-primary-light mb-6 text-base">
-            I bring a balanced mindset: user-first thinking, business impact, and consistency at scale.
+            Over the years, I’ve led end-to-end UX projects across research, user flows, interaction design, and usability testing, while collaborating closely with developers to ensure designs ship as intended. My hybrid approach—designing in Figma and prototyping in code—helps reduce handoff friction and deliver experiences that work in the real world.
+            </p>
+
+
+            
+            <p className="text-primary-light mb-6 text-base">
+            I bring a balanced mindset: user-first thinking, measurable business impact, and consistency at scale.
             </p>
             <div className="mb-6">
               <a
@@ -46,24 +54,29 @@ const About = () => {
             <div className="grid grid-cols-2 gap-4 text-base">
               <div>
                 <h3 className="font-medium mb-2 text-primary">Tools & Softwares</h3>
-                <ul className="space-y-1 text-primary-light">
-                  <li>Figma</li>
-                  <li>Figma Make, Site, Buzz (New features)</li>
-                  <li>Figjam</li>
-                  <li>Notion</li>
-                  <li>Balsamiq</li>
-                  <li>Cursor/GitHub</li>
-                  <li></li>
+                <ul className="space-y-1  ">
+                 <li> <span className="font-semibold text-primary-light">Figma & FigJam</span> <span className="text-muted-foreground">(design systems, prototyping, collaboration)</span></li>
+
+                  <li> <span className="font-semibold text-primary-light">Notion</span> <span className="text-muted-foreground">(documentation & product ops)</span></li>
+
+                  <li> <span className="font-semibold text-primary-light">Balsamiq</span> <span className="text-muted-foreground">(low-fi wireframes)</span></li>
+
+                  <li> <span className="font-semibold text-primary-light">GitHub / Cursor</span> <span className="text-muted-foreground">(design-to-code workflows)</span></li>
+                  
                 </ul>
               </div>
               <div>
                 <h3 className="font-medium mb-2 text-primary">Technical Skills</h3>
                 <ul className="space-y-1 text-primary-light">
-                  <li>Design System</li>
-                  <li>Product UI/UX</li>
-                  <li>Prototyping</li>
-                  <li>Developer Collaboration</li>
-                  <li>HTML/CSS (TailwindCSS), JavaScript/React</li>
+                  <li> <span className="font-semibold text-primary-light">Product UI/UX</span> <span className="text-muted-foreground">– flows, wireframes, high-fidelity UI, and accessibility</span></li>
+
+                  <li> <span className="font-semibold text-primary-light">Design Systems</span> <span className="text-muted-foreground">– scalable, reusable components with documentation</span></li>
+
+                  <li> <span className="font-semibold text-primary-light">Prototyping</span> <span className="text-muted-foreground">– interactive prototypes in Figma & code (React, Next.js)</span></li>
+
+                  <li> <span className="font-semibold text-primary-light">Developer Collaboration</span> <span className="text-muted-foreground">– handoff-ready designs, tokens, and guidelines</span></li>
+
+                  <span className="font-semibold">Frontend Basics</span> <span className="text-muted-foreground">– HTML, CSS (TailwindCSS), JavaScript, React</span>
                 </ul>
               </div>
             </div>

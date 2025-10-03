@@ -5,17 +5,17 @@ const WhatIDo = () => {
     {
       icon: LayoutDashboard,
       title: "Product strategy",
-      description: "Define product roadmaps, set success metrics, and prioritize experiments to turn user problems into measurable MVPs."
+      description: "Define the problem, success metrics, and a roadmap that de-risks decisions. I run discovery, map jobs-to-be-done, and prioritize experiments that move a KPI—not just a backlog."
     },
     {
       icon: Layers,
       title: "UX design",
-      description: "Run focused research and usability tests to design accessible, validated flows that solve real user needs."
+      description: "Research, wireframes, and high-fidelity flows that meet accessibility standards and real user needs. Usability tests close the loop before engineering commits."
     },
     {
       icon: Code,
       title: "Prototype → production",
-      description: "Prototype in TypeScript/Next.js and ship production‑ready components to cut handoff friction and speed delivery."
+      description: "I prototype in TypeScript/React (or Next.js) to validate interactions, states, and edge cases. When it’s right, I ship production-ready components to reduce handoff friction."
     }
   ];
 
@@ -24,9 +24,9 @@ const WhatIDo = () => {
       <div className="container-padded">
         <div className="flex flex-col md:flex-row justify-between gap-12 item-end">
           <div className="mb-12">
-            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-primary">What I do.</h2>
+            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-primary-light">What I do.</h2>
             <p className="text-xl md:text-2xl text-foreground font-medium leading-snug max-w-4xl">
-              I help companies turn user problems into measurable product roadmaps, design validated UX, and ship production-ready interfaces.
+            I help teams translate user needs into measurable outcomes—designing accessible, tested experiences and building the prototypes that prove they work.
             </p>
           </div>
 

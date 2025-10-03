@@ -60,7 +60,7 @@ const Projects = () => {
     <section className="section-padding bg-background-alt" id="projects">
       <div className="flex flex-col items-center container-padded">
         <div className="max-w-3xl mx-auto text-center mb-16">
-          <h2 className="text-3xl font-bold mb-4 text-foreground">Featured Projects</h2>
+          <h2 className="text-4xl font-bold mb-4 text-primary-light">Featured Projects</h2>
           {/* <p className="text-muted-foreground">Teasers focused on the UX challenge and impact</p> */}
         </div>
         <div className="max-w-7xl mx-auto w-full">

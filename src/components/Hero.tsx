@@ -99,7 +99,7 @@ const Hero = () => {
       <div className="container-padded max-w-7xl pb-14">
         <div className="space-y-8">
           {/* Greeting like reference site */}
-          <p className="text-lg md:text-xl text-muted-foreground animate-fade-in md:text-center">
+          <p className="text-lg md:text-2xl text-primary-light font-medium animate-fade-in md:text-center">
             Hi! I'm Sravan
           </p>
           

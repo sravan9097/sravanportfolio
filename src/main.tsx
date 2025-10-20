@@ -3,6 +3,13 @@ import ReactDOM from "react-dom/client";
 import App from "./App.tsx";
 import "./index.css";
 import { inject } from "@vercel/analytics";
+import { Buffer as BufferPolyfill } from "buffer";
+
+// Ensure Buffer exists in the browser for libraries like gray-matter
+if (typeof globalThis !== "undefined") {
+  const g = globalThis as unknown as { Buffer?: typeof BufferPolyfill };
+  if (!g.Buffer) g.Buffer = BufferPolyfill;
+}
 
 // Register service worker only in production to avoid dev caching issues
 if (import.meta.env.PROD && 'serviceWorker' in navigator) {

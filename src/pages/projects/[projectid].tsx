@@ -2,6 +2,8 @@ import React from "react";
 import { useParams, Navigate } from "react-router-dom";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import CaseStudyTemplate from "@/components/CaseStudyTemplate";
+import ArticleTemplate from "@/components/ArticleTemplate";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 import rehypeSlug from "rehype-slug";
@@ -31,6 +33,17 @@ const ProjectDetailPage: React.FC = () => {
   // Try markdown first
   const doc = getDocBySlug(projectid);
   if (doc) {
+    // Route Case Studies through CaseStudyTemplate
+    if (doc.category === "Case Study") {
+      return <CaseStudyTemplate doc={doc} />;
+    }
+    
+    // Route Articles through ArticleTemplate
+    if (doc.category === "Article") {
+      return <ArticleTemplate doc={doc} />;
+    }
+    
+    // Fallback to simple markdown rendering for other content types
     return (
       <div className="min-h-screen bg-background">
         <Navbar />

@@ -1,0 +1,539 @@
+// Case Study Content Styling Module
+// Hybrid approach: Tailwind utilities + SCSS for rich markdown content
+
+.caseStudyContent {
+  // Typography hierarchy
+  font-size: 1rem;
+  line-height: 1.6;
+  
+  @media (min-width: 768px) {
+    font-size: 1.125rem;
+  }
+}
+
+.heroSection {
+  margin-bottom: 3rem;
+  
+  .categoryLabel {
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: hsl(var(--accent));
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+  }
+  
+  .title {
+    font-size: 2.25rem;
+    font-weight: 700;
+    margin-top: 0.5rem;
+    margin-bottom: 1.5rem;
+    color: hsl(var(--primary));
+    
+    @media (min-width: 768px) {
+      font-size: 3rem;
+    }
+  }
+  
+  .coverImage {
+    aspect-ratio: 16/9;
+    width: 100%;
+    overflow: hidden;
+    border-radius: 0.5rem;
+    
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+}
+
+.metaGrid {
+  display: flex;
+  width: 100%;
+  margin: 0 auto;
+  gap: 2rem;
+  margin-bottom: 3rem;
+  
+  @media (min-width: 768px) {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
+  
+  .metaItem {
+    display: flex;
+    flex-direction: column;
+    
+    .metaLabel {
+      font-size: 1.125rem;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+      color: hsl(var(--primary));
+    }
+    
+    .metaValue {
+      color: hsl(var(--primary) / 0.7);
+      
+      ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        
+        li {
+          color: hsl(var(--primary) / 0.7);
+        }
+      }
+    }
+  }
+}
+
+// Markdown content styling
+.sectionHeading {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+  color: hsl(var(--foreground));
+  
+  @media (min-width: 768px) {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+  }
+}
+
+.subsectionHeading {
+  font-size: 1.125rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  margin-top: 1rem;
+  color: hsl(var(--foreground));
+  
+  @media (min-width: 768px) {
+    font-size: 1.25rem;
+  }
+}
+
+.blockquote {
+  border-left: 4px solid hsl(var(--accent));
+  padding-left: 0.75rem;
+  font-style: italic;
+  font-weight: 600;
+  font-size: 1rem;
+  color: hsl(var(--muted-foreground));
+  margin-bottom: 0.75rem;
+  
+  @media (min-width: 768px) {
+    padding-left: 1rem;
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+  }
+}
+
+// Image grids for wireframes and concepts
+.imageGrid {
+  display: grid;
+  gap: 1.5rem;
+  margin-bottom: 1rem;
+  
+  @media (min-width: 768px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .imageItem {
+    display: flex;
+    flex-direction: column;
+    
+    .imageTitle {
+      margin-bottom: 0.5rem;
+      color: hsl(var(--foreground));
+      margin-top: 0.5rem;
+      
+      @media (min-width: 768px) {
+        margin-top: 1rem;
+      }
+    }
+    
+    .imageContainer {
+      margin-top: 1rem;
+      border-radius: 0.5rem;
+      overflow: hidden;
+      
+      img {
+        width: 100%;
+        object-fit: cover;
+      }
+    }
+  }
+}
+
+// Wireframe image grid - specific styling for wireframe sections
+.wireframeGrid {
+  display: grid;
+  gap: 1rem;
+  margin: 1rem 0;
+  grid-template-columns: 1fr;
+  
+  @media (min-width: 768px) {
+    gap: 1.5rem;
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 0.5rem;
+    border: 1px solid hsl(var(--border));
+  }
+}
+
+// Prototype cards section
+.prototypeCards {
+  display: grid;
+  gap: 1rem;
+  margin-top: 1rem;
+  
+  @media (min-width: 768px) {
+    gap: 1.5rem;
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .prototypeCard {
+    background-color: hsl(var(--card));
+    border: 1px solid hsl(var(--border));
+    border-radius: 0.5rem;
+    padding: 1rem;
+    transition: box-shadow 0.3s ease;
+    
+    @media (min-width: 768px) {
+      padding: 1.5rem;
+    }
+    
+    &:hover {
+      box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    }
+    
+    .cardHeader {
+      display: flex;
+      align-items: center;
+      margin-bottom: 1rem;
+      
+      .cardIcon {
+        width: 2.5rem;
+        height: 2.5rem;
+        border-radius: 0.5rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-right: 0.75rem;
+        
+        @media (min-width: 768px) {
+          width: 3rem;
+          height: 3rem;
+          margin-right: 1rem;
+        }
+        
+        &.desktop {
+          background-color: #dbeafe;
+          
+          svg {
+            width: 1.5rem;
+            height: 1.5rem;
+            color: #2563eb;
+          }
+        }
+        
+        &.mobile {
+          background-color: #dcfce7;
+          
+          svg {
+            width: 1.5rem;
+            height: 1.5rem;
+            color: #16a34a;
+          }
+        }
+      }
+      
+      .cardTitle {
+        font-size: 1rem;
+        font-weight: 600;
+        color: hsl(var(--foreground));
+        
+        @media (min-width: 768px) {
+          font-size: 1.125rem;
+        }
+      }
+      
+      .cardSubtitle {
+        font-size: 0.75rem;
+        color: hsl(var(--muted-foreground));
+        
+        @media (min-width: 768px) {
+          font-size: 0.875rem;
+        }
+      }
+    }
+    
+    .cardDescription {
+      font-size: 0.875rem;
+      color: hsl(var(--muted-foreground));
+      margin-bottom: 1rem;
+    }
+    
+    .cardLink {
+      display: inline-flex;
+      align-items: center;
+      padding: 0.5rem 1rem;
+      border-radius: 0.375rem;
+      transition: all 0.3s ease;
+      
+      &.desktop {
+        background-color: #2563eb;
+        color: white;
+        
+        &:hover {
+          background-color: #1d4ed8;
+        }
+      }
+      
+      &.mobile {
+        background-color: #16a34a;
+        color: white;
+        
+        &:hover {
+          background-color: #15803d;
+        }
+      }
+      
+      svg {
+        width: 1rem;
+        height: 1rem;
+        margin-right: 0.5rem;
+      }
+    }
+  }
+}
+
+// Figma file CTA
+.figmaFileCTA {
+  margin-top: 2rem;
+  background-color: hsl(var(--muted) / 0.5);
+  border: 1px solid hsl(var(--border));
+  border-radius: 0.5rem;
+  padding: 0.75rem;
+  
+  @media (min-width: 768px) {
+    padding: 1rem;
+  }
+  
+  .ctaContent {
+    display: flex;
+    align-items: center;
+    
+    .figmaLogo {
+      flex-shrink: 0;
+      margin-right: 0.75rem;
+      
+      @media (min-width: 768px) {
+        margin-right: 1rem;
+      }
+      
+      img {
+        width: 1.75rem;
+        height: 1.75rem;
+        
+        @media (min-width: 768px) {
+          width: 2.25rem;
+          height: 2.25rem;
+        }
+      }
+    }
+    
+    .ctaText {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      
+      @media (min-width: 768px) {
+        flex-direction: row;
+      }
+      
+      .description {
+        font-size: 0.875rem;
+        color: hsl(var(--foreground));
+        font-weight: 400;
+        
+        @media (min-width: 768px) {
+          font-size: 1rem;
+        }
+      }
+      
+      .link {
+        font-size: 0.875rem;
+        color: hsl(var(--primary));
+        text-decoration: none;
+        
+        @media (min-width: 768px) {
+          font-size: 1rem;
+        }
+        
+        &:hover {
+          color: hsl(var(--primary) / 0.8);
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+}
+
+// Lists and content
+.contentList {
+  margin-bottom: 0.5rem;
+  padding-left: 1rem;
+  list-style-type: disc;
+  color: hsl(var(--muted-foreground));
+  font-size: 0.9rem;
+  
+  @media (min-width: 768px) {
+    padding-left: 1.25rem;
+    font-size: 1rem;
+  }
+  
+  li {
+    margin-bottom: 0.5rem;
+    
+    .highlight {
+      font-weight: 600;
+    }
+  }
+}
+
+// Responsive image handling
+.responsiveImage {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 0.5rem;
+  
+  &.fullWidth {
+    width: 100%;
+  }
+  
+  &.centered {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+// Carousel/slideshow containers
+.carouselContainer {
+  width: 100%;
+  
+  .carouselItem {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    
+    img {
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+      min-height: 15rem;
+      
+      @media (min-width: 768px) {
+        min-height: 20rem;
+      }
+    }
+    
+    .carouselCaption {
+      font-size: 0.75rem;
+      color: hsl(var(--muted-foreground));
+      text-align: center;
+      max-width: 64rem;
+      margin-top: 0.75rem;
+      padding: 0 0.5rem;
+      
+      @media (min-width: 768px) {
+        font-size: 0.875rem;
+        margin-top: 1rem;
+        padding: 0;
+      }
+    }
+  }
+}
+
+// Mobile-specific carousel items
+.mobileCarouselItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 0.25rem;
+  border-radius: 0.75rem;
+  border: 1px solid #e5e7eb;
+  background-color: white;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  
+  img {
+    width: 100%;
+    max-width: 20rem;
+    height: auto;
+    object-fit: contain;
+    min-height: 15rem;
+    border-radius: 0.5rem;
+    
+    @media (min-width: 768px) {
+      max-width: 24rem;
+      min-height: 20rem;
+    }
+  }
+}
+
+// Outcome and reflection sections
+.outcomeSection {
+  margin-bottom: 2rem;
+  
+  .outcomeTitle {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: hsl(var(--foreground));
+  }
+  
+  .outcomeQuote {
+    border-left: 4px solid hsl(var(--accent));
+    padding-left: 1rem;
+    font-style: italic;
+    font-size: 1.125rem;
+    color: hsl(var(--muted-foreground));
+    margin-bottom: 1rem;
+  }
+  
+  .outcomeList {
+    font-size: 0.875rem;
+    color: hsl(var(--muted-foreground));
+    list-style-type: disc;
+    padding-left: 1.25rem;
+    
+    li {
+      margin-bottom: 0.25rem;
+    }
+  }
+}
+
+.reflectionSection {
+  margin-bottom: 2rem;
+  
+  .reflectionTitle {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: hsl(var(--foreground));
+  }
+  
+  .reflectionContent {
+    font-size: 1rem;
+    color: hsl(var(--muted-foreground));
+    margin-bottom: 1rem;
+  }
+}

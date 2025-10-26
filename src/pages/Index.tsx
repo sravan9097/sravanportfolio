@@ -38,11 +38,9 @@ const Index = () => {
       <Hero />
       <div className="flex flex-col container-padded max-w-7xl">
       <Projects />
-      
       <WhatIDo />
       <About />
       <FigmaFiles />
-      {/* <Process /> */}
       <Contact />
       </div>
       <Footer />

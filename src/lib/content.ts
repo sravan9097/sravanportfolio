@@ -1,5 +1,6 @@
 import matter from "gray-matter";
 import { CarouselImage } from "./carouselData";
+import { getImageURL } from "./imageUtils";
 
 export type Doc = {
   slug: string;
@@ -11,6 +12,7 @@ export type Doc = {
   tags: string[];
   body: string;
   // Case Study specific fields
+  rank?: number; // Custom ordering for case studies
   timeline?: string;
   tools?: string[];
   role?: string;
@@ -21,7 +23,7 @@ export type Doc = {
 };
 
 type Frontmatter = Partial<
-  Pick<Doc, "slug" | "title" | "category" | "description" | "image" | "date" | "tags" | "timeline" | "tools" | "role" | "prototypeLinks" | "figmaFileUrl" | "carousels">
+  Pick<Doc, "slug" | "title" | "category" | "description" | "image" | "date" | "tags" | "rank" | "timeline" | "tools" | "role" | "prototypeLinks" | "figmaFileUrl" | "carousels">
 >;
 
 const files = import.meta.glob("/src/content/**/*.md", { as: "raw", eager: true }) as Record<string, string>;
@@ -45,11 +47,12 @@ const docs: Doc[] = Object.entries(files)
     const title = String((data.title ?? slug)).trim();
     const category = normalizeCategory(data.category);
     const description = String((data.description ?? "")).trim();
-    const image = data.image ? String(data.image) : undefined;
+    const image = data.image ? getImageURL(String(data.image)) : undefined;
     const date = String((data.date ?? "")).trim();
     const tags = Array.isArray(data.tags) ? data.tags.map(String) : [];
     
     // Case Study specific fields
+    const rank = typeof data.rank === 'number' ? data.rank : undefined;
     const timeline = data.timeline ? String(data.timeline).trim() : undefined;
     const tools = Array.isArray(data.tools) ? data.tools.map(String) : undefined;
     const role = data.role ? String(data.role).trim() : undefined;
@@ -61,9 +64,14 @@ const docs: Doc[] = Object.entries(files)
 
     const body = parsed.content?.trim?.() ?? "";
 
-    return { slug, title, category, description, image, date, tags, body, timeline, tools, role, prototypeLinks, figmaFileUrl, carousels } as Doc;
+    return { slug, title, category, description, image, date, tags, body, rank, timeline, tools, role, prototypeLinks, figmaFileUrl, carousels } as Doc;
   })
-  .sort((a, b) => (b.date || "").localeCompare(a.date || ""));
+  .sort((a, b) => {
+    // For both Case Studies and Articles, sort by rank (lower rank = higher priority)
+    const aRank = a.rank ?? Infinity;
+    const bRank = b.rank ?? Infinity;
+    return aRank - bRank; // Lower rank appears first
+  });
 
 export function getAllDocs(): Doc[] {
   return docs;

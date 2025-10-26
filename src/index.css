@@ -76,7 +76,7 @@
 
   /* Portfolio-specific styles */
   .section-padding {
-    @apply py-20;
+    @apply py-10 md:py-20;
   }
   .container-padded {
     @apply container mx-auto px-4 sm:px-6 md:px-8;

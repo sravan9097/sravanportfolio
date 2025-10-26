@@ -5,6 +5,7 @@ category: Case Study
 description: Empowering advertisers to launch lead-gen campaigns independently through a customizable, self-serve form builder.
 image: /sharechat/sharechatCover.png
 date: 2024-03-15
+rank: 2
 timeline: 3 months
 tools:
   - Figma
@@ -27,7 +28,7 @@ tags:
 
 Sharechat Ads platform aims to revolutionise the lead generation campaign process for high-paying clients by introducing a self-service feature that allows advertisers to create and customise forms independently. This project addresses the current challenges faced by the marketing team, designers, and developers in launching campaigns, by reducing the time required to launch a campaign from one to three weeks to a matter of days. By enabling advertisers to have more control over their campaigns, Sharechat Ads platform expects to increase the number of advertisers and revenue significantly.
 
-## Background & Goal
+## The Challenge
 
 As ShareChat's ad platform matured, we identified a recurring blocker: advertisers were unable to create or manage lead generation forms without internal support. This created bottlenecks, slowed down campaign launches, and introduced quality issues due to manual handovers.
 
@@ -78,11 +79,6 @@ We iterated quickly based on internal feedback and usability reviews, narrowing 
   <img src="/sharechat/layout.png" alt="Layout Concepts" />
 </div>
 
-<div class="wireframeGrid">
-  <img src="/sharechat/sampletemplate.png" alt="Sample Template" />
-  <img src="/sharechat/template1.png" alt="Template Variation" />
-</div>
-
 ## Final Designs & Prototyping
 
 The final design included:
@@ -102,17 +98,22 @@ I created a high-fidelity prototype with real interactions to simulate the creat
 
 ## Outcome & Impact
 
-### Results:
-
-- Reduced turnaround time for lead-gen campaigns from days to minutes
-- Internal ops time freed up by 30–40%
-- Enabled advertisers to experiment and iterate campaigns independently
-- Created a scalable framework for future form-based ad formats
-
 ### Key Metrics:
 
-**Days → Minutes**  
-Campaign turnaround time
-
-**30-40%**  
-Ops time freed up
+<div class="metricsGrid">
+  <div class="metricCard">
+    <div class="metricValue">Days → Minutes</div>
+    <div class="metricTitle">Campaign Turnaround</div>
+    <div class="metricDescription">Campaign setup time reduced from weeks to minutes</div>
+  </div>
+  <div class="metricCard">
+    <div class="metricValue">30-40%</div>
+    <div class="metricTitle">Ops Time Saved</div>
+    <div class="metricDescription">Internal operations team time freed up</div>
+  </div>
+  <div class="metricCard">
+    <div class="metricValue">100%</div>
+    <div class="metricTitle">Self-Service</div>
+    <div class="metricDescription">Advertisers can create campaigns independently</div>
+  </div>
+</div>

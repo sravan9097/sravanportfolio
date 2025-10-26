@@ -1,6 +1,8 @@
 // Carousel data configuration
 // This file contains all carousel data for case studies and articles
 
+import { getImageURL } from './imageUtils';
+
 export interface CarouselImage {
   src: string;
   alt: string;
@@ -12,25 +14,72 @@ export interface CarouselData {
 }
 
 export const carouselData: CarouselData = {
+
+  // Growthy Carousels
+  'growthy-learn-phase-slides': [
+    {
+      src: "/growthy/growthy_cl_moduleview.png",
+      alt: "Course Learn Modules List View",
+      caption: "Course Learn Modules List View: List of all the modules in the course with their progress and completion status."
+    },
+    {
+      src: "/growthy/growthy_learn_phase_1.png",
+      alt: "Learn Phase",
+      caption: "Learn Phase: Empty state of the learn phase where user see list of tasks and exercises."
+    },
+    {
+      src: "/growthy/growthy_learn_phase_2.png",
+      alt: "Learn Phase",
+      caption: "Filled view of the learn phase where user completes tasks and uploads notes to the tasks and exercises."
+    }
+  ],
+
+
+  'growthy-reflect-phase-slides': [
+    {
+      src: "/growthy/growthy_learn_reflect_1.png",
+      alt: "Reflect Phase",
+      caption: "Reflect Phase: User reflects on the module and evaluates their progress."
+    },
+    {
+      src: "/growthy/growthy_learn_reflect_2.png",
+      alt: "Reflect Phase",
+      caption: "Reflect Phase: User reflects on the module and evaluates their progress."
+    }
+  ],
+
+  'growthy-evaluate-phase-slides': [
+    {
+      src: "/growthy/growthy_learn_evaluate_1.png",
+      alt: "Evaluate Phase",
+      caption: "Evaluate Phase: User evaluates the module and evaluates their progress."
+    },
+    {
+      src: "/growthy/growthy_learn_evaluate_2.png",
+      alt: "Evaluate Phase",
+      caption: "Evaluate Phase: User evaluates the module and evaluates their progress."
+    }
+  ],
+
   // Design System Carousels
   'design-system-slides': [
     {
-      src: "/design-system/Atoms.png",
-      alt: "Atomic Design System - Atoms",
+      src: "/bcwebsite/atoms&molecules.png",
+      alt: "Atomic Design System - Atoms & Molecules",
       caption: "Atomic Design System: The foundation of the design system. Atoms are the smallest building blocks, while molecules are simple groups of atoms working together (e.g., a labeled input field)."
     },
     {
-      src: "/design-system/molecules.png",
-      alt: "Atomic Design System - Molecules",
+      src: "/bcwebsite/compounds.png",
+      alt: "Atomic Design System - Compounds",
       caption: "Molecules: Simple combinations of atoms that form functional units, like form inputs with labels, navigation items, or search bars."
     },
     {
-      src: "/design-system/organisms.png",
+      src: "/bcwebsite/organisms.png",
       alt: "Atomic Design System - Organisms",
       caption: "Organisms: Relatively complex UI components composed of groups of molecules and/or atoms, such as navigation bars, footers, or feature sections."
     },
     {
-      src: "/design-system/templates.png",
+      src: "/bcwebsite/templates.png",
       alt: "Atomic Design System - Templates",
       caption: "Templates: Page-level layouts that arrange organisms, molecules, and atoms into a cohesive structure, defining the overall flow and hierarchy of content."
     }
@@ -84,6 +133,70 @@ export const carouselData: CarouselData = {
       src: "/bc-experience/2001 - Check-in Creation - Guidelines CTA Addition.png",
       alt: "Check-in Guidelines",
       caption: "Check-in Guidelines: Integrated help system with contextual guidelines, clear call-to-actions, and validation feedback."
+    }
+  ],
+
+  'process-artifacts': [
+    {
+      src: "/Hero_Images/Objects.png",
+      alt: "Objects",
+      caption: "Defining key objects in the system like Projects, Teams, and Check-Ins."
+    },
+    {
+      src: "/Hero_Images/Roles.png",
+      alt: "Roles",
+      caption: "Mapping user roles such as Admin, Manager, and Employee."
+    },
+    {
+      src: "/Hero_Images/Site_Map.png",
+      alt: "Site Map",
+      caption: "Structuring the application with a clear sitemap."
+    },
+    {
+      src: "/Hero_Images/check_in_flow.png",
+      alt: "Check-in Flow",
+      caption: "Mapping the critical check-in user flow."
+    }
+  ],
+
+  'wireframes': [
+    {
+      src: "/Hero_Images/check_in_flow_1.png",
+      alt: "Check-in Flow Screen 1",
+      caption: "Wireframe exploration of the check-in process - initial design concepts."
+    },
+    {
+      src: "/Hero_Images/check_in_flow_2.png",
+      alt: "Check-in Flow Screen 2",
+      caption: "Refined check-in flow with simplified interactions and clear hierarchy."
+    },
+    {
+      src: "/Hero_Images/team_view_1.png",
+      alt: "Team View Screen",
+      caption: "Team view wireframe showing member management and status overview."
+    },
+    {
+      src: "/Hero_Images/team_settings.png",
+      alt: "Team Settings Screen",
+      caption: "Settings interface wireframe with intuitive organization and controls."
+    }
+  ],
+
+  'final-screens': [
+    {
+      src: "/bcexperience/checkin_creation.png",
+      alt: "Check-in Creation",
+      caption: "The simplified check-in interface where engineers update their progress twice daily."
+    },
+    {
+      src: "/bcexperience/Single_Member_View.png",
+      alt: "Single Member View",
+      caption: "A timeline of daily check-ins for a specific team member to track progress and blockers."
+    },
+    {
+      src: "/bcexperience/Team-View.png",
+      alt: "Team View",
+      caption: "A snapshot of check-in status across all team members."
     }
   ],
 

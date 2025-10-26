@@ -4,6 +4,7 @@ import { track } from "@vercel/analytics";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { getArticles, getCaseStudies } from "@/lib/content";
+import { getImageURL } from "@/lib/imageUtils";
 import { 
   Breadcrumb,
   BreadcrumbItem,
@@ -15,7 +16,7 @@ import {
 
 const Projects = () => {
   const caseStudies = getCaseStudies();
-  const articles = getArticles();
+  // const articles = getArticles();
   
   // Add design system project manually since it's a React component, not markdown
   const designSystemProject = {
@@ -23,8 +24,9 @@ const Projects = () => {
     title: "What is a Design System?",
     category: "Case Study",
     description: "A design system is a collection of reusable components, patterns, and guidelines that ensure consistency and efficiency across all products and platforms.",
-    image: "/Hero_Images/designsystemhero.png",
+    image: getImageURL("/Hero_Images/designsystemhero.png"),
     date: "2024-01-15",
+    rank: 5,
     tags: ["design-system", "ui-components", "documentation"],
     body: "",
     timeline: "2 months",
@@ -32,14 +34,14 @@ const Projects = () => {
     role: "Design System Lead"
   };
   
-  // Combine markdown case studies with the design system project
-  const allCaseStudies = [designSystemProject, ...caseStudies];
+  // Add design system to case studies
+  const allCaseStudies = [...caseStudies, designSystemProject];
   const figmaProjects = [
     {
       id: "growthy-figma",
       title: "Growthy – for Continuous Learning ",
       description: "Explore selected UI screens and design patterns from Growthy, a platform designed to build a Developing Expertise Culture in organizations through structured learning, daily reflections, and mentorship.",
-      image: "/Hero_Images/growthyCover.png",
+      image: getImageURL("/Hero_Images/growthyCover.png"),
       category: "Figma File - UI Screens",
       link: "https://www.figma.com/community/file/1535273022446774903/growthy-for-continuous-learning-ui-screens-design-system"
     },
@@ -96,7 +98,7 @@ const Projects = () => {
           {/* Case Studies Section */}
           <div className="mb-20">
             <h2 className="text-2xl font-bold mb-8 text-foreground">Case Studies</h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-10">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10">
               {allCaseStudies.map((project) => (
                 <Link 
                   key={project.slug} 
@@ -148,7 +150,7 @@ const Projects = () => {
           </div>
 
           {/* Articles Section */}
-          <div className="mb-20">
+          {/* <div className="mb-20">
             <h2 className="text-2xl font-bold mb-8 text-foreground">Articles</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {articles.map((project) => (
@@ -158,7 +160,7 @@ const Projects = () => {
                   className="group block"
                 >
                   <article className="h-full space-y-4">
-                    {/* Image */}
+                    
                     <div className="relative overflow-hidden bg-muted">
                       <div className="aspect-[4/3]">
                         <img 
@@ -170,7 +172,7 @@ const Projects = () => {
                       <div className="absolute top-0 left-0 w-1 h-0 bg-accent transition-all duration-500 group-hover:h-full" />
                     </div>
                     
-                    {/* Content */}
+                    
                     <div className="space-y-3">
                       <div className="flex items-center gap-3">
                         <div className="h-px w-8 bg-accent" />
@@ -198,7 +200,7 @@ const Projects = () => {
                 </Link>
               ))}
             </div>
-          </div>
+          </div> */}
 
           {/* Figma Files Section */}
           <div className="mb-16">

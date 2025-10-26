@@ -4,8 +4,8 @@ title: BeautifulCode Website Revamp
 category: Case Study
 description: A calm, minimal, and geek-friendly website reflecting deep engineering culture and thought leadership.
 image: /beautifulcode-revamp/beautifulcodeCover.png
-date: 2024-05-12
-timeline: 1 month
+rank: 3
+timeline: 3 month
 tools:
   - Figma
 role: UX Designer
@@ -22,15 +22,15 @@ tags:
   - ux-design
   - design-system
 ---
+
 ## The Challenge
 
-BeautifulCode wanted a website that felt **geeky yet calm** — designed *by engineers, for engineers*.  
+BeautifulCode wanted a website that felt **geeky yet calm** — designed _by engineers, for engineers_.  
 The goal: a site that spoke to CTOs and senior devs without the fluff of corporate marketing.
 
 > “We are engineers who care deeply about our craft.”
 
 The challenge: capture that authenticity — a **developer-first aesthetic** that’s professional, simple, and real.
-
 
 ## The Approach
 
@@ -39,16 +39,16 @@ The challenge: capture that authenticity — a **developer-first aesthetic** tha
 BeautifulCode’s team shared an initial wireframe that shaped the foundation.  
 I explored **two directions**:
 
-- *Retro Windows 92 UI* — nostalgic, hacker vibe, pixel grid, monospaced.
-- *Modern Bento layout* — structured, airy, clear hierarchy.
+- _Retro Windows 92 UI_ — nostalgic, hacker vibe, pixel grid, monospaced.
+- _Modern Bento layout_ — structured, airy, clear hierarchy.
 
 Core system elements:
-- **Font:** IBM Flex Mono — technical and grounded  
-- **Palette:** Low-contrast backgrounds, strong text focus  
+
+- **Font:** IBM Flex Mono — technical and grounded
+- **Palette:** Low-contrast backgrounds, strong text focus
 - **Sections:** “What We’re Wired For” (key capabilities) and “Foundation Principles” (engineering beliefs)
 
 The homepage acted as a **calm, navigational hub**, guiding users through articles and case studies.
-
 
 ## Wireframing & Early Concepts
 
@@ -75,7 +75,6 @@ Two themes guided early exploration:
 
 So I stripped away containers, leaned on **white space, typography, and rhythm** — letting simplicity lead.
 
-
 ## Final Layout & High-Fidelity Prototype
 
 After multiple iterations, the final design captured BeautifulCode’s **developer-first personality** — minimal, structured, and authentic.
@@ -83,27 +82,25 @@ After multiple iterations, the final design captured BeautifulCode’s **develop
 ### Design Direction
 
 Stripped of clutter, the design emphasized:
-- **Vertical rhythm** and generous spacing  
-- **Monospaced hierarchy** with IBM Flex Mono  
-- **Whitespace over containers**  
-- **Quiet micro-interactions** — smooth, functional, thoughtful  
+
+- **Vertical rhythm** and generous spacing
+- **Monospaced hierarchy** with IBM Flex Mono
+- **Whitespace over containers**
+- **Quiet micro-interactions** — smooth, functional, thoughtful
 
 The homepage became a **content hub**, guiding users seamlessly across sections.
 
 ![Navigation Animation](/beautifulcode-revamp/navigation.gif)
 
-
 ### Interactivity
 
-The clickable prototype validated structure and flow:  
-- Interactive navigation  
-- Expandable article lists  
-- Smooth mobile transitions  
-- Responsive layouts for real-world use  
+The clickable prototype validated structure and flow:
+
+- Interactive navigation
+- Expandable article lists
+- Responsive layouts for real-world use
 
 > “It feels more like a curated dev wiki — structured, clean, authentic.”
-
-
 
 ## Building the Design System with Atomic Design
 
@@ -116,42 +113,33 @@ It provided **clarity, consistency, and easy iteration** as the site evolved.
 
 ### The Breakdown
 
-**⚛️ Atoms** — colors, type tokens, buttons, icons  
-**🧪 Molecules** — article cards, category tiles, inputs  
-**🧱 Organisms** — navbar, footer, article lists  
-**🧩 Templates** — home, category, and mobile layouts  
-
 <div data-carousel="design-system-slides"></div>
-
-
-<div data-carousel="design-system-slides"></div>
-
 
 ## Final UI – Desktop & Mobile
 
 High-fidelity designs applied the system across breakpoints — clean, consistent, and responsive.  
 Many leadership visitors land on mobile first, so I prioritized **mobile clarity** from the start.
 
-
 ### Desktop Screens
+
 <div data-carousel="desktop-screens"></div>
 
 ### Mobile Screens
+
 <div data-carousel="mobile-screens"></div>
 
 ### Outcome
 
 > A calm, developer-first site — built by engineers, for engineers.
 
-- Minimal, content-driven experience  
-- Nostalgic yet modern visual language  
-- Scalable design system  
+- Minimal, content-driven experience
+- Nostalgic yet modern visual language
+- Scalable design system
 - Fully responsive across devices
 
 ### Reflections
 
 This project reinforced a simple truth — **clarity beats flash**.  
-Through iteration and restraint, I learned how **typography and rhythm** can define brand personality.  
+Through iteration and restraint, I learned how **typography and rhythm** can define brand personality.
 
 It pushed both my **system thinking** and **interaction design** skills — and reminded me that great UX often comes from doing less, thoughtfully.
-

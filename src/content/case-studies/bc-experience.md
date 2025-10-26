@@ -1,276 +1,168 @@
 ---
 slug: bc-experience
-title: BC Experience Platform Redesign
+title: Building BeautifulCode Experience App
 category: Case Study
-description: Redesigning the BC Experience platform to improve team collaboration, member management, and overall user experience for better engagement and productivity.
-image: /bc-experience/BC_experience_cover.png
-date: 2024-04-15
-timeline: 2 months
+description: Designing the BC Experience platform to improve team collaboration, member management, and overall user experience for better engagement and productivity.
+image: /Hero_Images/BC_experience_cover.png
+rank: 1
+timeline: 3 months
 tools:
   - Figma
-  - User Research
-role: UX/UI Designer
+  - Cursor
+role: Sr UX Designer & Front-End Developer
+prototypeLinks:
+  - label: Interactive Prototype
+    url: https://www.figma.com/proto/EtqeVYOBvOPc15RlSbZmZr/BeautifulCode-Experience-App?page-id=553%3A11178&node-id=40000021-50100&p=f&viewport=2332%2C217%2C0.12&t=L0l2vB5rOzhuFU8Q-1&scaling=scale-down&content-scaling=fixed&starting-point-node-id=40000021%3A49953
+    icon: desktop
+figmaFileUrl: https://www.figma.com/community/file/1532192399307808386/beautiful-code-experience-app
 tags:
-  - platform-redesign
+  - platform-design
   - team-collaboration
   - member-management
   - user-experience
+  - check-in-system
 carousels:
-  bc-experience-slides:
-    - src: "/bc-experience/Single_Member_View.png"
-      alt: "Single Member View"
-      caption: "Single Member View: Comprehensive member profile with activity timeline, status indicators, and quick actions for efficient member management."
-    - src: "/bc-experience/Team-View.png"
-      alt: "Team Overview"
-      caption: "Team Overview: Visual grid layout showing all team members with status overview, bulk actions, and filtering capabilities."
-    - src: "/bc-experience/checkin_creation.png"
+  process-artifacts:
+    - src: "/Hero_Images/Objects.png"
+      alt: "Objects"
+      caption: "Defining key objects in the system like Projects, Teams, and Check-Ins."
+    - src: "/Hero_Images/Roles.png"
+      alt: "Roles"
+      caption: "Mapping user roles such as Admin, Manager, and Employee."
+    - src: "/Hero_Images/Site_Map.png"
+      alt: "Site Map"
+      caption: "Structuring the application with a clear sitemap."
+    - src: "/Hero_Images/check_in_flow.png"
+      alt: "Check-in Flow"
+      caption: "Mapping the critical check-in user flow."
+  wireframes:
+    - src: "/Hero_Images/check_in_flow_1.png"
+      alt: "Check-in Flow Screen 1"
+    - src: "/Hero_Images/check_in_flow_2.png"
+      alt: "Check-in Flow Screen 2"
+    - src: "/Hero_Images/team_view_1.png"
+      alt: "Team View Screen"
+    - src: "/Hero_Images/team_settings.png"
+      alt: "Team Settings Screen"
+  final-screens:
+    - src: "/bcexperience/checkin_creation.png"
       alt: "Check-in Creation"
-      caption: "Check-in Creation: Streamlined step-by-step workflow with smart defaults, progress indicators, and contextual guidance."
-    - src: "/bc-experience/2001 - Check-in Creation - Guidelines CTA Addition.png"
-      alt: "Check-in Guidelines"
-      caption: "Check-in Guidelines: Integrated help system with contextual guidelines, clear call-to-actions, and validation feedback."
+      caption: "The simplified check-in interface where engineers update their progress twice daily."
+    - src: "/bcexperience/Single_Member_View.png"
+      alt: "Single Member View"
+      caption: "A timeline of daily check-ins for a specific team member to track progress and blockers."
+    - src: "/bcexperience/Team-View.png"
+      alt: "Team View"
+      caption: "A snapshot of check-in status across all team members."
 ---
 
 ## The Challenge
 
-The BC Experience platform was facing significant usability challenges that were impacting team productivity and member engagement. The existing interface was cluttered, difficult to navigate, and lacked the intuitive flow needed for effective team collaboration and member management.
+BeautifulCode’s success has always relied on transparency and autonomy. As the company grew, maintaining visibility across distributed teams became increasingly difficult.  
+Project updates were shared inconsistently, managers had to chase people for information, and daily stand-ups turned into time-consuming status meetings.
 
-The key challenges identified were:
+The growing team needed a better way to share progress and blockers—without adding extra meetings or friction.
 
-- **Complex Navigation**: Users struggled to find key features and information
-- **Poor Member Management**: Difficult to track and manage team members effectively
-- **Inefficient Check-in Process**: The check-in workflow was cumbersome and time-consuming
-- **Lack of Visual Hierarchy**: Important information was buried in dense layouts
-- **Mobile Responsiveness**: Poor experience on mobile devices
+**Key problems identified:**
 
-## Understanding the Problem
+- Lack of structured communication across distributed teams
+- Managers spending excessive time collecting updates
+- Difficulty tracking progress at scale
+- Increasing dependency on synchronous meetings
 
-### User Research & Analysis
+> “How can we create a system that builds trust and transparency, without micromanagement?”
 
-I conducted extensive user research to understand the pain points and user needs:
+The goal was to design a lightweight internal tool that encouraged regular updates, enabled visibility for everyone, and scaled naturally with team growth.
 
-- **Stakeholder Interviews**: Spoke with team leads, managers, and regular users
-- **User Journey Mapping**: Analyzed current workflows and identified friction points
-- **Usability Testing**: Observed users interacting with the existing platform
-- **Competitive Analysis**: Studied similar platforms to understand best practices
+## Design Process
 
-### Key Insights
+My process began with understanding user pain points and defining the product’s core architecture before diving into UI. The focus was on building a system that was easy to use daily, provided value instantly, and worked seamlessly for different roles—engineers, managers, and partners.
 
-The research revealed several critical insights:
+### User Flow & Site Mapping
 
-- **Users spent 40% more time** on tasks than necessary due to poor navigation
-- **Team leads struggled** to get visibility into member activities and progress
-- **Check-in process** was the most frustrating part of the user experience
-- **Mobile usage** was increasing but the platform wasn't optimized for it
+The foundation started with defining key **system objects** such as _Projects, Teams, Members,_ and _Check-ins_.  
+By mapping **user roles** (Admin, Manager, Engineer), I clarified permissions and views early on to avoid complexity later.
 
-> "We need a platform that feels intuitive and helps us focus on what matters most - our team and their progress."
+I then created a **site map** that organized the app into a logical, minimal structure. This ensured intuitive navigation and a consistent mental model for all users.
 
-## The Approach
+The most important flow—**the daily check-in**—was mapped in detail. It had to be frictionless, so engineers could complete their update in minutes while managers gained instant visibility. Through multiple iterations, I refined the flow to minimize steps and highlight only the essentials.
 
-### Design Strategy
+<div data-carousel="process-artifacts"></div>
 
-I adopted a user-centered design approach with the following principles:
+### Wireframing & Prototyping
 
-1. **Simplify Navigation**: Create clear, logical information architecture
-2. **Enhance Visibility**: Provide better insights into team and member activities
-3. **Streamline Workflows**: Reduce steps and cognitive load for common tasks
-4. **Mobile-First**: Ensure excellent experience across all devices
-5. **Consistent Design Language**: Establish cohesive visual patterns
+Once the structure was validated, I moved into low-fidelity wireframes using Figma.  
+The focus was simplicity—clear layout, minimal input, and predictable navigation. Early prototypes were tested internally, leading to valuable feedback about interaction patterns and terminology.
 
-### Information Architecture
+Iterations focused on:
 
-I restructured the platform's information architecture to improve discoverability and usability:
+- Reducing the number of actions needed to complete a check-in
+- Clarifying input labels and hierarchy
+- Improving contrast and readability for faster scanning
 
-#### Primary Navigation
-
-- **Dashboard**: Overview of team activities and key metrics
-- **Members**: Comprehensive member management and profiles
-- **Check-ins**: Streamlined check-in process and history
-- **Settings**: Team configuration and preferences
-
-#### Secondary Features
-
-- **Reports**: Analytics and insights
-- **Notifications**: Activity updates and alerts
-- **Help**: Support and documentation
-
-## Design Process & Iterations
-
-### Wireframing & Early Concepts
-
-I started with low-fidelity wireframes to explore different layout approaches and user flows:
+After several design-feedback loops, I developed interactive prototypes to test real workflows, ensuring the app felt natural in day-to-day use.
 
 <div class="wireframeGrid">
-  <img src="/bc-experience/wireframe1.png" alt="Initial Wireframe Concepts" />
-  <img src="/bc-experience/wireframe2.png" alt="Navigation Structure" />
+  <img src="/Hero_Images/check_in_flow_1.png" alt="Check-in Flow Screen 1" />
+  <img src="/Hero_Images/check_in_flow_2.png" alt="Check-in Flow Screen 2" />
+  <img src="/Hero_Images/team_view_1.png" alt="Team View Screen" />
+  <img src="/Hero_Images/team_settings.png" alt="Team Settings Screen" />
 </div>
 
-### Member Management Redesign
+## Final UI
 
-The member management section was completely redesigned to provide better visibility and control:
+The final interface balances **clarity and focus**.  
+Every screen communicates purpose without distractions—ideal for teams who need to check in, view updates, and move on quickly.
 
-#### Single Member View
+![Check-in Flow Animation](/bcexperience/checkin.gif)
 
-- **Comprehensive Profile**: All member information in one place
-- **Activity Timeline**: Visual representation of member progress
-- **Quick Actions**: Easy access to common tasks
-- **Status Indicators**: Clear visual cues for member status
+- **Check-in Creation:** A step-by-step form with smart defaults and contextual help.
+- **Single Member View:** A chronological timeline that highlights each engineer’s daily progress and blockers.
+- **Team View:** A high-level snapshot of all team members’ check-in statuses and recent activity.
 
-#### Team Overview
+The overall design embraces BeautifulCode’s minimalist brand values while maintaining strong usability.
 
-- **Member Grid**: Visual representation of all team members
-- **Status Overview**: Quick glance at team health and progress
-- **Bulk Actions**: Efficient management of multiple members
-- **Filtering & Search**: Easy member discovery and organization
+<div data-carousel="final-screens"></div>
 
-### Check-in Process Optimization
+## Challenges Faced
 
-The check-in process was the most critical area for improvement. I redesigned it to be more intuitive and efficient:
+### 1. Making Check-ins Feel Effortless
 
-#### Check-in Creation
+One of the biggest challenges was ensuring check-ins didn’t feel like surveillance. Engineers were used to autonomy, so the process had to feel quick and valuable rather than administrative.
 
-- **Step-by-Step Flow**: Clear progression through the check-in process
-- **Smart Defaults**: Pre-filled information based on context
-- **Guidelines Integration**: Built-in guidance and best practices
-- **Progress Indicators**: Visual feedback on completion status
+The solution was to:
 
-#### Guidelines & CTA Integration
+- Keep the flow under 2–3 screens
+- Use auto-fill for recurring project data
+- Provide instant Slack summaries to reduce redundancy
 
-- **Contextual Help**: Guidelines appear when needed
-- **Clear Call-to-Actions**: Obvious next steps and actions
-- **Validation Feedback**: Immediate feedback on form completion
-- **Save Progress**: Ability to save and continue later
+These small optimizations made check-ins natural rather than burdensome.
 
-<div data-carousel="bc-experience-slides"></div>
+### 2. Driving Adoption Across Teams
 
-### Login & Authentication
+Early testers found the process repetitive. Through user feedback, I introduced:
 
-I also redesigned the login experience to be more welcoming and secure:
+- **Auto-fill for repeated entries** to save time
+- A **“Generate Summary”** feature to instantly create update messages for Slack
+- Visual cues and feedback to confirm submissions
 
-![Login Page](/bc-experience/Login Page.png)
+This approach reduced friction and helped adoption rates grow steadily.
 
-## Key Features & Improvements
+## Outcomes & Results
 
-### Enhanced Dashboard
+### Quantitative Impact
 
-The new dashboard provides:
+- Reduced average check-in time to **under 5 minutes**
+- Introduced **auto-fill and smart suggestions**, reducing user friction by over 40%
+- Implemented **Slack summaries** that cut redundant communication
+- Achieved an **85% daily check-in rate** within the first month of rollout
 
-- **Key Metrics**: Important team statistics at a glance
-- **Recent Activity**: Latest updates and changes
-- **Quick Actions**: Fast access to common tasks
-- **Personalized Content**: Relevant information based on user role
+## Next Steps
 
-### Improved Member Management
+The success of the MVP opened up opportunities for future improvements, including:
 
-- **Visual Member Cards**: Easy-to-scan member information
-- **Advanced Filtering**: Multiple ways to find and organize members
-- **Bulk Operations**: Efficient management of multiple members
-- **Detailed Profiles**: Comprehensive member information and history
+- **Analytics Dashboard:** Insights into team activity, blockers, and performance trends
+- **Main Dashboard:** Personalized view for each user role
+- **Client-Side Portal:** Transparency for partners to view project progress
 
-### Streamlined Check-in Process
-
-- **Guided Workflow**: Step-by-step process with clear instructions
-- **Smart Suggestions**: AI-powered recommendations for check-in content
-- **Progress Tracking**: Visual indicators of completion status
-- **Mobile Optimization**: Touch-friendly interface for mobile devices
-
-### Mobile-First Design
-
-- **Responsive Layout**: Optimized for all screen sizes
-- **Touch Interactions**: Gesture-based navigation and actions
-- **Offline Capability**: Core features work without internet connection
-- **Fast Loading**: Optimized performance on mobile networks
-
-## User Experience Improvements
-
-### Navigation Enhancement
-
-- **Breadcrumb Navigation**: Clear indication of current location
-- **Search Functionality**: Quick access to any feature or information
-- **Keyboard Shortcuts**: Power user features for efficiency
-- **Customizable Layout**: Users can personalize their workspace
-
-### Visual Design System
-
-- **Consistent Color Palette**: Cohesive visual identity
-- **Typography Hierarchy**: Clear information hierarchy
-- **Icon System**: Intuitive visual language
-- **Spacing & Layout**: Generous whitespace for better readability
-
-### Accessibility Improvements
-
-- **Screen Reader Support**: Full compatibility with assistive technologies
-- **Keyboard Navigation**: Complete keyboard accessibility
-- **Color Contrast**: WCAG compliant color combinations
-- **Focus Indicators**: Clear visual feedback for keyboard users
-
-## Implementation & Results
-
-### Development Collaboration
-
-I worked closely with the development team to ensure:
-
-- **Design System Implementation**: Consistent component library
-- **Responsive Behavior**: Proper implementation across devices
-- **Performance Optimization**: Fast loading and smooth interactions
-- **Cross-Browser Compatibility**: Consistent experience across browsers
-
-### User Testing & Feedback
-
-After implementation, I conducted user testing to validate the improvements:
-
-- **Task Completion Rate**: Increased from 65% to 92%
-- **Time to Complete Tasks**: Reduced by 45% on average
-- **User Satisfaction**: Improved from 3.2/5 to 4.6/5
-- **Mobile Usage**: Increased by 60% after mobile optimization
-
-### Key Metrics
-
-- **User Adoption**: 95% of users adopted the new interface within 2 weeks
-- **Task Efficiency**: 45% reduction in time to complete common tasks
-- **Error Rate**: 70% reduction in user errors
-- **Support Tickets**: 50% reduction in platform-related support requests
-
-## Lessons Learned
-
-### What Worked Well
-
-- **User Research**: Deep understanding of user needs drove better decisions
-- **Iterative Design**: Regular feedback loops improved the final solution
-- **Mobile-First Approach**: Ensured excellent experience across all devices
-- **Design System**: Consistent components improved development efficiency
-
-### Challenges & Solutions
-
-- **Legacy Data Migration**: Solved through careful planning and user communication
-- **User Training**: Addressed through comprehensive onboarding and documentation
-- **Performance Requirements**: Met through optimization and progressive loading
-- **Stakeholder Alignment**: Achieved through regular communication and demos
-
-## Future Considerations
-
-### Planned Enhancements
-
-- **Advanced Analytics**: Deeper insights into team performance and trends
-- **Integration Capabilities**: Connect with other tools and platforms
-- **AI-Powered Features**: Smart suggestions and automated workflows
-- **Customization Options**: More personalization for different team needs
-
-### Continuous Improvement
-
-The platform will continue to evolve based on:
-
-- **User Feedback**: Regular surveys and feedback collection
-- **Usage Analytics**: Data-driven insights into user behavior
-- **Feature Requests**: Prioritized based on user needs and business value
-- **Technology Updates**: Keeping up with modern web standards and practices
-
-## Conclusion
-
-The BC Experience platform redesign successfully addressed the key usability challenges and significantly improved the user experience. By focusing on user needs, simplifying complex workflows, and implementing a mobile-first approach, we created a platform that truly serves its users.
-
-The results speak for themselves: improved task completion rates, reduced time to complete common tasks, and significantly higher user satisfaction. Most importantly, the platform now enables teams to focus on what matters most - collaboration, member management, and achieving their goals.
-
-> "The new platform feels like it was designed specifically for our needs. It's intuitive, efficient, and actually enjoyable to use."
-
-This project reinforced the importance of user-centered design, iterative development, and the value of investing in user experience. The platform is now positioned to scale with the organization's growth and adapt to evolving user needs.
+---

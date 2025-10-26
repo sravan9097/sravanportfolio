@@ -4,7 +4,7 @@ title: Bridging Design & Code in the Age of AI
 category: Article
 description: Learn how Model Context Protocol (MCP) creates a real-time bridge between design systems and development, enabling AI-powered tools to maintain perfect design-to-code consistency.
 image: /mcp-design-code-bridge/figmamcpCover.webp
-date: 2024-02-20
+rank: 2
 timeline: 1 month
 tools:
   - Figma

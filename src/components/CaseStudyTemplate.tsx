@@ -75,6 +75,31 @@ const CaseStudyTemplate: React.FC<CaseStudyTemplateProps> = ({ doc }) => {
         const { className, ...restProps } = props;
         return <div className={styles.wireframeGrid} {...restProps}>{children}</div>;
       }
+      // Handle metrics grid
+      if (props.className === 'metricsGrid') {
+        const { className, ...restProps } = props;
+        return <div className={styles.metricsGrid} {...restProps}>{children}</div>;
+      }
+      // Handle metric card
+      if (props.className === 'metricCard') {
+        const { className, ...restProps } = props;
+        return <div className={styles.metricCard} {...restProps}>{children}</div>;
+      }
+      // Handle metric value
+      if (props.className === 'metricValue') {
+        const { className, ...restProps } = props;
+        return <div className={styles.metricValue} {...restProps}>{children}</div>;
+      }
+      // Handle metric title
+      if (props.className === 'metricTitle') {
+        const { className, ...restProps } = props;
+        return <div className={styles.metricTitle} {...restProps}>{children}</div>;
+      }
+      // Handle metric description
+      if (props.className === 'metricDescription') {
+        const { className, ...restProps } = props;
+        return <div className={styles.metricDescription} {...restProps}>{children}</div>;
+      }
       return <div {...props}>{children}</div>;
     },
   };
@@ -86,7 +111,7 @@ const CaseStudyTemplate: React.FC<CaseStudyTemplateProps> = ({ doc }) => {
           {/* Hero Section */}
           <div className={styles.heroSection}>
             <span className={styles.categoryLabel}>
-              {doc.category} - Website Redesign
+              {doc.category} — {doc.tags?.[0] || 'Design'}
             </span>
             <h1 className={styles.title}>{doc.title}</h1>
             
@@ -141,7 +166,7 @@ const CaseStudyTemplate: React.FC<CaseStudyTemplateProps> = ({ doc }) => {
 
           {/* Prototype Links Section */}
           {doc.prototypeLinks && doc.prototypeLinks.length > 0 && (
-            <div className="w-full">
+            <div className={`w-full ${styles.prototypeSection}`}>
               <h2 className={styles.sectionHeading}>Final Prototype</h2>
               <div className={styles.prototypeCards}>
                 {doc.prototypeLinks.map((link, index) => (

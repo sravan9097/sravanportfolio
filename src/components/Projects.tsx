@@ -2,59 +2,20 @@
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { LazyImage } from "@/components/ui/LazyImage";
+import { getCaseStudies } from "@/lib/content";
 
 const Projects = () => {
-  const projects = [
-    {
-      id: "beautifulcode-revamp",  
-      title: "BeautifulCode Website Redesign",
-      description: "A calm, minimal, and geek-friendly website for BeautifulCode, reflecting deep engineering culture and thought leadership.",
-      image: "/bcwebsite/beautifulcodeCover.png",
-      category: "Case Study — Website Redesign"
-    },
-
-    {
-      id: "sharechat",
-      title: "ShareChat Lead Generation Feature Design",
-      description: "Empowering advertisers to launch lead-gen campaigns independently through a customizable, self-serve form builder.",
-      image: "/Hero_Images/sharechatCover.png",
-      category: "Case Study — Feature Design"
-    },
-    
-    {
-      id: "design-system",
-      title: "What is a Design System?",
-      description: "A design system is a collection of reusable components, patterns, and guidelines that ensure consistency and efficiency across all products and platforms.",
-      image: "/Hero_Images/designsystemhero.png",
-      category: "Case Study — Design System"
-    },
-    
-   
-    
-    
-    // Articles retained but de-emphasized in homepage slice
-    {
-      id: "design-tokens-naming",
-      title: "Naming Design Tokens: A Vital Step in the Design System Journey",
-      description: "A guide to naming tokens for clarity and collaboration in design systems.",
-      image: "/Hero_Images/naming-design-tokens.webp",
-      category: "Article — Design System"
-    },
-    {
-      id: "mcp-design-code-bridge",
-      title: "Bridging Design & Code in the Age of AI: How MCP Turns Your Design System into a Live-Synced Developer Guide",
-      description: "Learn how Model Context Protocol (MCP) creates a real-time bridge between design systems and development, enabling AI-powered tools to maintain perfect design-to-code consistency.",
-      image: "/Hero_Images/figmamcpCover.webp",
-      category: "Design System"
-    },
-    {
-      id: "ai-agents-design-systems",
-      title: "When Your 'User' Isn't Human: Reimagining Design Systems for AI Agents",
-      description: "Explore how design systems must evolve to serve both human users and AI agents, requiring new approaches to semantics, predictability, and machine-readable documentation.",
-      image: "/Hero_Images/aiagents.png",
-      category: "Design System"
-    }
-  ];
+  // Get top 3 case studies by rank
+  const caseStudies = getCaseStudies().slice(0, 3);
+  
+  // Convert to projects format for display
+  const projects = caseStudies.map(cs => ({
+    id: cs.slug,
+    title: cs.title,
+    description: cs.description,
+    image: cs.image || "/placeholder.svg",
+    category: `${cs.category} — ${cs.tags?.[0] || 'Design'}`
+  }));
 
   return (
     <section className="section-padding bg-background-alt" id="projects">
@@ -64,20 +25,16 @@ const Projects = () => {
           {/* <p className="text-muted-foreground">Teasers focused on the UX challenge and impact</p> */}
         </div>
         <div className="max-w-7xl mx-auto w-full">
-          <div className="space-y-12 md:space-y-20">
-            {projects.slice(0, 3).map((project, index) => (
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10">
+            {projects.map((project) => (
               <Link 
                 key={project.id} 
                 to={`/project/${project.id}`}
                 className="group block"
               >
-                <article className={`grid grid-cols-1 gap-6 md:gap-8 lg:gap-12 items-center ${
-                  index % 2 === 0 ? 'md:grid-cols-[0.8fr,1.2fr]' : 'md:grid-cols-[1.2fr,0.8fr]'
-                }`}>
+                <article className="h-full space-y-4">
                   {/* Image */}
-                  <div className={`relative overflow-hidden bg-muted ${
-                    index % 2 === 0 ? 'md:order-1' : 'md:order-2'
-                  }`}>
+                  <div className="relative overflow-hidden bg-muted">
                     <div className="aspect-[4/3]">
                       <LazyImage 
                         src={project.image} 
@@ -90,37 +47,31 @@ const Projects = () => {
                   </div>
                   
                   {/* Content */}
-                  <div className={`${
-                    index % 2 === 0 ? 'md:order-2' : 'md:order-1'
-                  }`}>
-                    <div className="space-y-4">
-                      {/* Category */}
-                      <div className="flex items-center gap-3">
-                        <div className="h-px w-8 bg-accent" />
-                        <span className="text-xs font-semibold text-accent uppercase tracking-[0.2em]">
-                          {project.category}
-                        </span>
-                      </div>
-                      
-                      {/* Title */}
-                      <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold text-foreground leading-tight group-hover:text-accent transition-colors duration-300">
-                        {project.title}
-                      </h3>
-                      
-                      {/* Description */}
-                      <p className="text-base md:text-lg text-muted-foreground leading-relaxed">
-                        {project.description}
-                      </p>
-                      
-                      {/* CTA */}
-                      <div className="pt-2">
-                        <div className="inline-flex items-center gap-2 text-sm font-medium text-foreground group-hover:gap-4 transition-all duration-300">
-                          <span>View Project</span>
-                          <svg className="w-5 h-5 transform group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                          </svg>
-                        </div>
-                      </div>
+                  <div className="space-y-3">
+                    {/* Category */}
+                    <div className="flex items-center gap-3">
+                      <div className="h-px w-8 bg-accent" />
+                      <span className="text-xs font-semibold text-accent uppercase tracking-[0.2em]">
+                        {project.category}
+                      </span>
+                    </div>
+                    
+                    {/* Title */}
+                    <h3 className="text-xl md:text-2xl font-bold text-foreground leading-tight group-hover:text-accent transition-colors duration-300">
+                      {project.title}
+                    </h3>
+                    
+                    {/* Description */}
+                    <p className="text-sm md:text-base text-muted-foreground leading-relaxed line-clamp-2">
+                      {project.description}
+                    </p>
+                    
+                    {/* CTA */}
+                    <div className="inline-flex items-center gap-2 text-sm font-medium text-foreground group-hover:gap-4 transition-all duration-300">
+                      <span>View Project</span>
+                      <svg className="w-4 h-4 transform group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                      </svg>
                     </div>
                   </div>
                 </article>

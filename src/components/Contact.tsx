@@ -104,8 +104,8 @@ const Contact = () => {
                 </div>
                 <div>
                   <h3 className="font-medium text-primary mb-1">Drop a mail</h3>
-                  <a href="mailto:sravan.iitk@live.in" className="text-primary-light hover:text-accent transition-colors">
-                    sravan.iitk@live.in
+                  <a href="mailto:sravan.mulugurthy@gmail.com" className="text-primary-light hover:text-accent transition-colors">
+                    sravan.mulugurthy@gmail.com
                   </a>
                 </div>
               </div>
@@ -116,8 +116,8 @@ const Contact = () => {
                 </div>
                 <div>
                   <h3 className="font-medium text-primary mb-1">Whatsapp/Call me</h3>
-                  <a href="tel:+919730578566" className="text-primary-light hover:text-accent transition-colors">
-                    +91 9730578566
+                  <a href="tel:+918008757502" className="text-primary-light hover:text-accent transition-colors">
+                    +91 8008757502
                   </a>
                 </div>
               </div>
@@ -144,7 +144,11 @@ const Contact = () => {
                   <a href="https://instagram.com/sravan_photography" target="_blank" rel="noopener noreferrer" className="bg-accent/10 p-3 rounded-full hover:bg-accent/20 transition-colors">
                     <Instagram className="w-5 h-5 text-accent" />
                   </a>
-                  
+                  <a href="https://github.com/sravan9097" target="_blank" rel="noopener noreferrer" className="bg-accent/10 p-3 rounded-full hover:bg-accent/20 transition-colors">
+                    <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path fill="currentColor" d="M12 2C6.477 2 2 6.484 2 12.021c0 4.423 2.864 8.166 6.839 9.504.5.092.682-.217.682-.482 0-.237-.009-.868-.013-1.703-2.782.604-3.369-1.342-3.369-1.342-.454-1.154-1.11-1.462-1.11-1.462-.908-.62.07-.608.07-.608 1.004.071 1.533 1.032 1.533 1.032.893 1.531 2.341 1.089 2.91.833.092-.647.35-1.09.636-1.342-2.222-.253-4.555-1.113-4.555-4.951 0-1.094.39-1.99 1.029-2.692-.103-.253-.446-1.272.098-2.651 0 0 .84-.27 2.75 1.026A9.563 9.563 0 0112 6.844c.853.004 1.71.115 2.512.337 1.909-1.296 2.748-1.026 2.748-1.026.546 1.379.202 2.398.1 2.651.64.702 1.027 1.598 1.027 2.692 0 3.849-2.337 4.695-4.566 4.943.36.309.681.919.681 1.852 0 1.336-.012 2.415-.012 2.744 0 .267.18.578.688.48C19.14 20.182 22 16.44 22 12.02 22 6.484 17.522 2 12 2Z" />
+                    </svg>
+                  </a>
                  
                 </div>
               </div>

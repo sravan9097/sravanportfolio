@@ -82,7 +82,7 @@ const CaseStudyTemplate: React.FC<CaseStudyTemplateProps> = ({ doc }) => {
   return (
     <ProjectLayout projectTitle={doc.title}>
       <div className={`min-h-screen bg-background ${styles.caseStudyContent}`}>
-        <div className="flex flex-col items-center mx-auto">
+        <div className={`flex flex-col max-w-6xl mx-auto ${styles.contentContainer}`}>
           {/* Hero Section */}
           <div className={styles.heroSection}>
             <span className={styles.categoryLabel}>
@@ -129,7 +129,7 @@ const CaseStudyTemplate: React.FC<CaseStudyTemplateProps> = ({ doc }) => {
           )}
 
           {/* Markdown Content */}
-          <div className="w-full">
+          <div className={styles.markdownContent}>
             <ReactMarkdown
               remarkPlugins={[remarkGfm]}
               rehypePlugins={[rehypeRaw, rehypeSlug, [rehypeAutolinkHeadings, { behavior: "append" }]]}

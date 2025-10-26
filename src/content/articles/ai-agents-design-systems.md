@@ -1,7 +1,7 @@
 ---
 slug: ai-agents-design-systems
 title: When Your 'User' Isn't Human
-category: Case Study
+category: Article
 description: Explore how design systems must evolve to serve both human users and AI agents, requiring new approaches to semantics, predictability, and machine-readable documentation.
 image: /ai-agents-design-systems/aiagents.png
 date: 2024-03-10

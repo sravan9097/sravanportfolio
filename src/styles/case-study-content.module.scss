@@ -5,14 +5,32 @@
   // Typography hierarchy
   font-size: 1rem;
   line-height: 1.6;
+  padding: 0;
   
   @media (min-width: 768px) {
     font-size: 1.125rem;
   }
 }
 
+.contentContainer {
+  padding: 2rem 1rem;
+  width: 100%;
+  /* Temporary debug border to verify changes are applied */
+
+  
+  @media (min-width: 768px) {
+    padding: 3rem 2rem;
+  }
+  
+  @media (min-width: 1024px) {
+    padding: 4rem 3rem;
+  }
+}
+
 .heroSection {
-  margin-bottom: 3rem;
+  margin-bottom: 4rem;
+  /* Temporary debug background to verify changes are applied */
+  background-color: rgba(0, 255, 0, 0.1);
   
   .categoryLabel {
     font-size: 0.875rem;
@@ -20,17 +38,21 @@
     color: hsl(var(--accent));
     text-transform: uppercase;
     letter-spacing: 0.2em;
+    margin-bottom: 0.75rem;
+    display: block;
   }
   
   .title {
     font-size: 2.25rem;
     font-weight: 700;
-    margin-top: 0.5rem;
-    margin-bottom: 1.5rem;
+    margin-top: 0;
+    margin-bottom: 2rem;
     color: hsl(var(--primary));
+    line-height: 1.2;
     
     @media (min-width: 768px) {
       font-size: 3rem;
+      margin-bottom: 2.5rem;
     }
   }
   
@@ -53,11 +75,12 @@
   width: 100%;
   margin: 0 auto;
   gap: 2rem;
-  margin-bottom: 3rem;
+  margin-bottom: 4rem;
   
   @media (min-width: 768px) {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
+    margin-bottom: 5rem;
   }
   
   .metaItem {
@@ -67,8 +90,12 @@
     .metaLabel {
       font-size: 1.125rem;
       font-weight: 600;
-      margin-bottom: 0.5rem;
+      margin-bottom: 0.75rem;
       color: hsl(var(--primary));
+      
+      @media (min-width: 768px) {
+        margin-bottom: 1rem;
+      }
     }
     
     .metaValue {
@@ -81,9 +108,20 @@
         
         li {
           color: hsl(var(--primary) / 0.7);
+          margin-bottom: 0.25rem;
         }
       }
     }
+  }
+}
+
+// Markdown content wrapper
+.markdownContent {
+  width: 100%;
+  margin-top: 2rem;
+  
+  @media (min-width: 768px) {
+    margin-top: 3rem;
   }
 }
 
@@ -91,24 +129,34 @@
 .sectionHeading {
   font-size: 1.25rem;
   font-weight: 700;
-  margin-bottom: 0.75rem;
+  margin-top: 3rem;
+  margin-bottom: 1.5rem;
   color: hsl(var(--foreground));
+  line-height: 1.3;
+  
+  &:first-child {
+    margin-top: 0;
+  }
   
   @media (min-width: 768px) {
     font-size: 1.5rem;
-    margin-bottom: 1rem;
+    margin-top: 3.5rem;
+    margin-bottom: 2rem;
   }
 }
 
 .subsectionHeading {
   font-size: 1.125rem;
   font-weight: 600;
-  margin-bottom: 0.5rem;
-  margin-top: 1rem;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
   color: hsl(var(--foreground));
+  line-height: 1.4;
   
   @media (min-width: 768px) {
     font-size: 1.25rem;
+    margin-top: 2.5rem;
+    margin-bottom: 1.25rem;
   }
 }
 
@@ -119,12 +167,16 @@
   font-weight: 600;
   font-size: 1rem;
   color: hsl(var(--muted-foreground));
-  margin-bottom: 0.75rem;
+  margin: 2rem 0;
+  padding: 1.25rem;
+  background-color: hsl(var(--muted) / 0.3);
+  border-radius: 0 0.5rem 0.5rem 0;
   
   @media (min-width: 768px) {
     padding-left: 1rem;
     font-size: 1.25rem;
-    margin-bottom: 1rem;
+    margin: 2.5rem 0;
+    padding: 1.5rem;
   }
 }
 
@@ -132,10 +184,11 @@
 .imageGrid {
   display: grid;
   gap: 1.5rem;
-  margin-bottom: 1rem;
+  margin-bottom: 2rem;
   
   @media (min-width: 768px) {
     grid-template-columns: repeat(2, 1fr);
+    margin-bottom: 2.5rem;
   }
   
   .imageItem {
@@ -143,12 +196,13 @@
     flex-direction: column;
     
     .imageTitle {
-      margin-bottom: 0.5rem;
+      margin-bottom: 0.75rem;
       color: hsl(var(--foreground));
-      margin-top: 0.5rem;
+      margin-top: 0.75rem;
       
       @media (min-width: 768px) {
         margin-top: 1rem;
+        margin-bottom: 1rem;
       }
     }
     
@@ -169,12 +223,13 @@
 .wireframeGrid {
   display: grid;
   gap: 1rem;
-  margin: 1rem 0;
+  margin: 2rem 0;
   grid-template-columns: 1fr;
   
   @media (min-width: 768px) {
     gap: 1.5rem;
     grid-template-columns: repeat(2, 1fr);
+    margin: 2.5rem 0;
   }
   
   img {
@@ -190,11 +245,12 @@
 .prototypeCards {
   display: grid;
   gap: 1rem;
-  margin-top: 1rem;
+  margin-top: 2rem;
   
   @media (min-width: 768px) {
     gap: 1.5rem;
     grid-template-columns: repeat(2, 1fr);
+    margin-top: 2.5rem;
   }
   
   .prototypeCard {
@@ -315,14 +371,15 @@
 
 // Figma file CTA
 .figmaFileCTA {
-  margin-top: 2rem;
+  margin-top: 3rem;
   background-color: hsl(var(--muted) / 0.5);
   border: 1px solid hsl(var(--border));
   border-radius: 0.5rem;
-  padding: 0.75rem;
+  padding: 1rem;
   
   @media (min-width: 768px) {
-    padding: 1rem;
+    margin-top: 4rem;
+    padding: 1.5rem;
   }
   
   .ctaContent {
@@ -387,7 +444,7 @@
 
 // Lists and content
 .contentList {
-  margin-bottom: 0.5rem;
+  margin-bottom: 1.5rem;
   padding-left: 1rem;
   list-style-type: disc;
   color: hsl(var(--muted-foreground));
@@ -396,10 +453,11 @@
   @media (min-width: 768px) {
     padding-left: 1.25rem;
     font-size: 1rem;
+    margin-bottom: 2rem;
   }
   
   li {
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.75rem;
     
     .highlight {
       font-weight: 600;
@@ -413,6 +471,12 @@
   height: auto;
   object-fit: cover;
   border-radius: 0.5rem;
+  margin: 2rem 0;
+  border: 1px solid hsl(var(--border));
+  
+  @media (min-width: 768px) {
+    margin: 2.5rem 0;
+  }
   
   &.fullWidth {
     width: 100%;
@@ -491,13 +555,21 @@
 
 // Outcome and reflection sections
 .outcomeSection {
-  margin-bottom: 2rem;
+  margin-bottom: 3rem;
+  
+  @media (min-width: 768px) {
+    margin-bottom: 4rem;
+  }
   
   .outcomeTitle {
     font-size: 1.25rem;
     font-weight: 600;
-    margin-bottom: 1rem;
+    margin-bottom: 1.5rem;
     color: hsl(var(--foreground));
+    
+    @media (min-width: 768px) {
+      margin-bottom: 2rem;
+    }
   }
   
   .outcomeQuote {
@@ -506,7 +578,15 @@
     font-style: italic;
     font-size: 1.125rem;
     color: hsl(var(--muted-foreground));
-    margin-bottom: 1rem;
+    margin-bottom: 1.5rem;
+    padding: 1.25rem;
+    background-color: hsl(var(--muted) / 0.3);
+    border-radius: 0 0.5rem 0.5rem 0;
+    
+    @media (min-width: 768px) {
+      margin-bottom: 2rem;
+      padding: 1.5rem;
+    }
   }
   
   .outcomeList {
@@ -516,24 +596,103 @@
     padding-left: 1.25rem;
     
     li {
-      margin-bottom: 0.25rem;
+      margin-bottom: 0.5rem;
     }
   }
 }
 
 .reflectionSection {
-  margin-bottom: 2rem;
+  margin-bottom: 3rem;
+  
+  @media (min-width: 768px) {
+    margin-bottom: 4rem;
+  }
   
   .reflectionTitle {
     font-size: 1.25rem;
     font-weight: 600;
-    margin-bottom: 1rem;
+    margin-bottom: 1.5rem;
     color: hsl(var(--foreground));
+    
+    @media (min-width: 768px) {
+      margin-bottom: 2rem;
+    }
   }
   
   .reflectionContent {
     font-size: 1rem;
     color: hsl(var(--muted-foreground));
+    margin-bottom: 1.5rem;
+    
+    @media (min-width: 768px) {
+      margin-bottom: 2rem;
+    }
+  }
+}
+
+// Responsive adjustments for case study
+@media (max-width: 896px) {
+  .contentContainer {
+    padding: 1.5rem 1rem;
+  }
+  
+  .heroSection {
+    margin-bottom: 2.5rem;
+    
+    .title {
+      font-size: 1.75rem;
+      margin-bottom: 1.5rem;
+    }
+  }
+  
+  .metaGrid {
+    margin-bottom: 2.5rem;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  
+  .markdownContent {
+    margin-top: 1.5rem;
+  }
+  
+  .sectionHeading {
+    margin-top: 2rem;
     margin-bottom: 1rem;
+  }
+  
+  .subsectionHeading {
+    margin-top: 1.5rem;
+    margin-bottom: 0.75rem;
+  }
+  
+  .blockquote {
+    margin: 1.5rem 0;
+    padding: 1rem;
+  }
+  
+  .wireframeGrid {
+    margin: 1.5rem 0;
+  }
+  
+  .prototypeCards {
+    margin-top: 1.5rem;
+  }
+  
+  .figmaFileCTA {
+    margin-top: 2rem;
+    padding: 0.75rem;
+  }
+  
+  .contentList {
+    margin-bottom: 1rem;
+  }
+  
+  .responsiveImage {
+    margin: 1.5rem 0;
+  }
+  
+  .outcomeSection,
+  .reflectionSection {
+    margin-bottom: 2rem;
   }
 }

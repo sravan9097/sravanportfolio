@@ -22,7 +22,7 @@ const ProjectLayout = ({ children, projectTitle }: ProjectLayoutProps) => {
   return (
     <div className="min-h-screen bg-background">
       <Navbar />
-      <div className="container mx-auto max-w-5xl pt-32 pb-16">
+      <div className="container mx-auto max-w-6xl pt-32 pb-16">
         <Breadcrumb className="mb-6">
           <BreadcrumbList>
             <BreadcrumbItem>

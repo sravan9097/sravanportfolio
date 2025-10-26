@@ -16,6 +16,24 @@ import {
 const Projects = () => {
   const caseStudies = getCaseStudies();
   const articles = getArticles();
+  
+  // Add design system project manually since it's a React component, not markdown
+  const designSystemProject = {
+    slug: "design-system",
+    title: "What is a Design System?",
+    category: "Case Study",
+    description: "A design system is a collection of reusable components, patterns, and guidelines that ensure consistency and efficiency across all products and platforms.",
+    image: "/Hero_Images/designsystemhero.png",
+    date: "2024-01-15",
+    tags: ["design-system", "ui-components", "documentation"],
+    body: "",
+    timeline: "2 months",
+    tools: ["Figma", "Storybook"],
+    role: "Design System Lead"
+  };
+  
+  // Combine markdown case studies with the design system project
+  const allCaseStudies = [designSystemProject, ...caseStudies];
   const figmaProjects = [
     {
       id: "growthy-figma",
@@ -79,7 +97,7 @@ const Projects = () => {
           <div className="mb-20">
             <h2 className="text-2xl font-bold mb-8 text-foreground">Case Studies</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-10">
-              {caseStudies.map((project) => (
+              {allCaseStudies.map((project) => (
                 <Link 
                   key={project.slug} 
                   to={`/project/${project.slug}`} 

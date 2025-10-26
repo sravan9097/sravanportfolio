@@ -108,7 +108,7 @@ const ArticleTemplate: React.FC<ArticleTemplateProps> = ({ doc }) => {
   return (
     <ProjectLayout projectTitle={doc.title}>
       <div className={`min-h-screen bg-background ${styles.articleContent}`}>
-        <div className="flex flex-col items-center mx-auto">
+        <div className={`flex flex-col max-w-6xl mx-auto ${styles.contentContainer}`}>
           {/* Hero Section */}
           <div className={styles.heroSection}>
             <span className={styles.categoryLabel}>
@@ -127,7 +127,7 @@ const ArticleTemplate: React.FC<ArticleTemplateProps> = ({ doc }) => {
           </div>
           
           {/* Meta Information */}
-          <div className={styles.metaInfo}>
+          {/* <div className={styles.metaInfo}>
             <div className={styles.metaItem}>
               <span className={styles.metaLabel}>Published</span>
               <span className={styles.metaValue}>{new Date(doc.date).toLocaleDateString('en-US', { 
@@ -148,10 +148,10 @@ const ArticleTemplate: React.FC<ArticleTemplateProps> = ({ doc }) => {
                 </div>
               </div>
             )}
-          </div>
+          </div> */}
 
           {/* Markdown Content */}
-          <div className="w-full">
+          <div className={styles.markdownContent}>
             <ReactMarkdown
               remarkPlugins={[remarkGfm]}
               rehypePlugins={[rehypeRaw, rehypeSlug, [rehypeAutolinkHeadings, { behavior: "append" }]]}

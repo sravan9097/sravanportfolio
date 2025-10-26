@@ -90,14 +90,14 @@ const Contact = () => {
   return (
     <section className="section-padding" id="contact">
       <div className="container mx-auto">
-        <div className="max-w-4xl mx-auto">
+        <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold mb-4 text-primary-light">Let’s create meaningful experiences together.</h2>
-            <p className="text-primary-light">I’m open to new projects, collaborations, and full-time opportunities. If you’re hiring or looking to improve your product’s UX, let’s connect.</p>
+            {/* <p className="text-primary-light">I’m open to new projects, collaborations, and full-time opportunities. If you’re hiring or looking for a UX designer, let’s connect.</p> */}
           </div>
           
           <div className="grid md:grid-cols-5 gap-8">
-            <div className="md:col-span-2 space-y-6">
+            <div className="md:col-span-2 md:order-1 order-2 space-y-6">
               <div className="flex items-start gap-4">
                 <div className="bg-accent/10 p-3 rounded-full">
                   <Mail className="w-5 h-5 text-accent" />
@@ -154,7 +154,7 @@ const Contact = () => {
               </div>
             </div>
             
-            <div className="md:col-span-3">
+            <div className="md:col-span-3 md:order-2 order-1">
               <Form {...form}>
                 <form onSubmit={form.handleSubmit(handleSubmit)} className="space-y-4">
                   <div className="grid sm:grid-cols-2 gap-4">

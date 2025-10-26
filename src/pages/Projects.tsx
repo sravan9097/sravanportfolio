@@ -3,6 +3,8 @@ import { Link } from "react-router-dom";
 import { track } from "@vercel/analytics";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import { getArticles, getCaseStudies } from "@/lib/content";
+import { getImageURL } from "@/lib/imageUtils";
 import { 
   Breadcrumb,
   BreadcrumbItem,
@@ -13,63 +15,33 @@ import {
 } from "@/components/ui/breadcrumb";
 
 const Projects = () => {
-  const allProjects = [
-    {
-      id: "mcp-design-code-bridge",
-      title: "Bridging Design & Code in the Age of AI: How MCP Turns Your Design System into a Live-Synced Developer Guide",
-      description: "Learn how Model Context Protocol (MCP) creates a real-time bridge between design systems and development, enabling AI-powered tools to maintain perfect design-to-code consistency.",
-      image: "/Hero_Images/figmamcpCover.webp",
-      category: "Article Design System"
-    },
-    {
-      id: "ai-agents-design-systems",
-      title: "When Your 'User' Isn't Human: Reimagining Design Systems for AI Agents",
-      description: "Explore how design systems must evolve to serve both human users and AI agents, requiring new approaches to semantics, predictability, and machine-readable documentation.",
-      image: "/Hero_Images/aiagents.png",
-      category: "Article Design System"
-    },
-    {
-      id: "design-system",
-      title: "What is Design System?",
-      description: "A comprehensive design system with components, colors, typography and design guidelines.",
-      image: "/Hero_Images/designsystemhero.png",
-      category: "Article Design System"
-    },
-    {
-      id: "design-tokens-naming",
-      title: "Naming Design Tokens: A Vital Step in the Design System Journey",
-      description: "A comprehensive guide to naming design tokens effectively for better design system communication and collaboration.",
-      image: "/Hero_Images/naming-design-tokens.webp",
-      category: "Article Design System"
-    },
-    
-    {
-      id: "beautifulcode-revamp",
-      title: "BeautifulCode Website Revamp",
-      description: "A calm, minimal, and geek-friendly website for BeautifulCode, reflecting deep engineering culture and thought leadership.",
-      image: "/bcwebsite/beautifulcodeCover.png", // Replace with actual image when available
-      category: "Case Study - Website Redesign"
-    },
-   
-    {
-      id: "sharechat",
-      title: "Designing Lead Generation Feature for ShareChat", 
-      description: "Designing a lead generation feature for ShareChat.",
-      image: "/Hero_Images/sharechatCover.png",
-      category: "Case Study - Feature Design"
-    },
-    {
-      id: "bcexperienceproject", 
-      title: "Building BeautifulCode Experience App",
-      description: "Transforming an e-commerce platform with a focus on conversion optimization and user flow.",
-      image: "/Hero_Images/BC_experience_cover.png",
-      category: "Case Study - Web App Design"
-    },
+  const caseStudies = getCaseStudies();
+  // const articles = getArticles();
+  
+  // Add design system project manually since it's a React component, not markdown
+  const designSystemProject = {
+    slug: "design-system",
+    title: "What is a Design System?",
+    category: "Case Study",
+    description: "A design system is a collection of reusable components, patterns, and guidelines that ensure consistency and efficiency across all products and platforms.",
+    image: getImageURL("/Hero_Images/designsystemhero.png"),
+    date: "2024-01-15",
+    rank: 5,
+    tags: ["design-system", "ui-components", "documentation"],
+    body: "",
+    timeline: "2 months",
+    tools: ["Figma", "Storybook"],
+    role: "Design System Lead"
+  };
+  
+  // Add design system to case studies
+  const allCaseStudies = [...caseStudies, designSystemProject];
+  const figmaProjects = [
     {
       id: "growthy-figma",
       title: "Growthy – for Continuous Learning ",
       description: "Explore selected UI screens and design patterns from Growthy, a platform designed to build a Developing Expertise Culture in organizations through structured learning, daily reflections, and mentorship.",
-      image: "/Hero_Images/growthyCover.png",
+      image: getImageURL("/Hero_Images/growthyCover.png"),
       category: "Figma File - UI Screens",
       link: "https://www.figma.com/community/file/1535273022446774903/growthy-for-continuous-learning-ui-screens-design-system"
     },
@@ -80,7 +52,6 @@ const Projects = () => {
       image: "/Hero_Images/rummyCover.png",
       category: "Figma File - UI Screens",
       link: "https://www.figma.com/community/file/1535246006291565048/design-system-rummy-game-app"
-
     },
     {
       id: "real-estate-app-figma",
@@ -127,20 +98,20 @@ const Projects = () => {
           {/* Case Studies Section */}
           <div className="mb-20">
             <h2 className="text-2xl font-bold mb-8 text-foreground">Case Studies</h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-10">
-              {allProjects.filter(project => project.category.includes("Case Study")).map((project) => (
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10">
+              {allCaseStudies.map((project) => (
                 <Link 
-                  key={project.id} 
-                  to={`/project/${project.id}`} 
+                  key={project.slug} 
+                  to={`/project/${project.slug}`} 
                   className="group block"
-                  onClick={() => track('project_open', { id: project.id, title: project.title, category: project.category })}
+                  onClick={() => track('project_open', { id: project.slug, title: project.title, category: project.category })}
                 >
                   <article className="h-full space-y-4">
                     {/* Image */}
                     <div className="relative overflow-hidden bg-muted">
                       <div className="aspect-[16/10]">
                         <img 
-                          src={project.image} 
+                          src={project.image || "/placeholder.svg"} 
                           alt={project.title} 
                           className="w-full h-full object-cover transition-all duration-700 group-hover:scale-105" 
                         />
@@ -179,21 +150,21 @@ const Projects = () => {
           </div>
 
           {/* Articles Section */}
-          <div className="mb-20">
+          {/* <div className="mb-20">
             <h2 className="text-2xl font-bold mb-8 text-foreground">Articles</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {allProjects.filter(project => project.category.includes("Article")).map((project) => (
+              {articles.map((project) => (
                 <Link 
-                  key={project.id} 
-                  to={`/project/${project.id}`}
+                  key={project.slug} 
+                  to={`/project/${project.slug}`}
                   className="group block"
                 >
                   <article className="h-full space-y-4">
-                    {/* Image */}
+                    
                     <div className="relative overflow-hidden bg-muted">
                       <div className="aspect-[4/3]">
                         <img 
-                          src={project.image} 
+                          src={project.image || "/placeholder.svg"} 
                           alt={project.title} 
                           className="w-full h-full object-cover transition-all duration-700 group-hover:scale-105" 
                         />
@@ -201,7 +172,7 @@ const Projects = () => {
                       <div className="absolute top-0 left-0 w-1 h-0 bg-accent transition-all duration-500 group-hover:h-full" />
                     </div>
                     
-                    {/* Content */}
+                    
                     <div className="space-y-3">
                       <div className="flex items-center gap-3">
                         <div className="h-px w-8 bg-accent" />
@@ -229,13 +200,13 @@ const Projects = () => {
                 </Link>
               ))}
             </div>
-          </div>
+          </div> */}
 
           {/* Figma Files Section */}
           <div className="mb-16">
             <h2 className="text-2xl font-bold mb-8 text-foreground">Figma Projects</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {allProjects.filter(project => project.category.includes("Figma File")).map((project) => (
+              {figmaProjects.map((project) => (
                 <a 
                   key={project.id} 
                   href={project.link} 

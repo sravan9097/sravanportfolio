@@ -2,7 +2,7 @@
 slug: bc-experience
 title: Building BeautifulCode Experience App
 category: Case Study
-description: Designing the BC Experience platform to improve team collaboration, member management, and overall user experience for better engagement and productivity.
+description: Designing the BC Experience platform to streamline collaboration, improve visibility, and create a frictionless check-in process that fosters autonomy and trust across distributed teams.
 image: /Hero_Images/BC_experience_cover.png
 rank: 1
 timeline: 3 months
@@ -25,16 +25,16 @@ carousels:
   process-artifacts:
     - src: "/Hero_Images/Objects.png"
       alt: "Objects"
-      caption: "Defining key objects in the system like Projects, Teams, and Check-Ins."
+      caption: "Defining key system objects like Projects, Teams, and Check-Ins."
     - src: "/Hero_Images/Roles.png"
       alt: "Roles"
-      caption: "Mapping user roles such as Admin, Manager, and Employee."
+      caption: "Mapping user roles and permissions for Admins, Managers, and Engineers."
     - src: "/Hero_Images/Site_Map.png"
       alt: "Site Map"
-      caption: "Structuring the application with a clear sitemap."
+      caption: "Structuring the app with a clear, minimal information architecture."
     - src: "/Hero_Images/check_in_flow.png"
       alt: "Check-in Flow"
-      caption: "Mapping the critical check-in user flow."
+      caption: "Mapping the critical daily check-in user flow."
   wireframes:
     - src: "/Hero_Images/check_in_flow_1.png"
       alt: "Check-in Flow Screen 1"
@@ -47,60 +47,77 @@ carousels:
   final-screens:
     - src: "/bcexperience/checkin_creation.png"
       alt: "Check-in Creation"
-      caption: "The simplified check-in interface where engineers update their progress twice daily."
+      caption: "The simplified check-in interface where engineers share updates in under 5 minutes."
     - src: "/bcexperience/Single_Member_View.png"
       alt: "Single Member View"
-      caption: "A timeline of daily check-ins for a specific team member to track progress and blockers."
+      caption: "A timeline of daily progress and blockers for each team member."
     - src: "/bcexperience/Team-View.png"
       alt: "Team View"
-      caption: "A snapshot of check-in status across all team members."
+      caption: "A high-level view of check-in statuses and activity across teams."
 ---
 
 ## The Challenge
 
-BeautifulCode’s success has always relied on transparency and autonomy. As the company grew, maintaining visibility across distributed teams became increasingly difficult.  
-Project updates were shared inconsistently, managers had to chase people for information, and daily stand-ups turned into time-consuming status meetings.
+As BeautifulCode’s distributed teams scaled, visibility and alignment became harder to maintain. Updates were fragmented across channels, and managers spent valuable time chasing project information. Daily stand-ups started to feel repetitive and inefficient.
 
-The growing team needed a better way to share progress and blockers, without adding extra meetings or friction.
+The challenge was to create a lightweight, async check-in system that fostered **trust, transparency, and autonomy**, without adding process overhead.
 
-**Key problems identified:**
+**Key Pain Points:**
 
-- Lack of structured communication across distributed teams
-- Managers spending excessive time collecting updates
-- Difficulty tracking progress at scale
-- Increasing dependency on synchronous meetings
+- Inconsistent updates across distributed teams
+- Excessive time spent collecting status reports
+- Difficulty tracking progress and blockers
+- Dependence on synchronous meetings
 
-> “How can we create a system that builds trust and transparency, without micromanagement?”
+> “How can we design a check-in experience that builds trust, not tension?”
 
-The goal was to design a lightweight internal tool that encouraged regular updates, enabled visibility for everyone, and scaled naturally with team growth.
+<!-- The goal was simple: **make updates effortless, engaging, and scalable across teams.** -->
+
+## Outcomes & Results
+
+<div class="metricsGrid">
+  <div class="metricCard">
+    <div class="metricValue">Under 5 min</div>
+    <div class="metricTitle">Check-in Time</div>
+    <div class="metricDescription">Average completion time per user</div>
+  </div>
+  <div class="metricCard">
+    <div class="metricValue">40%</div>
+    <div class="metricTitle">Friction Reduction</div>
+    <div class="metricDescription">Less repetitive input and fewer steps</div>
+  </div>
+  
+  <div class="metricCard">
+    <div class="metricValue">76.5%</div>
+    <div class="metricTitle">Daily Adoption</div>
+    <div class="metricDescription">Avg monthly check-in % achieved</div>
+  </div>
+</div>
 
 ## Design Process
 
-My process began with understanding user pain points and defining the product's core architecture before diving into UI. The focus was on building a system that was easy to use daily, provided value instantly, and worked seamlessly for different roles: engineers, managers, and partners.
+My approach focused on clarity and iteration: understanding user behavior, structuring the system for scalability, and refining the interaction flow through continuous feedback.
 
 ### User Flow & Site Mapping
 
-The foundation started with defining key **system objects** such as _Projects, Teams, Members,_ and _Check-ins_.  
-By mapping **user roles** (Admin, Manager, Engineer), I clarified permissions and views early on to avoid complexity later.
+The foundation began with defining key **objects** (Projects, Teams, Members, and Check-ins) and mapping **roles** for Admins, Managers, and Engineers.  
+A concise **site map** ensured intuitive navigation, while the **daily check-in** became the core user flow, optimized for speed and minimal friction.
 
-I then created a **site map** that organized the app into a logical, minimal structure. This ensured intuitive navigation and a consistent mental model for all users.
-
-The most important flow - **the daily check-in** - was mapped in detail. It had to be frictionless, so engineers could complete their update in minutes while managers gained instant visibility. Through multiple iterations, I refined the flow to minimize steps and highlight only the essentials.
+> Goal: Complete a check-in in under 3 minutes while maintaining meaningful context for the team.
 
 <div data-carousel="process-artifacts"></div>
 
 ### Wireframing & Prototyping
 
-Once the structure was validated, I moved into low-fidelity wireframes using Figma.  
-The focus was simplicity: clear layout, minimal input, and predictable navigation. Early prototypes were tested internally, leading to valuable feedback about interaction patterns and terminology.
+Low-fidelity wireframes emphasized **clarity and efficiency**. Through rapid internal testing, I validated structure, content hierarchy, and usability.
 
-Iterations focused on:
+Key iterations focused on:
 
-- Reducing the number of actions needed to complete a check-in
-- Clarifying input labels and hierarchy
-- Improving contrast and readability for faster scanning
+- Reducing steps to complete a check-in
+- Simplifying input fields and copy
+- Adding feedback cues to confirm completion
 
-After several design-feedback loops, I developed interactive prototypes to test real workflows, ensuring the app felt natural in day-to-day use.
+Interactive prototypes allowed real-world validation, ensuring the flow felt intuitive and aligned with engineers’ daily routines.
 
 <div class="wireframeGrid">
   <img src="/Hero_Images/check_in_flow_1.png" alt="Check-in Flow Screen 1" />
@@ -109,76 +126,39 @@ After several design-feedback loops, I developed interactive prototypes to test 
   <img src="/Hero_Images/team_settings.png" alt="Team Settings Screen" />
 </div>
 
-## Final UI
-
-The final interface balances **clarity and focus**.  
-Every screen communicates purpose without distractions, ideal for teams who need to check in, view updates, and move on quickly.
-
 ![Check-in Flow Animation](/bcexperience/checkin.gif)
 
-- **Check-in Creation:** A step-by-step form with smart defaults and contextual help.
-- **Single Member View:** A chronological timeline that highlights each engineer’s daily progress and blockers.
-- **Team View:** A high-level snapshot of all team members’ check-in statuses and recent activity.
+## Final UI
 
-The overall design embraces BeautifulCode’s minimalist brand values while maintaining strong usability.
+The final interface focuses on **speed, clarity, and autonomy**.  
+Each screen was designed to minimize cognitive load, enabling quick updates and instant team visibility.
+
+- **Check-in Creation:** Streamlined flow with smart defaults and contextual hints.
+- **Single Member View:** A chronological feed showing progress and blockers.
+- **Team View:** An overview dashboard summarizing team check-ins and activity.
 
 <div data-carousel="final-screens"></div>
 
-## Challenges Faced
+## Key Challenge: Making Check-ins Effortless & Adoptable
 
-### 1. Making Check-ins Feel Effortless
+The hardest part was designing a process that felt **valuable, not managerial**.  
+Early testers found the experience repetitive and “status-heavy.” Through iterative feedback, I redefined the flow to be faster, lighter, and more rewarding.
 
-One of the biggest challenges was ensuring check-ins didn’t feel like surveillance. Engineers were used to autonomy, so the process had to feel quick and valuable rather than administrative.
+**Design Solutions:**
 
-The solution was to:
+- Kept the flow within **3-4 steps**
+- Added **auto-fill** for recurring data
+- Introduced a **“Generate Summary”** feature to post updates directly to Slack
+- Implemented **visual confirmations** for completion feedback
 
-- Keep the flow under 2–3 screens
-- Use auto-fill for recurring project data
-- Provide instant Slack summaries to reduce redundancy
+These small but impactful refinements made check-ins feel **natural, quick, and trustworthy**, leading to rapid adoption across teams.
 
-These small optimizations made check-ins natural rather than burdensome.
+> The result: Check-ins evolved from a task into a team habit, creating consistent visibility and stronger collaboration.
 
-### 2. Driving Adoption Across Teams
+<!-- ## Next Steps
 
-Early testers found the process repetitive. Through user feedback, I introduced:
+Building on the MVP’s success, the next phase aims to enhance insights and transparency:
 
-- **Auto-fill for repeated entries** to save time
-- A **“Generate Summary”** feature to instantly create update messages for Slack
-- Visual cues and feedback to confirm submissions
-
-This approach reduced friction and helped adoption rates grow steadily.
-
-## Outcomes & Results
-
-<div class="metricsGrid">
-  <div class="metricCard">
-    <div class="metricValue">Under 5 min</div>
-    <div class="metricTitle">Check-in Time</div>
-    <div class="metricDescription">Average completion time</div>
-  </div>
-  <div class="metricCard">
-    <div class="metricValue">40%</div>
-    <div class="metricTitle">Friction Reduction</div>
-    <div class="metricDescription">Less repetitive data entry</div>
-  </div>
-  <div class="metricCard">
-    <div class="metricValue">Automated</div>
-    <div class="metricTitle">Slack Summaries</div>
-    <div class="metricDescription">Eliminated redundant communication</div>
-  </div>
-  <div class="metricCard">
-    <div class="metricValue">85%</div>
-    <div class="metricTitle">Daily Adoption</div>
-    <div class="metricDescription">Check-in rate within first month</div>
-  </div>
-</div>
-
-## Next Steps
-
-The success of the MVP opened up opportunities for future improvements, including:
-
-- **Analytics Dashboard:** Insights into team activity, blockers, and performance trends
-- **Main Dashboard:** Personalized view for each user role
-- **Client-Side Portal:** Transparency for partners to view project progress
-
----
+- **Analytics Dashboard:** Track engagement, blockers, and trends
+- **Personalized Home View:** Role-based dashboards for managers and engineers
+- **Client Portal:** Share real-time progress with partners and stakeholders -->

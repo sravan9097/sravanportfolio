@@ -55,9 +55,9 @@ const WhatIDo = () => {
             </div>
 
             {/* Card 3 - Prototype to production */}
-            <div className="md:col-span-2 p-8 rounded-2xl bg-gradient-to-br from-purple-50/50 to-purple-100/30 dark:from-purple-950/20 dark:to-purple-900/10 hover:shadow-lg transition-all border border-border/50 group self-start">
-              <div className="flex items-start gap-4">
-                <div className="w-12 h-12 bg-purple-500/10 dark:bg-purple-500/20 rounded-xl flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform">
+            <div className="md:col-span-2 p-8 rounded-2xl bg-gradient-to-br from-purple-50/50 to-purple-100/30 dark:from-purple-950/20 dark:to-purple-900/10 hover:shadow-lg transition-all border border-border/50 group">
+              <div className="flex flex-col md:flex-row items-start gap-4">
+                <div className="w-12 h-12 bg-purple-500/10 dark:bg-purple-500/20 rounded-xl flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform mb-0 md:mb-0">
                   <Code className="w-6 h-6 text-purple-600 dark:text-purple-400" />
                 </div>
                 <div className="flex-1">

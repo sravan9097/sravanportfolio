@@ -98,15 +98,18 @@ const Hero = () => {
       />
       <div className="container-padded max-w-7xl pb-14">
         <div className="space-y-8">
-          {/* Greeting like reference site */}
-          <p className="text-lg md:text-2xl text-primary-light font-medium animate-fade-in md:text-center">
+         
+          {/* Bold headline with italic emphasis for Design + Code */}
+          <h1 className="mx-auto mb-6 max-w-6xl font-semibold text-3xl sm:text-4xl md:text-5xl lg:text-7xl md:text-center leading-tight overflow-visible pb-2"> Where <em className="not-italic animated-gradient-text">Design + Coding</em> Collide</h1>
+          
+           {/* Greeting like reference site */}
+           <p className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-primary-light font-bold animate-fade-in md:text-center">
             Hi! I'm Sravan
           </p>
           
-          {/* Bold headline with italic emphasis for Design + Code */}
-          <h1 className="mx-auto mb-6 max-w-6xl font-semibold text-5xl md:text-5xl lg:text-7xl md:text-center leading-tight overflow-visible pb-2"> Where <em className="not-italic animated-gradient-text">Design + Coding</em> Collide</h1>
+          
           {/* Shorter, punchier description */}
-          <p className="text-lg md:text-xl text-primary-light max-w-4xl animate-fade-in md:text-center md:mx-auto" style={{ animationDelay: '0.2s' }}>
+          <p className="text-base md:text-xl text-primary-light max-w-4xl animate-fade-in md:text-center md:mx-auto" style={{ animationDelay: '0.2s' }}>
           I’m a UX designer passionate about understanding users, shaping product experiences, and building accessible, usable interfaces. My process spans research, wireframing, prototyping, and design systems. Outside of design, I enjoy coding, building prototypes and front-end experiments to explore ideas in action.
           </p>
           

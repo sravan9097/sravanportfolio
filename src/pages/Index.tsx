@@ -37,9 +37,9 @@ const Index = () => {
       <Navbar />
       <Hero />
       <div className="flex flex-col container-padded max-w-7xl">
-      <Projects />
       <WhatIDo />
       <About />
+      <Projects />
       <FigmaFiles />
       <Contact />
       </div>

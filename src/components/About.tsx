@@ -76,7 +76,7 @@ const About = () => {
                 <h3 className="font-medium mb-2 text-primary">Tools & Softwares</h3>
                 <ul className="space-y-1  ">
                  <li> <span className="font-semibold text-primary-light">Figma & FigJam</span> <span className="text-muted-foreground">(design systems, prototyping, collaboration)</span></li>
-
+                  <li> <span className="font-semibold text-primary-light">Zeplin (or Figma Dev Mode)</span> <span className="text-muted-foreground">(design-to-code workflows)</span></li>
                   <li> <span className="font-semibold text-primary-light">Notion</span> <span className="text-muted-foreground">(documentation & product ops)</span></li>
 
                   <li> <span className="font-semibold text-primary-light">Balsamiq</span> <span className="text-muted-foreground">(low-fi wireframes)</span></li>

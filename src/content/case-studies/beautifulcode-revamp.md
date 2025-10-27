@@ -36,11 +36,7 @@ The challenge: capture that authenticity, a **developer-first aesthetic** that's
 
 ### Understanding the Core Vision
 
-BeautifulCode’s team shared an initial wireframe that shaped the foundation.  
-I explored **two directions**:
-
-- _Retro Windows 92 UI_: nostalgic, hacker vibe, pixel grid, monospaced.
-- _Modern Bento layout_: structured, airy, clear hierarchy.
+BeautifulCode’s team shared an initial wireframe that shaped the foundation.
 
 Core system elements:
 
@@ -55,7 +51,7 @@ The homepage acted as a **calm, navigational hub**, guiding users through articl
 ### Wireframing
 
 Low-fidelity wireframes explored homepage and category layouts.  
-Focus: readability, flow, and hierarchy.
+Focus on: smiple, minimal.
 
 <div class="wireframeGrid">
   <img src="/beautifulcode-revamp/wireframe1.png" alt="Wireframe Iteration 1" />
@@ -64,8 +60,10 @@ Focus: readability, flow, and hierarchy.
 
 ### Concept Exploration
 
-Two themes guided early exploration:
+I explored **two directions**:
 
+- _Retro Windows 92 UI_: nostalgic, hacker vibe, pixel grid, monospaced.
+- _Modern Bento layout_: structured, airy, clear hierarchy.
 <div class="wireframeGrid">
   <img src="/beautifulcode-revamp/theme1screen1.png" alt="Retro Windows 92 UI" />
   <img src="/beautifulcode-revamp/theme2screen1.png" alt="Modern Bento layout" />

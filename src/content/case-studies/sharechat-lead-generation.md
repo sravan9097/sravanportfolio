@@ -34,70 +34,6 @@ As ShareChat's ad platform matured, we identified a recurring blocker: advertise
 
 > The goal was clear: Design a feature that enables advertisers to create and customize lead generation forms independently, streamlining the process and reducing dependencies.
 
-## Discovery & Research
-
-To kick things off, I collaborated closely with product, ads ops, and engineering teams to identify pain points and map out the ideal workflow. I also conducted platform benchmarking to analyze how similar solutions were built by Meta, Google, and InMobi.
-
-### Key Insights:
-
-- Advertisers needed speed and flexibility.
-- Internal teams spent hours handling requests that could be automated.
-- There was no visibility into the actual lead data structure during campaign setup.
-
-![Discovery & Research](/sharechat/researchImiage.png)
-
-## Process Overview
-
-We followed a Double Diamond approach, moving from research to definition, then exploring solutions before refining the best one.
-
-![Double Diamond Process](/sharechat/Double Diamond.svg)
-
-### 1. Understanding the User & Goals
-
-Created user personas for campaign managers, media buyers, and ops stakeholders. This helped prioritize use cases like quick form deployment, previewing designs, and lead analytics compatibility.
-
-### 2. Ideation & Mapping
-
-- Conducted mind mapping and user flow design.
-- Created form state logic: default templates, validation, data syncing.
-- Mapped user journeys from campaign creation to form submission and backend sync.
-
-<div data-carousel="process-slides"></div>
-
-## Wireframes & Exploration
-
-Designed multiple versions of form templates, exploring layouts, card styles, and field logic. Early concepts tested:
-
-- Single-column vs. dual-view layouts
-- Static templates vs. dynamic drag-and-drop fields
-- Preview interactions before publishing
-
-We iterated quickly based on internal feedback and usability reviews, narrowing down to two clear card formats:
-
-<div class="wireframeGrid">
-  <img src="/sharechat/Wireframe1.png" alt="Wireframe Exploration" />
-  <img src="/sharechat/layout.png" alt="Layout Concepts" />
-</div>
-
-## Final Designs & Prototyping
-
-The final design included:
-
-- Form Builder UI with field customization, previews, and styling tools
-- Clean, responsive UI optimized for mobile creation
-- Templates that adapt to campaign type
-
-I created a high-fidelity prototype with real interactions to simulate the creation experience and demo it to stakeholders.
-
-### Key Features:
-
-- Template selection with instant preview
-- Field control: title, placeholder, type (dropdown, number, etc.)
-- Visual customization for brand consistency
-- Integration-ready lead output format
-
-## Outcome & Impact
-
 ### Key Metrics:
 
 <div class="metricsGrid">
@@ -117,3 +53,58 @@ I created a high-fidelity prototype with real interactions to simulate the creat
     <div class="metricDescription">Advertisers can create campaigns independently</div>
   </div>
 </div>
+
+## Discovery & Research
+
+To kick things off, I collaborated closely with product, ads ops, and engineering teams to identify pain points and map out the ideal workflow. I also conducted platform benchmarking to analyze how similar solutions were built by Meta, Google, and InMobi.
+
+### Key Insights:
+
+- Advertisers needed speed and flexibility.
+- Internal teams spent hours handling requests that could be automated.
+- There was no visibility into the actual lead data structure during campaign setup.
+
+![Discovery & Research](/sharechat/researchImiage.png)
+
+## Process Overview
+
+### Ideation & Mapping
+
+- Conducted mind mapping and user flow design.
+- Mapped user journeys from campaign creation to form submission and backend sync.
+
+![Mind Mapping Process](/sharechat/mindmapping.png)
+
+<p style="text-align: center; margin-top: 1rem; font-size: 0.875rem; color: #6b7280;">Mind Mapping: Visual exploration of user needs, pain points, and solution opportunities for the lead generation feature.</p>
+
+![User Flow Design](/sharechat/userflow.png)
+
+<p style="text-align: center; margin-top: 1rem; font-size: 0.875rem; color: #6b7280;">User Flow: Detailed mapping of the advertiser journey from campaign creation to form submission and lead collection.</p>
+
+## Wireframes & Exploration
+
+Designed multiple versions of form templates, exploring layouts, card styles, and field logic. Early concepts tested and failed.
+
+We iterated quickly based on internal feedback and reviews, narrowing down to two clear card formats:
+
+<div class="wireframeGrid">
+  <img src="/sharechat/Wireframe1.png" alt="Wireframe Exploration" />
+  <img src="/sharechat/layout.png" alt="Layout Concepts" />
+</div>
+
+## Final Designs & Prototyping
+
+The final design included:
+
+- Form Builder UI with field customization, previews, and styling tools
+- Templates that adapt to campaign type
+
+I created a high-fidelity prototype with real interactions to simulate the creation experience and demo it to stakeholders.
+
+<!--
+### Key Features:
+
+- Template selection with instant preview
+- Field control: title, placeholder, type (dropdown, number, etc.)
+- Visual customization for brand consistency
+- Integration-ready lead output format -->

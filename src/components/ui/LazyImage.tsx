@@ -23,6 +23,9 @@ export const LazyImage = ({
   const imgRef = useRef<HTMLImageElement>(null);
 
   useEffect(() => {
+    const currentRef = imgRef.current;
+    if (!currentRef) return;
+
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -38,14 +41,10 @@ export const LazyImage = ({
       }
     );
 
-    if (imgRef.current) {
-      observer.observe(imgRef.current);
-    }
+    observer.observe(currentRef);
 
     return () => {
-      if (imgRef.current) {
-        observer.unobserve(imgRef.current);
-      }
+      observer.unobserve(currentRef);
     };
   }, []);
 
@@ -68,9 +67,9 @@ export const LazyImage = ({
         width={width}
         height={height}
         onLoad={handleLoad}
-        className={`transition-opacity duration-300 ${
+        className={`transition-opacity duration-300 absolute inset-0 w-full h-full object-cover ${
           isLoaded ? 'opacity-100' : 'opacity-0'
-        } ${className}`}
+        }`}
         loading="lazy"
       />
       {!isLoaded && (

@@ -39,24 +39,33 @@ const CaseStudyTemplate: React.FC<CaseStudyTemplateProps> = ({ doc }) => {
         {children}
       </h2>
     ),
-    h3: ({ children, ...props }: React.HTMLAttributes<HTMLHeadingElement>) => (
-      <h3 className={styles.subsectionHeading} {...props}>
-        {children}
-      </h3>
-    ),
     blockquote: ({ children, ...props }: React.HTMLAttributes<HTMLQuoteElement>) => (
       <blockquote className={styles.blockquote} {...props}>
         {children}
       </blockquote>
     ),
-    img: ({ src, alt, ...props }: React.ImgHTMLAttributes<HTMLImageElement>) => (
-      <img 
-        src={src} 
-        alt={alt} 
-        className={styles.responsiveImage} 
-        {...props} 
-      />
-    ),
+    img: ({ src, alt, className, ...props }: React.ImgHTMLAttributes<HTMLImageElement>) => {
+      // Handle special game thumbnail class
+      if (className === 'gameThumbnail') {
+        return <img className={styles.gameThumbnail} src={src} alt={alt} {...props} />;
+      }
+      // Default: apply responsive image styling but keep any other props
+      return <img className={styles.responsiveImage} src={src} alt={alt} {...props} />;
+    },
+    a: ({ children, href, ...props }: React.AnchorHTMLAttributes<HTMLAnchorElement>) => {
+      if (props.className === 'gameCTALink') {
+        const { className, ...restProps } = props;
+        return <a className={styles.gameCTALink} href={href} {...restProps}>{children}</a>;
+      }
+      
+      // For regular links, add target="_blank" and rel for external links
+      const isExternal = href?.startsWith('http');
+      const linkProps = isExternal 
+        ? { ...props, target: '_blank', rel: 'noopener noreferrer' }
+        : props;
+      
+      return <a href={href} {...linkProps}>{children}</a>;
+    },
     ul: ({ children, ...props }: React.HTMLAttributes<HTMLUListElement>) => (
       <ul className={styles.contentList} {...props}>
         {children}
@@ -100,7 +109,34 @@ const CaseStudyTemplate: React.FC<CaseStudyTemplateProps> = ({ doc }) => {
         const { className, ...restProps } = props;
         return <div className={styles.metricDescription} {...restProps}>{children}</div>;
       }
+      // Handle game CTA
+      if (props.className === 'gameCTA') {
+        const { className, ...restProps } = props;
+        return <div className={styles.gameCTA} {...restProps}>{children}</div>;
+      }
+      if (props.className === 'gameCTACard') {
+        const { className, ...restProps } = props;
+        return <div className={styles.gameCTACard} {...restProps}>{children}</div>;
+      }
+      if (props.className === 'gameCTAContent') {
+        const { className, ...restProps } = props;
+        return <div className={styles.gameCTAContent} {...restProps}>{children}</div>;
+      }
       return <div {...props}>{children}</div>;
+    },
+    h3: ({ children, ...props }: React.HTMLAttributes<HTMLHeadingElement>) => {
+      if (props.className === 'gameCTATitle') {
+        const { className, ...restProps } = props;
+        return <h3 className={styles.gameCTATitle} {...restProps}>{children}</h3>;
+      }
+      return <h3 className={styles.subsectionHeading} {...props}>{children}</h3>;
+    },
+    p: ({ children, ...props }: React.HTMLAttributes<HTMLParagraphElement>) => {
+      if (props.className === 'gameCTADescription') {
+        const { className, ...restProps } = props;
+        return <p className={styles.gameCTADescription} {...restProps}>{children}</p>;
+      }
+      return <p className={styles.paragraph} {...props}>{children}</p>;
     },
   };
 
@@ -231,6 +267,34 @@ const CaseStudyTemplate: React.FC<CaseStudyTemplateProps> = ({ doc }) => {
                     className={styles.link}
                   >
                     View detailed documentation →
+                  </a>
+                </div>
+              </div>
+            </div>
+          )}
+
+          {/* Website CTA */}
+          {doc.websiteUrl && (
+            <div className={styles.figmaFileCTA}>
+              <div className={styles.ctaContent}>
+                <div className={styles.figmaLogo}>
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+                    <polyline points="15 3 21 3 21 9" />
+                    <line x1="10" y1="14" x2="21" y2="3" />
+                  </svg>
+                </div>
+                <div className={styles.ctaText}>
+                  <p className={styles.description}>
+                    Try the live product yourself and experience the design in action.
+                  </p>
+                  <a 
+                    href={doc.websiteUrl} 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className={styles.link}
+                  >
+                    Visit live site →
                   </a>
                 </div>
               </div>

@@ -4,7 +4,7 @@ title: BeautifulCode Website Revamp
 category: Case Study
 description: A calm, minimal, and geek-friendly website reflecting deep engineering culture and thought leadership.
 image: /beautifulcode-revamp/beautifulcodeCover.png
-rank: 3
+rank: 4
 timeline: 3 month
 tools:
   - Figma

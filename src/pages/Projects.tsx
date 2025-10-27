@@ -26,7 +26,7 @@ const Projects = () => {
     description: "A design system is a collection of reusable components, patterns, and guidelines that ensure consistency and efficiency across all products and platforms.",
     image: getImageURL("/Hero_Images/designsystemhero.png"),
     date: "2024-01-15",
-    rank: 5,
+    rank: 6,
     tags: ["design-system", "ui-components", "documentation"],
     body: "",
     timeline: "2 months",

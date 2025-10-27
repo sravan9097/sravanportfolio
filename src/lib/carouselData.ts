@@ -294,6 +294,30 @@ export const carouselData: CarouselData = {
       alt: "AI Agents Interface",
       caption: "AI Agents Interface: Designing interfaces that serve both human users and AI agents with semantic structure and predictable patterns."
     }
+  ],
+
+  // Chorsepoi Game Screens
+  'chorsepoi-screens': [
+    {
+      src: "/chorsepoi/login_view.webp",
+      alt: "Login and Sign Up Screen",
+      caption: "Login Interface: Clean authentication screen with social login options and game information sections."
+    },
+    {
+      src: "/chorsepoi/game_waiting_area.webp",
+      alt: "Game Lobby",
+      caption: "Game Lobby: Real-time lobby system where players can join with a code, select roles, and choose colors before starting the game."
+    },
+    {
+      src: "/chorsepoi/gameboard_chor.webp",
+      alt: "Game Board - Chor View",
+      caption: "Game Board: Interactive digital map showing the game state with player positions, available moves, tickets, and transportation routes."
+    },
+    {
+      src: "/chorsepoi/leave_modal.webp",
+      alt: "Leave Game Modal",
+      caption: "Leave Game Confirmation: Safety modal to prevent accidental disconnection with clear options to stay or leave."
+    }
   ]
 };
 

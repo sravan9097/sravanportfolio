@@ -18,12 +18,13 @@ export type Doc = {
   role?: string;
   prototypeLinks?: Array<{label: string; url: string; icon?: string}>;
   figmaFileUrl?: string;
+  websiteUrl?: string;
   // Carousel data
   carousels?: Record<string, CarouselImage[]>;
 };
 
 type Frontmatter = Partial<
-  Pick<Doc, "slug" | "title" | "category" | "description" | "image" | "date" | "tags" | "rank" | "timeline" | "tools" | "role" | "prototypeLinks" | "figmaFileUrl" | "carousels">
+  Pick<Doc, "slug" | "title" | "category" | "description" | "image" | "date" | "tags" | "rank" | "timeline" | "tools" | "role" | "prototypeLinks" | "figmaFileUrl" | "websiteUrl" | "carousels">
 >;
 
 const files = import.meta.glob("/src/content/**/*.md", { as: "raw", eager: true }) as Record<string, string>;
@@ -58,13 +59,14 @@ const docs: Doc[] = Object.entries(files)
     const role = data.role ? String(data.role).trim() : undefined;
     const prototypeLinks = Array.isArray(data.prototypeLinks) ? data.prototypeLinks : undefined;
     const figmaFileUrl = data.figmaFileUrl ? String(data.figmaFileUrl).trim() : undefined;
+    const websiteUrl = data.websiteUrl ? String(data.websiteUrl).trim() : undefined;
     
     // Carousel data
     const carousels = data.carousels && typeof data.carousels === 'object' ? data.carousels as Record<string, CarouselImage[]> : undefined;
 
     const body = parsed.content?.trim?.() ?? "";
 
-    return { slug, title, category, description, image, date, tags, body, rank, timeline, tools, role, prototypeLinks, figmaFileUrl, carousels } as Doc;
+    return { slug, title, category, description, image, date, tags, body, rank, timeline, tools, role, prototypeLinks, figmaFileUrl, websiteUrl, carousels } as Doc;
   })
   .sort((a, b) => {
     // For both Case Studies and Articles, sort by rank (lower rank = higher priority)

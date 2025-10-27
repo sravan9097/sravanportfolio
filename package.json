@@ -10,6 +10,8 @@
     "lint": "eslint .",
     "preview": "vite preview",
     "optimize-and-upload": "tsx scripts/optimize-and-upload-images.ts",
+    "optimize-chorsepoi": "tsx scripts/optimize-chorsepoi.ts",
+    "save-chorsepoi-webp": "tsx scripts/save-chorsepoi-webp.ts",
     "cleanup": "rm -rf dist node_modules/.vite"
   },
   "dependencies": {

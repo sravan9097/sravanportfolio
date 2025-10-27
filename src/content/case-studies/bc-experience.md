@@ -150,12 +150,28 @@ This approach reduced friction and helped adoption rates grow steadily.
 
 ## Outcomes & Results
 
-### Quantitative Impact
-
-- Reduced average check-in time to **under 5 minutes**
-- Introduced **auto-fill and smart suggestions**, reducing user friction by over 40%
-- Implemented **Slack summaries** that cut redundant communication
-- Achieved an **85% daily check-in rate** within the first month of rollout
+<div class="metricsGrid">
+  <div class="metricCard">
+    <div class="metricValue">Under 5 min</div>
+    <div class="metricTitle">Check-in Time</div>
+    <div class="metricDescription">Average completion time</div>
+  </div>
+  <div class="metricCard">
+    <div class="metricValue">40%</div>
+    <div class="metricTitle">Friction Reduction</div>
+    <div class="metricDescription">Less repetitive data entry</div>
+  </div>
+  <div class="metricCard">
+    <div class="metricValue">Automated</div>
+    <div class="metricTitle">Slack Summaries</div>
+    <div class="metricDescription">Eliminated redundant communication</div>
+  </div>
+  <div class="metricCard">
+    <div class="metricValue">85%</div>
+    <div class="metricTitle">Daily Adoption</div>
+    <div class="metricDescription">Check-in rate within first month</div>
+  </div>
+</div>
 
 ## Next Steps
 

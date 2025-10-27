@@ -383,8 +383,8 @@ The evolution of design systems to serve AI agents alongside human users represe
 - **More Scalable**: AI-friendly systems enable automation and efficiency
 - **Future-Ready**: Prepared for the AI-powered development landscape
 
-The key insight is that designing for AI agents doesn't mean compromising human usability—it means creating better, more thoughtful interfaces that serve both audiences effectively.
+The key insight is that designing for AI agents doesn't mean compromising human usability, it means creating better, more thoughtful interfaces that serve both audiences effectively.
 
 > "The future of design systems lies in creating interfaces that are simultaneously human-friendly and AI-accessible, where semantic design principles benefit all users, regardless of their nature."
 
-This approach transforms design systems from human-centric tools into universal interfaces that can serve the full spectrum of users—both human and artificial—in our increasingly automated world.
+This approach transforms design systems from human-centric tools into universal interfaces that can serve the full spectrum of users, both human and artificial, in our increasingly automated world.

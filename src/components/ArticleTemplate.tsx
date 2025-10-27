@@ -112,7 +112,7 @@ const ArticleTemplate: React.FC<ArticleTemplateProps> = ({ doc }) => {
           {/* Hero Section */}
           <div className={styles.heroSection}>
             <span className={styles.categoryLabel}>
-              {doc.category} — {doc.tags?.[0] || 'Design'}
+              {doc.category} - {doc.tags?.[0] || 'Design'}
             </span>
             <h1 className={styles.title}>{doc.title}</h1>
             

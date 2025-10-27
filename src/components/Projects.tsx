@@ -14,7 +14,7 @@ const Projects = () => {
     title: cs.title,
     description: cs.description,
     image: cs.image || "/placeholder.svg",
-    category: `${cs.category} — ${cs.tags?.[0] || 'Design'}`
+    category: `${cs.category} - ${cs.tags?.[0] || 'Design'}`
   }));
 
   return (

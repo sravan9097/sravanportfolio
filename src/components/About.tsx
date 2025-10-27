@@ -7,12 +7,12 @@ const About = () => {
           <div className=" w-full md:w-2/3">
             <h2 className="text-4xl md:text-5xl font-bold mb-6 text-primary-light">About Me</h2>
             <p className="text-primary-light mb-4 text-base">
-            I’m Sravan Kumar, a UX designer who bridges strategy, design, and execution. I specialize in turning complex user problems into intuitive, scalable solutions—grounded in research and validated through prototypes.
+            I'm Sravan Kumar, a UX designer who bridges strategy, design, and execution. I specialize in turning complex user problems into intuitive, scalable solutions, grounded in research and validated through prototypes.
 
             </p>
             
             <p className="text-primary-light mb-6 text-base">
-            Over the years, I’ve led end-to-end UX projects across research, user flows, interaction design, and usability testing, while collaborating closely with developers to ensure designs ship as intended. My hybrid approach—designing in Figma and prototyping in code—helps reduce handoff friction and deliver experiences that work in the real world.
+            Over the years, I've led end-to-end UX projects across research, user flows, interaction design, and usability testing, while collaborating closely with developers to ensure designs ship as intended. My hybrid approach of designing in Figma and prototyping in code helps reduce handoff friction and deliver experiences that work in the real world.
             </p>
 
 

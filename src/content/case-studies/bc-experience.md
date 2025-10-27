@@ -61,7 +61,7 @@ carousels:
 BeautifulCode’s success has always relied on transparency and autonomy. As the company grew, maintaining visibility across distributed teams became increasingly difficult.  
 Project updates were shared inconsistently, managers had to chase people for information, and daily stand-ups turned into time-consuming status meetings.
 
-The growing team needed a better way to share progress and blockers—without adding extra meetings or friction.
+The growing team needed a better way to share progress and blockers, without adding extra meetings or friction.
 
 **Key problems identified:**
 
@@ -76,7 +76,7 @@ The goal was to design a lightweight internal tool that encouraged regular updat
 
 ## Design Process
 
-My process began with understanding user pain points and defining the product’s core architecture before diving into UI. The focus was on building a system that was easy to use daily, provided value instantly, and worked seamlessly for different roles—engineers, managers, and partners.
+My process began with understanding user pain points and defining the product's core architecture before diving into UI. The focus was on building a system that was easy to use daily, provided value instantly, and worked seamlessly for different roles: engineers, managers, and partners.
 
 ### User Flow & Site Mapping
 
@@ -85,14 +85,14 @@ By mapping **user roles** (Admin, Manager, Engineer), I clarified permissions an
 
 I then created a **site map** that organized the app into a logical, minimal structure. This ensured intuitive navigation and a consistent mental model for all users.
 
-The most important flow—**the daily check-in**—was mapped in detail. It had to be frictionless, so engineers could complete their update in minutes while managers gained instant visibility. Through multiple iterations, I refined the flow to minimize steps and highlight only the essentials.
+The most important flow - **the daily check-in** - was mapped in detail. It had to be frictionless, so engineers could complete their update in minutes while managers gained instant visibility. Through multiple iterations, I refined the flow to minimize steps and highlight only the essentials.
 
 <div data-carousel="process-artifacts"></div>
 
 ### Wireframing & Prototyping
 
 Once the structure was validated, I moved into low-fidelity wireframes using Figma.  
-The focus was simplicity—clear layout, minimal input, and predictable navigation. Early prototypes were tested internally, leading to valuable feedback about interaction patterns and terminology.
+The focus was simplicity: clear layout, minimal input, and predictable navigation. Early prototypes were tested internally, leading to valuable feedback about interaction patterns and terminology.
 
 Iterations focused on:
 
@@ -112,7 +112,7 @@ After several design-feedback loops, I developed interactive prototypes to test 
 ## Final UI
 
 The final interface balances **clarity and focus**.  
-Every screen communicates purpose without distractions—ideal for teams who need to check in, view updates, and move on quickly.
+Every screen communicates purpose without distractions, ideal for teams who need to check in, view updates, and move on quickly.
 
 ![Check-in Flow Animation](/bcexperience/checkin.gif)
 

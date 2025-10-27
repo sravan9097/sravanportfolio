@@ -5,7 +5,7 @@ const WhatIDo = () => {
     {
       icon: LayoutDashboard,
       title: "Product strategy",
-      description: "Define the problem, success metrics, and a roadmap that de-risks decisions. I run discovery, map jobs-to-be-done, and prioritize experiments that move a KPI—not just a backlog."
+      description: "Define the problem, success metrics, and a roadmap that de-risks decisions. I run discovery, map jobs-to-be-done, and prioritize experiments that move a KPI, not just a backlog."
     },
     {
       icon: Layers,
@@ -26,7 +26,7 @@ const WhatIDo = () => {
           <div className="mb-12">
             <h2 className="text-4xl md:text-5xl font-bold mb-6 text-primary-light">What I do.</h2>
             <p className="text-xl md:text-2xl text-foreground font-medium leading-snug max-w-4xl">
-            I help teams translate user needs into measurable outcomes—designing accessible, tested experiences and building the prototypes that prove they work.
+            I help teams translate user needs into measurable outcomes by designing accessible, tested experiences and building the prototypes that prove they work.
             </p>
           </div>
 

@@ -32,7 +32,7 @@ Sharechat Ads platform aims to revolutionise the lead generation campaign proces
 
 As ShareChat's ad platform matured, we identified a recurring blocker: advertisers were unable to create or manage lead generation forms without internal support. This created bottlenecks, slowed down campaign launches, and introduced quality issues due to manual handovers.
 
-> The goal was clear: Design a feature that enables advertisers to create and customize lead generation forms independently — streamlining the process and reducing dependencies.
+> The goal was clear: Design a feature that enables advertisers to create and customize lead generation forms independently, streamlining the process and reducing dependencies.
 
 ## Discovery & Research
 
@@ -66,7 +66,7 @@ Created user personas for campaign managers, media buyers, and ops stakeholders.
 
 ## Wireframes & Exploration
 
-Designed multiple versions of form templates — exploring layouts, card styles, and field logic. Early concepts tested:
+Designed multiple versions of form templates, exploring layouts, card styles, and field logic. Early concepts tested:
 
 - Single-column vs. dual-view layouts
 - Static templates vs. dynamic drag-and-drop fields

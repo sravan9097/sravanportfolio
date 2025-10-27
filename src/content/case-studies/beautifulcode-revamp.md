@@ -25,12 +25,12 @@ tags:
 
 ## The Challenge
 
-BeautifulCode wanted a website that felt **geeky yet calm** — designed _by engineers, for engineers_.  
+BeautifulCode wanted a website that felt **geeky yet calm**, designed _by engineers, for engineers_.  
 The goal: a site that spoke to CTOs and senior devs without the fluff of corporate marketing.
 
 > “We are engineers who care deeply about our craft.”
 
-The challenge: capture that authenticity — a **developer-first aesthetic** that’s professional, simple, and real.
+The challenge: capture that authenticity, a **developer-first aesthetic** that's professional, simple, and real.
 
 ## The Approach
 
@@ -39,12 +39,12 @@ The challenge: capture that authenticity — a **developer-first aesthetic** tha
 BeautifulCode’s team shared an initial wireframe that shaped the foundation.  
 I explored **two directions**:
 
-- _Retro Windows 92 UI_ — nostalgic, hacker vibe, pixel grid, monospaced.
-- _Modern Bento layout_ — structured, airy, clear hierarchy.
+- _Retro Windows 92 UI_: nostalgic, hacker vibe, pixel grid, monospaced.
+- _Modern Bento layout_: structured, airy, clear hierarchy.
 
 Core system elements:
 
-- **Font:** IBM Flex Mono — technical and grounded
+- **Font:** IBM Flex Mono: technical and grounded
 - **Palette:** Low-contrast backgrounds, strong text focus
 - **Sections:** “What We’re Wired For” (key capabilities) and “Foundation Principles” (engineering beliefs)
 
@@ -71,13 +71,13 @@ Two themes guided early exploration:
   <img src="/beautifulcode-revamp/theme2screen1.png" alt="Modern Bento layout" />
 </div>
 
-> Feedback: “Feels too boxed in — more like a dashboard than a workspace.”
+> Feedback: "Feels too boxed in, more like a dashboard than a workspace."
 
-So I stripped away containers, leaned on **white space, typography, and rhythm** — letting simplicity lead.
+So I stripped away containers, leaned on **white space, typography, and rhythm**, letting simplicity lead.
 
 ## Final Layout & High-Fidelity Prototype
 
-After multiple iterations, the final design captured BeautifulCode’s **developer-first personality** — minimal, structured, and authentic.
+After multiple iterations, the final design captured BeautifulCode's **developer-first personality**: minimal, structured, and authentic.
 
 ### Design Direction
 
@@ -86,7 +86,7 @@ Stripped of clutter, the design emphasized:
 - **Vertical rhythm** and generous spacing
 - **Monospaced hierarchy** with IBM Flex Mono
 - **Whitespace over containers**
-- **Quiet micro-interactions** — smooth, functional, thoughtful
+- **Quiet micro-interactions**: smooth, functional, thoughtful
 
 The homepage became a **content hub**, guiding users seamlessly across sections.
 
@@ -100,11 +100,11 @@ The clickable prototype validated structure and flow:
 - Expandable article lists
 - Responsive layouts for real-world use
 
-> “It feels more like a curated dev wiki — structured, clean, authentic.”
+> "It feels more like a curated dev wiki: structured, clean, authentic."
 
 ## Building the Design System with Atomic Design
 
-To keep the site scalable and consistent, I built the UI using **Atomic Design** — turning components into reusable parts.
+To keep the site scalable and consistent, I built the UI using **Atomic Design**, turning components into reusable parts.
 
 ### Why Atomic Design?
 
@@ -117,7 +117,7 @@ It provided **clarity, consistency, and easy iteration** as the site evolved.
 
 ## Final UI – Desktop & Mobile
 
-High-fidelity designs applied the system across breakpoints — clean, consistent, and responsive.  
+High-fidelity designs applied the system across breakpoints: clean, consistent, and responsive.  
 Many leadership visitors land on mobile first, so I prioritized **mobile clarity** from the start.
 
 ### Desktop Screens
@@ -130,7 +130,7 @@ Many leadership visitors land on mobile first, so I prioritized **mobile clarity
 
 ### Outcome
 
-> A calm, developer-first site — built by engineers, for engineers.
+> A calm, developer-first site, built by engineers, for engineers.
 
 - Minimal, content-driven experience
 - Nostalgic yet modern visual language
@@ -139,7 +139,7 @@ Many leadership visitors land on mobile first, so I prioritized **mobile clarity
 
 ### Reflections
 
-This project reinforced a simple truth — **clarity beats flash**.  
+This project reinforced a simple truth: **clarity beats flash**.  
 Through iteration and restraint, I learned how **typography and rhythm** can define brand personality.
 
-It pushed both my **system thinking** and **interaction design** skills — and reminded me that great UX often comes from doing less, thoughtfully.
+It pushed both my **system thinking** and **interaction design** skills, and reminded me that great UX often comes from doing less, thoughtfully.

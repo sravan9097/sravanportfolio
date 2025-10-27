@@ -1,6 +1,6 @@
 ---
 slug: design-tokens-naming
-title: Naming Design Tokens — A Vital Step in the Design System Journey
+title: Naming Design Tokens - A Vital Step in the Design System Journey
 category: Article
 description: A practical guide to naming design tokens for clarity, scale, and collaboration.
 image: /Hero_Images/naming-design-tokens.webp

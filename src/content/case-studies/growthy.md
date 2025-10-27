@@ -1,6 +1,6 @@
 ---
 slug: growthy
-title: Building Growthy — Empowering Continuous Learning in the Age of AI
+title: Building Growthy - Empowering Continuous Learning in the Age of AI
 category: Case Study
 description: Designing Growthy, an internal platform to help employees upskill and reflect on their daily learning through AI-powered guidance and mentor-driven courses.
 image: /Hero_Images/growthyCover.png
@@ -25,11 +25,11 @@ tags:
 As AI rapidly transforms how we work, staying relevant means learning continuously. At BeautifulCode, we wanted to empower our team to learn actively, reflect deeply, and grow consistently.
 
 However, traditional learning platforms felt transactional. They captured _completion_, not _understanding_.  
-We needed an internal tool that encouraged people to **capture what they learn every day**, reflect meaningfully, and **get personalized feedback from AI** — without making it feel like a classroom.
+We needed an internal tool that encouraged people to **capture what they learn every day**, reflect meaningfully, and **get personalized feedback from AI**, without making it feel like a classroom.
 
 > “How might we help every employee become a self-driven learner in the age of AI?”
 
-Our solution became **Growthy** — an internal platform built around two key experiences:
+Our solution became **Growthy**: an internal platform built around two key experiences:
 
 1. **TIL (Today I Learned):** For quick daily learning reflections
 2. **Course Learn:** For structured, guided learning journeys
@@ -69,7 +69,7 @@ Each mode was mapped with distinct user flows but shared a unified design langua
 
 ## Designing the “Today I Learned” (TIL) Flow
 
-TIL was envisioned as a daily reflection ritual — quick, conversational, and AI-assisted.
+TIL was envisioned as a daily reflection ritual: quick, conversational, and AI-assisted.
 
 ### Flow & Interaction
 
@@ -81,10 +81,10 @@ TIL was envisioned as a daily reflection ritual — quick, conversational, and A
    It makes gentle corrections _only when necessary_, ensuring learning remains authentic.
 
 3. **Suggested Titles:**  
-   Based on the content, AI generates **title options**, each written in a different tone or “mode” — e.g., informative, curious, or thought-provoking — helping users express their learning better.
+   Based on the content, AI generates **title options**, each written in a different tone or "mode" (e.g., informative, curious, or thought-provoking), helping users express their learning better.
 
 4. **Post to Feed:**  
-   Once finalized, the TIL is published to the **daily feed**, where peers can **like, comment, and discuss** others’ posts — transforming isolated learning into shared growth.
+   Once finalized, the TIL is published to the **daily feed**, where peers can **like, comment, and discuss** others' posts, transforming isolated learning into shared growth.
 
 <div class="wireframeGrid">
   <img src="/growthy/growthy_til_empty.png" alt="Today I learned Landing UI" />
@@ -97,7 +97,7 @@ TIL was envisioned as a daily reflection ritual — quick, conversational, and A
 
 ## Designing “Course Learn”
 
-While TIL nurtures daily reflection, **Course Learn** provides depth — a structured journey for mastering new skills through practice, reflection, and feedback.
+While TIL nurtures daily reflection, **Course Learn** provides depth: a structured journey for mastering new skills through practice, reflection, and feedback.
 
 Each course contains multiple **modules**, and each module has a clear path: **Learn → Reflect → Evaluate.**
 
@@ -112,7 +112,7 @@ As they engage, they **capture notes** using the in-app note-capture feature. Ea
 
 Reflection happens once the learning tasks are complete. Here, users annotate their uploaded notes by tagging sections as Concepts, Analogy, Insights, Questions.
 
-AI reviews each annotation and provides **constructive feedback**. Users can revise and re-evaluate until all annotations reach “green” — meaning the reflections are complete and accurate.
+AI reviews each annotation and provides **constructive feedback**. Users can revise and re-evaluate until all annotations reach "green", meaning the reflections are complete and accurate.
 
 <div class="wireframeGrid">
   <img src="/growthy/growthy_learn_reflect_1.png" alt="Reflect Phase" />
@@ -138,7 +138,7 @@ Growthy’s AI compares the user’s work to **mentor-defined expectations**, ch
 ### 1. Balancing AI Feedback with Human Judgment
 
 Early prototypes made users feel as if AI was “grading” their learning.
-We redesigned the experience so AI became a **coach**, not a critic — giving supportive, conversational feedback and allowing users to choose whether to apply suggestions. -->
+We redesigned the experience so AI became a **coach**, not a critic, giving supportive, conversational feedback and allowing users to choose whether to apply suggestions. -->
 
 ## Outcomes & Impact
 
@@ -171,9 +171,9 @@ We redesigned the experience so AI became a **coach**, not a critic — giving s
 
 <!-- ## Conclusion
 
-Growthy was more than a product — it was a cultural shift.
+Growthy was more than a product, it was a cultural shift.
 By blending human reflection with AI-assisted learning, we built a platform that encourages curiosity, consistency, and critical thinking.
 
 The combination of **TIL** for daily reflection and **Course Learn** for structured growth created a complete learning ecosystem that supports both individual development and organizational knowledge building. -->
 
-<!-- > “Growthy helped transform everyday moments into learning opportunities — and that’s the real measure of growth.” -->
+<!-- > "Growthy helped transform everyday moments into learning opportunities, and that's the real measure of growth." -->

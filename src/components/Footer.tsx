@@ -35,7 +35,7 @@ const Footer = () => {
         <div className="flex flex-col md:flex-row justify-between items-center">
           <div className="mb-6 md:mb-0">
             <button onClick={scrollToTop} className="text-xl font-bold text-foreground">
-              Sravan Kumar — Senior UX Designer
+              Sravan Kumar - Senior UX Designer
             </button>
             <p className="mt-2 text-sm text-muted-foreground">
               Crafting thoughtful digital experiences that scale

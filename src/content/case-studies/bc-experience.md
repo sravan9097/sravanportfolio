@@ -100,12 +100,21 @@ My approach focused on clarity and iteration: understanding user behavior, struc
 
 ### User Flow & Site Mapping
 
-The foundation began with defining key **objects** (Projects, Teams, Members, and Check-ins) and mapping **roles** for Admins, Managers, and Engineers.  
-A concise **site map** ensured intuitive navigation, while the **daily check-in** became the core user flow, optimized for speed and minimal friction.
+The foundation started with defining key **system objects** such as _Projects, Teams, Members,_ and _Check-ins_.  
 
-> Goal: Complete a check-in in under 3 minutes while maintaining meaningful context for the team.
+<img src="/bc-experience/Objects.png" alt="Defining Objects" />
 
-<div data-carousel="process-artifacts"></div>
+By mapping **user roles** (Admin, Manager, Engineer), I clarified permissions and views early on to avoid complexity later.
+
+<img src="/bc-experience/Roles.png" alt="Defining Roles" />
+
+I then created a **site map** that organized the app into a logical, minimal structure. This ensured intuitive navigation and a consistent mental model for all users.
+
+<im class="bg-white rounded-lg mt-4" src="/bc-experience/Site_Map.png" alt="Site Map" />
+
+The most important flow—**the daily check-in**—was mapped in detail. It had to be frictionless, so engineers could complete their update in minutes while managers gained instant visibility. Through multiple iterations, I refined the flow to minimize steps and highlight only the essentials.
+
+<img class="bg-white rounded-lg mt-4" src="/bc-experience/check_in_flow.png" alt="User Flow for Check-in" />
 
 ### Wireframing & Prototyping
 

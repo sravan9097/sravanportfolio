@@ -70,6 +70,7 @@ Using **Cursor** , I began developing the core architecture:
 - **Frontend:** Built using **Vite + React**, prioritizing speed and modular UI
 - **Backend:** Powered by **Next.js**, enabling efficient API and real-time updates
 - **Game Engine:** Chose **Pixi.js** for rendering the map and movements: lightweight, fast, and React-compatible
+- **Screens and Styling** Using figma i created the few screens and build a basic styling and feel of the website. 
 
 > Choosing Pixi.js allowed faster iteration for an MVP while keeping the door open for future Unity-based enhancements.
 

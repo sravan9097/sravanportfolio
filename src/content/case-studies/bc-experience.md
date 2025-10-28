@@ -110,7 +110,7 @@ By mapping **user roles** (Admin, Manager, Engineer), I clarified permissions an
 
 I then created a **site map** that organized the app into a logical, minimal structure. This ensured intuitive navigation and a consistent mental model for all users.
 
-<im class="bg-white rounded-lg mt-4" src="/bc-experience/Site_Map.png" alt="Site Map" />
+<img class="bg-white rounded-lg mt-4" src="/bc-experience/Site_Map.png" alt="Site Map" />
 
 The most important flow—**the daily check-in**—was mapped in detail. It had to be frictionless, so engineers could complete their update in minutes while managers gained instant visibility. Through multiple iterations, I refined the flow to minimize steps and highlight only the essentials.
 

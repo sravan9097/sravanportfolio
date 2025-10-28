@@ -70,11 +70,16 @@ Using **Cursor** , I began developing the core architecture:
 - **Frontend:** Built using **Vite + React**, prioritizing speed and modular UI
 - **Backend:** Powered by **Next.js**, enabling efficient API and real-time updates
 - **Game Engine:** Chose **Pixi.js** for rendering the map and movements: lightweight, fast, and React-compatible
-- **Screens and Styling** Using figma i created the few screens and build a basic styling and feel of the website. 
+- **Screens and Styling** Using figma i created the few screens and build a basic styling and feel of the website.
+
+<div class="wireframeGrid">
+  <img src="/chorsepoi/Initial_lobby.png" alt="main Lobby Screen " />
+  <img src="/chorsepoi/Initial_waiting.png" alt="Waiting phase Screen " />
+  <img src="/chorsepoi/Initial_drawphase.png" alt="Draw Card phase Screen" />
+  <img src="/chorsepoi/Initial_game.png" alt="Game Board Screen" />
+</div>
 
 > Choosing Pixi.js allowed faster iteration for an MVP while keeping the door open for future Unity-based enhancements.
-
-<div data-carousel="chorsepoi-screens"></div>
 
 ### 3. Designing the Game Logic
 
@@ -94,7 +99,10 @@ After extensive research, I found an **open-source repository** with station coo
 
 The **Pixi.js renderer** visualizes the board dynamically, allowing zoom, pan, and real-time player movement, creating an immersive digital playground.
 
-<img src="/chorsepoi/gameboard_chor.png" alt="Gameboard View of Chor"/>
+<div class="wireframeGrid">
+  <img src="/chorsepoi/map_scotland.webp" alt="Original Scotland Boardgame Map Image" />
+  <img src="/chorsepoi/map_remake.webp" alt="Alternate version of Map" />
+</div>
 
 ## The MVP
 
@@ -104,6 +112,8 @@ The first playable version of **Chorsepoi** focused on functionality:
 - Automated ticket management
 - Timeline view of Chor tickets
 - Basic UI for gameplay testing
+
+<div data-carousel="chorsepoi-screens"></div>
 
 Though the visuals were minimal, the experience successfully captured the **strategic tension and cooperative thrill** of the original game.
 

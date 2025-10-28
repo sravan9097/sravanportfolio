@@ -143,7 +143,7 @@ const CaseStudyTemplate: React.FC<CaseStudyTemplateProps> = ({ doc }) => {
   return (
     <ProjectLayout projectTitle={doc.title}>
       <div className={`min-h-screen bg-background ${styles.caseStudyContent}`}>
-        <div className={`flex flex-col max-w-6xl mx-auto ${styles.contentContainer}`}>
+        <div className={`flex flex-col ${styles.contentContainer}`}>
           {/* Hero Section */}
           <div className={styles.heroSection}>
             <span className={styles.categoryLabel}>

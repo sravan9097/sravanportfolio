@@ -44,13 +44,8 @@
     font-weight: 700;
     margin-top: 0;
     margin-bottom: 2rem;
-    color: hsl(var(--primary));
+    color: hsl(var(--text-primary));
     line-height: 1.2;
-    
-    @media (min-width: 768px) {
-      font-size: 3rem;
-      margin-bottom: 2.5rem;
-    }
   }
   
   .coverImage {
@@ -827,9 +822,9 @@
 
 // Responsive adjustments for case study
 @media (max-width: 896px) {
-  .contentContainer {
-    padding: 1.5rem 1rem;
-  }
+  // .contentContainer {
+  //   padding: 1.5rem 1rem;
+  // }
   
   .heroSection {
     margin-bottom: 2.5rem;

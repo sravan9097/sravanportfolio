@@ -5,7 +5,7 @@ category: Case Study
 description: Designing Growthy, an internal platform to help employees upskill and reflect on their daily learning through AI-powered guidance and mentor-driven courses.
 image: /Hero_Images/growthyCover.png
 date: 2025-01-10
-rank: 4
+rank: 5
 timeline: 4 months
 tools:
   - Figma

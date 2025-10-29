@@ -1,33 +1,9 @@
 import { Button } from "@/components/ui/button";
 import { LazyImage } from "@/components/ui/LazyImage";
+import { getFigmaFilesWithProcessedImages } from "@/lib/figmaFiles";
 
 const FigmaFiles = () => {
-  const figmaFiles = [
-    {
-      id: "growthy-figma",
-      title: "Growthy – for Continuous Learning | UI Screens & Design System",
-      description: "Explore selected UI screens and design patterns from Growthy, a platform designed to build a Developing Expertise Culture in organizations through structured learning, daily reflections, and mentorship.",
-      image: "/Hero_Images/growthyCover.png",
-      category: "Figma File - UI Screens",
-      link: "https://www.figma.com/community/file/1535273022446774903/growthy-for-continuous-learning-ui-screens-design-system"
-    },
-    {
-      id: "rummy-figma",
-      title: "Rummy Game App - Design System",
-      description: "Explore selected UI screens and design system implementation from Rummy Game App.",
-      image: "/Hero_Images/rummyCover.png",
-      category: "Figma File - Mobile UI Screens",
-      link: "https://www.figma.com/community/file/1535246006291565048/design-system-rummy-game-app"
-    },
-    {
-      id: "real-estate-app-figma",
-      title: "Real Estate App - Design System",
-      description: "Explore design system implementation from Real Estate App.",
-      image: "/Hero_Images/realestateCover.png",
-      category: "Figma File - Communnity Template",
-      link: "https://www.figma.com/community/file/1295787971747216645/real-estate-app-ui-kit-free-to-customise-components-variables-modes"
-    }
-  ];
+  const figmaFiles = getFigmaFilesWithProcessedImages();
 
   return (
     <section className="section-padding" id="figma-files">
@@ -40,7 +16,7 @@ const FigmaFiles = () => {
           {figmaFiles.map((file) => (
             <a 
               key={file.id} 
-              href={file.link} 
+              href={file.redirectLink} 
               target="_blank" 
               rel="noopener noreferrer"
               className="group block"
@@ -50,7 +26,7 @@ const FigmaFiles = () => {
                 <div className="relative overflow-hidden bg-muted">
                   <div className="aspect-[4/3]">
                     <LazyImage 
-                      src={file.image} 
+                      src={file.thumbnailImagePath} 
                       alt={file.title} 
                       className="w-full h-full object-cover transition-all duration-700 group-hover:scale-105" 
                     />
@@ -64,7 +40,7 @@ const FigmaFiles = () => {
                   <div className="flex items-center gap-3">
                     <div className="h-px w-8 bg-accent" />
                     <span className="text-xs font-semibold text-accent uppercase tracking-[0.2em]">
-                      {file.category}
+                      {file.label}
                     </span>
                   </div>
                   

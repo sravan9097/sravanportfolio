@@ -1,8 +1,6 @@
 // Carousel data configuration
 // This file contains all carousel data for case studies and articles
 
-import { getImageURL } from './imageUtils';
-
 export interface CarouselImage {
   src: string;
   alt: string;

@@ -118,3 +118,10 @@ export function getFigmaFilesWithProcessedImages(): FigmaFile[] {
   }));
 }
 
+/**
+ * Get top N Figma files for preview (e.g., home page)
+ */
+export function getTopFigmaFiles(count: number = 3): FigmaFile[] {
+  return getFigmaFilesWithProcessedImages().slice(0, count);
+}
+

@@ -1,11 +1,14 @@
 
-import { Link } from "react-router-dom";
+import { useRef, useEffect } from "react";
+import { Link, useLocation } from "react-router-dom";
 import { track } from "@vercel/analytics";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { getArticles, getCaseStudies } from "@/lib/content";
 import { getImageURL } from "@/lib/imageUtils";
 import { getFigmaFilesWithProcessedImages } from "@/lib/figmaFiles";
+import { getAnimations } from "@/lib/animations";
+import { DotLottieReact } from "@lottiefiles/dotlottie-react";
 import { 
   Breadcrumb,
   BreadcrumbItem,
@@ -16,6 +19,7 @@ import {
 } from "@/components/ui/breadcrumb";
 
 const Projects = () => {
+  const location = useLocation();
   const caseStudies = getCaseStudies();
   // const articles = getArticles();
   
@@ -38,6 +42,49 @@ const Projects = () => {
   // Add design system to case studies
   const allCaseStudies = [...caseStudies, designSystemProject];
   const figmaProjects = getFigmaFilesWithProcessedImages();
+  const animations = getAnimations();
+  
+  // Refs for dotLottie instances
+  const dotLottieRefsMap = useRef<Record<string, any>>({});
+
+  // Handle hash scrolling when component mounts or hash changes
+  useEffect(() => {
+    const hash = location.hash;
+    if (hash) {
+      // Remove the # symbol
+      const sectionId = hash.substring(1);
+      
+      // Use a longer timeout to ensure the page has fully rendered
+      // Also try multiple times in case the element isn't ready yet
+      const scrollToSection = () => {
+        const element = document.getElementById(sectionId);
+        if (element) {
+          // Calculate offset for navbar
+          const navbarHeight = 80; // Approximate navbar height
+          const elementPosition = element.getBoundingClientRect().top;
+          const offsetPosition = elementPosition + window.pageYOffset - navbarHeight;
+          
+          window.scrollTo({
+            top: offsetPosition,
+            behavior: 'smooth'
+          });
+          return true;
+        }
+        return false;
+      };
+      
+      // Try immediately
+      if (!scrollToSection()) {
+        // If not found, try after a delay
+        setTimeout(() => {
+          if (!scrollToSection()) {
+            // Try one more time after a longer delay
+            setTimeout(scrollToSection, 300);
+          }
+        }, 200);
+      }
+    }
+  }, [location.hash, location.pathname]);
 
   return (
     <div className="min-h-screen bg-background">
@@ -171,7 +218,7 @@ const Projects = () => {
           </div> */}
 
           {/* Figma Files Section */}
-          <div className="mb-16">
+          <div className="mb-16" id="figma-files">
             <h2 className="text-2xl font-bold mb-8 text-foreground">Figma Projects</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {figmaProjects.map((project) => (
@@ -222,6 +269,58 @@ const Projects = () => {
                     </div>
                   </article>
                 </a>
+              ))}
+            </div>
+          </div>
+
+          {/* Animations Section */}
+          <div className="mb-16" id="animations">
+            <h2 className="text-2xl font-bold mb-8 text-foreground">Animations</h2>
+            <p className="text-muted-foreground mb-8">
+              Handcrafted Lottie animations designed to enhance user experiences and bring interfaces to life. 
+              Each animation is carefully crafted to provide smooth, engaging interactions for various UI states and scenarios.
+            </p>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {animations.map((animation) => (
+                <div 
+                  key={animation.id} 
+                  className="group block"
+                >
+                  <article className="h-full space-y-4">
+                    {/* Animation Preview */}
+                    <div className="relative overflow-hidden bg-muted rounded-lg">
+                      <div className="aspect-square flex items-center justify-center p-8">
+                        <DotLottieReact
+                          src={animation.animationPath}
+                          loop
+                          autoplay
+                          dotLottieRefCallback={(dotLottie) => {
+                            dotLottieRefsMap.current[animation.id] = dotLottie;
+                          }}
+                          style={{ width: '100%', height: '100%' }}
+                        />
+                      </div>
+                    </div>
+                    
+                    {/* Content */}
+                    <div className="space-y-3">
+                      {/* <div className="flex items-center gap-3">
+                        <div className="h-px w-8 bg-accent" />
+                        <span className="text-xs font-semibold text-accent uppercase tracking-[0.2em]">
+                          {animation.label}
+                        </span>
+                      </div> */}
+                      
+                      <h3 className="text-lg md:text-xl font-bold text-foreground leading-tight ">
+                        {animation.title}
+                      </h3>
+                      
+                      <p className="text-sm text-muted-foreground leading-relaxed">
+                        {animation.description}
+                      </p>
+                    </div>
+                  </article>
+                </div>
               ))}
             </div>
           </div>

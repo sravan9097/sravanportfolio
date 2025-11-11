@@ -8,6 +8,7 @@ import Process from "@/components/Process";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 import FigmaFiles from "@/components/FigmaFiles";
+import Animations from "@/components/Animations";
 import { useEffect } from "react";
 
 const Index = () => {
@@ -41,6 +42,7 @@ const Index = () => {
       <About />
       <Projects />
       <FigmaFiles />
+      <Animations />
       <Contact />
       </div>
       <Footer />

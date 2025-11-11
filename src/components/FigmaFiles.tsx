@@ -1,9 +1,11 @@
+import { useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { LazyImage } from "@/components/ui/LazyImage";
-import { getFigmaFilesWithProcessedImages } from "@/lib/figmaFiles";
+import { getTopFigmaFiles } from "@/lib/figmaFiles";
 
 const FigmaFiles = () => {
-  const figmaFiles = getFigmaFilesWithProcessedImages();
+  const navigate = useNavigate();
+  const figmaFiles = getTopFigmaFiles(3);
 
   return (
     <section className="section-padding" id="figma-files">
@@ -68,7 +70,7 @@ const FigmaFiles = () => {
             variant="outline"
             size="lg"
             onClick={() => {
-              window.location.href = "/projects#figma-files";
+              navigate("/projects#figma-files");
               setTimeout(() => {
                 const el = document.getElementById("figma-files");
                 if (el) {

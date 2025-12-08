@@ -115,7 +115,7 @@ const Hero = () => {
         <div className="space-y-8 px-2 md:px-10">
          
           {/* Animated hero line */}
-          <h1 className="mb-6 max-w-6xl font-semibold text-5xl lg:text-7xl leading-tight overflow-visible pb-2">
+          <h1 className="mb-6 max-w-6xl font-semibold text-5xl lg:text-7xl leading-tight overflow-visible pb-8">
             <span>Less chaos. More </span>
             <RotatingText
               texts={['clarity', 'focus', 'order', 'sense', 'calm', 'flow', 'meaning']}
@@ -130,17 +130,18 @@ const Hero = () => {
               rotationInterval={2000}
             />
           </h1>
+          <div className="flex flex-col gap-2">
+             {/* Greeting like reference site */}
+            <p className="text-2xl sm:text-3xl  text-primary-light font-medium animate-fade-in" style={{ animationDelay: '0.2s' }}>
+              Hi! I'm Sravan
+            </p>
           
-           {/* Greeting like reference site */}
-           {/* <p className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-primary-light font-bold animate-fade-in">
-            Hi! I'm Sravan
-          </p> */}
           
-          
-          {/* Shorter, punchier description */}
-          <p className="text-base md:text-xl text-primary-light max-w-4xl animate-fade-in" style={{ animationDelay: '0.2s' }}>
-          Senior UX & Product Designer building systems that make complex products feel simple.
-          </p>
+            {/* Shorter, punchier description */}
+            <p className="text-base md:text-xl text-primary-light max-w-4xl animate-fade-in" style={{ animationDelay: '0.2s' }}>
+            Senior UX & Product Designer building systems that make complex products feel simple.
+            </p>
+          </div>
           
           <div className="flex flex-wrap gap-4 justify-start animate-fade-in" style={{ animationDelay: '0.4s' }}>
             <Button 
@@ -152,7 +153,7 @@ const Hero = () => {
             <Button 
               variant="outline" 
               className="border-accent text-primary-light px-6 py-6 rounded-md hover:bg-accent/10 w-full md:w-auto"
-              onClick={() => window.open("https://drive.google.com/drive/folders/1_p8uKUiWuPJGIB-Y5_y375I50rx3WOmR?usp=sharing", "_blank")}
+              onClick={() => window.open("https://docs.google.com/document/d/1_Oo6KGpCElotMFFhrYa4jN_EG43L0soP1lYqaGjEX6c/edit?usp=sharing", "_blank")}
             >
               View Resume
             </Button>
@@ -163,7 +164,7 @@ const Hero = () => {
             className="mt-4 pt-8  animate-fade-in"
             style={{ animationDelay: '0.6s' }}
           >
-            <p className="text-base text-muted-foreground mb-6">
+            <p className="text-base text-muted-foreground mb-4">
               Work shipped across
             </p>
             <div className="flex flex-wrap items-center justify-start gap-6 md:gap-8">

@@ -1,26 +1,20 @@
 
 import { useState, useEffect, useRef } from 'react';
-import { Button } from "@/components/ui/button";
-import { Menu, X, Moon, Sun, Download } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { track } from "@vercel/analytics";
-import { useTheme } from "@/hooks/useTheme";
+import ThemeToggle from "./ThemeToggle";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const location = useLocation();
   const navigate = useNavigate();
   const isHomePage = location.pathname === '/';
-  const { theme, setTheme } = useTheme();
 
   const mobileMenuRef = useRef<HTMLDivElement>(null);
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
-  };
-
-  const toggleTheme = () => {
-    setTheme(theme === 'dark' ? 'light' : 'dark');
   };
 
   const scrollToSection = (sectionId: string) => {
@@ -85,24 +79,14 @@ const Navbar = () => {
               About
             </button>
             <button 
-              onClick={() => { track('resume_download', { location: 'navbar_desktop' }); window.open("https://drive.google.com/drive/folders/1_p8uKUiWuPJGIB-Y5_y375I50rx3WOmR?usp=sharing", "_blank"); }}
+              onClick={() => { track('resume_download', { location: 'navbar_desktop' }); window.open("https://docs.google.com/document/d/1_Oo6KGpCElotMFFhrYa4jN_EG43L0soP1lYqaGjEX6c/edit?usp=sharing", "_blank"); }}
               className="text-sm text-foreground/80 hover:text-foreground transition-colors font-medium"
             >
               Resume
             </button>
             
             {/* Theme toggle */}
-            <button 
-              onClick={toggleTheme}
-              className="p-2 rounded-lg hover:bg-accent/10 text-foreground/60 hover:text-foreground transition-all"
-              aria-label={theme === 'dark' ? "Switch to light mode" : "Switch to dark mode"}
-            >
-              {theme === 'dark' ? (
-                <Sun className="w-4 h-4" />
-              ) : (
-                <Moon className="w-4 h-4" />
-              )}
-            </button>
+            <ThemeToggle />
           </div>
           
           {/* Mobile menu button */}
@@ -128,24 +112,12 @@ const Navbar = () => {
             <button onClick={() => { track('nav_click', { label: 'about', context: 'mobile' }); setIsMenuOpen(false); scrollToSection('about'); }} className="text-sm text-foreground/80 hover:text-foreground hover:bg-accent/5 transition-all py-3 px-3 rounded-lg text-left font-medium">
               About
             </button>
-            <button onClick={() => { track('resume_download', { location: 'navbar_mobile' }); setIsMenuOpen(false); window.open("https://drive.google.com/drive/folders/1_p8uKUiWuPJGIB-Y5_y375I50rx3WOmR?usp=sharing", "_blank"); }} className="text-sm text-foreground/80 hover:text-foreground hover:bg-accent/5 transition-all py-3 px-3 rounded-lg text-left font-medium">
+            <button onClick={() => { track('resume_download', { location: 'navbar_mobile' }); setIsMenuOpen(false); window.open("https://docs.google.com/document/d/1_Oo6KGpCElotMFFhrYa4jN_EG43L0soP1lYqaGjEX6c/edit?usp=sharing", "_blank"); }} className="text-sm text-foreground/80 hover:text-foreground hover:bg-accent/5 transition-all py-3 px-3 rounded-lg text-left font-medium">
               Resume
             </button>
             
-            <div className="pt-2 border-t border-border/40">
-              <button onClick={() => { setIsMenuOpen(false); toggleTheme(); }} className="w-full text-sm text-foreground/60 hover:text-foreground hover:bg-accent/5 transition-all py-3 px-3 rounded-lg flex items-center gap-2">
-                {theme === 'dark' ? (
-                  <>
-                    <Sun className="w-4 h-4" />
-                    Light Mode
-                  </>
-                ) : (
-                  <>
-                    <Moon className="w-4 h-4" />
-                    Dark Mode
-                  </>
-                )}
-              </button>
+            <div className="pt-2 border-t border-border/40 flex justify-center">
+              <ThemeToggle />
             </div>
           </div>
         </div>

@@ -1,8 +1,9 @@
 
 import { Button } from "@/components/ui/button";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Download } from "lucide-react";
 import { useEffect, useRef } from "react";
 import { createAnimatable } from 'animejs';
+import { track } from "@vercel/analytics";
 
 const uxSkills: string[] = [
   "User Research",
@@ -99,35 +100,54 @@ const Hero = () => {
       <div className="container-padded max-w-7xl pb-14">
         <div className="space-y-8">
          
-          {/* Bold headline with italic emphasis for Design + Code */}
-          <h1 className="mx-auto mb-6 max-w-6xl font-semibold text-3xl sm:text-4xl md:text-5xl lg:text-7xl md:text-center leading-tight overflow-visible pb-2"> Where <em className="not-italic animated-gradient-text">Design + Coding</em> Collide</h1>
+          {/* Headline */}
+          <h1 className="mx-auto mb-6 max-w-6xl font-semibold text-3xl sm:text-4xl md:text-5xl lg:text-7xl md:text-center leading-tight overflow-visible pb-2">
+            Designing Intelligent Product Experiences at Scale
+          </h1>
           
-           {/* Greeting like reference site */}
-           <p className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-primary-light font-bold animate-fade-in md:text-center">
-            Hi! I'm Sravan
+          {/* Subhead */}
+          <p className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-primary-light font-bold animate-fade-in md:text-center">
+            Hi, I&apos;m Sravan, a Senior UX &amp; Product Designer focused on design systems, enterprise workflows, and AI-informed experiences.
           </p>
           
-          
-          {/* Shorter, punchier description */}
-          <p className="text-base md:text-xl text-primary-light max-w-4xl animate-fade-in md:text-center md:mx-auto" style={{ animationDelay: '0.2s' }}>
-          I’m a UX designer passionate about understanding users, shaping product experiences, and building accessible, usable interfaces. My process spans research, wireframing, prototyping, and design systems. Outside of design, I enjoy coding, building prototypes and front-end experiments to explore ideas in action.
+          {/* Value line */}
+          <p
+            className="text-base md:text-xl text-primary-light max-w-4xl animate-fade-in md:text-center md:mx-auto"
+            style={{ animationDelay: '0.2s' }}
+          >
+            I turn complex product challenges into clear, scalable, and measurable outcomes across B2B, B2C, and internal platforms.
           </p>
           
-          <div className="flex flex-wrap gap-4 justify-start animate-fade-in md:justify-center" style={{ animationDelay: '0.4s' }}>
+          <div
+            className="flex flex-wrap gap-4 justify-start animate-fade-in md:justify-center"
+            style={{ animationDelay: '0.4s' }}
+          >
             <Button 
               className="bg-accent hover:bg-accent-hover text-white px-6 py-6 rounded-md w-full md:w-auto"
               onClick={() => window.location.href = '/projects'}
             >
-              View My Work <ArrowRight className="ml-2 h-5 w-5" />
+              View Selected Work <ArrowRight className="ml-2 h-5 w-5" />
             </Button>
             <Button 
               variant="outline" 
-              className="border-accent text-primary-light px-6 py-6 rounded-md hover:bg-accent/10 w-full md:w-auto"
-              onClick={() => scrollToSection('contact')}
+              className="border-accent text-primary-light px-6 py-6 rounded-md hover:bg-accent/10 w-full md:w-auto flex items-center justify-center gap-2"
+              onClick={() => { 
+                track('resume_download', { location: 'hero' }); 
+                window.open("https://drive.google.com/drive/folders/1_p8uKUiWuPJGIB-Y5_y375I50rx3WOmR?usp=sharing", "_blank"); 
+              }}
             >
-              Work with me
+              Download Resume
+              <Download className="h-5 w-5" />
             </Button>
           </div>
+          
+          {/* Micro-credibility */}
+          <p
+            className="text-sm text-muted-foreground mt-4 animate-fade-in md:text-center"
+            style={{ animationDelay: '0.6s' }}
+          >
+            BeautifulCode · ShareChat · Circle · DigiRetail
+          </p>
         </div>
       </div>
       

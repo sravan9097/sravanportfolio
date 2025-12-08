@@ -3,6 +3,9 @@ import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 import { useEffect, useRef } from "react";
 import { createAnimatable } from 'animejs';
+import RotatingText from "./RotatingText";
+import DotGrid from "./DotGrid";
+import SplashCursor from "./SplashCursor";
 
 const uxSkills: string[] = [
   "User Research",
@@ -81,7 +84,19 @@ const Hero = () => {
   };
 
   return (
-    <section ref={sectionRef} className="pt-36 pb-0 hero-grid relative overflow-hidden" id="home">
+    <section ref={sectionRef} className="pt-36 pb-0 relative overflow-hidden" id="home">
+      {/* Interactive Dot Grid Background */}
+      <DotGrid />
+      
+      {/* Splash Cursor Effect */}
+      <SplashCursor 
+        containerRef={sectionRef}
+        DENSITY_DISSIPATION={2}
+        VELOCITY_DISSIPATION={1.5}
+        SPLAT_FORCE={4000}
+        SPLAT_RADIUS={0.15}
+      />
+      
       {/* Animated light effect */}
       <div 
         ref={lightRef}
@@ -96,24 +111,38 @@ const Hero = () => {
           willChange: 'transform',
         }}
       />
-      <div className="container-padded max-w-7xl pb-14">
-        <div className="space-y-8">
+      <div className="container-padded max-w-7xl pb-14 relative z-10">
+        <div className="space-y-8 px-2 md:px-10">
          
-          {/* Bold headline with italic emphasis for Design + Code */}
-          <h1 className="mx-auto mb-6 max-w-6xl font-semibold text-3xl sm:text-4xl md:text-5xl lg:text-7xl md:text-center leading-tight overflow-visible pb-2"> Where <em className="not-italic animated-gradient-text">Design + Coding</em> Collide</h1>
+          {/* Animated hero line */}
+          <h1 className="mb-6 max-w-6xl font-semibold text-5xl lg:text-7xl leading-tight overflow-visible pb-2">
+            <span>Less chaos. More </span>
+            <RotatingText
+              texts={['clarity', 'focus', 'order', 'sense', 'calm', 'flow', 'meaning']}
+              mainClassName="hero-rotating-word-box"
+              staggerFrom={"last"}
+              initial={{ y: "100%" }}
+              animate={{ y: 0 }}
+              exit={{ y: "-120%" }}
+              staggerDuration={0.025}
+              splitLevelClassName="overflow-hidden pb-0.5 sm:pb-1 md:pb-1"
+              transition={{ type: "spring", damping: 30, stiffness: 400 }}
+              rotationInterval={2000}
+            />
+          </h1>
           
            {/* Greeting like reference site */}
-           <p className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-primary-light font-bold animate-fade-in md:text-center">
+           {/* <p className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-primary-light font-bold animate-fade-in">
             Hi! I'm Sravan
-          </p>
+          </p> */}
           
           
           {/* Shorter, punchier description */}
-          <p className="text-base md:text-xl text-primary-light max-w-4xl animate-fade-in md:text-center md:mx-auto" style={{ animationDelay: '0.2s' }}>
-          I’m a UX designer passionate about understanding users, shaping product experiences, and building accessible, usable interfaces. My process spans research, wireframing, prototyping, and design systems. Outside of design, I enjoy coding, building prototypes and front-end experiments to explore ideas in action.
+          <p className="text-base md:text-xl text-primary-light max-w-4xl animate-fade-in" style={{ animationDelay: '0.2s' }}>
+          Senior UX & Product Designer building systems that make complex products feel simple.
           </p>
           
-          <div className="flex flex-wrap gap-4 justify-start animate-fade-in md:justify-center" style={{ animationDelay: '0.4s' }}>
+          <div className="flex flex-wrap gap-4 justify-start animate-fade-in" style={{ animationDelay: '0.4s' }}>
             <Button 
               className="bg-accent hover:bg-accent-hover text-white px-6 py-6 rounded-md w-full md:w-auto"
               onClick={() => window.location.href = '/projects'}
@@ -123,16 +152,67 @@ const Hero = () => {
             <Button 
               variant="outline" 
               className="border-accent text-primary-light px-6 py-6 rounded-md hover:bg-accent/10 w-full md:w-auto"
-              onClick={() => scrollToSection('contact')}
+              onClick={() => window.open("https://drive.google.com/drive/folders/1_p8uKUiWuPJGIB-Y5_y375I50rx3WOmR?usp=sharing", "_blank")}
             >
-              Work with me
+              View Resume
             </Button>
+          </div>
+
+          {/* Company Credibility */}
+          <div 
+            className="mt-4 pt-8  animate-fade-in"
+            style={{ animationDelay: '0.6s' }}
+          >
+            <p className="text-base text-muted-foreground mb-6">
+              Work shipped across
+            </p>
+            <div className="flex flex-wrap items-center justify-start gap-6 md:gap-8">
+              {/* ShareChat */}
+              <div className="flex items-center gap-2 opacity-70 hover:opacity-100 transition-opacity">
+                <img 
+                  src="/5f49207a68ecc70004ae7045.png" 
+                  alt="ShareChat" 
+                  className="w-8 h-8 object-contain"
+                />
+                <span className="text-base font-medium text-foreground">ShareChat</span>
+              </div>
+
+              {/* Moj */}
+              <div className="flex items-center gap-2 opacity-70 hover:opacity-100 transition-opacity">
+                <img 
+                  src="/Mojapp_logo.png" 
+                  alt="Moj" 
+                  className="w-8 h-8 object-contain rounded"
+                />
+                <span className="text-base font-medium text-foreground">Moj</span>
+              </div>
+
+              {/* Circle */}
+              <div className="flex items-center gap-2 opacity-70 hover:opacity-100 transition-opacity">
+                <img 
+                  src="/circle_internet_tech_pvt_ltd_logo.jpeg" 
+                  alt="Circle" 
+                  className="w-8 h-8 object-contain rounded-lg"
+                />
+                <span className="text-base font-medium text-foreground">Circle</span>
+              </div>
+
+              {/* BeautifulCode */}
+              <div className="flex items-center gap-2 opacity-70 hover:opacity-100 transition-opacity">
+                <img 
+                  src="/BCLogo.png" 
+                  alt="BeautifulCode" 
+                  className="h-8 w-8 object-contain"
+                />
+                <span className="text-base font-medium text-foreground">BeautifulCode</span>
+              </div>
+            </div>
           </div>
         </div>
       </div>
       
       {/* Skills Ticker - Full Width */}
-      <div className="w-full overflow-hidden py-6  bg-card/30 backdrop-blur-sm">
+      {/* <div className="w-full overflow-hidden py-6  bg-card/30 backdrop-blur-sm">
         <div className="container-padded max-w-7xl">
           <div className="flex items-center gap-3 mb-3">
           <div className="h-px flex-1 bg-border" />
@@ -153,7 +233,7 @@ const Hero = () => {
             ))}
           </div>
         </div>
-      </div>
+      </div> */}
     </section>
   );
 };

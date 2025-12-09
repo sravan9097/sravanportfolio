@@ -39,11 +39,9 @@ const Projects = () => {
                       <LazyImage 
                         src={project.image} 
                         alt={project.title} 
-                        className="w-full h-full object-cover transition-all duration-700 group-hover:scale-105" 
+                        className="w-full h-full object-cover" 
                       />
                     </div>
-                    {/* Accent bar that appears on hover */}
-                    <div className="absolute top-0 left-0 w-1 h-0 bg-accent transition-all duration-500 group-hover:h-full" />
                   </div>
                   
                   {/* Content */}

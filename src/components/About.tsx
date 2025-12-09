@@ -7,18 +7,18 @@ const About = () => {
           <div className=" w-full md:w-2/3">
             <h2 className="text-4xl md:text-5xl font-bold mb-6 text-primary-light">About Me</h2>
             <p className="text-primary-light mb-4 text-base">
-            I'm Sravan Kumar, a UX designer who bridges strategy, design, and execution. I specialize in turning complex user problems into intuitive, scalable solutions, grounded in research and validated through prototypes.
+            I’m Sravan Kumar. A Senior UX & Product Designer who works where strategy meets systems and real-world execution. I design for complex products that need to scale. Not just look good.
 
             </p>
             
             <p className="text-primary-light mb-6 text-base">
-            Over the years, I've led end-to-end UX projects across research, user flows, interaction design, and usability testing, while collaborating closely with developers to ensure designs ship as intended. My hybrid approach of designing in Figma and prototyping in code helps reduce handoff friction and deliver experiences that work in the real world.
+            Over the last 6+ years, I’ve led end-to-end UX across research, flows, interaction design, and usability testing. I work closely with engineering to ensure what gets designed actually ships. My hybrid workflow of designing in Figma and prototyping in code helps reduce handoff friction and move teams faster with confidence.
             </p>
 
 
             
             <p className="text-primary-light mb-6 text-base">
-            I bring a balanced mindset: user-first thinking, measurable business impact, and consistency at scale.
+            At the core of my work is a simple belief. Less chaos. More clarity. I design with a strong focus on user-first thinking, measurable business impact, and long-term consistency at scale.
             </p>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
               <a
@@ -34,7 +34,7 @@ const About = () => {
                   <div>
                     <div className="font-semibold text-primary">Figma Community</div>
                     <div className="text-primary-light text-sm mb-1">www.figma.com/@sravan</div>
-                    <div className="text-primary-light text-sm">View my published files, templates, and resources</div>
+                    <div className="text-primary-light text-sm">Explore my published systems, templates, and resources</div>
                   </div>
                 </div>
               </a>

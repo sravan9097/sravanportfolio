@@ -29,12 +29,15 @@ const WhatIDo = () => {
   return (
     <section className="section-padding" id="what-i-do">
       <div className="container-padded">
-        <div className="flex flex-col md:flex-row justify-between gap-12 items-start">
-          <div className="mb-12">
+        <div className="flex flex-col md:flex-row justify-between gap-6 items-center">
+          <div className="mb-12 w-full md:w-1/3">
             <h2 className="text-4xl md:text-5xl font-bold mb-6 text-title-light">What I do.</h2>
             <p className="text-xl md:text-2xl text-foreground font-medium leading-snug max-w-4xl">
               I help teams turn real user needs into measurable product outcomes.
-              My work spans strategy, UX design, and shipping production-ready systems.
+             
+            </p>
+            <p className="text-xl md:text-2xl text-foreground font-medium leading-snug max-w-4xl">
+            My work spans strategy, UX design, and shipping production-ready systems.
             </p>
           </div>
 

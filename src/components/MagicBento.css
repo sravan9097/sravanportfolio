@@ -115,6 +115,7 @@
 .magic-bento-card__description {
   font-size: 1rem;
   line-height: 1.5;
+  font-weight: 500;
   color: hsl(var(--muted-foreground));
 }
 

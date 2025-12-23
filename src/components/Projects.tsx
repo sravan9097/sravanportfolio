@@ -4,6 +4,17 @@ import { Link } from "react-router-dom";
 import { LazyImage } from "@/components/ui/LazyImage";
 import { getCaseStudies } from "@/lib/content";
 
+// Mapping of case study slugs to their project titles
+const projectTitleMap: Record<string, string> = {
+  "bc-experience": "Capturing Daily Engineering Progress Without Meetings",
+  "sharechat": "ShareChat Lead Generation",
+  "beautifulcode-revamp": "BeautifulCode Website Redesign",
+  "design-system": "What is a Design System?",
+  "mcp-design-code-bridge": "Bridging Design & Code in the Age of AI",
+  "ai-agents-design-systems": "When Your 'User' Isn't Human",
+  "design-token-naming": "Naming Design Tokens"
+};
+
 const Projects = () => {
   // Get top 3 case studies by rank
   const caseStudies = getCaseStudies().slice(0, 3);
@@ -11,7 +22,7 @@ const Projects = () => {
   // Convert to projects format for display
   const projects = caseStudies.map(cs => ({
     id: cs.slug,
-    title: cs.title,
+    title: projectTitleMap[cs.slug] || cs.title,
     description: cs.description,
     image: cs.image || "/placeholder.svg",
     category: `${cs.category} - ${cs.tags?.[0] || 'Design'}`

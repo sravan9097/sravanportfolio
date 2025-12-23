@@ -18,6 +18,17 @@ import {
   BreadcrumbSeparator
 } from "@/components/ui/breadcrumb";
 
+// Mapping of case study slugs to their project titles
+const projectTitleMap: Record<string, string> = {
+  "bc-experience": "Capturing Daily Engineering Progress Without Meetings",
+  "sharechat": "ShareChat Lead Generation",
+  "beautifulcode-revamp": "BeautifulCode Website Redesign",
+  "design-system": "What is a Design System?",
+  "mcp-design-code-bridge": "Bridging Design & Code in the Age of AI",
+  "ai-agents-design-systems": "When Your 'User' Isn't Human",
+  "design-token-naming": "Naming Design Tokens"
+};
+
 const Projects = () => {
   const location = useLocation();
   const caseStudies = getCaseStudies();
@@ -39,8 +50,14 @@ const Projects = () => {
     role: "Design System Lead"
   };
   
-  // Add design system to case studies
-  const allCaseStudies = [...caseStudies, designSystemProject];
+  // Add design system to case studies and map project titles
+  const allCaseStudies = [...caseStudies, designSystemProject].map(project => {
+    const displayTitle = projectTitleMap[project.slug] || project.title;
+    return {
+      ...project,
+      displayTitle
+    };
+  });
   const figmaProjects = getFigmaFilesWithProcessedImages();
   const animations = getAnimations();
   
@@ -144,7 +161,7 @@ const Projects = () => {
                       </div>
                       
                       <h3 className="text-xl md:text-2xl font-bold text-foreground leading-tight group-hover:text-accent transition-colors duration-300">
-                        {project.title}
+                        {project.displayTitle || project.title}
                       </h3>
                       
                       <p className="text-sm md:text-base text-muted-foreground leading-relaxed line-clamp-2">

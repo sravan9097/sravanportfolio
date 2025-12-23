@@ -215,6 +215,20 @@ main {
   }
 }
 
+@keyframes scroll-infinite {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-3816px);
+  }
+}
+
+.animate-scroll-infinite {
+  animation: scroll-infinite 40s linear infinite;
+  will-change: transform;
+}
+
 /* Hero light effect - theme aware */
 .hero-light-effect {
   background: radial-gradient(

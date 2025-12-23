@@ -12,6 +12,7 @@ import { getDocBySlug } from "@/lib/content";
 import BeautifulCodeRedesignProject from "./BeautifulCodeRedesignProject";
 import DesignSystemProject from "./DesignSystemProject";
 import bcexperienceproject from "./BCexperienceproject";
+import BCExperienceNew from "./BCExperienceNew";
 import ShareChatLeadGenerationProject from "./ShareChatLeadGenerationProject";
 import DesignTokenNamingArticle from "./DesignTokenNamingArticle";
 import MCPDesignCodeBridgeArticle from "./MCPDesignCodeBridgeArticle";
@@ -29,6 +30,11 @@ const projectComponents: Record<string, React.FC> = {
 
 const ProjectDetailPage: React.FC = () => {
   const { projectid } = useParams<{ projectid: string }>();
+
+  // Special handling for bc-experience - use new React component
+  if (projectid === "bc-experience") {
+    return <BCExperienceNew />;
+  }
 
   // Try markdown first
   const doc = getDocBySlug(projectid);

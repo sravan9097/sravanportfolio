@@ -12,6 +12,7 @@ import ScrollToTop from "./components/ui/ScrollToTop";
 import { PerformanceMonitor } from "./components/PerformanceMonitor";
 import { OfflinePage } from "./components/OfflinePage";
 import { useNetworkStatus } from "./hooks/useNetworkStatus";
+import { ImageModalProvider } from "./components/ImageModal";
 // Removed GA pageview tracking; Vercel Web Analytics handles page views automatically
 
 // Lazy load pages for code splitting
@@ -62,24 +63,26 @@ const App = () => {
   return (
     <QueryClientProvider client={queryClient}>
       <ThemeProvider>
-        <TooltipProvider>
-          <PerformanceMonitor />
-          <Toaster />
-          <Sonner />
-            <BrowserRouter>
-            <ScrollToTop />
-            <Suspense fallback={<LoadingSpinner />}>
-              <Routes>
-                <Route path="/" element={<Index />} />
-                <Route path="/about" element={<Index />} />
-                <Route path="/projects" element={<Projects />} />
-                <Route path="/project/:projectid" element={<ProjectDetailPage />} />
-                <Route path="/project/*" element={<ProjectNotFound />} />
-              </Routes>
-            </Suspense>
-          </BrowserRouter>
-          <SpeedInsights />
-        </TooltipProvider>
+        <ImageModalProvider>
+          <TooltipProvider>
+            <PerformanceMonitor />
+            <Toaster />
+            <Sonner />
+              <BrowserRouter>
+              <ScrollToTop />
+              <Suspense fallback={<LoadingSpinner />}>
+                <Routes>
+                  <Route path="/" element={<Index />} />
+                  <Route path="/about" element={<Index />} />
+                  <Route path="/projects" element={<Projects />} />
+                  <Route path="/project/:projectid" element={<ProjectDetailPage />} />
+                  <Route path="/project/*" element={<ProjectNotFound />} />
+                </Routes>
+              </Suspense>
+            </BrowserRouter>
+            <SpeedInsights />
+          </TooltipProvider>
+        </ImageModalProvider>
       </ThemeProvider>
     </QueryClientProvider>
   );

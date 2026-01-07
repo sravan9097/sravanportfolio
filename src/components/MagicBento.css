@@ -1,13 +1,13 @@
 .card-grid {
-  display: grid;
+  display: flex;
+  flex-direction: column;
   gap: 1rem;
   width: 100%;
-  grid-template-columns: 1fr;
 }
 
 @media (min-width: 768px) {
   .card-grid {
-    grid-template-columns: repeat(2, 1fr);
+    flex-direction: row;
   }
 }
 
@@ -35,7 +35,7 @@
 /* Purple card - spans full width */
 @media (min-width: 768px) {
   .magic-bento-card--purple {
-    grid-column: span 2;
+    flex: 1 1 100%;
   }
 }
 
@@ -119,10 +119,9 @@
   color: hsl(var(--muted-foreground));
 }
 
-
 /* Border glow effect */
 .magic-bento-card--border-glow::after {
-  content: '';
+  content: "";
   position: absolute;
   inset: 0;
   padding: 2px;
@@ -133,13 +132,9 @@
     transparent 60%
   );
   border-radius: inherit;
-  -webkit-mask:
-    linear-gradient(#fff 0 0) content-box,
-    linear-gradient(#fff 0 0);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
   -webkit-mask-composite: xor;
-  mask:
-    linear-gradient(#fff 0 0) content-box,
-    linear-gradient(#fff 0 0);
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
   mask-composite: exclude;
   pointer-events: none;
   opacity: 1;
@@ -161,7 +156,7 @@
 }
 
 .particle::before {
-  content: '';
+  content: "";
   position: absolute;
   top: -2px;
   left: -2px;
@@ -193,13 +188,12 @@
 @media (min-width: 768px) {
   .magic-bento-card--purple {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     align-items: flex-start;
     gap: 1rem;
   }
-  
+
   .magic-bento-card--purple .magic-bento-card__header {
     margin-bottom: 0;
   }
 }
-

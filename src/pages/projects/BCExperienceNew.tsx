@@ -239,7 +239,7 @@ const BCExperienceNew = () => {
         </section>
 
         {/* Design Intent */}
-        <section className="mb-24">
+        {/* <section className="mb-24">
           <h2 className="text-3xl font-bold mb-12 text-foreground">Design Intent</h2>
           
           <div className="grid md:grid-cols-2 gap-8 mb-12">
@@ -286,7 +286,7 @@ const BCExperienceNew = () => {
             </div>
           </div>
           
-          {/* <div className="bg-background rounded-2xl p-8 border border-border shadow-sm">
+          <div className="bg-background rounded-2xl p-8 border border-border shadow-sm">
             <h3 className="text-xl font-semibold mb-4 text-foreground">
               Enable transparency without micromanagement
             </h3>
@@ -305,8 +305,8 @@ const BCExperienceNew = () => {
                 </ul>
               </div>
             </div>
-          </div> */}
-        </section>
+          </div>
+        </section> */}
 
 
 

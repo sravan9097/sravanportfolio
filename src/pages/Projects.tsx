@@ -9,7 +9,7 @@ import { getImageURL } from "@/lib/imageUtils";
 import { getFigmaFilesWithProcessedImages } from "@/lib/figmaFiles";
 import { getAnimations } from "@/lib/animations";
 import { DotLottieReact } from "@lottiefiles/dotlottie-react";
-import { 
+import {
   Breadcrumb,
   BreadcrumbItem,
   BreadcrumbLink,
@@ -20,6 +20,7 @@ import {
 
 // Mapping of case study slugs to their project titles
 const projectTitleMap: Record<string, string> = {
+  "sharechat-wallet": "Improving Wallet Recharge Experience for Advertisers",
   "bc-experience": "Capturing Daily Engineering Progress Without Meetings",
   "sharechat": "ShareChat Lead Generation",
   "beautifulcode-revamp": "BeautifulCode Website Redesign",
@@ -33,7 +34,7 @@ const Projects = () => {
   const location = useLocation();
   const caseStudies = getCaseStudies();
   // const articles = getArticles();
-  
+
   // Add design system project manually since it's a React component, not markdown
   const designSystemProject = {
     slug: "design-system",
@@ -49,7 +50,7 @@ const Projects = () => {
     tools: ["Figma", "Storybook"],
     role: "Design System Lead"
   };
-  
+
   // Add design system to case studies and map project titles
   const allCaseStudies = [...caseStudies, designSystemProject].map(project => {
     const displayTitle = projectTitleMap[project.slug] || project.title;
@@ -60,7 +61,7 @@ const Projects = () => {
   });
   const figmaProjects = getFigmaFilesWithProcessedImages();
   const animations = getAnimations();
-  
+
   // Refs for dotLottie instances
   const dotLottieRefsMap = useRef<Record<string, any>>({});
 
@@ -70,7 +71,7 @@ const Projects = () => {
     if (hash) {
       // Remove the # symbol
       const sectionId = hash.substring(1);
-      
+
       // Use a longer timeout to ensure the page has fully rendered
       // Also try multiple times in case the element isn't ready yet
       const scrollToSection = () => {
@@ -80,7 +81,7 @@ const Projects = () => {
           const navbarHeight = 80; // Approximate navbar height
           const elementPosition = element.getBoundingClientRect().top;
           const offsetPosition = elementPosition + window.pageYOffset - navbarHeight;
-          
+
           window.scrollTo({
             top: offsetPosition,
             behavior: 'smooth'
@@ -89,7 +90,7 @@ const Projects = () => {
         }
         return false;
       };
-      
+
       // Try immediately
       if (!scrollToSection()) {
         // If not found, try after a delay
@@ -123,18 +124,18 @@ const Projects = () => {
 
         <div>
           <h1 className="text-4xl font-bold mb-4 text-foreground">My Work</h1>
-          <p className="text-lg text-muted-foreground mb-12"> 
-            Explore my complete collection of articles, design work and case studies.
+          <p className="text-lg text-muted-foreground mb-12">
+            Explore my complete collection of design work and case studies.
           </p>
-          
+
           {/* Case Studies Section */}
           <div className="mb-20">
             <h2 className="text-2xl font-bold mb-8 text-foreground">Case Studies</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10">
               {allCaseStudies.map((project) => (
-                <Link 
-                  key={project.slug} 
-                  to={`/project/${project.slug}`} 
+                <Link
+                  key={project.slug}
+                  to={`/project/${project.slug}`}
                   className="group block"
                   onClick={() => track('project_open', { id: project.slug, title: project.title, category: project.category })}
                 >
@@ -142,15 +143,15 @@ const Projects = () => {
                     {/* Image */}
                     <div className="relative overflow-hidden bg-muted">
                       <div className="aspect-[16/10]">
-                        <img 
-                          src={project.image || "/placeholder.svg"} 
-                          alt={project.title} 
-                          className="w-full h-full object-cover transition-all duration-700 group-hover:scale-105" 
+                        <img
+                          src={project.image || "/placeholder.svg"}
+                          alt={project.title}
+                          className="w-full h-full object-cover transition-all duration-700 group-hover:scale-105"
                         />
                       </div>
                       <div className="absolute top-0 left-0 w-1 h-0 bg-accent transition-all duration-500 group-hover:h-full" />
                     </div>
-                    
+
                     {/* Content */}
                     <div className="space-y-3">
                       <div className="flex items-center gap-3">
@@ -159,15 +160,15 @@ const Projects = () => {
                           {project.category}
                         </span>
                       </div>
-                      
+
                       <h3 className="text-xl md:text-2xl font-bold text-foreground leading-tight group-hover:text-accent transition-colors duration-300">
                         {project.displayTitle || project.title}
                       </h3>
-                      
+
                       <p className="text-sm md:text-base text-muted-foreground leading-relaxed line-clamp-2">
                         {project.description}
                       </p>
-                      
+
                       <div className="inline-flex items-center gap-2 text-sm font-medium text-foreground group-hover:gap-4 transition-all duration-300">
                         <span>View Project</span>
                         <svg className="w-4 h-4 transform group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -239,11 +240,11 @@ const Projects = () => {
             <h2 className="text-2xl font-bold mb-8 text-foreground">Figma Projects</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {figmaProjects.map((project) => (
-                <a 
-                  key={project.id} 
-                  href={project.redirectLink} 
-                  target="_blank" 
-                  rel="noopener noreferrer" 
+                <a
+                  key={project.id}
+                  href={project.redirectLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="group block"
                   onClick={() => track('figma_open', { id: project.id, title: project.title })}
                 >
@@ -251,15 +252,15 @@ const Projects = () => {
                     {/* Image */}
                     <div className="relative overflow-hidden bg-muted">
                       <div className="aspect-[4/3]">
-                        <img 
-                          src={project.thumbnailImagePath} 
-                          alt={project.title} 
-                          className="w-full h-full object-cover transition-all duration-700 group-hover:scale-105" 
+                        <img
+                          src={project.thumbnailImagePath}
+                          alt={project.title}
+                          className="w-full h-full object-cover transition-all duration-700 group-hover:scale-105"
                         />
                       </div>
                       <div className="absolute top-0 left-0 w-1 h-0 bg-accent transition-all duration-500 group-hover:h-full" />
                     </div>
-                    
+
                     {/* Content */}
                     <div className="space-y-3">
                       <div className="flex items-center gap-3">
@@ -268,15 +269,15 @@ const Projects = () => {
                           {project.label}
                         </span>
                       </div>
-                      
+
                       <h3 className="text-lg md:text-xl font-bold text-foreground leading-tight group-hover:text-accent transition-colors duration-300">
                         {project.title}
                       </h3>
-                      
+
                       <p className="text-sm text-muted-foreground leading-relaxed line-clamp-2">
                         {project.description}
                       </p>
-                      
+
                       <div className="inline-flex items-center gap-2 text-sm font-medium text-foreground group-hover:gap-4 transition-all duration-300">
                         <span>Open in Figma</span>
                         <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -294,13 +295,13 @@ const Projects = () => {
           <div className="mb-16" id="animations">
             <h2 className="text-2xl font-bold mb-8 text-foreground">Animations</h2>
             <p className="text-muted-foreground mb-8">
-              Handcrafted Lottie animations designed to enhance user experiences and bring interfaces to life. 
+              Handcrafted Lottie animations designed to enhance user experiences and bring interfaces to life.
               Each animation is carefully crafted to provide smooth, engaging interactions for various UI states and scenarios.
             </p>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {animations.map((animation) => (
-                <div 
-                  key={animation.id} 
+                <div
+                  key={animation.id}
                   className="group block"
                 >
                   <article className="h-full space-y-4">
@@ -318,7 +319,7 @@ const Projects = () => {
                         />
                       </div>
                     </div>
-                    
+
                     {/* Content */}
                     <div className="space-y-3">
                       {/* <div className="flex items-center gap-3">
@@ -327,11 +328,11 @@ const Projects = () => {
                           {animation.label}
                         </span>
                       </div> */}
-                      
+
                       <h3 className="text-lg md:text-xl font-bold text-foreground leading-tight ">
                         {animation.title}
                       </h3>
-                      
+
                       <p className="text-sm text-muted-foreground leading-relaxed">
                         {animation.description}
                       </p>

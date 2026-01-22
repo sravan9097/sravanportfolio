@@ -4,7 +4,7 @@ title: Building BeautifulCode Experience App
 category: Case Study
 description: Designing the BC Experience platform to streamline collaboration, improve visibility, and create a frictionless check-in process that fosters autonomy and trust across distributed teams.
 image: /Hero_Images/BC_experience_cover.png
-rank: 1
+rank: 2
 timeline: 3 months
 tools:
   - Figma

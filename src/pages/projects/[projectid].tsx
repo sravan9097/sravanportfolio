@@ -14,6 +14,7 @@ import DesignSystemProject from "./DesignSystemProject";
 import bcexperienceproject from "./BCexperienceproject";
 import BCExperienceNew from "./BCExperienceNew";
 import ShareChatLeadGenerationProject from "./ShareChatLeadGenerationProject";
+import ShareChatWallet from "./ShareChatWallet";
 import DesignTokenNamingArticle from "./DesignTokenNamingArticle";
 import MCPDesignCodeBridgeArticle from "./MCPDesignCodeBridgeArticle";
 import AIAgentsDesignSystemsArticle from "./AIAgentsDesignSystemsArticle";
@@ -34,6 +35,11 @@ const ProjectDetailPage: React.FC = () => {
   // Special handling for bc-experience - use new React component
   if (projectid === "bc-experience") {
     return <BCExperienceNew />;
+  }
+
+  // Special handling for sharechat-wallet - use new React component
+  if (projectid === "sharechat-wallet") {
+    return <ShareChatWallet />;
   }
 
   // Try markdown first

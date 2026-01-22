@@ -8,6 +8,7 @@ import { getCaseStudies } from "@/lib/content";
 const projectTitleMap: Record<string, string> = {
   "bc-experience": "Capturing Daily Engineering Progress Without Meetings",
   "sharechat": "ShareChat Lead Generation",
+  "sharechat-wallet": "Improving Wallet Recharge Experience for Advertisers",
   "beautifulcode-revamp": "BeautifulCode Website Redesign",
   "design-system": "What is a Design System?",
   "mcp-design-code-bridge": "Bridging Design & Code in the Age of AI",

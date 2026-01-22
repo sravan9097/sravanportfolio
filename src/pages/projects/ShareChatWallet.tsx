@@ -67,9 +67,9 @@ const ShareChatWallet = () => {
             <div className="flex-1">
               <p className="text-base text-muted-foreground mb-6 leading-relaxed">
                 ShareChat Business allows advertisers to run ad campaigns by first adding money to a prepaid wallet.
-                This wallet recharge flow is a critical conversion point, especially for first-time and small-budget
-                advertisers. However, existing data and user feedback indicated hesitation, confusion, and drop-offs
-                at this step — directly impacting advertiser activation and revenue.
+                This wallet recharge flow is a critical conversion point, especially for first time and small budget
+                advertisers. However, existing data and user feedback indicated hesitation, confusion, and drop offs
+                at this step directly impacting advertiser activation and revenue.
               </p>
 
               <div className="grid grid-cols-2 gap-6 mb-6">
@@ -87,7 +87,7 @@ const ShareChatWallet = () => {
                 </div>
                 <div>
                   <p className="text-sm text-muted-foreground mb-1">Users</p>
-                  <p className="text-sm font-medium text-foreground">Advertisers, SMBs, First-time users</p>
+                  <p className="text-sm font-medium text-foreground">Advertisers, SMBs, First time users</p>
                 </div>
               </div>
 
@@ -118,20 +118,20 @@ const ShareChatWallet = () => {
         {/* Problem Section */}
         <section className="mb-24 bg-muted/50 rounded-2xl p-12 md:p-16">
           <h2 className="text-3xl font-bold mb-6 text-foreground max-w-2xl">
-            The problem was not payment—it was trust, clarity, and confidence.
+            The problem was not payment.  <br />  It was trust, clarity, and confidence.
           </h2>
 
           <p className="text-base text-muted-foreground mb-8 w-full leading-relaxed">
             Advertisers lacked trust, clarity, and confidence while adding money to the wallet due to unclear
-            value communication, high perceived financial risk, and confusing credit-related messaging — resulting
-            in hesitation and drop-offs at a critical conversion step.
+            value communication, high perceived financial risk, and confusing credit related messaging resulting
+            in hesitation and drop offs at a critical conversion step.
           </p>
 
           <div className="space-y-4 mb-8">
             {[
               "Lack of trust: Users questioned whether ads would work and if money was refundable",
               "No visibility into value: Users wanted clarity similar to Facebook or Instagram ads",
-              "High entry barrier: ₹10,000 felt too high for first-time advertisers",
+              "High entry barrier: ₹10,000 felt too high for first time advertisers",
               "Confusing minimum amount rules: Unclear about recharge constraints",
               "Overloaded credit messaging: Terms like free credits were misunderstood"
             ].map((point, idx) => (
@@ -164,7 +164,7 @@ const ShareChatWallet = () => {
               <div className="space-y-3">
                 {[
                   "Increase successful wallet recharges",
-                  "Improve first-time advertiser activation",
+                  "Improve first time advertiser activation",
                   "Reduce friction and support queries related to recharge"
                 ].map((goal, idx) => (
                   <div key={idx} className="flex items-center gap-3">
@@ -210,7 +210,7 @@ const ShareChatWallet = () => {
 
           <p className="text-base text-muted-foreground mb-8 leading-relaxed">
             We conducted qualitative research focused on advertiser behavior during wallet recharge to understand
-            their pain points and decision-making process.
+            their pain points and decision making process.
           </p>
 
           {/* Before and After Images */}
@@ -290,7 +290,7 @@ const ShareChatWallet = () => {
               {[
                 {
                   message: "How do I know I'll get value for my money? There are no reviews or proofs that this works.",
-                  user: "First-time Advertiser"
+                  user: "First time Advertiser"
                 },
                 {
                   message: "What reach will I get if I add this amount?",
@@ -547,7 +547,7 @@ const ShareChatWallet = () => {
               <div className="text-5xl font-bold text-accent mb-4">45%</div>
               <h3 className="text-xl font-semibold mb-3 text-foreground">Reduced Support Queries</h3>
               <p className="text-sm text-muted-foreground leading-relaxed">
-                Around credits, GST, and recharge eligibility, leading to fewer drop-offs
+                Around credits, GST, and recharge eligibility, leading to fewer drop offs
               </p>
             </div>
           </div>
@@ -564,7 +564,7 @@ const ShareChatWallet = () => {
               {
                 number: "1",
                 title: "Early exploration of multiple directions pays off.",
-                description: "Testing various wireframe layouts helped identify the optimal structure before investing in high-fidelity design."
+                description: "Testing various wireframe layouts helped identify the optimal structure before investing in high fidelity design."
               },
               {
                 number: "2",
@@ -574,7 +574,7 @@ const ShareChatWallet = () => {
               {
                 number: "3",
                 title: "Use competitive analysis as behavioral guidance, not just inspiration.",
-                description: "Understanding patterns from high-trust platforms helped establish familiar, reliable patterns."
+                description: "Understanding patterns from high trust platforms helped establish familiar, reliable patterns."
               },
               {
                 number: "4",
